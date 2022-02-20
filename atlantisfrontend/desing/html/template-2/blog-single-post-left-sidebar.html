@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Blog - single post left sidebar | Nookx</title>
+      <!-- Favicon -->
+      <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+      <!-- Linearicon Font -->
+      <link rel="stylesheet" href="assets/plugins/linearicon/css/lnr-icon.css">
+      <!-- FontAwesome Free Font -->
+      <link rel="stylesheet" href="assets/plugins/fontawesome/css/font-awesome.min.css">
+      <!-- Slick slider CSS -->
+      <link rel="stylesheet" href="assets/plugins/slick/css/slick.css">
+      <link rel="stylesheet" href="assets/plugins/slick/css/slick-theme.min.css">
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="assets/css/style.css">
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.min.js"></script>
+      <script src="assets/js/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+      <!-- Home Wrapper -->
+      <div class="home-wrapper">
+         <!-- Header -->
+         <header class="bg-black">
+            <!-- Main header Section -->
+            <div class="main-header-section shadow-sm">
+               <div class="container-fluid">
+                  <div class="row align-items-center">
+                     <div class="col-12">
+                        <!-- Main Menu -->
+                        <div class="main-menu menu-section w-100 d-inline-block d-md-block">
+                           <!-- offcanvas menu -->
+                           <div id="offcanvas_menu" class="slidebar-menu">
+                              <div class="scroll-style">
+                                 <div class="container-fluid">
+                                    <div class="row">
+                                       <div class="col-12">
+                                          <div class="close-btn-blk position-absolute r-2 text-right pt-3">
+                                             <a href="javascript:;" id="close_navSidebar" class="text-black text-right">
+                                             <span data-feather="x-circle" class="" ></span>
+                                             </a>                                          
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="row">
+                                       <div class="col-xl-3 col-lg-4 px-lg-0 d-none d-lg-inline-block bg-black">
+                                          <div class="menu-slider bg-black p-5 vh-100">
+                                             <p>Top Selling</p>
+                                             <h1>The New Collection</h1>
+                                             <div id="advertise-space-blk" class="my-5 carousel slide" data-ride="carousel">
+                                                <!-- Indicators -->
+                                                <ul class="carousel-indicators">
+                                                   <li data-target="#advertise-space-blk" data-slide-to="0" class="active"></li>
+                                                   <li data-target="#advertise-space-blk" data-slide-to="1"></li>
+                                                   <li data-target="#advertise-space-blk" data-slide-to="2"></li>
+                                                </ul>
+                                                <!-- The slideshow -->
+                                                <div class="carousel-inner">
+                                                   <div class="carousel-item text-center active">
+                                                      <img class="img-fluid mx-auto text-center" src="assets/img/ad-pdt-slider-1.jpg" alt="Showcase Product Image Slider" />
+                                                   </div>
+                                                   <div class="carousel-item text-center">
+                                                      <img class="img-fluid mx-auto text-center" src="assets/img/ad-pdt-slider-2.jpg" alt="Showcase Product Image Slider" />
+                                                   </div>
+                                                   <div class="carousel-item text-center">
+                                                      <img class="img-fluid mx-auto text-center" src="assets/img/ad-pdt-slider-3.jpg" alt="Showcase Product Image Slider" />
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="cta-explore-btn text-center">
+                                                <a href="product-3col.html" class="btn btn-style btn-lg">Explore Now</a>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="col-xl-9 col-lg-8 pl-lg-0">
+                                          <div class="p-5 slimscroll">
+                                             <div class="row">
+                                                <div class="col-xl-3 col-md-4">
+                                                   <div class="menu-widget-grid">
+                                                      <h5 class="text-uppercase font-bold">Home</h5>
+                                                      <ul class="pt-3 menu-list-style">
+                                                         <li><a class="text-link" href="index.html">Banner Version</a></li>
+                                                         <li><a class="text-link" href="index-2.html">Video Version</a></li>
+                                                         <li><a class="text-link" href="index-3.html">Slider Version</a></li>
+                                                      </ul>
+                                                   </div>
+                                                </div>
+                                                <div class="col-xl-3 col-md-4">
+                                                   <div class="menu-widget-grid">
+                                                      <h5 class="text-uppercase font-bold">Shop</h5>
+                                                      <ul class="pt-3 menu-list-style">
+                                                         <li class="default-menu dropdown">
+                                                            <a class="text-link dropdown-toggle" data-toggle="dropdown" href="javascript:;">Theme</a>
+                                                            <div class="dropdown-menu position-relative border-0">
+                                                               <ul>
+                                                                  <li><a class="dropdown-item" href="product-3col.html">Shop Basic</a></li>
+                                                                  <li><a class="dropdown-item" href="product-v2.html">Shop Advanced</a></li>
+                                                                  <li><a class="dropdown-item" href="product-v3.html">Shop Pro</a></li>
+                                                               </ul>
+                                                            </div>
+                                                         </li>
+                                                         <li class="default-menu dropdown">
+                                                            <a class="text-link dropdown-toggle" data-toggle="dropdown" href="javascript:;">Layout</a>
+                                                            <div class="dropdown-menu position-relative border-0">
+                                                               <ul>
+                                                                  <li><a class="dropdown-item" href="product-3col.html">Shop Grid</a></li>
+                                                                  <li><a class="dropdown-item" href="product-list.html">Shop List</a></li>
+                                                                  <li><a class="dropdown-item" href="product-full-width.html">Shop Full-Width</a></li>
+                                                               </ul>
+                                                            </div>
+                                                         </li>
+                                                         <li class="default-menu dropdown">
+                                                            <a class="text-link dropdown-toggle" data-toggle="dropdown" href="javascript:;">Column</a>
+                                                            <div class="dropdown-menu position-relative border-0">
+                                                               <ul>
+                                                                  <li><a class="dropdown-item" href="product-3col.html">Shop 3 Column</a></li>
+                                                                  <li><a class="dropdown-item" href="product-no-sidebar.html">Shop 4 Column</a></li>
+                                                               </ul>
+                                                            </div>
+                                                         </li>
+                                                         <li class="default-menu dropdown">
+                                                            <a class="text-link dropdown-toggle" data-toggle="dropdown" href="javascript:;">Sidebar</a>
+                                                            <div class="dropdown-menu position-relative border-0">
+                                                               <ul>
+                                                                  <li><a class="dropdown-item" href="product-3col.html">Shop left Sidebar</a></li>
+                                                                  <li><a class="dropdown-item" href="product-right-sidebar.html">Shop Right Sidebar</a></li>
+                                                                  <li><a class="dropdown-item" href="product-no-sidebar.html">Shop No Sidebar</a></li>
+                                                               </ul>
+                                                            </div>
+                                                         </li>
+                                                      </ul>
+                                                   </div>
+                                                </div>
+                                                <div class="col-xl-3 col-md-4">
+                                                   <div class="menu-widget-grid">
+                                                      <h5 class="text-uppercase font-bold">Product</h5>
+                                                      <ul class="pt-3 menu-list-style">
+                                                         <li class="default-menu dropdown">
+                                                            <a class="text-link dropdown-toggle" data-toggle="dropdown" href="javascript:;">Layout</a>
+                                                            <div class="dropdown-menu position-relative border-0">
+                                                               <ul>
+                                                                  <li><a class="dropdown-item" href="single-product.html">Image Version</a></li>
+                                                                  <li><a class="dropdown-item" href="single-product-v2.html">Video Version</a></li>
+                                                               </ul>
+                                                            </div>
+                                                         </li>
+                                                         <li class="default-menu dropdown">
+                                                            <a class="text-link dropdown-toggle" data-toggle="dropdown" href="javascript:;">Sidebar</a>
+                                                            <div class="dropdown-menu position-relative border-0">
+                                                               <ul>
+                                                                  <li><a class="dropdown-item" href="single-product-left-sidebar.html">Left Sidebar</a></li>
+                                                                  <li><a class="dropdown-item" href="single-product.html">Right Sidebar</a></li>
+                                                               </ul>
+                                                            </div>
+                                                         </li>
+                                                         <li class="default-menu dropdown">
+                                                            <a class="text-link dropdown-toggle" data-toggle="dropdown" href="javascript:;">Thumbnail</a>
+                                                            <div class="dropdown-menu position-relative border-0">
+                                                               <ul>
+                                                                  <li><a class="dropdown-item" href="single-product-vertical-left.html">Left Image</a></li>
+                                                                  <li><a class="dropdown-item" href="single-product-vertical-right.html">Right Image</a></li>
+                                                                  <li><a class="dropdown-item" href="single-product-thumbnail-top.html">Top Image</a></li>
+                                                                  <li><a class="dropdown-item" href="single-product.html">Bottom Image</a></li>
+                                                               </ul>
+                                                            </div>
+                                                         </li>
+                                                      </ul>
+                                                   </div>
+                                                </div>
+                                                <div class="col-xl-3 col-md-4">
+                                                   <div class="menu-widget-grid">
+                                                      <h5 class="text-uppercase font-bold">Blog</h5>
+                                                      <ul class="pt-3 menu-list-style">
+                                                         <li class="default-menu dropdown">
+                                                            <a class="text-link dropdown-toggle" data-toggle="dropdown" href="javascript:;">Theme</a>
+                                                            <div class="dropdown-menu position-relative border-0">
+                                                               <ul>
+                                                                  <li><a class="dropdown-item" href="blog-classic.html">Blog Classic</a></li>
+                                                                  <li><a class="dropdown-item" href="blog-3col.html">Blog Basic</a></li>
+                                                               </ul>
+                                                            </div>
+                                                         </li>
+                                                         <li class="default-menu dropdown">
+                                                            <a class="text-link dropdown-toggle" data-toggle="dropdown" href="javascript:;">Layout</a>
+                                                            <div class="dropdown-menu position-relative border-0">
+                                                               <ul>
+                                                                  <li><a class="dropdown-item" href="blog-3col.html">Blog Grid</a></li>
+                                                                  <li><a class="dropdown-item" href="blog-list.html">Blog List</a></li>
+                                                               </ul>
+                                                            </div>
+                                                         </li>
+                                                         <li class="default-menu dropdown">
+                                                            <a class="text-link dropdown-toggle" data-toggle="dropdown" href="javascript:;">Column</a>
+                                                            <div class="dropdown-menu position-relative border-0">
+                                                               <ul>
+                                                                  <li><a class="dropdown-item" href="blog-3col.html">Blog 3 Column</a></li>
+                                                                  <li><a class="dropdown-item" href="blog-4col.html">Blog 4 Column</a></li>
+                                                               </ul>
+                                                            </div>
+                                                         </li>
+                                                         <li class="default-menu dropdown">
+                                                            <a class="text-link dropdown-toggle" data-toggle="dropdown" href="javascript:;">Sidebar</a>
+                                                            <div class="dropdown-menu position-relative border-0">
+                                                               <ul>
+                                                                  <li><a class="dropdown-item" href="blog-single-post-left-sidebar.html">Blog Left Sidebar</a></li>
+                                                                  <li><a class="dropdown-item" href="blog-single-post.html">Blog Right Sidebar</a></li>
+                                                               </ul>
+                                                            </div>
+                                                         </li>
+                                                      </ul>
+                                                   </div>
+                                                </div>
+                                                <div class="col-xl-3 col-md-4">
+                                                   <div class="menu-widget-grid">
+                                                      <h5 class="text-uppercase font-bold">Pages</h5>
+                                                      <ul class="pt-3 menu-list-style">
+                                                         <li><a class="text-link" href="about-us.html">About Us</a></li>
+                                                         <li><a class="text-link" href="contact-us.html">Contact Us</a></li>
+                                                         <li><a class="text-link" href="how-it-works.html">How It Works</a></li>
+                                                         <li><a class="text-link" href="faq.html">FAQ</a></li>
+                                                         <li><a class="text-link" href="terms-policy.html">Terms & Policy</a></li>
+                                                      </ul>
+                                                   </div>
+                                                </div>
+                                                <div class="col-xl-3 col-md-4">
+                                                   <div class="menu-widget-grid">
+                                                      <h5 class="text-uppercase font-bold">User Panel</h5>
+                                                      <ul class="pt-3 menu-list-style">
+                                                         <li><a class="text-link" href="user-profile.html">User profile</a></li>
+                                                         <li><a class="text-link" href="user-profile-v2.html">User profile V2</a></li>
+                                                         <li><a class="text-link" href="settings.html">Settings</a></li>
+                                                         <li><a class="text-link" href="seller-cart.html">Seller Cart</a></li>
+                                                         <li><a class="text-link" href="my-wishlist.html">My wishlist</a></li>
+                                                         <li><a class="text-link" href="my-shop.html">My shop</a></li>
+                                                         <li><a class="text-link" href="my-sales.html">My sale</a></li>
+                                                         <li><a class="text-link" href="my-payments.html">My payments</a></li>
+                                                         <li><a class="text-link" href="my-orders.html">My orders</a></li>
+                                                         <li><a class="text-link" href="my-dashboard.html">My dashboard</a></li>
+                                                         <li><a class="text-link" href="loggedin-user-profile.html">My profile</a></li>
+                                                         <li><a class="text-link" href="invite-friends.html">Invite friends</a></li>
+                                                         <li><a class="text-link" href="forum.html">Forum</a></li>
+                                                         <li><a class="text-link" href="add-shop.html">Add Shop</a></li>
+                                                         <li><a class="text-link" href="add-product.html">Add product</a></li>
+                                                         <li><a class="text-link" href="add-addresses.html">Add addresses</a></li>
+                                                      </ul>
+                                                   </div>
+                                                </div>
+                                                <div class="col-xl-3 col-md-4">
+                                                   <div class="menu-widget-grid">
+                                                      <h5 class="text-uppercase font-bold">Admin Panel</h5>
+                                                      <ul class="pt-3 menu-list-style">
+                                                         <li><a class="text-link" href="admin-panel/index.html">View pages</a></li>
+                                                      </ul>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- /offcanvas menu -->
+                           <!-- Navbar menu-->
+                           <nav class="navbar p-0 navbar-expand-lg">
+                              <div class="logo my-3 my-md-0">
+                                 <a class="navbar-brand" href="index.html">
+                                 <img src="assets/img/logo.png" alt="logo image" class="img-fluid">
+                                 </a>
+                              </div>
+                              <div class="header-items text-white ml-auto">
+                                 <ul class="list-inline">
+                                    <li class="list-inline-item d-none d-md-inline-block">
+                                       <a href="register.html">
+                                       <span data-feather="user" class="d-inline-block mr-0 mr-lg-3"></span><span class="d-none d-lg-inline-block">Connections</span>
+                                       </a>
+                                    </li>
+                                    <li class="list-inline-item d-none d-md-inline-block explore-menu-style">
+                                       <a href="product-3col.html">
+                                       <span data-feather="play" class="d-inline-block mr-0 mr-lg-3"></span><span class="d-none d-lg-inline-block">Explore</span>
+                                       </a>
+                                    </li>
+                                    <li class="list-inline-item d-none d-md-inline-block map-menu-style">
+                                       <span data-feather="map" class="d-inline-block mr-0 mr-lg-3"></span><span class="d-none d-lg-inline-block">NY, USA</span>
+                                    </li>
+                                    <li class="list-inline-item d-none d-md-inline-block sell-pdt-menu-style">
+                                       <a href="add-product.html">
+                                       <span data-feather="globe" class="d-inline-block mr-0 mr-lg-3"></span><span class="d-none d-lg-inline-block">Sell Your Product</span></a>
+                                    </li>
+                                    <li class="list-inline-item animate-menu dropdown">
+                                       <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                                       <span data-feather="shopping-cart" class="d-inline-block"></span>
+                                       </a>
+                                       <div class="dropdown-menu justify-content-center shadow-lg radius-0 border-0 r-0 l-auto p-4 p-md-5 text-center">
+                                          <h4>Your shopping cart is empty!</h4>
+                                          <img class="d-none d-md-inline-block img-fluid py-5" src="assets/img/empty-cart.png" alt="Empty Cart" />
+                                          <a href="javascript:;" class="btn btn-style mt-3 mt-md-0">Shop now</a>
+                                       </div>
+                                    </li>
+                                    <li class="list-inline-item animate-menu dropdown">
+                                       <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                                       <img src="assets/img/en.png" alt="Language Icon" />
+                                       </a>
+                                       <div class="dropdown-menu bg-grey dropdown-xs text-center shadow-lg radius-0 border-0 r-0 l-auto">
+                                          <img class="mt-4 d-block mx-auto" src="assets/img/in.png" alt="Language Icon" />
+                                          <hr class="my-4">
+                                          <img class="mb-4 d-block mx-auto" src="assets/img/fr.png" alt="Language Icon" />
+                                       </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                       <a href="javascript:;" id="open_navSidebar">
+                                       <span data-feather="menu" class="d-inline-block"></span>
+                                       </a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </nav>
+                           <!-- /Navbar menu-->
+                        </div>
+                        <!-- /Main Menu -->
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- /Main Header Section -->
+         </header>
+         <!-- /Header -->
+         <!-- Bread crumb -->
+         <div class="breadcrumb-wrapper custom-shadow-bottom py-3">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="d-block d-md-flex justify-content-between align-items-center">
+                        <div class="breadcrumb-title">
+                           <h3>Insights</h3>
+                        </div>
+                        <div class="custom-breadcrumb">
+                           <ol class="breadcrumb mt-2 mt-md-0 no-bg-color p-0 m-0">
+                              <li class="breadcrumb-item d-inline-block">
+                                 <a href="index.html" class="text-theme-secondary">
+                                 Home
+                                 </a>
+                              </li>
+                              <li class="breadcrumb-item d-inline-block active">Blog single post left sidebar</li>
+                           </ol>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- /Bread crumb -->       
+         <!-- Blog Section -->
+         <section class="blog-wrapper bg-grey py-5">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-5 col-xl-4">
+                     <div class="search-blog mb-4 mt-md-0 mt-lg-0">
+                        <div class="input-group">
+                           <input type="email" class="form-control border-0 custom-radius-input" placeholder="Search Post">
+                           <span class="input-group-btn">
+                           <button class="btn btn-style-search text-white btn-sm" type="submit"><span data-feather="search" class="align-middle"></span></button>
+                           </span>
+                        </div>
+                     </div>
+                     <div class="card  mb-4 categ-list">
+                        <div class="card-header bg-white border-bottom p-4">
+                           <h4 class="card-title font-bold mb-0">Blog archives</h4>
+                        </div>
+                        <div class="card-body p-4">
+                           <div class="blog-post-cat">
+                              <ul>
+                                 <li class="mb-2">
+                                    <a href="javascript:;" class="text-link"><span data-feather="chevron-right" class="mr-2"></span>January (14)</a>
+                                 </li>
+                                 <li class="mb-2">
+                                    <a href="javascript:;" class="text-link"><span data-feather="chevron-right" class="mr-2"></span>Feburary (23)</a>
+                                 </li>
+                                 <li class="mb-2">
+                                    <a href="javascript:;" class="text-link"><span data-feather="chevron-right" class="mr-2"></span>March (32)</a>
+                                 </li>
+                                 <li class="mb-2">
+                                    <a href="javascript:;" class="text-link"><span data-feather="chevron-right" class="mr-2"></span>April (41)</a>
+                                 </li>
+                                 <li class="mb-0">
+                                    <a href="javascript:;" class="text-link"><span data-feather="chevron-right" class="mr-2"></span>May (50)</a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="card  mb-4 categ-list">
+                        <div class="card-header bg-white border-bottom p-4">
+                           <h4 class="card-title font-bold mb-0">Categories</h4>
+                        </div>
+                        <div class="card-body p-4">
+                           <div class="blog-post-cat">
+                              <ul>
+                                 <li class="mb-2">
+                                    <a href="javascript:;" class="text-link"><span data-feather="chevron-right" class="mr-2"></span>Electronics (59)</a>
+                                 </li>
+                                 <li class="mb-2">
+                                    <a href="javascript:;" class="text-link"><span data-feather="chevron-right" class="mr-2"></span>Clothings (68)</a>
+                                 </li>
+                                 <li class="mb-2">
+                                    <a href="javascript:;" class="text-link"><span data-feather="chevron-right" class="mr-2"></span>Furnitures (77)</a>
+                                 </li>
+                                 <li class="mb-2">
+                                    <a href="javascript:;" class="text-link"><span data-feather="chevron-right" class="mr-2"></span>Fashion (86)</a>
+                                 </li>
+                                 <li class="mb-0">
+                                    <a href="javascript:;" class="text-link"><span data-feather="chevron-right" class="mr-2"></span>Health care (95)</a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="card  bg-white post-blog mb-4">
+                        <div class="pdt-item-info">
+                           <div class="tab-blk-style pdt-item-nav">
+                              <ul class="nav nav-tabs nav-justified border-0">
+                                 <li class="nav-item">
+                                    <a href="#popular-post" class="nav-link active" data-toggle="tab">Trending</a>
+                                 </li>
+                                 <li class="nav-item">
+                                    <a href="#latest-post" data-toggle="tab" class="nav-link">Popular</a>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="tab-content">
+                              <div class="fade show tab-pane product-tab active p-4" id="popular-post">
+                                 <div class="tab-content-wrapper">
+                                    <a href="blog-single-post.html">
+                                       <div class="media align-items-center">
+                                          <div class="usr">
+                                             <img src="assets/img/blog-post-2.jpg" alt="user avatar">
+                                          </div>
+                                          <div class="pl-3 media-body">
+                                             <p class="mb-2 custom-truncate text-link">Learn more about the verified seller.</p>
+                                             <div class="insight-posted-date">
+                                                <span data-feather="calendar" class="text-grey"></span>
+                                                <span class="text-grey">&nbsp;23 Nov 2019</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </a>
+                                    <hr>
+                                    <a href="blog-single-post.html">
+                                       <div class="media align-items-center">
+                                          <div class="usr">
+                                             <img src="assets/img/blog-post-3.jpg" alt="user avatar">
+                                          </div>
+                                          <div class="pl-3 media-body">
+                                             <p class="mb-2 custom-truncate text-link">Tips to know your buyers expectations.</p>
+                                             <div class="insight-posted-date">
+                                                <span data-feather="calendar" class="text-grey"></span>
+                                                <span class="text-grey">&nbsp;5 Mar 2019</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </a>
+                                    <hr>
+                                    <a href="blog-single-post.html">
+                                       <div class="media align-items-center">
+                                          <div class="usr">
+                                             <img src="assets/img/blog-post-4.jpg" alt="user avatar">
+                                          </div>
+                                          <div class="pl-3 media-body">
+                                             <p class="mb-2 custom-truncate text-link">Step for a successful buyer.</p>
+                                             <div class="insight-posted-date">
+                                                <span data-feather="calendar" class="text-grey"></span>
+                                                <span class="text-grey">&nbsp;21 Jun 2019</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </a>
+                                    <hr>
+                                    <a href="blog-single-post.html">
+                                       <div class="media align-items-center">
+                                          <div class="usr">
+                                             <img src="assets/img/blog-post-5.jpg" alt="user avatar">
+                                          </div>
+                                          <div class="pl-3 media-body">
+                                             <p class="mb-2 custom-truncate text-link">How to showcase my service.</p>
+                                             <div class="insight-posted-date">
+                                                <span data-feather="calendar" class="text-grey"></span>
+                                                <span class="text-grey">&nbsp;28 Jul 2019</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </a>
+                                    <hr>
+                                    <a href="blog-single-post.html">
+                                       <div class="media align-items-center">
+                                          <div class="usr">
+                                             <img src="assets/img/blog-post-6.jpg" alt="user avatar">
+                                          </div>
+                                          <div class="pl-3 media-body">
+                                             <p class="mb-2 custom-truncate text-link">Successful sellers story.</p>
+                                             <div class="insight-posted-date">
+                                                <span data-feather="calendar" class="text-grey"></span>
+                                                <span class="text-grey">&nbsp;14 May 2019</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </a>
+                                 </div>
+                              </div>
+                              <div class="fade show tab-pane product-tab p-4" id="latest-post">
+                                 <div class="tab-content-wrapper">
+                                    <a href="blog-single-post.html">
+                                       <div class="media align-items-center">
+                                          <div class="usr">
+                                             <img src="assets/img/blog-post-2.jpg" alt="user avatar">
+                                          </div>
+                                          <div class="pl-3 media-body">
+                                             <p class="mb-2 custom-truncate text-link">Learn more about the verified seller.</p>
+                                             <div class="insight-posted-date">
+                                                <span data-feather="calendar" class="text-grey"></span>
+                                                <span class="text-grey">&nbsp;23 Sep 2019</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </a>
+                                    <hr>
+                                    <a href="blog-single-post.html">
+                                       <div class="media align-items-center">
+                                          <div class="usr">
+                                             <img src="assets/img/blog-post-3.jpg" alt="user avatar">
+                                          </div>
+                                          <div class="pl-3 media-body">
+                                             <p class="mb-2 custom-truncate text-link">Tips to know your buyers expectations.</p>
+                                             <div class="insight-posted-date">
+                                                <span data-feather="calendar" class="text-grey"></span>
+                                                <span class="text-grey">&nbsp;14 Feb 2019</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </a>
+                                    <hr>
+                                    <a href="blog-single-post.html">
+                                       <div class="media align-items-center">
+                                          <div class="usr">
+                                             <img src="assets/img/blog-post-4.jpg" alt="user avatar">
+                                          </div>
+                                          <div class="pl-3 media-body">
+                                             <p class="mb-2 custom-truncate text-link">Step for a successful buyer.</p>
+                                             <div class="insight-posted-date">
+                                                <span data-feather="calendar" class="text-grey"></span>
+                                                <span class="text-grey">&nbsp;8 Jan 2020</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </a>
+                                    <hr>
+                                    <a href="blog-single-post.html">
+                                       <div class="media align-items-center">
+                                          <div class="usr">
+                                             <img src="assets/img/blog-post-5.jpg" alt="user avatar">
+                                          </div>
+                                          <div class="pl-3 media-body">
+                                             <p class="mb-2 custom-truncate text-link">How to showcase my service.</p>
+                                             <div class="insight-posted-date">
+                                                <span data-feather="calendar" class="text-grey"></span>
+                                                <span class="text-grey">&nbsp;02 Feb 2020</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </a>
+                                    <hr>
+                                    <a href="blog-single-post.html">
+                                       <div class="media align-items-center">
+                                          <div class="usr">
+                                             <img src="assets/img/blog-post-6.jpg" alt="user avatar">
+                                          </div>
+                                          <div class="pl-3 media-body">
+                                             <p class="mb-2 custom-truncate text-link">Successful sellers story.</p>
+                                             <div class="insight-posted-date">
+                                                <span data-feather="calendar" class="text-grey"></span>
+                                                <span class="text-grey">&nbsp;1 Feb 2020</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="card mb-0 popular-tag mb-4 mb-lg-0">
+                        <div class="card-header bg-white border-bottom p-4">
+                           <h4 class="card-title mb-0">Tags cloud</h4>
+                        </div>
+                        <div class="card-body p-4">
+                           <div class="blog-post-tag">
+                              <ul class="list-inline">
+                                 <li class="list-inline-item">
+                                    <a href="javascript:;" class="btn btn-sm btn-outline-black my-1">Camera</a>
+                                 </li>
+                                 <li class="list-inline-item">
+                                    <a href="javascript:;" class="btn btn-sm btn-outline-black my-1">Speakers</a>
+                                 </li>
+                                 <li class="list-inline-item">
+                                    <a href="javascript:;" class="btn btn-sm btn-outline-black my-1">bluetooth</a>
+                                 </li>
+                                 <li class="list-inline-item">
+                                    <a href="javascript:;" class="btn btn-sm btn-outline-black my-1">Headset</a>
+                                 </li>
+                                 <li class="list-inline-item">
+                                    <a href="javascript:;" class="btn btn-sm btn-outline-black my-1">Macbook</a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-7 col-xl-8">
+                     <div class="card mx-0 mb-0">
+                        <div class="card-image">
+                           <img class="img-fluid w-100" src="assets/img/blog-post-3.jpg" alt="Card image">
+                        </div>
+                        <div class="card-body p-4">
+                           <div class="card-title mb-0">
+                              <h3 class="mb-3">10 Step to become a successful buyer</h3>
+                              <div class="card-section-2">
+                                 <div class="row">
+                                    <div class="col-6">
+                                       <div class="insight-posted-date">
+                                          <span class="lnr lnr-clock text-theme"></span>
+                                          <span>&nbsp;14 Jan 2019</span>
+                                       </div>
+                                    </div>
+                                    <div class="col-6">
+                                       <div class="insight-share position-relative float-right">
+                                          <a href="javascript:;" class="d-block text-grey">
+                                          <span data-feather="share-2" class=""></span>
+                                          </a>
+                                          <div class="social-share-blk position-absolute d-block radius-1 border py-1 px-4 shadow-lg">
+                                             <ul class="list-inline text-nowrap">
+                                                <li class="list-inline-item mr-3">
+                                                   <a href="javascript:;"><span data-feather="facebook" class="size-xs"></span></a>
+                                                </li>
+                                                <li class="list-inline-item mr-3">
+                                                   <a href="javascript:;"><span data-feather="instagram" class="size-xs"></span></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                   <a href="javascript:;"><span data-feather="linkedin" class="size-xs "></span></a>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div id="share-post" class="collapse py-3 px-0">
+                                    <div class="">
+                                       <ul class="lh-0">
+                                          <li class="list-inline-item text-white"><a class="d-inline-block p-3 btn-outline-theme" href="javascript:;"><i class="fa fa-facebook mr-md-3"></i><span class="d-none d-md-inline-block">Googleplus</span></a></li>
+                                          <li class="list-inline-item"><a class="d-inline-block btn-outline-theme p-3" href="javascript:;"><i class="fa fa-twitter mr-md-3"></i><span class="d-none d-md-inline-block">Twitter</span></a></li>
+                                          <li class="list-inline-item"><a class="d-inline-block btn-outline-theme p-3" href="javascript:;"><i class="fa fa-google-plus mr-md-3"></i><span class="d-none d-md-inline-block">Googleplus</span></a></li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <hr>
+                           <div class="card-text">
+                              <div class="card-section-3">
+                                 <div class="row">
+                                    <div class="col-12">
+                                       <div class="pdt-description">
+                                          <p>Nunc placerat mi id nisi interdum mollis. Praesent pharetra, justo ut scelerisque the mattis, leo quam aliquet congue. incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in henderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat sunt in culpa qui officia sunt in culpa qui officia. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in henderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat sunt in culpa qui officia sunt in culpa qui officia.</p>
+                                          <h3 class="my-4">Nunc placerat mi id nisi : </h3>
+                                          <ul class="list-group">
+                                             <li class="list-group-item pl-0 border-0">1. Nunc placerat mi id nisi interdum mollis. Praesent pharetra, justo</li>
+                                             <li class="list-group-item pl-0 border-0">2. leo quam aliquet congue. incididunt ut labore et dolore magna aliqua.</li>
+                                             <li class="list-group-item pl-0 border-0">3. Excepteur sint occaecat sunt in culpa qui officia sunt in culpa qui officia. Ut enim ad minim veniam, quis nostrud exercitation</li>
+                                             <li class="list-group-item pl-0 border-0">4. Nunc placerat mi id nisi interdum mollis. Praesent pharetra, justo</li>
+                                             <li class="list-group-item pl-0 border-0">5. leo quam aliquet congue. incididunt ut labore et dolore magna aliqua.</li>
+                                             <li class="p-0 list-group-item pl-0 border-0">6. Excepteur sint occaecat sunt in culpa qui officia sunt in culpa qui officia. Ut enim ad minim veniam, quis nostrud exercitation</li>
+                                          </ul>
+                                       </div>
+                                       <hr class="my-4">
+                                       <div class="">
+                                          <div class="row align-items-center">
+                                             <div class="col-md-6 col-6">
+                                                <div class="next-blog-post text-left">
+                                                   <a href="javascript" class="text-center btn btn-outline-theme radius-5 px-4 py-2">
+                                                      <h5 class="xs-text-center"><i class="align-middle lnr lnr-chevron-left display-5"></i><span class="d-none align-middle d-md-inline-block">Previous blog</span></h5>
+                                                   </a>
+                                                </div>
+                                             </div>
+                                             <div class="col-md-6 col-6">
+                                                <div class="next-blog-post text-right">
+                                                   <a href="JavaScript:;" class="text-center btn btn-outline-theme radius-5 px-4 py-2">
+                                                      <h5 class="xs-text-center"><span class="d-none align-middle d-md-inline-block">Next blog</span><i class="align-middle lnr lnr-chevron-right display-5"></i></h5>
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <hr class="my-4">
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="card-section mb-4">
+                              <div class="media">
+                                 <div class="usr-img">
+                                    <img src="assets/img/pdt-owner-img.jpg" alt="user avatar" class="mr-4 rounded-circle">
+                                 </div>
+                                 <div class="media-body">
+                                    <h5 class="mb-2">About admin</h5>
+                                    <p class="text-grey mb-3">Passages and more recently with desktop publishing software like Aldus the PageMaker they including versions of Lorem Ipsum.</p>
+                                 </div>
+                              </div>
+                           </div>
+                           <hr>
+                           <div class="card-section mb-4 mt-4">
+                              <h4 class="card-title">1 Comments</h4>
+                           </div>
+                           <hr>
+                           <div class="card-section mb-4">
+                              <div class="media">
+                                 <div class="usr-img">
+                                    <img src="assets/img/replier-img.jpg" alt="user avatar" class="mr-4 rounded-circle">
+                                 </div>
+                                 <div class="media-body">
+                                    <h5 class="d-inline-block">Thesera minton <span class="text-muted"><small>April 29, 2019</small></span></h5>
+                                    <a href="" class="float-right xs-float-none">Reply</a>
+                                    <p class="text-grey mb-3">Passages and more recently with desktop publishing software like Aldus the PageMaker they including versions of Lorem Ipsum.</p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="card-section leave-comment">
+                              <div class="card-header bg-white border-bottom py-4 mb-4">
+                                 <h4 class="cardd-title">Leave a comment</h4>
+                              </div>
+                              <div class="card-text">
+                                 <form>
+                                    <div class="form-row mb-4">
+                                       <div class="col-lg-6">
+                                          <input type="text" class="form-control bg-input mb-lg-0 mb-md-4 mb-4" placeholder="Name">
+                                       </div>
+                                       <div class="col-lg-6">
+                                          <input type="text" class="form-control bg-input" placeholder="Email">
+                                       </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                       <textarea name="message" class="form-control bg-input custom-textarea p-3" rows="5" id="user-message" placeholder="Your message..."></textarea>
+                                    </div>
+                                    <a href="javascript:;" class="btn btn-style btn-lg radius-0 mb-0">Submit now</a>
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- /Blog Section -->
+         <!-- Footer -->
+         <footer>
+            <div class="middle-footer py-6">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-6 col-lg-4 mb-md-5 mb-lg-0">
+                        <div class="company-info-widget mb-4 mb-md-0">
+                           <h5 class="text-white text-uppercase">About us</h5>
+                           <p class="pt-4">Lorem Ipsum is simply dummy text of the printing and typesetting.</p>
+                           <address class="pt-4 mb-0">
+                              <ul>
+                                 <li class="mb-2"><span data-feather="map-pin" class="mr-2 size-xs"></span>1603 Old York Rd, Houma, LA, 75429</li>
+                                 <li class="mb-2"><span data-feather="phone-call" class="mr-2 size-xs"></span><a href="tel:8503867896">Phone: (850) 386-7896</a></li>
+                                 <li><span data-feather="mail" class="mr-2 size-xs"></span><a href="mailto:support@example.com">support@example.com</a></li>
+                              </ul>
+                           </address>
+                           <div class="pt-4 social-widget">
+                              <ul class="lh-0">
+                                 <li class="list-inline-item"><a class="d-inline-block" href="javascript:;"><i class="fa fa-facebook"></i></a></li>
+                                 <li class="list-inline-item"><a class="d-inline-block" href="javascript:;"><i class="fa fa-twitter"></i></a></li>
+                                 <li class="list-inline-item"><a class="d-inline-block" href="javascript:;"><i class="fa fa-google-plus"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-2 mb-md-5 mb-lg-0">
+                        <div class="mb-4 mb-md-0">
+                           <h5 class="text-white text-uppercase">My Account</h5>
+                           <ul class="pt-4 menu-list-style">
+                              <li><a href="user-profile.html">Profile</a></li>
+                              <li><a href="my-payments.html">Wallet</a></li>
+                              <li><a href="my-dashboard.html">Dashboard</a></li>
+                              <li><a href="add-product.html">Add Service</a></li>
+                              <li class="mb-0"><a href="settings.html">Settings</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-2 mb-lg-0">
+                        <div class="mb-4 mb-md-0">
+                           <h5 class="text-white text-uppercase">Links</h5>
+                           <ul class="pt-4 menu-list-style">
+                              <li><a href="contact-us.html">Contact</a></li>
+                              <li><a href="blog-3col.html">Blog</a></li>
+                              <li><a href="faq.html">FAQ</a></li>
+                              <li class="mb-0"><a href="terms-policy.html">Terms of Use</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-6 col-lg-4 mb-lg-0">
+                        <div class="app-widget">
+                           <h5 class="text-white text-uppercase">Newsletters</h5>
+                           <div class="pt-4 mb-0">
+                              <p>Learn about events, contests, designing tips and more? Of course you do!</p>
+                              <div class="d-flex input-group">
+                                 <div class="main-search-blk d-flex input-group radius-1 py-4 shadow">
+                                    <input type="email" class="form-control bg-white custom-input-height custom-radius-input border-0 no-bg-color" placeholder="Search Product">
+                                    <span class="input-group-btn">
+                                    <button class="ml-n1 btn btn-style-search p-3 text-white" type="submit"><span data-feather="mail" class=""></span></button>
+                                    </span>
+                                 </div>
+                                 <hr class="footer-hr w-100 my-0">
+                                 <p class="text-uppercase pt-4 font-bold">We Accept</p>
+                                 <img class="mt-4 img-fluid" src="assets/img/payment-icons.png" alt="Payment-icon"/>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="bottom-footer text-center py-4">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-12">
+                        <div class="d-block d-md-flex justify-content-between">
+                           <p>© Copyrights 2020. All Rights Reserved</p>
+                           <ul class="list-inline mt-2 mt-md-0">
+                              <li class="list-inline-item mr-4"><a href="javascript:;" class="text-uppercase">Support</a></li>
+                              <li class="list-inline-item mr-4"><a href="javascript:;" class="text-uppercase">Privacy Policy</a></li>
+                              <li class="list-inline-item"><a href="javascript:;" class="text-uppercase">Terms</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </footer>
+         <!-- /Footer -->
+      </div>
+      <!-- /Home Wrapper -->
+      <!-- Optional JavaScript -->
+      <!-- jQuery -->
+      <script src="assets/js/jquery.min.js"></script>
+      <!-- Bootstrap Core JS -->
+      <script src="assets/js/popper.min.js"></script>
+      <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+      <!-- Slick Js-->
+      <script src="assets/plugins/slick/js/slick.min.js"></script>
+      <!-- SlimScroll Js-->
+      <script src="assets/plugins/slimscroll/js/jquery.slimscroll.min.js"></script>
+      <!-- Color Switcher Js-->
+      <script src="assets/js/feather.min.js"></script>      
+      <!-- Custom JS -->
+      <script src="assets/js/script.js"></script>
+   </body>
+</html>

@@ -1,0 +1,1749 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<title>NookX</title>
+		
+	<!-- Favicons -->
+	<link type="image/x-icon" href="assets/img/favicon.png" rel="icon">
+		
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+		
+	<!-- Select2 CSS -->
+	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+		
+	<!-- Owl carousel CSS -->
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	
+	<!-- Price Slider CSS -->
+	<link rel="stylesheet" href="assets/plugins/price-slider/style.css">
+		
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/style.css"> 
+		
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->	
+</head>
+
+<body>
+
+        <!-- Main Wrapper -->
+        <div class="main-wrapper"> 
+		  <!-- Header -->
+			<header class="header">
+				
+				<div class="min-header">
+				<div class="header-container-top">
+					<div class="container">
+						<nav class="navbar navbar-expand-lg header-nav">
+						
+							<div class="navbar-header">
+								<a id="mobile_btn" href="javascript:void(0);">
+									<span class="bar-icon">
+										<span></span>
+										<span></span>
+										<span></span>
+									</span>
+								</a>
+								<a href="index.html" class="navbar-brand logo">
+									<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+								</a>
+							</div>
+							
+							<div class="main-menu-wrapper">
+								<div class="menu-header">
+									<a href="index.html" class="menu-logo">
+										<img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+									</a>
+									<a id="menu_close" class="menu-close" href="javascript:void(0);">
+										<i class="fas fa-times"></i>
+									</a>
+								</div>
+								<ul class="main-nav">
+									<li>
+										<a href="index.html">Home</a>
+									</li>
+									<li class="has-submenu">
+										<a href="">Blog <i class="fas fa-chevron-down"></i></a>
+										<ul class="submenu">
+											<li><a href="blog.html">Blog</a></li>
+											<li><a href="blog-details.html">Blog Details</a></li>
+										</ul>
+									</li>	
+									<li class="has-submenu active">
+										<a href=""> Pages <i class="fas fa-chevron-down"></i></a>
+										<ul class="submenu">
+											<li><a href="about.html">About</a></li>
+											<li><a href="gift-cards.html">Gift Cards</a></li>
+											<li><a href="gift-credits.html">Gift Credits</a></li>
+											<li><a href="message.html">Messages</a></li>
+											<li><a href="products.html">Products</a></li>
+											<li class="active"><a href="product-details.html">Product Details</a></li>
+											<li><a href="checkout.html">Checkout</a></li>
+											<li><a href="wishlist.html">Wishlist</a></li>
+											<li><a href="purchases.html">Purchases</a></li>
+											<li><a href="public-profile.html">Profile</a></li>
+											<li><a href="account-settings.html">Account Settings</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>	
+							
+							<ul class="signup-col">
+								<li>
+									<a class="icart shop-icon" href="shop-manager.html">
+										<span class="user-circle">
+											<img src="assets/img/shop.png" class="img-fluid" alt="shop">
+										</span>										
+									</a>
+								</li>								
+								<li class="nav-item dropdown has-arrow user-nav bell">
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+										<span class="circle-user"><i class="far fa-bell"></i>											
+											<span class="notification">1</span>
+										</span>			
+									</a>
+									<div class="dropdown-menu dropdown-menu-right">
+										<a href="#" class="dropdown-item">
+											50% offer for jewellery
+										</a>
+									</div>
+								</li>
+								<li>
+									<a class="icart" href="wishlist.html">
+										<span class="user-circle">
+											<i class="fa fa-heart"></i>
+										</span>										
+									</a>
+								</li>
+								<li class="nav-item dropdown has-arrow user-nav">
+									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+										<span class="circle-user"><i class="far fa-user"></i></span>		
+									</a>
+									<div class="dropdown-menu dropdown-menu-right">
+										<a href="account-settings.html" class="dropdown-item">
+											Settings
+										</a>
+										<a href="shop-manager.html" class="dropdown-item d-lg-none">
+											Shop Manager
+										</a>
+										<a href="wishlist.html" class="dropdown-item d-lg-none">
+											Wishlist
+										</a>
+										<a href="message.html" class="dropdown-item">
+											Chat
+										</a>
+										<a href="index.html" class="dropdown-item">
+											Logout
+										</a>
+									</div>
+								</li>
+								<li>
+									<a class="icart" data-toggle="dropdown" href="#" role="button">
+										<span class="user-circle">
+											<img src="assets/img/cart.png" class="img-fluid" alt="cart">
+										</span>										
+									</a>
+									<div class="dropdown-menu dropdown-menu-right cart-dropdown">
+										<ul>
+                                            <li class="dropdown-item">
+                                                <div class="cart-img">
+                                                    <a href="product-details.html"><img alt="" src="assets/img/product/pr-3.jpg"></a>
+                                                </div>
+                                                <div class="cart-title">
+                                                    <h4><a href="product-details.html">Ear Rings</a></h4>
+                                                    <h3><span>1 X </span>$126.00</h3>
+                                                </div>
+                                                <div class="cart-delete">
+                                                    <a href="#"><i class="fa fa-times"></i></a>
+                                                </div>
+                                            </li>
+                                            <li class="dropdown-item">
+                                                <div class="cart-img">
+                                                    <a href="product-details.html"><img alt="" src="assets/img/product/pr-6.jpg"></a>
+                                                </div>
+                                                <div class="cart-title">
+                                                    <h4><a href="product-details.html">Chain</a></h4>
+                                                    <h3><span>1 X </span>$126.00</h3>
+                                                </div>
+                                                <div class="cart-delete">
+                                                    <a href="#"><i class="fa fa-times"></i></a>
+                                                </div>
+                                            </li>
+                                        </ul>
+										<div class="cart-footer">
+                                            <div class="cart-total">
+                                                <h4>Total <span>$383.00</span></h4>
+                                            </div>
+                                            <div class="cart-buttons">
+                                                <a href="#" class="btn br-30 btn-primary">View cart</a>
+                                                <a href="checkout.html" class="btn br-30 btn-primary">Checkout</a>
+                                            </div>
+                                        </div>
+                                     </div>
+								</li>
+							</ul>
+							
+						</nav>
+					</div>
+				</div>
+				<div class="header-container-bottom">
+					<div class="container">
+						<div class="header-bottom">				
+							<ul class="main-nav bottom-menu-slider owl-carousel">
+								<li class="has-submenu item">
+									<a href=""> Jewellery & Accessories</a>
+									<ul class="submenu">
+										<li><a href="product-details.html">Necklace</a></li>
+										<li><a href="product-details.html">Ring</a></li>
+									</ul>
+								</li>	
+								<li class="has-submenu item">
+									<a href=""> Clothing & Shoes</a>
+									<ul class="submenu">
+										<li><a href="product-details.html">Women Cloths</a></li>
+										<li><a href="product-details.html">Mens Cloths</a></li>
+									</ul>
+								</li>	
+								<li class="item">
+									<a href="product-details.html"> Home & Living</a>
+								</li>
+								<li class="item">
+									<a href="product-details.html"> Wedding & Party</a>
+								</li>
+								<li class="item">
+									<a href="product-details.html"> Toys & Entertainment</a>										
+								</li>
+								<li class="item">
+									<a href="product-details.html"> Art & Collectibles</a>
+								</li>
+								<li class="item">
+									<a href="product-details.html"> Craft Supplies & Tools</a>
+								</li>
+								<li class="item">
+									<a href="product-details.html"> Vintage</a>
+								</li>
+							</ul>										
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- /Header -->
+		
+		<!-- Content -->
+			<div class="content">
+				<div class="container">
+					<div class="row">
+					
+						<!-- Product Detail -->
+						<div class="col-lg-5">
+							<div class="products-details">
+								<div class="products-info">
+									<h4 class="text-primary">GlacelisGifts</h4>
+									<ul class="ratings pb-0">
+										<li class="ratings-count">( 1,783 )</li>
+										<li><i class="fas fa-star filled"></i></li>
+										<li><i class="fas fa-star filled"></i></li>
+										<li><i class="fas fa-star filled"></i></li>
+										<li><i class="fas fa-star"></i></li>
+										<li><i class="fas fa-star"></i></li>
+									</ul>
+									<h4 class="products-name my-4">Funny Mermaid Shirts, Mermaid Sweatshirt, 
+										Mermaid Vibes Shirt, Mermaid Shirts for Girls
+										,Mermaid Mom Shirt, American Mermaid Shirt
+									</h4>
+								</div>
+								<div class="d-md-flex">
+									<div class="price-details">
+										<h3 class="price-detail d-flex align-items-center">US$ 19.99<span class="pl-2"><del>US$ 26.99 </del></span></h3>
+										<h5>You save US$ 5.74 (20%)</h5>
+										<p>Local taxes included (where applicable)</p>
+									</div>
+									<div class="stock-info ml-auto">
+										<p>In stock <span class="icon-check"><i class="fas fa-check"></i></span></p>
+									</div>
+								</div>
+								<div class="form-style-1">
+									<form action="#">
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="form-group">
+													<label>T-Shirt Size</label>
+													<select class="form-control select">
+														<option>Unisex T-Shirt(XS) (US$ 16.97)</option>
+														<option>Unisex T-Shirt(S) (US$ 16.97)</option>
+														<option>Unisex T-Shirt(L) (US$ 16.97)</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-lg-12">
+												<div class="form-group">
+													<label>T-Shirt Color</label>
+													<select class="form-control select">
+														<option>Athletic Heather</option>
+														<option>Athletic Heather</option>
+														<option>Athletic Heather</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-lg-8">
+												<div class="form-group">
+													<label>Add your personalization</label>
+													<input type="text" class="form-control">
+												</div>
+											</div>
+											<div class="col-lg-4">
+												<div class="form-group">
+													<label>Quantity</label>
+													<select class="form-control select">
+														<option>1</option>
+														<option>2</option>
+														<option>3</option>
+														<option>4</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-lg-6">
+												<a href="checkout.html" class="btn main-btn w-100 comment-form">Buy it now</a>
+											</div>
+											<div class="col-lg-6">
+												<a href="#" class="btn btn-main-outline w-100 comment-form">Add to basket</a>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="faq-cards my-4 d-lg-block d-none">
+								<div class="faq-card">
+									<div class="faq-card-body">
+										<h4 class="faq-card-title mb-0">
+											<a class="collapsed" data-toggle="collapse" href="#collapseOne">Highlights</a>
+										</h4>
+										<div id="collapseOne" class="card-collapse collapse">
+											<p><i class="fas fa-arrow-right mr-2"></i> Handmade</p>
+											<p><i class="fas fa-arrow-right mr-2"></i> Materials: Cotton, Polyester, Vinyl, Bella Canvas</p>
+										</div>
+									</div>
+								</div>
+								<div class="faq-card">
+									<div class="faq-card-body">
+										<h4 class="faq-card-title mb-0">
+											<a class="collapsed" data-toggle="collapse" href="#collapseTwo">Description</a>
+										</h4>
+										<div id="collapseTwo" class="card-collapse collapse">
+											<p><i class="fas fa-arrow-right mr-2"></i> Handmade</p>
+											<p><i class="fas fa-arrow-right mr-2"></i> Materials: Cotton, Polyester, Vinyl, Bella Canvas</p>
+										</div>
+									</div>
+								</div>
+								<div class="faq-card">
+									<div class="faq-card-body">
+										<h4 class="faq-card-title mb-0">
+											<a class="collapsed" data-toggle="collapse" href="#collapseThree">Delivery</a>
+										</h4>
+										<div id="collapseThree" class="card-collapse collapse">
+											<p><i class="fas fa-arrow-right mr-2"></i> Handmade</p>
+											<p><i class="fas fa-arrow-right mr-2"></i> Materials: Cotton, Polyester, Vinyl, Bella Canvas</p>
+										</div>
+									</div>
+								</div>
+								<div class="faq-card">
+									<div class="faq-card-body">
+										<h4 class="faq-card-title mb-0">
+											<a class="collapsed" data-toggle="collapse" href="#collapseFour">FAQs</a>
+										</h4>
+										<div id="collapseFour" class="card-collapse collapse">
+											<p><i class="fas fa-arrow-right mr-2"></i> Handmade</p>
+											<p><i class="fas fa-arrow-right mr-2"></i> Materials: Cotton, Polyester, Vinyl, Bella Canvas</p>
+										</div>
+									</div>
+								</div>
+								<div class="faq-card">
+									<div class="faq-card-body">
+										<h4 class="faq-card-title mb-0">
+											<a class="collapsed" data-toggle="collapse" href="#collapseFive">Meet your sellers</a>
+										</h4>
+										<div id="collapseFive" class="card-collapse collapse">
+											<p> Pinehart</p>
+											<p>Owner of Pinehart</p>
+											<button class="btn main-btn mb-3">Message Pinehart</button>
+											<p>This seller usually responds <span class="text-primary"> within a few hours.</span></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-7">
+							<div class="products-detail-slider">
+								<div class="card">
+									<div class="card-body">
+										<div id="sync1" class="owl-carousel owl-theme main-prtd">
+											<div class="item">
+												<a data-toggle="modal" href="#product-popup"><img src="assets/img/product/prd-1.jpg" alt="" class="img-fluid"></a>
+											</div> 
+											<div class="item">
+												<a data-toggle="modal" href="#product-popup"><img src="assets/img/product/prd-1.jpg" alt="" class="img-fluid"></a>
+											</div> 
+											<div class="item">
+												<a data-toggle="modal" href="#product-popup"><img src="assets/img/product/prd-1.jpg" alt="" class="img-fluid"></a>
+											</div> 
+											<div class="item">
+												<a data-toggle="modal" href="#product-popup"><img src="assets/img/product/prd-1.jpg" alt="" class="img-fluid"></a>
+											</div> 
+											<div class="item">
+												<a data-toggle="modal" href="#product-popup"><img src="assets/img/product/prd-1.jpg" alt="" class="img-fluid"></a>
+											</div> 
+											<div class="item">
+												<a data-toggle="modal" href="#product-popup"><img src="assets/img/product/prd-1.jpg" alt="" class="img-fluid"></a>
+											</div> 
+											<div class="item">
+												<a data-toggle="modal" href="#product-popup"><img src="assets/img/product/prd-1.jpg" alt="" class="img-fluid"></a>
+											</div> 
+											<div class="item">
+												<a data-toggle="modal" href="#product-popup"><img src="assets/img/product/prd-1.jpg" alt="" class="img-fluid"></a>
+											</div> 
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12 overflow-nav">
+											<div class="owl-nav slide-nav-1 nav-control"></div>
+										</div>
+										<div class="col-md-12 prd-dtl">
+											<span class="prod-wl prd-vis"><i class="far fa-heart"></i></span>
+										</div>
+										
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-body">
+										<div id="sync2" class="owl-carousel owl-theme sub-prtd">
+											<div class="item">
+												<img src="assets/img/product/pr-24.jpg" alt="" class="img-fluid">
+											</div>
+											<div class="item">
+												<img src="assets/img/product/pr-25.jpg" alt="" class="img-fluid">
+											</div>
+											<div class="item">
+												<img src="assets/img/product/pr-26.jpg" alt="" class="img-fluid">
+											</div>
+											<div class="item">
+												<img src="assets/img/product/pr-27.jpg" alt="" class="img-fluid">
+											</div> 
+											<div class="item">
+												<img src="assets/img/product/pr-24.jpg" alt="" class="img-fluid">
+											</div>
+											<div class="item">
+												<img src="assets/img/product/pr-25.jpg" alt="" class="img-fluid">
+											</div>
+											<div class="item">
+												<img src="assets/img/product/pr-26.jpg" alt="" class="img-fluid">
+											</div>
+											<div class="item">
+												<img src="assets/img/product/pr-27.jpg" alt="" class="img-fluid">
+											</div> 
+										</div>
+									</div> 
+								</div> 
+							</div>
+							<div class="products-reviews d-lg-block d-none">
+								<div class="prd-rev-cnt d-md-flex">
+									<h4 class="font-bold">3,543 reviews</h4>
+									<ul class="ratings ml-3">
+										<li><i class="fas fa-star filled"></i></li>
+										<li><i class="fas fa-star filled"></i></li>
+										<li><i class="fas fa-star filled"></i></li>
+										<li><i class="fas fa-star filled"></i></li>
+										<li><i class="fas fa-star"></i></li>
+									</ul>
+								</div>
+								<p class="buyer-hint"><i class="fas fa-star mr-3"></i>Buyers are raving! Multiple people gave 5-star reviews to this shop in the past 7 days.</p>
+								<p class="info-btn">Reviews for this item<span class="btn main-btn">2545</span></p>
+								<div class="reviews-line mb-3"></div>
+								<div class="prd-reviews">
+									<div class="prd-reviews-head d-md-flex align-items-center mb-4">
+										<div class="reviewers-info d-flex align-items-center">
+											<img src="assets/img/customer/customer-02.jpg" alt="" class="img-fluid">
+											<p class="mb-0 ml-2"><a href="#" class="text-high">Sonya Jones</a></p>
+										</div>
+										<p class="mb-0 rev-date">30 Apr, 2021</p>
+										<ul class="ratings ml-auto">
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star"></i></li>
+										</ul>
+									</div>
+									<div class="prd-reviews-body">
+										<p class="font-bold mb-4">I absolutely love my Mermaid Vibes shirt! The quality is great, and it arrivedquickly!</p>
+									</div>
+									<div class="reviewers-info d-flex align-items-center">
+										<img src="assets/img/customer/customer-01.jpg" alt="" class="img-fluid">
+										<p class="mb-0 ml-2"><a href="#" class="text-high">Funny Mermaid Shirts, Mermaid Sweatshirt, Mermaid Vibes...</a></p>
+									</div>
+								</div>
+								<div class="prd-reviews">
+									<div class="prd-reviews-head d-md-flex align-items-center mb-4">
+										<div class="reviewers-info d-flex align-items-center">
+											<img src="assets/img/customer/customer-02.jpg" alt="" class="img-fluid">
+											<p class="mb-0 ml-2"><a href="#" class="text-high">Sonya Jones</a></p>
+										</div>
+										<p class="mb-0 rev-date">30 Apr, 2021</p>
+										<ul class="ratings ml-auto">
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star"></i></li>
+										</ul>
+									</div>
+									<div class="reviewers-info d-flex align-items-center">
+										<img src="assets/img/customer/customer-01.jpg" alt="" class="img-fluid">
+										<p class="mb-0 ml-2"><a href="#" class="text-high">Funny Mermaid Shirts, Mermaid Sweatshirt, Mermaid Vibes...</a></p>
+									</div>
+								</div>
+								<div class="prd-reviews">
+									<div class="prd-reviews-head d-md-flex align-items-center mb-4">
+										<div class="reviewers-info d-flex align-items-center">
+											<img src="assets/img/customer/customer-02.jpg" alt="" class="img-fluid">
+											<p class="mb-0 ml-2"><a href="#" class="text-high">Sonya Jones</a></p>
+										</div>
+										<p class="mb-0 rev-date">30 Apr, 2021</p>
+										<ul class="ratings ml-auto">
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star"></i></li>
+										</ul>
+									</div>
+									<div class="prd-reviews-body">
+										<p class="font-bold mb-4">I absolutely love my Mermaid Vibes shirt! The quality is great, and it arrivedquickly!</p>
+									</div>
+									<div class="reviewers-info d-flex align-items-center">
+										<img src="assets/img/customer/customer-01.jpg" alt="" class="img-fluid">
+										<p class="mb-0 ml-2"><a href="#" class="text-high">Funny Mermaid Shirts, Mermaid Sweatshirt, Mermaid Vibes...</a></p>
+									</div>
+								</div>
+								<div class="prd-reviews">
+									<div class="prd-reviews-head d-md-flex align-items-center mb-4">
+										<div class="reviewers-info d-flex align-items-center">
+											<img src="assets/img/customer/customer-02.jpg" alt="" class="img-fluid">
+											<p class="mb-0 ml-2"><a href="#" class="text-high">Sonya Jones</a></p>
+										</div>
+										<p class="mb-0 rev-date">30 Apr, 2021</p>
+										<ul class="ratings ml-auto">
+										<li><i class="fas fa-star filled"></i></li>
+										<li><i class="fas fa-star filled"></i></li>
+										<li><i class="fas fa-star filled"></i></li>
+										<li><i class="fas fa-star filled"></i></li>
+										<li><i class="fas fa-star"></i></li>
+									</ul>
+									</div> 
+									<div class="reviewers-info d-flex align-items-center">
+										<img src="assets/img/customer/customer-01.jpg" alt="" class="img-fluid">
+										<p class="mb-0 ml-2"><a href="#" class="text-high">Funny Mermaid Shirts, Mermaid Sweatshirt, Mermaid Vibes...</a></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-12">
+										<div class="blog-pagination">
+											<nav>
+												<ul class="pagination">
+													<li class="page">
+														<div class="form-group">
+															<select class="form-control">
+																<option>1</option>
+																<option>2</option>
+																<option>3</option>
+															</select>
+														</div>
+													</li>
+													<li class="no-page">
+														<a class="" href="#">of 318 pages</a>
+													</li>
+													<li class="page-item first-page active">
+														<a class="page-link" href="#"><i class="fa fa-arrow-left"></i></a>
+													</li>
+													<li class="page-item last-page">
+														<a class="page-link" href="#"><i class="fa fa-arrow-right"></i></a>
+													</li>
+												</ul>
+											</nav>
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="card">
+											<div class="card-body">
+												<div class="owl-carousel sub-prtd review-slider">
+													<div class="item">
+														<img src="assets/img/product/pr-24.jpg" alt="" class="img-fluid">
+													</div>
+													<div class="item">
+														<img src="assets/img/product/pr-25.jpg" alt="" class="img-fluid">
+													</div>
+													<div class="item">
+														<img src="assets/img/product/pr-26.jpg" alt="" class="img-fluid">
+													</div>
+													<div class="item">
+														<img src="assets/img/product/pr-27.jpg" alt="" class="img-fluid">
+													</div> 
+													<div class="item">
+														<img src="assets/img/product/pr-24.jpg" alt="" class="img-fluid">
+													</div>
+													<div class="item">
+														<img src="assets/img/product/pr-25.jpg" alt="" class="img-fluid">
+													</div>
+													<div class="item">
+														<img src="assets/img/product/pr-26.jpg" alt="" class="img-fluid">
+													</div>
+													<div class="item">
+														<img src="assets/img/product/pr-27.jpg" alt="" class="img-fluid">
+													</div> 
+												</div>
+												<div class="row">
+													<div class="col-md-12 overflow-nav">
+														<div class="owl-nav slide-nav-2 nav-control"></div>
+													</div>
+												</div>
+											</div> 
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /Product Detail -->
+						
+						<div class="col-lg-5 d-lg-none d-sm-block">
+							<div class="faq-cards my-4">
+								<div class="faq-card">
+									<div class="faq-card-body">
+										<h4 class="faq-card-title mb-0">
+											<a class="collapsed" data-toggle="collapse" href="#collapseOne">Highlights</a>
+										</h4>
+										<div id="collapseOne" class="card-collapse collapse">
+											<p><i class="fas fa-arrow-right mr-2"></i> Handmade</p>
+											<p><i class="fas fa-arrow-right mr-2"></i> Materials: Cotton, Polyester, Vinyl, Bella Canvas</p>
+										</div>
+									</div>
+								</div>
+								<div class="faq-card">
+									<div class="faq-card-body">
+										<h4 class="faq-card-title mb-0">
+											<a class="collapsed" data-toggle="collapse" href="#collapseTwo">Description</a>
+										</h4>
+										<div id="collapseTwo" class="card-collapse collapse">
+											<p><i class="fas fa-arrow-right mr-2"></i> Handmade</p>
+											<p><i class="fas fa-arrow-right mr-2"></i> Materials: Cotton, Polyester, Vinyl, Bella Canvas</p>
+										</div>
+									</div>
+								</div>
+								<div class="faq-card">
+									<div class="faq-card-body">
+										<h4 class="faq-card-title mb-0">
+											<a class="collapsed" data-toggle="collapse" href="#collapseThree">Delivery</a>
+										</h4>
+										<div id="collapseThree" class="card-collapse collapse">
+											<p><i class="fas fa-arrow-right mr-2"></i> Handmade</p>
+											<p><i class="fas fa-arrow-right mr-2"></i> Materials: Cotton, Polyester, Vinyl, Bella Canvas</p>
+										</div>
+									</div>
+								</div>
+								<div class="faq-card">
+									<div class="faq-card-body">
+										<h4 class="faq-card-title mb-0">
+											<a class="collapsed" data-toggle="collapse" href="#collapseFour">FAQs</a>
+										</h4>
+										<div id="collapseFour" class="card-collapse collapse">
+											<p><i class="fas fa-arrow-right mr-2"></i> Handmade</p>
+											<p><i class="fas fa-arrow-right mr-2"></i> Materials: Cotton, Polyester, Vinyl, Bella Canvas</p>
+										</div>
+									</div>
+								</div>
+								<div class="faq-card">
+									<div class="faq-card-body">
+										<h4 class="faq-card-title mb-0">
+											<a class="collapsed" data-toggle="collapse" href="#collapseFive">Meet your sellers</a>
+										</h4>
+										<div id="collapseFive" class="card-collapse collapse">
+											<p> Pinehart</p>
+											<p>Owner of Pinehart</p>
+											<button class="btn main-btn mb-3">Message Pinehart</button>
+											<p>This seller usually responds <span class="text-primary"> within a few hours.</span></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-7 d-lg-none d-sm-block">
+							<div class="products-reviews">
+								<div class="prd-rev-cnt d-md-flex">
+									<h4 class="font-bold">3,543 reviews</h4>
+									<ul class="ratings ml-3">
+										<li><i class="fas fa-star filled"></i></li>
+										<li><i class="fas fa-star filled"></i></li>
+										<li><i class="fas fa-star filled"></i></li>
+										<li><i class="fas fa-star filled"></i></li>
+										<li><i class="fas fa-star"></i></li>
+									</ul>
+								</div>
+								<p class="buyer-hint"><i class="fas fa-star mr-3"></i>Buyers are raving! Multiple people gave 5-star reviews to this shop in the past 7 days.</p>
+								<p class="info-btn">Reviews for this item<span class="btn main-btn">2545</span></p>
+								<div class="reviews-line mb-3"></div>
+								<div class="prd-reviews">
+									<div class="prd-reviews-head d-md-flex align-items-center mb-4">
+										<div class="reviewers-info d-flex align-items-center">
+											<img src="assets/img/customer/customer-02.jpg" alt="" class="img-fluid">
+											<p class="mb-0 ml-2"><a href="#" class="text-high">Sonya Jones</a></p>
+										</div>
+										<p class="mb-0 rev-date">30 Apr, 2021</p>
+										<ul class="ratings ml-auto">
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star"></i></li>
+										</ul>
+									</div>
+									<div class="prd-reviews-body">
+										<p class="font-bold mb-4">I absolutely love my Mermaid Vibes shirt! The quality is great, and it arrivedquickly!</p>
+									</div>
+									<div class="reviewers-info d-flex align-items-center">
+										<img src="assets/img/customer/customer-01.jpg" alt="" class="img-fluid">
+										<p class="mb-0 ml-2"><a href="#" class="text-high">Funny Mermaid Shirts, Mermaid Sweatshirt, Mermaid Vibes...</a></p>
+									</div>
+								</div>
+								<div class="prd-reviews">
+									<div class="prd-reviews-head d-md-flex align-items-center mb-4">
+										<div class="reviewers-info d-flex align-items-center">
+											<img src="assets/img/customer/customer-02.jpg" alt="" class="img-fluid">
+											<p class="mb-0 ml-2"><a href="#" class="text-high">Sonya Jones</a></p>
+										</div>
+										<p class="mb-0 rev-date">30 Apr, 2021</p>
+										<ul class="ratings ml-auto">
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star"></i></li>
+										</ul>
+									</div>
+									<div class="reviewers-info d-flex align-items-center">
+										<img src="assets/img/customer/customer-01.jpg" alt="" class="img-fluid">
+										<p class="mb-0 ml-2"><a href="#" class="text-high">Funny Mermaid Shirts, Mermaid Sweatshirt, Mermaid Vibes...</a></p>
+									</div>
+								</div>
+								<div class="prd-reviews">
+									<div class="prd-reviews-head d-md-flex align-items-center mb-4">
+										<div class="reviewers-info d-flex align-items-center">
+											<img src="assets/img/customer/customer-02.jpg" alt="" class="img-fluid">
+											<p class="mb-0 ml-2"><a href="#" class="text-high">Sonya Jones</a></p>
+										</div>
+										<p class="mb-0 rev-date">30 Apr, 2021</p>
+										<ul class="ratings ml-auto">
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star"></i></li>
+										</ul>
+									</div>
+									<div class="prd-reviews-body">
+										<p class="font-bold mb-4">I absolutely love my Mermaid Vibes shirt! The quality is great, and it arrivedquickly!</p>
+									</div>
+									<div class="reviewers-info d-flex align-items-center">
+										<img src="assets/img/customer/customer-01.jpg" alt="" class="img-fluid">
+										<p class="mb-0 ml-2"><a href="#" class="text-high">Funny Mermaid Shirts, Mermaid Sweatshirt, Mermaid Vibes...</a></p>
+									</div>
+								</div>
+								<div class="prd-reviews">
+									<div class="prd-reviews-head d-md-flex align-items-center mb-4">
+										<div class="reviewers-info d-flex align-items-center">
+											<img src="assets/img/customer/customer-02.jpg" alt="" class="img-fluid">
+											<p class="mb-0 ml-2"><a href="#" class="text-high">Sonya Jones</a></p>
+										</div>
+										<p class="mb-0 rev-date">30 Apr, 2021</p>
+										<ul class="ratings ml-auto">
+										<li><i class="fas fa-star filled"></i></li>
+										<li><i class="fas fa-star filled"></i></li>
+										<li><i class="fas fa-star filled"></i></li>
+										<li><i class="fas fa-star filled"></i></li>
+										<li><i class="fas fa-star"></i></li>
+									</ul>
+									</div> 
+									<div class="reviewers-info d-flex align-items-center">
+										<img src="assets/img/customer/customer-01.jpg" alt="" class="img-fluid">
+										<p class="mb-0 ml-2"><a href="#" class="text-high">Funny Mermaid Shirts, Mermaid Sweatshirt, Mermaid Vibes...</a></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-12">
+										<div class="blog-pagination">
+											<nav>
+												<ul class="pagination">
+													<li class="page">
+														<div class="form-group">
+															<select class="form-control">
+																<option>1</option>
+																<option>2</option>
+																<option>3</option>
+															</select>
+														</div>
+													</li>
+													<li class="no-page">
+														<a class="" href="#">of 318 pages</a>
+													</li>
+													<li class="page-item first-page active">
+														<a class="page-link" href="#"><i class="fa fa-arrow-left"></i></a>
+													</li>
+													<li class="page-item last-page">
+														<a class="page-link" href="#"><i class="fa fa-arrow-right"></i></a>
+													</li>
+												</ul>
+											</nav>
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="card">
+											<div class="card-body">
+												<div class="owl-carousel sub-prtd review-slider">
+													<div class="item">
+														<img src="assets/img/product/pr-24.jpg" alt="" class="img-fluid">
+													</div>
+													<div class="item">
+														<img src="assets/img/product/pr-25.jpg" alt="" class="img-fluid">
+													</div>
+													<div class="item">
+														<img src="assets/img/product/pr-26.jpg" alt="" class="img-fluid">
+													</div>
+													<div class="item">
+														<img src="assets/img/product/pr-27.jpg" alt="" class="img-fluid">
+													</div> 
+													<div class="item">
+														<img src="assets/img/product/pr-24.jpg" alt="" class="img-fluid">
+													</div>
+													<div class="item">
+														<img src="assets/img/product/pr-25.jpg" alt="" class="img-fluid">
+													</div>
+													<div class="item">
+														<img src="assets/img/product/pr-26.jpg" alt="" class="img-fluid">
+													</div>
+													<div class="item">
+														<img src="assets/img/product/pr-27.jpg" alt="" class="img-fluid">
+													</div> 
+												</div>
+												<div class="row">
+													<div class="col-md-12 overflow-nav">
+														<div class="owl-nav slide-nav-2 nav-control"></div>
+													</div>
+												</div>
+											</div> 
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+						
+				 <!-- Realted Product -->
+				 <div class="section-more-shop pb-0">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<div class="related-products">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="section-header">
+												<div class="row align-items-center">
+													<div class="col-lg-8">
+														<h2>More from this shop</h2>
+													 </div>
+													  <div class="col-lg-4 float-md-right">
+														<a href="#" class="view-all-link">See more</a>
+													 </div>
+												 </div> 
+											</div>
+										 </div>
+										<div class="col-md-6">
+											<div class="section-header">
+												<div class="row align-items-center">
+													<div class="col-lg-8">
+														<h2>You may also like</h2>
+													 </div>
+													  <div class="col-lg-4 float-md-right">
+														<a href="#" class="view-all-link">See more</a>
+													 </div>
+												 </div>
+											</div>
+										 </div>
+									 </div>
+									<div class="row">
+										<div class="col-lg-3 col-md-6 mb-4">
+											<div class="prod-widget">
+												<div class="prod-img">
+													<a href="#"><img src="assets/img/product/product-01.jpg" class="img-fluid prod-img-tag" alt="Arrivals" /></a>
+													<a href="#"><span class="prod-wl"><i class="far fa-heart"></i></span></a>
+													<label class="product-label label-green">FREE delivery</label>
+												</div>
+												<div class="prod-content">
+													<h4 class="title"><a href="#">Double Name Ring...</a></h4> 
+													<h4 class="prod-price-fig">US$ 23.62</h4> 
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-3 col-md-6 mb-4">
+											<div class="prod-widget">
+												<div class="prod-img">
+													<a href="#" tabindex="0">
+														<img class="img-fluid prod-img-tag" alt="Product Image" src="assets/img/product/product-02.jpg">
+													</a>
+													<a href="#"><span class="prod-wl"><i class="far fa-heart"></i></span></a>
+													<label class="product-label label-pink">Bestseller</label>
+												</div>
+												<div class="prod-content">
+													<h4 class="title"><a href="#">Fathers Day Gift for Dad...</a></h4> 
+													<h4 class="prod-price-fig">US$ 26.99</h4>
+													<div class="prod-price">
+														<span class="prod-price-strike">US$ 26.99 </span>
+														<span class="prod-price-discount">(60% off)</span>
+													</div>
+												</div>
+											 </div> 
+										</div>
+										<div class="col-lg-3 col-md-6 mb-4">
+											<div class="prod-widget">
+												<div class="prod-img">
+													<a href="#">
+														<img class="img-fluid prod-img-tag" alt="Product Image" src="assets/img/product/product-03.jpg">
+													</a>
+													<a href="#"><span class="prod-wl"><i class="far fa-heart"></i></span></a>
+													<label class="product-label label-green">FREE delivery</label>
+												</div>
+												<div class="prod-content">
+													<h4 class="title"><a href="#">Hummingbird stained...</a></h4> 
+													<h4 class="prod-price-fig">US$ 29.75</h4>
+													<div class="prod-price">
+														<span class="prod-price-strike"></span>
+														<span class="prod-price-discount"></span>
+													</div>
+												</div>
+											 </div>
+										</div>
+										<div class="col-lg-3 col-md-6 mb-4">
+											<div class="prod-widget">
+												<div class="prod-img">
+													<a href="#">
+														<img class="img-fluid prod-img-tag" alt="Product Image" src="assets/img/product/product-04.jpg">
+													</a>
+													<a href="#"><span class="prod-wl"><i class="far fa-heart"></i></span></a>
+													<label class="product-label label-green">Bestseller</label>
+												</div>
+												<div class="prod-content">
+													<h4 class="title"><a href="#">Gift for Mom / Mother ...</a></h4> 
+													<h4 class="prod-price-fig">US$ 19.99</h4>
+													<div class="prod-price">
+														<span class="prod-price-strike"></span>
+														<span class="prod-price-discount"></span>
+													</div>
+												</div>
+											 </div>
+										</div>
+										<div class="col-lg-3 col-md-6 mb-4">
+											<div class="prod-widget">
+												<div class="prod-img">
+													<a href="#"><img src="assets/img/product/product-01.jpg" class="img-fluid prod-img-tag" alt="Arrivals" /></a>
+													<a href="#"><span class="prod-wl"><i class="far fa-heart"></i></span></a>
+													<label class="product-label label-green">FREE delivery</label>
+												</div>
+												<div class="prod-content">
+													<h4 class="title"><a href="#">Double Name Ring...</a></h4> 
+													<h4 class="prod-price-fig">US$ 23.62</h4> 
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-3 col-md-6 mb-4">
+											<div class="prod-widget">
+												<div class="prod-img">
+													<a href="#" tabindex="0">
+														<img class="img-fluid prod-img-tag" alt="Product Image" src="assets/img/product/product-02.jpg">
+													</a>
+													<a href="#"><span class="prod-wl"><i class="far fa-heart"></i></span></a>
+													<label class="product-label label-pink">Bestseller</label>
+												</div>
+												<div class="prod-content">
+													<h4 class="title"><a href="#">Fathers Day Gift for Dad...</a></h4> 
+													<h4 class="prod-price-fig">US$ 26.99</h4>
+													<div class="prod-price">
+														<span class="prod-price-strike">US$ 26.99 </span>
+														<span class="prod-price-discount">(60% off)</span>
+													</div>
+												</div>
+											 </div> 
+										</div>
+										<div class="col-lg-3 col-md-6 mb-4">
+											<div class="prod-widget">
+												<div class="prod-img">
+													<a href="#">
+														<img class="img-fluid prod-img-tag" alt="Product Image" src="assets/img/product/product-03.jpg">
+													</a>
+													<a href="#"><span class="prod-wl"><i class="far fa-heart"></i></span></a>
+													<label class="product-label label-green">FREE delivery</label>
+												</div>
+												<div class="prod-content">
+													<h4 class="title"><a href="#">Hummingbird stained...</a></h4> 
+													<h4 class="prod-price-fig">US$ 29.75</h4>
+													<div class="prod-price">
+														<span class="prod-price-strike"></span>
+														<span class="prod-price-discount"></span>
+													</div>
+												</div>
+											 </div>
+										</div>
+										<div class="col-lg-3 col-md-6 mb-4">
+											<div class="prod-widget">
+												<div class="prod-img">
+													<a href="#">
+														<img class="img-fluid prod-img-tag" alt="Product Image" src="assets/img/product/product-04.jpg">
+													</a>
+													<a href="#"><span class="prod-wl"><i class="far fa-heart"></i></span></a>
+													<label class="product-label label-green">Bestseller</label>
+												</div>
+												<div class="prod-content">
+													<h4 class="title"><a href="#">Gift for Mom / Mother ...</a></h4> 
+													<h4 class="prod-price-fig">US$ 19.99</h4>
+													<div class="prod-price">
+														<span class="prod-price-strike"></span>
+														<span class="prod-price-discount"></span>
+													</div>
+												</div>
+											 </div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Realted Product -->
+				
+				<!-- More Product -->
+				<div class="more-prdts">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-3 col-md-6 d-flex flex-wrap">
+								<div class="products-card flex-fill">
+									<div class="products-img">
+										<a href="product-details.html"><img src="assets/img/product/pr-12.jpg" alt="" class="img-fluid"></a>
+										<div class="products-overlay seller-badge">
+											<span>Bestseller</span>
+										</div>
+									</div>
+									<div class="products-body">
+										<h4 class="products-title text-truncate"><a href="product-details.html">14k & 18k Minimal 7</a></h4>
+										<p class="product-info">StayFinePersonalized</p>
+										<ul class="ratings pb-2">
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li class="ratings-count">( 1,783 )</li>
+										</ul>
+										<h5 class="products-price">US$ 126.99</h5> 
+										<a href="#" class="prd-btn">More colours</a>
+									</div>
+								</div>
+							</div> 
+							<div class="col-lg-3 col-md-6 d-flex flex-wrap">
+								<div class="products-card flex-fill">
+									<div class="products-img">
+										<a href="product-details.html"><img src="assets/img/product/pr-13.jpg" alt="" class="img-fluid"></a>
+										<div class="products-overlay delivery-badge">
+											<span>Free Delivery</span>
+										</div>
+									</div>
+									<div class="products-body">
+										<h4 class="products-title text-truncate"><a href="product-details.html">Jewellery</a></h4>
+										<p class="product-info">StayFinePersonalized</p>
+										<ul class="ratings pb-2">
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li class="ratings-count">( 1,783 )</li>
+										</ul>
+										<h5 class="products-price">US$ 126.99</h5> 
+										<a href="#" class="prd-btn">More colours</a>
+									</div>
+								</div>
+							</div> 
+							<div class="col-lg-3 col-md-6 d-flex flex-wrap">
+								<div class="products-card flex-fill">
+									<div class="products-img">
+										<a href="product-details.html"><img src="assets/img/product/pr-14.jpg" alt="" class="img-fluid"></a>
+										<div class="products-overlay delivery-badge">
+											<span>Free Delivery</span>
+										</div>
+									</div>
+									<div class="products-body">
+										<h4 class="products-title text-truncate"><a href="product-details.html">Jewellery</a></h4>
+										<p class="product-info">StayFinePersonalized</p>
+										<ul class="ratings pb-2">
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li class="ratings-count">( 1,783 )</li>
+										</ul>
+										<h5 class="products-price">US$ 126.99</h5> 
+										<a href="#" class="prd-btn">More colours</a>
+									</div>
+								</div>
+							</div> 
+							<div class="col-lg-3 col-md-6 d-flex flex-wrap">
+								<div class="products-card flex-fill">
+									<div class="products-img">
+										<a href="product-details.html"><img src="assets/img/product/pr-15.jpg" alt="" class="img-fluid"></a>
+										<div class="products-overlay delivery-badge">
+											<span>Free Delivery</span>
+										</div>
+									</div>
+									<div class="products-body">
+										<h4 class="products-title text-truncate"><a href="product-details.html">Jewellery</a></h4>
+										<p class="product-info">StayFinePersonalized</p>
+										<ul class="ratings pb-2">
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li class="ratings-count">( 1,783 )</li>
+										</ul>
+										<h5 class="products-price">US$ 126.99</h5> 
+										<a href="#" class="prd-btn">More colours</a>
+									</div>
+								</div>
+							</div> 
+							<div class="col-lg-3 col-md-6 d-flex flex-wrap">
+								<div class="products-card flex-fill">
+									<div class="products-img">
+										<a href="product-details.html"><img src="assets/img/product/pr-16.jpg" alt="" class="img-fluid"></a>
+										<div class="products-overlay seller-badge">
+											<span>Bestseller</span>
+										</div>
+									</div>
+									<div class="products-body">
+										<h4 class="products-title text-truncate"><a href="product-details.html">Jewellery</a></h4>
+										<p class="product-info">StayFinePersonalized</p>
+										<ul class="ratings pb-2">
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li class="ratings-count">( 1,783 )</li>
+										</ul>
+										<h5 class="products-price">US$ 126.99</h5> 
+										<a href="#" class="prd-btn">More colours</a>
+									</div>
+								</div>
+							</div> 
+							<div class="col-lg-3 col-md-6 d-flex flex-wrap">
+								<div class="products-card flex-fill">
+									<div class="products-img">
+										<a href="product-details.html"><img src="assets/img/product/pr-17.jpg" alt="" class="img-fluid"></a>
+										<div class="products-overlay delivery-badge">
+											<span>Free Delivery</span>
+										</div>
+									</div>
+									<div class="products-body">
+										<h4 class="products-title text-truncate"><a href="product-details.html">Jewellery</a></h4>
+										<p class="product-info">StayFinePersonalized</p>
+										<ul class="ratings pb-2">
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li class="ratings-count">( 1,783 )</li>
+										</ul>
+										<h5 class="products-price">US$ 126.99</h5> 
+										<a href="#" class="prd-btn">More colours</a>
+									</div>
+								</div>
+							</div> 
+							<div class="col-lg-3 col-md-6 d-flex flex-wrap">
+								<div class="products-card flex-fill">
+									<div class="products-img">
+										<a href="product-details.html"><img src="assets/img/product/pr-18.jpg" alt="" class="img-fluid"></a>
+										<div class="products-overlay seller-badge">
+											<span>Bestseller</span>
+										</div>
+									</div>
+									<div class="products-body">
+										<h4 class="products-title text-truncate"><a href="product-details.html">Jewellery</a></h4>
+										<p class="product-info">StayFinePersonalized</p>
+										<ul class="ratings pb-2">
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li class="ratings-count">( 1,783 )</li>
+										</ul>
+										<h5 class="products-price">US$ 126.99</h5> 
+										<a href="#" class="prd-btn">More colours</a>
+									</div>
+								</div>
+							</div> 
+							<div class="col-lg-3 col-md-6 d-flex flex-wrap">
+								<div class="products-card flex-fill">
+									<div class="products-img">
+										<a href="product-details.html"><img src="assets/img/product/pr-19.jpg" alt="" class="img-fluid"></a>
+										<div class="products-overlay seller-badge">
+											<span>Bestseller</span>
+										</div>
+									</div>
+									<div class="products-body">
+										<h4 class="products-title text-truncate"><a href="product-details.html">Jewellery</a></h4>
+										<p class="product-info">StayFinePersonalized</p>
+										<ul class="ratings pb-2">
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star filled"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li><i class="fas fa-star"></i></li>
+											<li class="ratings-count">( 1,783 )</li>
+										</ul>
+										<h5 class="products-price">US$ 126.99</h5> 
+										<a href="#" class="prd-btn">More colours</a>
+									</div>
+								</div>
+							</div>  
+						</div>
+					</div>
+				</div>
+				<!-- /More Product -->
+				
+				<!-- Search Product -->
+					<div class="search-products w-100">
+						<div class="container">
+							<div class="row">
+								<div class="col-12">
+									<div class="owl-carousel owl-theme products-search">
+										<div class="item">
+											<div class="icon-card text-center">
+												<img src="assets/img/search-products/img-1.jpg" alt="" class=" d-inline-flex">
+												<p>wolf clothing</p>
+											</div>
+										</div>
+										<div class="item">
+											<div class="icon-card text-center">
+												<img src="assets/img/search-products/img-2.jpg" alt="" class=" d-inline-flex">
+												<p>Japan clothing</p>
+											</div>
+										</div>
+										<div class="item">
+											<div class="icon-card text-center">
+												<img src="assets/img/search-products/img-3.jpg" alt="" class=" d-inline-flex">
+												<p>Japaneses weater</p>
+											</div>
+										</div>
+										<div class="item">
+											<div class="icon-card text-center">
+												<img src="assets/img/search-products/img-4.jpg" alt="" class=" d-inline-flex">
+												<p>Japanese hoodie</p>
+											</div>
+										</div>
+										<div class="item">
+											<div class="icon-card text-center">
+												<img src="assets/img/search-products/img-5.jpg" alt="" class="d-inline-flex">
+												<p>Japanese tattoo</p>
+											</div>
+										</div>
+										<div class="item">
+											<div class="icon-card text-center">
+												<img src="assets/img/search-products/img-6.jpg" alt="" class="d-inline-flex">
+												<p>Japanese clothing</p>
+											</div>
+										</div>
+										<div class="item">
+											<div class="icon-card text-center">
+												<img src="assets/img/search-products/img-7.jpg" alt="" class=" d-inline-flex">
+												<p>Japanese street wear</p>
+											</div>
+										</div>
+									</div> 
+								</div>
+							</div>
+						</div>
+					</div>
+				<!-- /Search Product -->
+				
+				<!-- Search Category -->
+				<div class="related-category">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<div class="section-header">
+									<h2>Explore related categories & searches</h2>
+								</div>
+							</div>
+						</div>
+						<ul class="cat-btns">
+							<li><a href="#">Clothing</a></li>
+							<li><a href="#">Japanese embroidered</a></li>
+							<li><a href="#">kitusune</a></li>
+						</ul>
+						<div class="cat-list d-md-flex align-items-center">
+							<p class="mb-0">Listed on 13 May, 2021 <a href="#"><span class="text-high ml-2">170 favourites</span></a></p>
+							<button class="btn sub-btn float-md-right font-bold">Report this item to NookX</button>
+						</div>
+					</div>
+				</div>
+				<!-- /Search Category -->
+				 
+			</div> 
+		 
+		<section class="section section-offer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7">
+						<h2 class="mb-0">Yes! Send me exclusive offers,</h2>
+						<h2>unique gift ideas, and Personalized tips for shopping and selling on NookX.</h2>
+						<form class="search-form">
+							<div class="input-group search-box mb-3">
+							  <input type="email" class="form-control search-input" placeholder="Enter your email" aria-describedby="button-addon1">
+							  <div class="input-group-append search-btn">
+								<button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fas fa-paper-plane"></i></button>
+							  </div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+			
+		<!-- The Modal -->
+		<div class="modal fade custom-modal" id="product-popup"> 
+			<div class="modal-dialog modal-dialog-centered custom-dialog">
+				<div class="modal-content">
+					<button type="button" class="close custom-close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+					<div class="modal-body p-0">
+						<div class="owl-carousel popup-owl owl-theme">
+							<div class="item">
+								<div class="row">
+									<div class="col-lg-6">
+										<img src="assets/img/img-1.jpg" alt="" class="img-fluid popup-product">
+									</div>
+									<div class="col-lg-6">
+										<div class="prd-review pt-4">
+											<div class="review-info d-md-flex align-items-center">
+												<div class="d-flex reviewer-info">
+													<img src="assets/img/customer/customer-02.jpg" alt="" class="img-fluid">
+													<div class="d-block ml-2">
+														<p class="mb-0">30 Apr, 2021</p>
+														<p class="text-high">Sonya Jones</p>
+													</div>
+												</div>
+												<ul class="ratings ml-auto">
+													<li><i class="fas fa-star filled"></i></li>
+													<li><i class="fas fa-star filled"></i></li>
+													<li><i class="fas fa-star filled"></i></li>
+													<li><i class="fas fa-star filled"></i></li>
+													<li><i class="fas fa-star"></i></li>
+												</ul>
+											</div>
+											<p class="font-bold mt-4">I absolutely love my Mermaid Vibes shirt! The quality is great, and it arrived quickly!</p>
+										</div>
+										<div class="reviewer-purchase">
+											<p>Purchased item:</p>
+											<div class="purchase-info d-md-flex align-items-center">
+												<div class="d-flex">
+													<img src="assets/img/product/pr-2.jpg" alt="" class="img-fluid">
+													<div class="d-block ml-2">
+														<p class="text-high mb-2">Funny Mermaid Mermaid Vibes...</p>
+														<h4 class="mb-0 font-bold">US$ 144.86</h4>
+														<p class="text-success"><del>US$ 160.96</del> (10% off)</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="row">
+									<div class="col-lg-6">
+										<img src="assets/img/img-1.jpg" alt="" class="img-fluid popup-product">
+									</div>
+									<div class="col-lg-6">
+										<div class="prd-review pt-4">
+											<div class="review-info d-md-flex align-items-center">
+												<div class="d-flex reviewer-info">
+													<img src="assets/img/customer/customer-01.jpg" alt="" class="img-fluid">
+													<div class="d-block ml-2">
+														<p class="mb-0">30 Apr, 2021</p>
+														<p class="text-high">Sonya Jones</p>
+													</div>
+												</div>
+												<ul class="ratings ml-auto">
+													<li><i class="fas fa-star filled"></i></li>
+													<li><i class="fas fa-star filled"></i></li>
+													<li><i class="fas fa-star filled"></i></li>
+													<li><i class="fas fa-star filled"></i></li>
+													<li><i class="fas fa-star"></i></li>
+												</ul>
+											</div>
+											<p class="font-bold mt-4">I absolutely love my Mermaid Vibes shirt! The quality is great, and it arrived quickly!</p>
+										</div>
+										<div class="reviewer-purchase">
+											<p>Purchased item:</p>
+											<div class="purchase-info d-md-flex align-items-center">
+												<div class="d-flex">
+													<img src="assets/img/product/pr-2.jpg" alt="" class="img-fluid">
+													<div class="d-block ml-2">
+														<p class="text-high mb-2">Funny Mermaid Mermaid Vibes...</p>
+														<h4 class="mb-0 font-bold">US$ 144.86</h4>
+														<p class="text-success"><del>US$ 160.96</del> (10% off)</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 overflow-nav">
+								<div class="owl-nav slide-nav-2 nav-control"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /The Modal -->
+                            
+		
+			<!-- Footer -->
+            <footer class="footer">
+                
+                <!-- Footer Top -->
+                <div class="container">
+                    <div class="footer-top">
+                        <div class="row">
+							<div class="col-sm-12 col-md-6 col-lg-3">
+
+                                <!-- Footer Widget -->
+                                <div class="footer-widget footer-contact">
+                                    <div class="footer-logo">
+										<img src="assets/img/footer-logo.png" alt="logo">
+									</div>
+									<div class="footer-about-content">
+										<p>NookX is a global online marketplace, where people come together to make, sell, buy and collect unique items.</p>
+									</div>
+                                </div>
+                                <!-- /Footer Widget -->
+
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-2">
+
+                                <!-- Footer Widget -->
+                                <div class="footer-widget footer-menu">
+                                    <h2 class="footer-title">SHOP</h2>
+                                    <ul>
+                                        <li><a href="gift-cards.html">Gift cards</a></li>
+                                        <li><a href="blog.html">NookX blog</a></li>
+                                    </ul>
+                                </div>
+                                <!-- /Footer Widget -->
+
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-2">
+
+                                <!-- Footer Widget -->
+                                <div class="footer-widget footer-menu">
+                                    <h2 class="footer-title">Sell</h2>
+                                    <ul>
+                                        <li><a href="seller-handbook.html">Sell on NookX</a></li>
+                                        <li><a href="#">Teams</a></li>
+                                        <li><a href="#">Forums</a></li>
+                                        <li><a href="#">Affiliates</a></li>
+                                    </ul>
+                                </div>
+                                <!-- /Footer Widget -->
+
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-2">
+
+                                <!-- Footer Widget -->
+                                <div class="footer-widget footer-menu">
+                                    <h2 class="footer-title">About</h2>
+                                    <ul>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="#">Investors</a></li>
+                                        <li><a href="#">Careers</a></li>
+                                        <li><a href="#">Press</a></li>
+                                        <li><a href="#">Impact</a></li>
+                                        <li><a href="#">Legal imprint</a></li>
+                                    </ul>
+                                </div>
+                                <!-- /Footer Widget -->
+
+                            </div>
+							 <div class="col-sm-12 col-md-6 col-lg-3">
+
+                                <!-- Footer Widget -->
+                                <div class="footer-widget">
+                                    <h2 class="footer-title">Help</h2>
+                                    <ul class="footer-menu">
+                                        <li><a href="#">Help Centre</a></li>
+                                        <li><a href="#">Trust and safety</a></li>
+                                        <li><a href="#">Privacy settings</a></li>
+                                    </ul>
+									<div class="social-icon">
+										<ul>
+											<li>
+												<a href="#" target="_blank"><i class="fab fa-instagram"></i> </a>
+											</li>
+											<li>
+												<a href="#" target="_blank"><i class="fab fa-facebook"></i> </a>
+											</li>
+											<li>
+												<a href="#" target="_blank"><i class="fab fa-pinterest"></i> </a>
+											</li>
+											<li>
+												<a href="#" target="_blank"><i class="fab fa-youtube"></i> </a>
+											</li>
+											<li>
+												<a href="#" target="_blank"><i class="fab fa-twitter"></i> </a>
+											</li>
+										</ul>
+									</div>
+                                </div>
+                                <!-- /Footer Widget -->
+
+                            </div>
+
+                        </div>
+                    </div>					
+					<!-- /Footer Top -->
+					
+				 </div>
+				 <!-- Footer Bottom -->
+					<div class="footer-bottom">
+						<div class="container">
+
+							<!-- Copyright -->
+							<div class="copyright">
+								<div class="row">
+									<div class="col-md-4 col-lg-5">
+											<ul class="language-links">
+												<li><a href="#">India</a></li>
+												<li><a href="#">English (UK)</a></li>
+												<li><a href="#">$ (USD)</a></li>
+											</ul>
+									</div>
+									<div class="col-md-2 col-lg-2">
+										<div class="copyright-text">											
+											<p class="mb-0">© 2021 NookX</p>
+										</div>
+									</div>
+									<div class="col-md-6 col-lg-5">
+											<ul class="term-links">
+												<li><a href="#">Terms of Use</a></li>
+												<li><a href="#">Privacy</a></li>
+												<li><a href="#">Interest-based ads</a></li>
+											</ul>
+									</div>
+								</div>
+							</div>
+							<!-- /Copyright -->
+							
+						</div>
+					</div>
+                <!-- /Footer Bottom -->
+ 
+            </footer>
+            <!-- /Footer -->
+        </div>
+        <!-- /Main Wrapper -->
+		
+		<!-- The Modal -->
+		<div class="modal fade custom-modal" id="login"> 
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header pb-0">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					<div class="modal-body pt-0">
+						<div class="text-center pt-0 mb-4">
+							<h2 class="modal-title">Sign in</h2>
+						</div>
+						<form>
+							<div class="modal-info">
+								<div class="row form-row form-style-1">
+									<div class="col-12 col-md-12">
+										<div class="form-group">
+											<div class="search-form">
+												<div class="input-group search-box mb-3">
+												  <input type="email" class="form-control search-input" placeholder="Email address" aria-describedby="maila">
+												  <div class="input-group-append search-btn">
+													<button class="btn btn-outline-secondary" type="button" id="maila"><i class="fas fa-envelope"></i></button>
+												  </div>
+												</div>
+											</div>
+										</div> 
+										<div class="form-group">
+											<div class="search-form">
+												<div class="input-group search-box mb-3">
+												  <input type="password" class="form-control search-input" placeholder="Password" aria-describedby="pass">
+												  <div class="input-group-append search-btn">
+													<button class="btn btn-outline-secondary" type="button" id="pass"><i class="fas fa-lock"></i></button>
+												  </div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row form-row mb-3">
+									<div class="col-6">
+										<label class="custom_check d-block">
+											<input type="checkbox" name="mail">
+											<span class="checkmark"></span> Stay signed in
+										</label>
+									</div>
+									<div class="col-6 text-right">
+										<a class="forgot-link" href="#">Forgot Password ?</a>
+									</div>
+								</div>
+							</div>
+							<div class="submit-section text-center">
+								<button type="submit" class="btn btn-primary btn-block submit-btn">Sign Up</button>
+							</div>
+							<div class="login-or">
+								<span class="or-line"></span>
+								<span class="span-or">or</span>
+							</div>
+							<a href="#" class="btn btn-outline-primary btn-block"><img src="assets/img/google.png" class="img-fluid mr-1" alt="google"> Continue with Google</a>
+							<a href="#" class="btn btn-outline-primary btn-block"><i class="fab fb-icon fa-facebook-f mr-1"></i> Continue with Facebook</a>
+							<a href="#" class="btn btn-outline-primary btn-block"><i class="fab fa-apple mr-1"></i> Continue with Apple</a>
+							<p class="policy-text">By clicking Register or Continue with Google, Facebook, or Apple, you agree to NookX's <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>. NookX  may send you communications; you may change your preferences in your account settings. We'll never post without your permission.</p>
+							<div class="text-center member">Join a member? <a data-dismiss="modal" data-toggle="modal" href="#register">Sign Up</a></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /The Modal -->
+		
+		<!-- The Modal -->
+		<div class="modal fade custom-modal" id="register"> 
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header pb-0">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					<div class="modal-body pt-0">
+						<div class="text-center pt-0 mb-4">
+							<h2 class="modal-title">Create your account</h2>
+							<h3 class="modal-subtitle">Registration is easy.</h3>
+						</div>
+						<form>
+							<div class="modal-info">
+								<div class="row form-row form-style-1">
+									<div class="col-12 col-md-12">
+										<div class="form-group">
+											<div class="search-form">
+												<div class="input-group search-box mb-3">
+												  <input type="text" class="form-control search-input" placeholder="First name" aria-describedby="user">
+												  <div class="input-group-append search-btn">
+													<button class="btn btn-outline-secondary" type="button" id="user"><i class="fas fa-user"></i></button>
+												  </div>
+												</div>
+											</div>
+										</div> 
+										<div class="form-group">
+											<div class="search-form">
+												<div class="input-group search-box mb-3">
+												  <input type="email" class="form-control search-input" placeholder="Email address" aria-describedby="envelope">
+												  <div class="input-group-append search-btn">
+													<button class="btn btn-outline-secondary" type="button" id="envelope"><i class="fas fa-envelope"></i></button>
+												  </div>
+												</div>
+											</div>
+										</div> 
+										<div class="form-group">
+											<div class="search-form">
+												<div class="input-group search-box mb-3">
+												  <input type="password" class="form-control search-input" placeholder="Password" aria-describedby="lock">
+												  <div class="input-group-append search-btn">
+													<button class="btn btn-outline-secondary" type="button" id="lock"><i class="fas fa-lock"></i></button>
+												  </div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="submit-section text-center">
+								<button type="submit" class="btn btn-primary btn-block submit-btn">Sign Up</button>
+							</div>
+							<div class="login-or">
+								<span class="or-line"></span>
+								<span class="span-or">or</span>
+							</div>
+							<a href="#" class="btn btn-outline-primary btn-block"><img src="assets/img/google.png" class="img-fluid" alt="google"> Continue with Google</a>
+							<a href="#" class="btn btn-outline-primary btn-block"><i class="fab fb-icon fa-facebook-f mr-1"></i> Continue with Facebook</a>
+							<a href="#" class="btn btn-outline-primary btn-block"><i class="fab fa-apple mr-1"></i> Continue with Apple</a>
+							<p class="policy-text">By clicking Register or Continue with Google, Facebook, or Apple, you agree to NookX's <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>. NookX  may send you communications; you may change your preferences in your account settings. We'll never post without your permission.</p>
+							<div class="text-center member">Already a member? <a data-dismiss="modal" data-toggle="modal" href="#login">Sign In</a></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /The Modal -->
+
+
+        <!-- jQuery -->
+        <script src="assets/js/jquery-3.5.1.min.js"></script>
+
+        <!-- Bootstrap Core JS -->
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+		
+		<!-- Select2 JS -->
+		<script src="assets/plugins/select2/js/select2.min.js"></script>
+	
+		<!-- Price Slider JS --> 
+		<script src="assets/plugins/price-slider/script.js"></script>
+		
+		<!-- Owl Carousel JS -->
+		<script src="assets/js/owl.carousel.min.js"></script>
+
+        <!-- Custom JS -->
+        <script src="assets/js/script.js"></script>
+        <script src="assets/js/products.js"></script>
+		
+    </body>
+</html>
