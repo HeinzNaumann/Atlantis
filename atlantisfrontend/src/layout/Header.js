@@ -1,31 +1,9 @@
-import "./App.css";
-import "./components/detail.css";
-import "./components/Detail";
+import "./header.css";
 
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Redirect,
-// } from "react-router-dom";
-
-// function App() {
-//   return (
-//     <Router>
-//       <Switch>
-//         <Route exact path="/">
-//           <Redirect to="/detail" />
-//         </Route>
-//       </Switch>
-//     </Router>
-//   );
-// }
-
-function App() {
+function Header() {
   return (
     <header className="bg-black">
       <nav className="navbar" id="home">
-        <h1>AQUI</h1>
         <div className="container">
           <div className="navbar-left">
             <a className="navbar-brand" href="index.html">
@@ -43,4 +21,5 @@ function App() {
     </header>
   );
 }
-export default App;
+
+export default Header;

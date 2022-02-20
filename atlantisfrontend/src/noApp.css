@@ -1,0 +1,41 @@
+.navbar {
+  background-color: rgb(24, 4, 4);
+  z-index: 1000;
+  -webkit-transition: background-color 0.3s ease-out,
+    -webkit-transform 0.3s ease-out;
+  transition: background-color 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, background-color 0.3s ease-out;
+  transition: transform 0.3s ease-out, background-color 0.3s ease-out,
+    -webkit-transform 0.3s ease-out;
+  padding: 5px 0;
+  min-height: 56px;
+  border-bottom: 1px solid #f0f0f0;
+}
+h1 {
+  color: pink;
+}
+
+title {
+  color: green;
+}
+.navbar-left {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.navbar-brand img {
+  vertical-align: baseline;
+}
+
+.navbar .logo-dark {
+  display: inline-block;
+  max-height: 50px;
+}
