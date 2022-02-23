@@ -2,19 +2,39 @@
 
 import React from 'react';
 import { Formik, Field, Form } from 'formik';
-
+import { login } from "../service";
 import * as Yup from 'yup';
 
 const LoginPage = () => {
+
+    const handleSubmit = async event => {
+    //event.preventDefault();
+    // setIsLoading(true);
+    // resetError();
+    try {
+        console.log(event)
+      // call to api - send value
+      await login(event);
+     // setIsLoading(false);
+     // onLogin();
+      //const { from } = location.state || { from: { pathname: "/" } };
+      //history.push(from);
+    } catch (error) {
+      //setError(error);
+      // setIsLoading(false);
+    }
+  };
 
     return (
         <Formik
             initialValues={{email: '', password: ''}}
             onSubmit={(values, { setSubmitting }) => {
-                setTimeout(() => {
-                    alert(JSON.stringify(values, null, 2));
+                    
+                    handleSubmit(values);
+       
                     setSubmitting(false);
-                }, 1000);
+
+
             }}
             validationSchema={Yup.object({
                 email: Yup.string()
@@ -27,7 +47,7 @@ const LoginPage = () => {
             })}
         >
             {(formik, isSubmitting) => (
-                <Form className="container">
+                <Form className=" form container col-md-4 d-flex flex-column justify-content-center  ">
 
                     <div className="form-group">
                         <label htmlFor="email">Email Address</label>
