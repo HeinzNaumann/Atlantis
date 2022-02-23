@@ -1,0 +1,103 @@
+/* ******************************************
+    :: 16.0 PRODUCT LIST & GRID VIEW CSS
+*********************************************/
+
+.range-slider.ui-slider {
+    height: 6px;
+    background: #efedf3;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.range-slider.ui-slider .ui-slider-range {
+    background: #1579ee;
+}
+
+.range-slider.ui-slider .ui-slider-handle {
+    height: 18px;
+    width: 18px;
+    background: #1579ee;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    top: -6px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.range-slider.ui-slider .ui-slider-handle:focus {
+    outline: 0;
+}
+
+.range-slider.ui-slider .ui-slider-handle:before {
+    content: '';
+    position: absolute;
+    height: calc(100% - 8px);
+    width: calc(100% - 8px);
+    background: #fff;
+    left: 4px;
+    top: 4px;
+    z-index: -1;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.custom-checkbox .custom-control-label.green-fill::before {
+    background: green;
+    border: 1px solid green;
+}
+
+.custom-checkbox .custom-control-label.yellow-fill::before {
+    background: yellow;
+    border: 1px solid yellow;
+}
+
+.custom-checkbox .custom-control-label.orange-fill::before {
+    background: orange;
+    border: 1px solid orange;
+}
+
+.custom-checkbox .custom-control-label.red-fill::before {
+    background: red;
+    border: 1px solid red;
+}
+
+.pdt-banner:before {
+    position: absolute;
+    content: "";
+    background: rgba(0, 0, 0, 0.32);
+    width: 100%;
+    border-radius: 1rem;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+.buy-blk-list .pdt-item li a {
+    position: relative;
+    color: #ffffff;
+    display: inline-block;
+    vertical-align: middle;
+    background: #1579ee;
+    border-radius: 50%;
+    width: 41px;
+    height: 41px;
+}
+
+.buy-blk-list .pdt-item li a:hover {
+    color: #1579ee;
+    border: 1px solid #1579ee;
+    background: #ffffff;
+    border-radius: 50%;
+}
+
+.buy-blk-list .pdt-item li a:hover svg {
+    stroke: #1579ee;
+}
+
+.buy-blk-list .pdt-item li a svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
