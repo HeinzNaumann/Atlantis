@@ -1,9 +1,11 @@
+//import Footer from "./Footer";
 import Header from "./Header";
 
-function Layout() {
+export function Layout() {
   return (
-    <div className="layout">
-      <Header className="XXX" />
+    <div>
+      <Header />
+      {/* <Footer /> */}
     </div>
   );
 }
