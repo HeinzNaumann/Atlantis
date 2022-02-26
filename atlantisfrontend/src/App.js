@@ -1,6 +1,7 @@
 //import Detail from "./components/Detail";
-//import Layout from "./layout/Layout";
-import ErrorPage from "./components/ErrorPage";
+import Layout from "./layout/Layout";
+//import ErrorPage from "./components/ErrorPage";
+//import Login from "./login/Login";
 
 // import {
 //   BrowserRouter as Router,
@@ -22,6 +23,6 @@ import ErrorPage from "./components/ErrorPage";
 // }
 
 function App() {
-  return <ErrorPage />;
+  return <Layout />;
 }
 export default App;

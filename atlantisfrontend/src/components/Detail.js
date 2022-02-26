@@ -15,11 +15,12 @@ function Detail() {
                     <div class="col-md-6 col-lg-3">
                       <div class="pdt-item-blk mb-4">
                         <div class="pdt-img-blk">
-                          <img
+                          <h1>NUESTRO ANUNCIO</h1>
+                          {/* <img
                             src="assets/img/product1.jpg"
                             alt="Winter Coat with Hat"
                             class="img-fluid product-item-image"
-                          />
+                          /> */}
                         </div>
                         <div class="pdt-content-blk pt-0 pl-3 pr-3 pb-3">
                           <div class="position-relative">

@@ -10,688 +10,6 @@ function Header() {
             <div class="col-12">
               {/* <!-- Main Menu --> */}
               <div class="main-menu menu-section w-100 d-inline-block d-md-block">
-                {/* <!-- offcanvas menu --> */}
-                <div id="offcanvas_menu" class="slidebar-menu">
-                  <div class="scroll-style">
-                    <div class="container-fluid">
-                      <div class="row">
-                        <div class="col-12">
-                          <div class="close-btn-blk position-absolute r-2 text-right pt-3">
-                            <a
-                              href="javascript"
-                              id="close_navSidebar"
-                              class="text-black text-right"
-                            >
-                              <span data-feather="x-circle" class=""></span>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-xl-3 col-lg-4 px-lg-0 d-none d-lg-inline-block bg-black">
-                          <div class="menu-slider bg-black p-5 vh-100">
-                            <p>Top Selling</p>
-                            <h1>The New Collection</h1>
-
-                            <div
-                              id="advertise-space-blk"
-                              class="my-5 carousel slide"
-                              data-ride="carousel"
-                            >
-                              {/* <!-- Indicators --> */}
-                              <ul class="carousel-indicators">
-                                <li
-                                  data-target="#advertise-space-blk"
-                                  data-slide-to="0"
-                                  class="active"
-                                ></li>
-                                <li
-                                  data-target="#advertise-space-blk"
-                                  data-slide-to="1"
-                                ></li>
-                                <li
-                                  data-target="#advertise-space-blk"
-                                  data-slide-to="2"
-                                ></li>
-                              </ul>
-
-                              {/* <!-- The slideshow --> */}
-                              <div class="carousel-inner">
-                                <div class="carousel-item text-center active">
-                                  <img
-                                    class="img-fluid mx-auto text-center"
-                                    src="assets/img/ad-pdt-slider-1.jpg"
-                                    alt="Showcase Product Image Slider"
-                                  />
-                                </div>
-                                <div class="carousel-item text-center">
-                                  <img
-                                    class="img-fluid mx-auto text-center"
-                                    src="assets/img/ad-pdt-slider-2.jpg"
-                                    alt="Showcase Product Image Slider"
-                                  />
-                                </div>
-                                <div class="carousel-item text-center">
-                                  <img
-                                    class="img-fluid mx-auto text-center"
-                                    src="assets/img/ad-pdt-slider-3.jpg"
-                                    alt="Showcase Product Image Slider"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="cta-explore-btn text-center">
-                              <a
-                                href="product-3col.html"
-                                class="btn btn-style btn-lg"
-                              >
-                                Explore Now
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-xl-9 col-lg-8 pl-lg-0">
-                          <div class="p-5 slimscroll">
-                            <div class="row">
-                              <div class="col-xl-3 col-md-4">
-                                <div class="menu-widget-grid">
-                                  <h5 class="text-uppercase font-bold">Home</h5>
-                                  <ul class="pt-3 menu-list-style">
-                                    <li>
-                                      <a class="text-link" href="index.html">
-                                        Banner Version
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a class="text-link" href="index-2.html">
-                                        Video Version
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a class="text-link" href="index-3.html">
-                                        Slider Version
-                                      </a>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div class="col-xl-3 col-md-4">
-                                <div class="menu-widget-grid">
-                                  <h5 class="text-uppercase font-bold">Shop</h5>
-                                  <ul class="pt-3 menu-list-style">
-                                    <li class="default-menu dropdown">
-                                      <a
-                                        class="text-link dropdown-toggle"
-                                        data-toggle="dropdown"
-                                        href="javascript:;"
-                                      >
-                                        Theme
-                                      </a>
-                                      <div class="dropdown-menu position-relative border-0">
-                                        <ul>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="product-3col.html"
-                                            >
-                                              Shop Basic
-                                            </a>
-                                          </li>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="product-v2.html"
-                                            >
-                                              Shop Advanced
-                                            </a>
-                                          </li>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="product-v3.html"
-                                            >
-                                              Shop Pro
-                                            </a>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </li>
-                                    <li class="default-menu dropdown">
-                                      <a
-                                        class="text-link dropdown-toggle"
-                                        data-toggle="dropdown"
-                                        href="javascript:;"
-                                      >
-                                        Layout
-                                      </a>
-                                      <div class="dropdown-menu position-relative border-0">
-                                        <ul>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="product-3col.html"
-                                            >
-                                              Shop Grid
-                                            </a>
-                                          </li>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="product-list.html"
-                                            >
-                                              Shop List
-                                            </a>
-                                          </li>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="product-full-width.html"
-                                            >
-                                              Shop Full-Width
-                                            </a>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </li>
-                                    <li class="default-menu dropdown">
-                                      <a
-                                        class="text-link dropdown-toggle"
-                                        data-toggle="dropdown"
-                                        href="javascript:;"
-                                      >
-                                        Column
-                                      </a>
-                                      <div class="dropdown-menu position-relative border-0">
-                                        <ul>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="product-3col.html"
-                                            >
-                                              Shop 3 Column
-                                            </a>
-                                          </li>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="product-no-sidebar.html"
-                                            >
-                                              Shop 4 Column
-                                            </a>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </li>
-                                    <li class="default-menu dropdown">
-                                      <a
-                                        class="text-link dropdown-toggle"
-                                        data-toggle="dropdown"
-                                        href="javascript:;"
-                                      >
-                                        Sidebar
-                                      </a>
-                                      <div class="dropdown-menu position-relative border-0">
-                                        <ul>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="product-3col.html"
-                                            >
-                                              Shop left Sidebar
-                                            </a>
-                                          </li>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="product-right-sidebar.html"
-                                            >
-                                              Shop Right Sidebar
-                                            </a>
-                                          </li>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="product-no-sidebar.html"
-                                            >
-                                              Shop No Sidebar
-                                            </a>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div class="col-xl-3 col-md-4">
-                                <div class="menu-widget-grid">
-                                  <h5 class="text-uppercase font-bold">
-                                    Product
-                                  </h5>
-                                  <ul class="pt-3 menu-list-style">
-                                    <li class="default-menu dropdown">
-                                      <a
-                                        class="text-link dropdown-toggle"
-                                        data-toggle="dropdown"
-                                        href="javascript:;"
-                                      >
-                                        Layout
-                                      </a>
-                                      <div class="dropdown-menu position-relative border-0">
-                                        <ul>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="single-product.html"
-                                            >
-                                              Image Version
-                                            </a>
-                                          </li>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="single-product-v2.html"
-                                            >
-                                              Video Version
-                                            </a>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </li>
-                                    <li class="default-menu dropdown">
-                                      <a
-                                        class="text-link dropdown-toggle"
-                                        data-toggle="dropdown"
-                                        href="javascript:;"
-                                      >
-                                        Sidebar
-                                      </a>
-                                      <div class="dropdown-menu position-relative border-0">
-                                        <ul>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="single-product-left-sidebar.html"
-                                            >
-                                              Left Sidebar
-                                            </a>
-                                          </li>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="single-product.html"
-                                            >
-                                              Right Sidebar
-                                            </a>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </li>
-                                    <li class="default-menu dropdown">
-                                      <a
-                                        class="text-link dropdown-toggle"
-                                        data-toggle="dropdown"
-                                        href="javascript:;"
-                                      >
-                                        Thumbnail
-                                      </a>
-                                      <div class="dropdown-menu position-relative border-0">
-                                        <ul>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="single-product-vertical-left.html"
-                                            >
-                                              Left Image
-                                            </a>
-                                          </li>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="single-product-vertical-right.html"
-                                            >
-                                              Right Image
-                                            </a>
-                                          </li>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="single-product-thumbnail-top.html"
-                                            >
-                                              Top Image
-                                            </a>
-                                          </li>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="single-product.html"
-                                            >
-                                              Bottom Image
-                                            </a>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div class="col-xl-3 col-md-4">
-                                <div class="menu-widget-grid">
-                                  <h5 class="text-uppercase font-bold">Blog</h5>
-                                  <ul class="pt-3 menu-list-style">
-                                    <li class="default-menu dropdown">
-                                      <a
-                                        class="text-link dropdown-toggle"
-                                        data-toggle="dropdown"
-                                        href="javascript:;"
-                                      >
-                                        Theme
-                                      </a>
-                                      <div class="dropdown-menu position-relative border-0">
-                                        <ul>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="blog-classic.html"
-                                            >
-                                              Blog Classic
-                                            </a>
-                                          </li>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="blog-3col.html"
-                                            >
-                                              Blog Basic
-                                            </a>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </li>
-                                    <li class="default-menu dropdown">
-                                      <a
-                                        class="text-link dropdown-toggle"
-                                        data-toggle="dropdown"
-                                        href="javascript:;"
-                                      >
-                                        Layout
-                                      </a>
-                                      <div class="dropdown-menu position-relative border-0">
-                                        <ul>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="blog-3col.html"
-                                            >
-                                              Blog Grid
-                                            </a>
-                                          </li>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="blog-list.html"
-                                            >
-                                              Blog List
-                                            </a>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </li>
-                                    <li class="default-menu dropdown">
-                                      <a
-                                        class="text-link dropdown-toggle"
-                                        data-toggle="dropdown"
-                                        href="javascript:;"
-                                      >
-                                        Column
-                                      </a>
-                                      <div class="dropdown-menu position-relative border-0">
-                                        <ul>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="blog-3col.html"
-                                            >
-                                              Blog 3 Column
-                                            </a>
-                                          </li>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="blog-4col.html"
-                                            >
-                                              Blog 4 Column
-                                            </a>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </li>
-                                    <li class="default-menu dropdown">
-                                      <a
-                                        class="text-link dropdown-toggle"
-                                        data-toggle="dropdown"
-                                        href="javascript:;"
-                                      >
-                                        Sidebar
-                                      </a>
-                                      <div class="dropdown-menu position-relative border-0">
-                                        <ul>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="blog-single-post-left-sidebar.html"
-                                            >
-                                              Blog Left Sidebar
-                                            </a>
-                                          </li>
-                                          <li>
-                                            <a
-                                              class="dropdown-item"
-                                              href="blog-single-post.html"
-                                            >
-                                              Blog Right Sidebar
-                                            </a>
-                                          </li>
-                                        </ul>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div class="col-xl-3 col-md-4">
-                                <div class="menu-widget-grid">
-                                  <h5 class="text-uppercase font-bold">
-                                    Pages
-                                  </h5>
-                                  <ul class="pt-3 menu-list-style">
-                                    <li>
-                                      <a class="text-link" href="about-us.html">
-                                        About Us
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a
-                                        class="text-link"
-                                        href="contact-us.html"
-                                      >
-                                        Contact Us
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a
-                                        class="text-link"
-                                        href="how-it-works.html"
-                                      >
-                                        How It Works
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a class="text-link" href="faq.html">
-                                        FAQ
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a
-                                        class="text-link"
-                                        href="terms-policy.html"
-                                      >
-                                        Terms & Policy
-                                      </a>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div class="col-xl-3 col-md-4">
-                                <div class="menu-widget-grid">
-                                  <h5 class="text-uppercase font-bold">
-                                    User Panel
-                                  </h5>
-                                  <ul class="pt-3 menu-list-style">
-                                    <li>
-                                      <a
-                                        class="text-link"
-                                        href="user-profile.html"
-                                      >
-                                        User profile
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a
-                                        class="text-link"
-                                        href="user-profile-v2.html"
-                                      >
-                                        User profile V2
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a class="text-link" href="settings.html">
-                                        Settings
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a
-                                        class="text-link"
-                                        href="seller-cart.html"
-                                      >
-                                        Seller Cart
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a
-                                        class="text-link"
-                                        href="my-wishlist.html"
-                                      >
-                                        My wishlist
-                                      </a>
-                                    </li>
-
-                                    <li>
-                                      <a class="text-link" href="my-shop.html">
-                                        My shop
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a class="text-link" href="my-sales.html">
-                                        My sale
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a
-                                        class="text-link"
-                                        href="my-payments.html"
-                                      >
-                                        My payments
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a
-                                        class="text-link"
-                                        href="my-orders.html"
-                                      >
-                                        My orders
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a
-                                        class="text-link"
-                                        href="my-dashboard.html"
-                                      >
-                                        My dashboard
-                                      </a>
-                                    </li>
-
-                                    <li>
-                                      <a
-                                        class="text-link"
-                                        href="loggedin-user-profile.html"
-                                      >
-                                        My profile
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a
-                                        class="text-link"
-                                        href="invite-friends.html"
-                                      >
-                                        Invite friends
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a class="text-link" href="forum.html">
-                                        Forum
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a class="text-link" href="add-shop.html">
-                                        Add Shop
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a
-                                        class="text-link"
-                                        href="add-product.html"
-                                      >
-                                        Add product
-                                      </a>
-                                    </li>
-                                    <li>
-                                      <a
-                                        class="text-link"
-                                        href="add-addresses.html"
-                                      >
-                                        Add addresses
-                                      </a>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div class="col-xl-3 col-md-4">
-                                <div class="menu-widget-grid">
-                                  <h5 class="text-uppercase font-bold">
-                                    Admin Panel
-                                  </h5>
-                                  <ul class="pt-3 menu-list-style">
-                                    <li>
-                                      <a
-                                        class="text-link"
-                                        href="admin-panel/index.html"
-                                      >
-                                        View pages
-                                      </a>
-                                    </li>
-                                  </ul>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/* <!-- /offcanvas menu --> */}
-
-                {/* <!-- Navbar menu--> */}
                 <nav class="navbar p-0 navbar-expand-lg">
                   <div class="logo my-3 my-md-0">
                     <a class="navbar-brand" href="index.html">
@@ -795,15 +113,26 @@ function Header() {
                           ></span>
                         </a>
                       </li>
-                      <li class="list-inline-item d-none d-md-inline-block sell-pdt-menu-style">
+                      <ul class="signup-col">
+                        <li>
+                          <a
+                            class="btn btn-signup"
+                            data-toggle="modal"
+                            href="#login"
+                          >
+                            <i class="far fa-user"></i> Sign in
+                          </a>
+                        </li>
+                      </ul>
+                      {/* <li class="list-inline-item d-none d-md-inline-block sell-pdt-menu-style">
                         <a href="add-product.html">
                           <span
                             data-feather="globe"
                             class="d-inline-block mr-0 mr-lg-3"
                           ></span>
-                          <span class="d-none d-lg-inline-block">Log In</span>
+                          <span class="d-none d-lg-inline-block">Sing In</span>
                         </a>
-                      </li>
+                      </li> */}
                       <li class="list-inline-item d-none d-md-inline-block sell-pdt-menu-style">
                         <a href="add-product.html">
                           <span
@@ -826,6 +155,134 @@ function Header() {
         </div>
       </div>
       {/* <!-- /Main Header Section --> */}
+      <div class="modal fade custom-modal" id="login">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header pb-0">
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="modal-body pt-0">
+              <div class="text-center pt-0 mb-4">
+                <h2 class="modal-title">Sign in</h2>
+              </div>
+              <form>
+                <div class="modal-info">
+                  <div class="row form-row form-style-1">
+                    <div class="col-12 col-md-12">
+                      <div class="form-group">
+                        <div class="search-form">
+                          <div class="input-group search-box mb-3">
+                            <input
+                              type="email"
+                              class="form-control search-input"
+                              placeholder="Email address"
+                              aria-describedby="maila"
+                            />
+                            <div class="input-group-append search-btn">
+                              <button
+                                class="btn btn-outline-secondary"
+                                type="button"
+                                id="maila"
+                              >
+                                <i class="fas fa-envelope"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="search-form">
+                          <div class="input-group search-box mb-3">
+                            <input
+                              type="password"
+                              class="form-control search-input"
+                              placeholder="Password"
+                              aria-describedby="pass"
+                            />
+                            <div class="input-group-append search-btn">
+                              <button
+                                class="btn btn-outline-secondary"
+                                type="button"
+                                id="pass"
+                              >
+                                <i class="fas fa-lock"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row form-row mb-3">
+                    <div class="col-6">
+                      <label class="custom_check d-block">
+                        <input type="checkbox" name="mail" />
+                        <span class="checkmark"></span> Stay signed in
+                      </label>
+                    </div>
+                    <div class="col-6 text-right">
+                      <a class="forgot-link" href="#">
+                        Forgot Password ?
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="submit-section text-center">
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-block submit-btn"
+                  >
+                    Sign Up
+                  </button>
+                </div>
+                <div class="login-or">
+                  <span class="or-line"></span>
+                  <span class="span-or">or</span>
+                </div>
+                <a href="#" class="btn btn-outline-primary btn-block">
+                  <img
+                    src="assets/img/google.png"
+                    class="img-fluid mr-1"
+                    alt="google"
+                  />{" "}
+                  Continue with Google
+                </a>
+                <a href="#" class="btn btn-outline-primary btn-block">
+                  <i class="fab fb-icon fa-facebook-f mr-1"></i> Continue with
+                  Facebook
+                </a>
+                <a href="#" class="btn btn-outline-primary btn-block">
+                  <i class="fab fa-apple mr-1"></i> Continue with Apple
+                </a>
+                <p class="policy-text">
+                  By clicking Register or Continue with Google, Facebook, or
+                  Apple, you agree to NookX's <a href="#">Terms of Use</a> and{" "}
+                  <a href="#">Privacy Policy</a>. NookX may send you
+                  communications; you may change your preferences in your
+                  account settings. We'll never post without your permission.
+                </p>
+                <div class="text-center member">
+                  Join a member?{" "}
+                  <a
+                    data-toggle="modal"
+                    href="#register"
+                    class="custom-modal-close"
+                  >
+                    Sign Up
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
   );
 }
