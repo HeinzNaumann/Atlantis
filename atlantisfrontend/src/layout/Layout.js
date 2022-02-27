@@ -5,7 +5,6 @@ export function Layout() {
   return (
     <div>
       <Header />
-      {/* <Footer /> */}
     </div>
   );
 }

@@ -1,0 +1,39 @@
+/* ************************************ 
+    :: 8.0 LOGIN & REGISTER CSS
+***************************************/
+
+.bg-input {
+  border: 1px solid #ced4da;
+}
+
+.bg-input:focus {
+  border: 1px solid #1579ee;
+  background-color: transparent;
+}
+
+.btn-social:hover,
+.btn-social:focus {
+  background-color: #1579ee;
+  border: 1px solid #1579ee;
+  color: #ffffff;
+}
+
+.form-control::-webkit-input-placeholder {
+  /* Edge */
+  color: #898f96;
+}
+
+.form-control:-ms-input-placeholder {
+  /* Internet Explorer */
+  color: #898f96;
+}
+
+.form-control::placeholder {
+  color: #898f96;
+}
+
+.custom-control-label::before,
+.custom-control-label::after {
+  width: 1rem;
+  height: 1rem;
+}
