@@ -1,5 +1,5 @@
 //import Layout from "../layout/Layout";
-import "./detail.css";
+//import "../css/";
 function Detail() {
   // return <Layout />;
   return (
