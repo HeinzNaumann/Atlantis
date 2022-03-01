@@ -1,9 +1,8 @@
-//import Detail from "./components/Detail";
-//import Layout from "./layout/Layout";
+import Detail from "./components/Detail";
+import Layout from "./layout/Layout";
 //import ErrorPage from "./components/ErrorPage";
-import Login1 from "./login/Login1";
-//import Footer from "./layout/Footer";
-//import Detail from "./components/Detail";
+//import Login1 from "./login/Login1";
+import Footer from "./layout/Footer";
 
 // import {
 //   BrowserRouter as Router,
@@ -27,10 +26,11 @@ import Login1 from "./login/Login1";
 function App() {
   return (
     <>
-      <Login1 />
-      {/* <Layout />
+      {/* <Login1 /> */}
+      <Layout />
       <Detail />
-      <Footer /> */}
+      <Footer />
+      {/* <ErrorPage /> */}
     </>
   );
 }
