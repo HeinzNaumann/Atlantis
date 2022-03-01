@@ -1,0 +1,104 @@
+/* ************************
+    :: 25.0 FOOTER CSS
+***************************/
+
+footer {
+  background-color: #000000;
+  color: #999999;
+}
+
+footer a {
+  color: #999999;
+}
+
+.footer-hr {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer .bottom-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer h5 {
+  font-weight: 500;
+  line-height: 1rem;
+}
+
+.menu-list-style a {
+  position: relative;
+}
+
+.menu-list-style a:before {
+  width: 14px;
+  height: 1px;
+  left: 20px;
+  top: 50%;
+  content: "";
+  position: absolute;
+  background-color: #999999;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  z-index: -1;
+}
+
+.menu-list-style a:hover {
+  padding-left: 23px;
+}
+
+.menu-list-style a:hover:before {
+  opacity: 1;
+  left: 0px;
+  background-color: #1579ee;
+  visibility: visible;
+  z-index: 1;
+}
+
+footer .menu-list-style li {
+  margin-bottom: 0.5rem;
+}
+
+.social-widget ul li a {
+  position: relative;
+  width: 41px;
+  height: 41px;
+  color: #999999;
+  border: 2px solid #999999;
+  border-radius: 50%;
+}
+
+.social-widget ul li a:hover {
+  color: #ffffff;
+  border: 1px solid #1579ee;
+  background-color: #1579ee;
+}
+
+.social-widget ul li i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.app-widget a {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.app-widget a:hover {
+  background-color: #1579ee;
+}
+
+.social-widget ul li i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
