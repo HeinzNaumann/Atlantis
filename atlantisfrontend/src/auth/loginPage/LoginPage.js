@@ -28,12 +28,9 @@ const LoginPage = () => {
     return (
         <Formik
             initialValues={{email: '', password: ''}}
-            onSubmit={(values, { setSubmitting }) => {
-                    
+            onSubmit={(values, { setSubmitting }) => {         
                     handleSubmit(values);
-       
                     setSubmitting(false);
-
 
             }}
             validationSchema={Yup.object({
