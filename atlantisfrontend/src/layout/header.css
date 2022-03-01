@@ -91,6 +91,7 @@ button:focus {
 
 img {
   max-width: 100%;
+  color: pink;
 }
 
 input[type="email"],

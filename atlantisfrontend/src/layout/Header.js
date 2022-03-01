@@ -1,4 +1,5 @@
 import "./header.css";
+import logo from "../assets/img/logo-atlantis-small.png";
 
 function Header() {
   return (
@@ -13,8 +14,7 @@ function Header() {
                 <nav class="navbar p-0 navbar-expand-lg">
                   <div class="logo my-3 my-md-0">
                     <a class="navbar-brand" href="index.html">
-                      {/* <img src="assets/img/logo.png" alt="logo image" class="img-fluid"/> */}
-                      alt=" LOGO ATLANTIS"
+                      <img src={logo} alt="logo " class="img-fluid" />
                     </a>
                   </div>
                   <div class="header-items text-white ml-auto">
