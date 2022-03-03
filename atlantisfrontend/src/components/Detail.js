@@ -1,6 +1,24 @@
 //import Layout from "../layout/Layout";
 import "./detail.css";
-function Detail() {
+import { detailAds } from "./service";
+import { useEffect, useState } from "react";
+
+function Detail({
+  nombre,
+  imagen,
+  descripcion,
+  venta,
+  precio,
+  tags,
+  reservado,
+  vendido,
+  usuario,
+}) {
+  const [advert, setAdvert] = useState([]);
+
+  useEffect(() => {
+    detailAds().then((data) => setAdvert(data));
+  }, []);
   // return <Layout />;
   return (
     <div class="home-wrapper">
@@ -19,7 +37,7 @@ function Detail() {
                       <div class="col-md-6 col-lg-3">
                         <div class="pdt-item-blk mb-4">
                           <div class="pdt-img-blk">
-                            <h1>NUESTRO ANUNCIO</h1>
+                            <h1>{nombre}</h1>
                             <img
                               src="./assets/img/logo-atlantis-small.png"
                               alt="Winter Coat with Hat"
@@ -62,14 +80,16 @@ function Detail() {
                                 <p class="text-green font-bold">In Stock</p>
                               </div>
                               <h5 class="text-theme font-amt font-bold">
-                                $500
+                                {precio}
+                                {venta}
                               </h5>
                               <h4>
                                 <a
                                   href="single-product.html"
                                   class="display-block text-link"
                                 >
-                                  Sonic Headphone
+                                  {descripcion}
+                                  {imagen}
                                 </a>
                               </h4>
                             </div>
@@ -81,7 +101,7 @@ function Detail() {
                                   alt="Product Seller Image"
                                 />
                                 <div class="media-body">
-                                  <h6 class="mb-0">Aana</h6>
+                                  <h6 class="mb-0">{usuario}</h6>
                                   <div class="rating-blk">
                                     <span
                                       data-feather="star"
@@ -107,13 +127,14 @@ function Detail() {
                                       href="javascript:;"
                                       class="font-bold text-grey"
                                     >
-                                      ( 23 )
+                                      {tags}
                                     </a>
                                   </div>
                                 </div>
                               </div>
                               <p class="text-green font-bold">
-                                99.4 % Positive feedback
+                                {reservado}
+                                {vendido}
                               </p>
                             </div>
                           </div>
