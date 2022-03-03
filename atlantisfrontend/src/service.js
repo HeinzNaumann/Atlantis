@@ -1,11 +1,11 @@
 import client, {
   removeAuthorizationHeader,
   setAuthorizationHeader,
-} from "../api/client";
-import storage from "../utils/storage";
+} from "../../api/client";
+import storage from "../../utils/storage";
 
-export const login = ({ mem = 1, ...credentials }) => {
-  return client.post("/api/auth", credentials).then(({ accessToken }) => {
+export const login = ({ mem, ...credentials }) => {
+  return client.post("/api/auth/login", credentials).then(({ accessToken }) => {
     setAuthorizationHeader(accessToken);
     if (mem) {
       storage.set("auth", accessToken);
