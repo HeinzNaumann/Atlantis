@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import LoginPage from './auth/loginPage/LoginPage.js';
+import LoginPage from './components/auth/loginPage/index'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
