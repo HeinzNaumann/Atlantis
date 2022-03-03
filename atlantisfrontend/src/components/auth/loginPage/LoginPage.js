@@ -57,13 +57,13 @@ function LoginPage({ onLogin, history, location }) {
           value={value.password}
           onChange={handleChange}
         ></input>
-        <span> Click para mantenerme logeado </span>
+        {/* <span> Click para mantenerme logeado </span>
         <input
           type='checkbox'
           name='mem'
           checked={value.mem}
           onChange={handleChange}
-        ></input>
+        ></input> */}
         <Button
           type='submit'
           variant='primary'

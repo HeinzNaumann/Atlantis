@@ -1,9 +1,10 @@
 import { useState } from "react";
+import signupPage from ".";
 import Button from "../../common/button";
 import { login } from "../service";
 import "./SignupPage.css";
 
-function LoginPage({ onLogin, history, location }) {
+function SignupPage({ onLogin, history, location }) {
   const [value, setValue] = useState({
     name: "",
     email: "",
@@ -41,7 +42,7 @@ function LoginPage({ onLogin, history, location }) {
 
   return (
     <div className='LoginPage'>
-      <h1 className='loginPage-title'> Log in to WallaClon </h1>
+      <h1 className='loginPage-title'> Signup to WallaClon </h1>
       <form onSubmit={handleSubmit}>
          <span> Introduce tu nombre de usuario </span>
         <input
@@ -66,20 +67,14 @@ function LoginPage({ onLogin, history, location }) {
           value={value.password}
           onChange={handleChange}
         ></input>
-               <span> Introduce tu contraseña </span>
+               <span> Repite tu contraseña</span>
         <input
           type='password'
           name='password'
           value={value.password}
           onChange={handleChange}
         ></input>
-        <span> Click para mantenerme logeado </span>
-        <input
-          type='checkbox'
-          name='mem'
-          checked={value.mem}
-          onChange={handleChange}
-        ></input>
+
         <Button
           type='submit'
           variant='primary'
@@ -99,4 +94,4 @@ function LoginPage({ onLogin, history, location }) {
 
 
 
-export default LoginPage;
+export default SignupPage;
