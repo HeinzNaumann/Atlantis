@@ -1,5 +1,8 @@
 import "./header.css";
 import logo from "../assets/img/logo-atlantis-small.png";
+import en from "../assets/img/en.png";
+import fr from "../assets/img/fr.png";
+//import emptyCart from "../assets/emptyCart.png";
 
 function Header() {
   return (
@@ -72,7 +75,7 @@ function Header() {
                           <h4>Your shopping cart is empty!</h4>
                           <img
                             class="d-none d-md-inline-block img-fluid py-5"
-                            // src="assets/img/empty-cart.png"
+                            //src={emptyCart}
                             alt="Empty Cart"
                           />
                           <a
@@ -89,7 +92,7 @@ function Header() {
                           class="dropdown-toggle"
                           data-toggle="dropdown"
                         >
-                          <img src="assets/img/en.png" alt="Language Icon" />
+                          <img src={en} alt="Language Icon" />
                         </a>
                         <div class="dropdown-menu bg-grey dropdown-xs text-center shadow-lg radius-0 border-0 r-0 l-auto">
                           <img
@@ -100,7 +103,8 @@ function Header() {
                           <hr class="my-4" />
                           <img
                             class="mb-4 d-block mx-auto"
-                            // src="assets/img/fr.png"
+                            src={fr}
+                            alt="Language Icon"
                             alt="Language Icon"
                           />
                         </div>
