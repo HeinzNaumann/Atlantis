@@ -2,6 +2,7 @@
 import "./detail.css";
 import { detailAds } from "./service";
 import { useEffect, useState } from "react";
+//import { DeleteButton } from "../common/DeleteButton";
 
 function Detail({
   nombre,
@@ -13,6 +14,7 @@ function Detail({
   reservado,
   vendido,
   usuario,
+  //onDelete,
 }) {
   const [advert, setAdvert] = useState([]);
 
@@ -81,7 +83,7 @@ function Detail({
                               </div>
                               <h5 class="text-theme font-amt font-bold">
                                 {precio}
-                                {venta}
+                                {venta ? "Sell" : "Buy"}
                               </h5>
                               <h4>
                                 <a
@@ -89,14 +91,13 @@ function Detail({
                                   class="display-block text-link"
                                 >
                                   {descripcion}
-                                  {imagen}
                                 </a>
                               </h4>
                             </div>
                             <div class="content-btm-blk">
                               <div class="media py-3">
                                 <img
-                                  src="assets/img/user-avatar-5.png"
+                                  src={imagen}
                                   class="align-self-center mr-4"
                                   alt="Product Seller Image"
                                 />
@@ -147,6 +148,7 @@ function Detail({
             </div>
           </div>
         </div>
+        {/* //<DeleteButton onClick={onDelete}>Delete</DeleteButton> */}
       </section>
     </div>
   );
