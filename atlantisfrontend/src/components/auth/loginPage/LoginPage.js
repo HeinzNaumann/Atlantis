@@ -3,6 +3,9 @@ import Button from "../../common/button";
 import { login } from "../service";
 import "./LoginPage.css";
 
+import HeaderMainPage from "../../HeaderMainPage"
+import Footer from "../../Footer"
+
 function LoginPage({ onLogin, history, location }) {
   const [value, setValue] = useState({
     email: "",
@@ -39,7 +42,10 @@ function LoginPage({ onLogin, history, location }) {
   };
 
   return (
+
+
     <div className='LoginPage'>
+      <HeaderMainPage/>
       <h1 className='loginPage-title'> Log in to WallaClon </h1>
       <form onSubmit={handleSubmit}>
         <span> Introduce tu email </span>
@@ -77,6 +83,8 @@ function LoginPage({ onLogin, history, location }) {
           {error.message}
         </div>
       )}
+
+      <Footer/>
     </div>
   );
 }

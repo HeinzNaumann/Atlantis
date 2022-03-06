@@ -1,6 +1,6 @@
 
 
-export const HeaderMainPage = () => {
+const HeaderMainPage = () => {
   return (
     <header className="bg-black">
       {/* Main header Section */}
