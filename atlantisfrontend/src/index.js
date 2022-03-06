@@ -10,7 +10,7 @@ ReactDOM.render(
     <LoginPage />
     <SignupPage/>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 
