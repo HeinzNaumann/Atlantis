@@ -8,7 +8,7 @@ import Footer from "../../Footer"
 
 function LoginPage({ onLogin, history, location }) {
   const [value, setValue] = useState({
-    email: "",
+    nombre: "",
     password: "",
     mem: false,
   });
@@ -50,10 +50,10 @@ function LoginPage({ onLogin, history, location }) {
       <form onSubmit={handleSubmit}>
         <span> Introduce tu email </span>
         <input
-          type='email'
-          name='email'
+          type='nombre'
+          name='nombre'
           className='loginForm-field'
-          value={value.email}
+          value={value.nombre}
           onChange={handleChange}
         ></input>
         <span> Introduce tu contraseña </span>
@@ -73,7 +73,7 @@ function LoginPage({ onLogin, history, location }) {
         <Button
           type='submit'
           variant='primary'
-          disabled={isLoading || !value.email || !value.password}
+          disabled={isLoading || !value.nombre || !value.password}
         >
           Log in
         </Button>
