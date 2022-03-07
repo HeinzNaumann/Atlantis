@@ -7,7 +7,7 @@ const EmptyList = () => {
   return <p> Nothing to show up </p>;
 };
 
-export const AdsListMainPage = (props) => {
+ const AdsListMainPage = (props) => {
   const [adsList, setAdsList] = useState([]);
   const [filterByName, setFilterByName] = useState("");
 
@@ -69,3 +69,6 @@ export const AdsListMainPage = (props) => {
     </section>
   );
 };
+
+
+export default AdsListMainPage;

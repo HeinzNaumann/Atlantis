@@ -3,8 +3,8 @@ import Button from "../../common/button";
 import { login } from "../service";
 import "./LoginPage.css";
 
-import HeaderMainPage from "../../HeaderMainPage"
-import Footer from "../../Footer"
+import Layout from '../../../layout/Layout'
+
 
 function LoginPage({ onLogin, history, location }) {
   const [value, setValue] = useState({
@@ -43,9 +43,9 @@ function LoginPage({ onLogin, history, location }) {
 
   return (
 
-
+    <Layout>
     <div className='LoginPage'>
-      <HeaderMainPage/>
+
       <h1 className='loginPage-title'> Log in to WallaClon </h1>
       <form onSubmit={handleSubmit}>
         <span> Introduce tu email </span>
@@ -84,8 +84,8 @@ function LoginPage({ onLogin, history, location }) {
         </div>
       )}
 
-      <Footer/>
-    </div>
+      </div>
+    </Layout>
   );
 }
 

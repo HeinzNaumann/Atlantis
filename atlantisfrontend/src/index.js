@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import SignupPage from './components/auth/signupPage/SignupPage';
-import LoginPage from './components/auth/loginPage/index'
+import { BrowserRouter as Router } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import App from "./App"
 
 ReactDOM.render(
   <React.StrictMode>
-    <LoginPage />
-    <SignupPage/>
+    <Router>
+      <App />
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );
