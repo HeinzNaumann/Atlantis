@@ -5,7 +5,7 @@ export const login = (credentials) => {
     setAuthorizationHeader(accessToken);
   });
 };
-export const detailAds = (id) => {
-  const url = "http://localhost:3000";
-  return clients.get(url, id);
+export const detailAds = () => {
+  const url = "/api/ads/62264cc5b06439597a080232";
+  return clients.get(url);
 };
