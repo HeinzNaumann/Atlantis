@@ -7,6 +7,10 @@ export const getAdsList = () => {
 
 export const createAd = (adObj) => {
     const url = "/api/ads";
-    console.log(adObj)
     return client.post(url, adObj)
+}
+
+export const getTags = () =>{
+    const url = "/api/ads/tags";
+    return client.get(url);
 }

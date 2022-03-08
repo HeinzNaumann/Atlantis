@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { createAd } from "../DataService";
+import { useEffect, useState } from "react";
+import { createAd, getTags } from "../DataService";
 import FormField from "./FormField";
 
-export function NewAdPage() {
+export function NewAdPage({ history }) {
   const [ad, setAd] = useState({
     nombre: "",
     imagen: "",
@@ -13,6 +13,7 @@ export function NewAdPage() {
     usuario: "",
   });
   const [filesInput, setFilesInput] = useState("");
+  const [tags, setTags] = useState([]);
 
   const handleChange = (event) => {
     setFilesInput({ [event.target.name]: event.target.files });
@@ -26,13 +27,21 @@ export function NewAdPage() {
     event.preventDefault();
     try {
       const data = new FormData(event.target);
-      data.append("files input", filesInput)
+      data.append("files input", filesInput);
       const newAd = await createAd(data);
       console.log("Ad Created", newAd);
+      if (newAd) {
+        history.push(`/adverts/${newAd.id}`);
+      }
     } catch (err) {
       console.log(err);
     }
   };
+
+  useEffect(() => {
+    getTags().then((tags) => setTags(tags));
+  }, []);
+  const { results } = tags;
 
   return (
     <div className="new-ad-page">
@@ -96,7 +105,15 @@ export function NewAdPage() {
             value={ad.descripcion}
             onChange={handleChange}
           ></FormField>
-          <select name="tags" className="form-select" multiple></select>
+          <select name="tags" className="form-select" multiple>
+            {tags
+              ? results?.map((tag) => (
+                  <option key={tag} value={tag}>
+                    {tag}
+                  </option>
+                ))
+              : []}
+          </select>
           <FormField
             type="text"
             name="usuario"
