@@ -2,14 +2,18 @@ import { useEffect, useState } from "react";
 import { getAdsList } from "../DataService";
 import Ad from "./Ad";
 import FormField from "./FormField";
+import { Range } from "rc-slider";
+
+import "rc-slider/assets/index.css";
 
 const EmptyList = () => {
   return <p> Nothing to show up </p>;
 };
 
- const AdsListMainPage = (props) => {
+const AdsListMainPage = (props) => {
   const [adsList, setAdsList] = useState([]);
   const [filterByName, setFilterByName] = useState("");
+  const [filterByPrice, setFilterByPrice] = useState([0, 1000]);
 
   useEffect(() => {
     getAdsList().then((adsList) => setAdsList(adsList));
@@ -20,15 +24,19 @@ const EmptyList = () => {
   };
 
   const filteredName = (ad) => {
-    for (var i = 0; i >= 0; i++) {
-      return ad[i].nombre.includes(filterByName);
-    }
+    return ad.nombre.includes(filterByName);
   };
 
-  const filteredAds = Object.values(adsList).filter((ad) => {
-    return filteredName(ad);
+  const filteredPrice = (ad) => {
+    return ad.precio >= filterByPrice[0] && ad.precio <= filterByPrice[1];
+  };
+  console.log(adsList)
+  const { results } = adsList;
+  console.log(results)
+
+  const filteredAds = results.filter((ad) => {
+    return (filteredPrice(ad) && filteredName(ad));
   });
-  console.log(adsList);
   console.log(filteredAds);
 
   return (
@@ -49,10 +57,13 @@ const EmptyList = () => {
                     placeholder="Find ads"
                     onChange={handleSearch}
                   ></FormField>
+                  <p>Min Price: {filterByPrice[0]}</p>{" "}
+                  <p>Max Price: {filterByPrice[1]}</p>
+                  <Range value={filterByPrice} onChange={setFilterByPrice} />
                   <div className="row">
-                    {filteredAds.length !== 0 ? (
+                    {adsList.length !== 0 ? (
                       <div>
-                        {filteredAds[0].map((ad) => (
+                        {filteredAds.map((ad) => (
                           <Ad {...ad} />
                         ))}
                       </div>
@@ -69,6 +80,5 @@ const EmptyList = () => {
     </section>
   );
 };
-
 
 export default AdsListMainPage;
