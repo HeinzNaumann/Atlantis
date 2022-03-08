@@ -3,13 +3,26 @@ import "./detail.css";
 import { detailAds } from "./service";
 import { useEffect, useState } from "react";
 //import { DeleteButton } from "../common/DeleteButton";
+import { useParams, useHistory } from "react-router-dom";
+import React from "react";
+function Detail({ match }) {
+  const { advertId } = match.params.id;
+  const history = useHistory();
+  const [advert, setAdvert] = useState();
 
-function Detail() {
-  const [advert, setAdvert] = useState([]);
+  const getAdvertById = async () => {
+    try {
+      const advertData = await detailAds(advertId);
+      return advertData;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
-    detailAds().then((advert) => setAdvert(advert));
+    setAdvert(getAdvertById);
   }, []);
+
   // return <Layout />;
   return (
     <>
@@ -69,7 +82,7 @@ function Detail() {
                                     <img
                                       src={advert.imagen}
                                       class="align-self-center mr-4"
-                                      alt="Product Seller Image"
+                                      alt="Product Seller"
                                     />
                                     <div class="media-body">
                                       <h6 class="mb-0">{advert.usuario}</h6>
