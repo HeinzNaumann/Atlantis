@@ -6,6 +6,8 @@ import LoginPage from '../src/components/auth/loginPage/LoginPage';
 import SignupPage from '../src/components/auth/signupPage/SignupPage'
 import AdsListMainPage from './components/AdsListMainPage'
 import NewAdPage from "./components/NewAdPage";
+import PasswordForgot from "./components/auth/passwordForgot/PasswordForgot";
+
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
       <Route exact path="/adverts/new" component={NewAdPage} />
       <Route exact path="/login" component={LoginPage} />
       <Route exact path="/signup" component={SignupPage} />
+      <Route exact path="/password-forgot" component={PasswordForgot} /> 
       <Route exact path="/404"></Route>
       <Route exact path="/" component={AdsListMainPage} />
       <Redirect to="/404" />

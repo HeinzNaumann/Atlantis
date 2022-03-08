@@ -6,11 +6,15 @@ import storage from "../../utils/storage";
 
 export const login = ({ mem = 1, ...credentials }) => {
   return client.post("/api/auth", credentials).then(({ accessToken }) => {
-    setAuthorizationHeader(accessToken);
-    if (mem) {
-      storage.set("auth", accessToken);
-    }
+    // setAuthorizationHeader(accessToken);
+    // if (mem) {
+    //   storage.set("auth", accessToken);
+    // }
   });
+};
+
+export const signup = ({  ...credentials }) => {
+  return client.post("/api/users", credentials);
 };
 
 export const logout = () =>
