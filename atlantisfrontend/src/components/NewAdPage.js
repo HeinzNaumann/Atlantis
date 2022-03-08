@@ -12,8 +12,10 @@ export function NewAdPage() {
     tags: [""],
     usuario: "",
   });
+  const [filesInput, setFilesInput] = useState("");
 
   const handleChange = (event) => {
+    setFilesInput({ [event.target.name]: event.target.files });
     setAd({
       ...ad,
       [event.target.name]: event.target.value,
@@ -23,9 +25,10 @@ export function NewAdPage() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-       const data = new FormData(event.target);
-      // const newAd = await createAd(data);
-      console.log(data)
+      const data = new FormData(event.target);
+      data.append("files input", filesInput)
+      const newAd = await createAd(data);
+      console.log("Ad Created", newAd);
     } catch (err) {
       console.log(err);
     }
@@ -61,7 +64,7 @@ export function NewAdPage() {
             placeholder="Are you selling?"
             label="Sale"
             className="venta"
-            value= {true}
+            value={true}
             checked={ad.venta === true}
             onChange={handleChange}
           ></FormField>
