@@ -1,8 +1,8 @@
 import Detail from "./components/Detail";
-//import Layout from "./layout/Layout";
+import Layout from "./layout/Layout";
 //import ErrorPage from "./components/ErrorPage";
 //import Login1 from "./login/Login1";
-//import Footer from "./layout/Footer";
+import Footer from "./layout/Footer";
 import NewAdPage from "./components/NewAdPage";
 import { Switch, Route, Redirect } from "react-router-dom";
 
@@ -30,10 +30,10 @@ function App() {
     <>
       <Switch>
         <Route exact path="/adverts/new" component={NewAdPage} />
-
+        <Layout />
         <Route exact path="/adverts/:id" component={Detail} />
-
-        <Redirect to="/404" />
+        <Footer />
+        {/* <Redirect to="/404" /> */}
       </Switch>
     </>
   );

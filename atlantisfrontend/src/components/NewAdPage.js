@@ -29,9 +29,9 @@ export function NewAdPage({ history }) {
       const data = new FormData(event.target);
       data.append("files input", filesInput);
       const newAd = await createAd(data);
-      console.log("Ad Created", newAd);
+
       if (newAd) {
-        history.push(`/advert/${newAd.id}`);
+        history.push(`/adverts/${newAd.result._id}`);
       }
     } catch (err) {
       console.log(err);
