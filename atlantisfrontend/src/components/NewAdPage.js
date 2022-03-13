@@ -35,7 +35,7 @@ export function NewAdPage({ history }) {
       const newAd = await createAd(data);
       console.log("Ad Created", newAd);
       if (newAd) {
-        history.push(`/adverts/${newAd.id}`);
+        history.push("/adverts");
       }
     } catch (err) {
       console.log(err);

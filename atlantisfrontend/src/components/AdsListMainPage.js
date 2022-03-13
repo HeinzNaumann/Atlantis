@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
-import { getAdsList } from "../DataService";
+import { getAdsList, getTags } from "../DataService";
 import Ad from "./Ad";
 import FormField from "./FormField";
+import Layout from "../layout/Layout";
 import { Range } from "rc-slider";
 
 import "rc-slider/assets/index.css";
+import "../css/AdsListMainPage.css";
+import { Pagination } from "./common/Pagination";
 
 const EmptyList = () => {
   return <p> Nothing to show up </p>;
@@ -12,15 +15,34 @@ const EmptyList = () => {
 
 const AdsListMainPage = (props) => {
   const [adsList, setAdsList] = useState([]);
+  //const [totalPages, setTotalPages] = useState(0);
   const [filterByName, setFilterByName] = useState("");
   const [filterByPrice, setFilterByPrice] = useState([0, 1000]);
+  const [filterBySale, setFilterBySale] = useState("all");
+  const [tags, setTags] = useState([]);
+  const [filterByTag, setFilterByTag] = useState([]);
 
   useEffect(() => {
-    getAdsList().then((adsList) => setAdsList(adsList));
+    getAdsList().then(
+      (adsList) => setAdsList(adsList)
+    );
+  }, []);
+
+  useEffect(() => {
+    getTags().then((tags) => setTags(tags));
   }, []);
 
   const handleSearch = (event) => {
     setFilterByName(event.target.value);
+  };
+
+  const handleRadio = (event) => {
+    setFilterBySale(event.target.value);
+  };
+
+  const handleSelectChange = (event) => {
+    const selectedOptions = Array.from(event.target.selectedOptions);
+    setFilterByTag(selectedOptions.map((tag) => tag.value));
   };
 
   const filteredName = (ad) => {
@@ -30,54 +52,76 @@ const AdsListMainPage = (props) => {
   const filteredPrice = (ad) => {
     return ad.precio >= filterByPrice[0] && ad.precio <= filterByPrice[1];
   };
-  console.log(adsList)
-  const { results } = adsList;
-  console.log(results)
 
-  const filteredAds = results.filter((ad) => {
-    return (filteredPrice(ad) && filteredName(ad));
-  });
-  console.log(filteredAds);
+  const filteredTags = (ad) => {
+    return filterByTag.every((tag) => ad.tags.includes(tag));
+  };
+
+  const filteredSale = (ad) => {
+    console.log(ad.venta);
+    const sellBuy = ad.venta ? true : false;
+    return filterBySale === "all" || filterBySale === sellBuy;
+  };
+
+  const { results } = adsList;
+
+  const filteredAds =
+    results?.filter((ad) => {
+      return filteredPrice(ad) && filteredName(ad) && filteredTags(ad); //&& filteredSale(ad);
+    }) || [];
 
   return (
-    <section className="tab-blk-style bg-grey py-6" {...props}>
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <div className="tab-list-contents">
-              <div className="tab-content">
-                <div
-                  role="tabpanel"
-                  className="tab-pane fade show active"
-                  id="geo"
-                >
-                  <FormField
-                    type="text"
-                    name="query"
-                    placeholder="Find ads"
-                    onChange={handleSearch}
-                  ></FormField>
-                  <p>Min Price: {filterByPrice[0]}</p>{" "}
-                  <p>Max Price: {filterByPrice[1]}</p>
-                  <Range value={filterByPrice} onChange={setFilterByPrice} />
-                  <div className="row">
-                    {adsList.length !== 0 ? (
-                      <div>
-                        {filteredAds.map((ad) => (
-                          <Ad {...ad} />
-                        ))}
-                      </div>
-                    ) : (
-                      <EmptyList />
-                    )}
-                  </div>
-                </div>
-              </div>
+    <Layout>
+      <section className="tab-blk-style bg-grey py-6" {...props}>
+        <FormField
+          type="text"
+          name="query"
+          placeholder="Find ads"
+          onChange={handleSearch}
+        ></FormField>
+        <p>Min Price: {filterByPrice[0]}</p>{" "}
+        <p>Max Price: {filterByPrice[1]}</p>
+        <Range value={filterByPrice} onChange={setFilterByPrice} />
+        <input type="radio" name="venta" value={true} onChange={handleRadio} />
+        Sell
+        <input type="radio" name="venta" value={false} onChange={handleRadio} />
+        Buy
+        <input
+          type="radio"
+          name="venta"
+          value="all"
+          checked
+          onChange={handleRadio}
+        />
+        All
+        <select
+          name="tags"
+          className="form-select"
+          onChange={handleSelectChange}
+          multiple
+        >
+          {tags
+            ? tags.results?.map((tag) => (
+                <option key={tag} value={tag}>
+                  {tag}
+                </option>
+              ))
+            : []}
+        </select>
+        <>
+          {adsList.length !== 0 ? (
+            <div className="ad-container">
+              {filteredAds.map((ad) => (
+                <Ad {...ad} />
+              ))}
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+          ) : (
+            <EmptyList />
+          )}
+        </>
+      </section>
+      {/* <Pagination {...filteredAds}></Pagination> */}
+    </Layout>
   );
 };
 
