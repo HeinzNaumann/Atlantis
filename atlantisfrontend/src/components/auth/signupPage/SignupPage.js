@@ -92,7 +92,7 @@ function SignupPage({ onLogin, history, location }) {
        
       //onLogin();
       //const { from } = location.state || { from: { pathname: "/" } };
-      //history.push("/SignupPage");
+      history.push("/adverts");
       } catch (error) {
       setError(error);
       setIsLoading(false);

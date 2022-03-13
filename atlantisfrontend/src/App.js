@@ -8,10 +8,10 @@ import AdsListMainPage from './components/AdsListMainPage'
 import NewAdPage from "./components/NewAdPage";
 import PasswordForgot from "./components/auth/passwordForgot/PasswordForgot";
 import AccountConfirm from "./components/auth/accountConfirm/AccountConfirm"
-import {AuthProvider} from "./context/AuthProvider";
+//import {AuthProvider} from "./context/AuthProvider";
 function App() {
   return (
-    <AuthProvider>
+   // <AuthProvider>
     <Switch>
       <Route exact path="/adverts" component={AdsListMainPage} />
       <Route exact path="/adverts/new" component={NewAdPage} />
@@ -23,7 +23,7 @@ function App() {
       <Route exact path="/" component={AdsListMainPage} />
       <Redirect to="/404" />
       </Switch>
-      </AuthProvider>
+     // </AuthProvider>
   );
 }
 export default App;

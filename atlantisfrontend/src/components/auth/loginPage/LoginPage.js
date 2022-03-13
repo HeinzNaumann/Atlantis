@@ -68,7 +68,7 @@ function LoginPage({ onLogin, history, location }) {
 
       //onLogin();
       //const { from } = location.state || { from: { pathname: "/" } };
-      //history.push(from);
+      history.push("/login");
     } catch (error) {
       setError(error);
       setIsLoading(false);
