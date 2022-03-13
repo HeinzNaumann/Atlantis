@@ -1,16 +1,21 @@
 .formField-label {
-    background-color: rgb(245, 248, 250);
+    text-align: left;
+    background-color: rgb(229, 235, 238);
     border-bottom-style: solid;
     border-bottom-width: 2px;
     border-bottom: solid 3px rgb(101, 119, 134);
     border-radius: 2px;
+    border: solid 1px rgb(125, 136, 125);
+    border-radius: 10px;
     color: rgb(129, 151, 132);
     display: flex;
     flex-direction: column;
     transition: all 0.2s;
+
   }
   
   .formField-input {
+    
     background-color: transparent;
     font-size: 20px;
     height: 36px;
