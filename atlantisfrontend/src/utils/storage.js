@@ -1,20 +1,20 @@
-const storage = {
-  get(key) {
-    const value = localStorage.getItem(key);
-    if (!value) {
-      return null;
-    }
+// const storage = {
+//   get(key) {
+//     const value = localStorage.getItem(key);
+//     if (!value) {
+//       return null;
+//     }
 
-    return JSON.parse(value);
-  },
+//     return JSON.parse(value);
+//   },
 
-  set(key, value) {
-    localStorage.setItem(key, JSON.stringify(value));
-  },
+//   set(key, value) {
+//     localStorage.setItem(key, JSON.stringify(value));
+//   },
 
-  remove(key) {
-    localStorage.removeItem(key);
-  },
-};
+//   remove(key) {
+//     localStorage.removeItem(key);
+//   },
+// };
 
-export default storage;
+// export default storage;
