@@ -1,4 +1,9 @@
 import "./header.css";
+import logo from "../assets/logo_atlantis.png";
+import flagEs from "../assets/img/es.png";
+import flagEn from "../assets/img/en.png"
+import * as Icon from 'react-feather';
+import { NavLink, Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -10,138 +15,69 @@ function Header() {
             <div className="col-12">
               {/* <!-- Main Menu --> */}
               <div className="main-menu menu-section w-100 d-inline-block d-md-block">
-                <nav className="navbar p-0 navbar-expand-lg">
+                <nav className="navbar p-0 navbar-expand-justify-content-xxl-around">
                   <div className="logo my-3 my-md-0">
-                    <a className="navbar-brand" href="index.html">
-                      {/* <img src="assets/img/logo.png" alt="logo image" className="img-fluid"/> */}
-                      alt=" LOGO ATLANTIS"
-                    </a>
+                    <NavLink to="/">
+                    <a className="navbar-brand" href="/">
+                      <img src={logo} width="150px" height="auto "alt="logo" className="img-fluid"/> </a>
+                   </NavLink>
+                   
                   </div>
                   <div className="header-items text-white ml-auto">
-                    <ul className="list-inline">
+                    <ul className="list-inline menu-header">
                       <li className="list-inline-item d-none d-md-inline-block">
-                        <a href="register.html">
-                          <span
-                            data-feather="user"
-                            className="d-inline-block mr-0 mr-lg-3"
-                          ></span>
+                        <Link to="/signup">
+                    
+                           <Icon.User className="d-inline-block mr-0 mr-lg-3 icons-header" />
                           <span className="d-none d-lg-inline-block">
-                            Connections
+                            User
                           </span>
-                        </a>
+                       </Link>
                       </li>
                       <li className="list-inline-item d-none d-md-inline-block explore-menu-style">
-                        <a href="product-3col.html">
+                        <Link to="/adverts">
                           <span
-                            data-feather="play"
                             className="d-inline-block mr-0 mr-lg-3"
-                          ></span>
+                          ><Icon.Play className="d-inline-block mr-0 mr-lg-3 icons-header" /></span>
                           <span className="d-none d-lg-inline-block">Explore</span>
-                        </a>
-                      </li>
-                      <li className="list-inline-item d-none d-md-inline-block map-menu-style">
-                        <span
-                          data-feather="map"
-                          className="d-inline-block mr-0 mr-lg-3"
-                        ></span>
-                        <span className="d-none d-lg-inline-block">NY, USA</span>
+                        </Link>
                       </li>
                       <li className="list-inline-item d-none d-md-inline-block sell-pdt-menu-style">
-                        <a href="add-product.html">
-                          <span
-                            data-feather="globe"
+                        <Link to="/adverts/new">
+                           <span
+                          
                             className="d-inline-block mr-0 mr-lg-3"
-                          ></span>
+                          ><Icon.Globe className="d-inline-block mr-0 mr-lg-3 icons-header" /></span>
                           <span className="d-none d-lg-inline-block">
                             Sell Your Product
                           </span>
-                        </a>
+                        </Link>
                       </li>
+                     
                       <li className="list-inline-item animate-menu dropdown">
                         <a
                           href="javascript"
                           className="dropdown-toggle"
                           data-toggle="dropdown"
                         >
-                          <span
-                            data-feather="shopping-cart"
-                            className="d-inline-block"
-                          ></span>
-                        </a>
-                        <div className="dropdown-menu justify-content-center shadow-lg radius-0 border-0 r-0 l-auto p-4 p-md-5 text-center">
-                          <h4>Your shopping cart is empty!</h4>
-                          <img
-                            className="d-none d-md-inline-block img-fluid py-5"
-                            // src="assets/img/empty-cart.png"
-                            alt="Empty Cart"
-                          />
-                          <a
-                            href="javascript"
-                            className="btn btn-style mt-3 mt-md-0"
-                          >
-                            Shop now
-                          </a>
-                        </div>
-                      </li>
-                      <li className="list-inline-item animate-menu dropdown">
-                        <a
-                          href="javascript"
-                          className="dropdown-toggle"
-                          data-toggle="dropdown"
-                        >
-                          <img src="assets/img/en.png" alt="Language Icon" />
+                          <img src={flagEn} alt="Language Icon" />
+                          <Icon.ChevronDown className="d-inline-block mr-1 mr-lg-3" />
                         </a>
                         <div className="dropdown-menu bg-grey dropdown-xs text-center shadow-lg radius-0 border-0 r-0 l-auto">
                           <img
                             className="mt-4 d-block mx-auto"
-                            src="assets/img/in.png"
+                            src={flagEs}
+                            width="32px"
+                            height="auto"
                             alt="Language Icon"
                           />
-                          <hr className="my-4" />
-                          <img
-                            className="mb-4 d-block mx-auto"
-                            // src="assets/img/fr.png"
-                            alt="Language Icon"
-                          />
+
+                             
                         </div>
                       </li>
                       <li className="list-inline-item">
                         <a href="javascript" id="open_navSidebar">
-                          <span
-                            data-feather="menu"
-                            className="d-inline-block"
-                          ></span>
-                        </a>
-                      </li>
-                      <ul className="signup-col">
-                        <li>
-                          <a
-                            className="btn btn-signup"
-                            data-toggle="modal"
-                            href="#login"
-                          >
-                            <i className="far fa-user"></i> Sign in
-                          </a>
-                        </li>
-                      </ul>
-                      {/* <li className="list-inline-item d-none d-md-inline-block sell-pdt-menu-style">
-                        <a href="add-product.html">
-                          <span
-                            data-feather="globe"
-                            className="d-inline-block mr-0 mr-lg-3"
-                          ></span>
-                          <span className="d-none d-lg-inline-block">Sing In</span>
-                        </a>
-                      </li> */}
-                      <li className="list-inline-item d-none d-md-inline-block sell-pdt-menu-style">
-                        <a href="add-product.html">
-                          <span
-                            data-feather="globe"
-                            className="d-inline-block mr-0 mr-lg-3"
-                          ></span>
-                          <span className="d-none d-lg-inline-block">
-                            Create One!
-                          </span>
+                          <Icon.Menu className="d-inline-block mr-0 mr-lg-3" />
                         </a>
                       </li>
                     </ul>
