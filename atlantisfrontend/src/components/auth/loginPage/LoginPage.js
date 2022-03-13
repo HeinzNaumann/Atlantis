@@ -4,17 +4,22 @@ import { login } from "../service";
 import "./LoginPage.css";
 //import { AuthContextConsumer } from "../context";
 import Layout from '../../../layout/Layout'
-import { Link } from "react-router-dom";
+import Alert from "../../common/Alert";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 function LoginPage({ onLogin, history, location }) {
   const [value, setValue] = useState({
     nombre: "",
-    password: "",
-    mem: false,
+    password: ""
   });
+
+  const { setAuth } = useAuth()
+
+ 
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-
+  const [alert, setAlert] = useState({});
   const resetError = () => setError(null);
 
   const handleChange = event => {
@@ -24,23 +29,52 @@ function LoginPage({ onLogin, history, location }) {
     }));
   };
 
+
+    //Comprobar que todos los campos estan rellenados
+    const checker = Object.values(value).every(x => {
+      if (x === "") {
+      return true;
+      }
+      return false;
+    });
+    
   const handleSubmit = async event => {
     event.preventDefault();
+
+    //Comprobar que todos los campos estan rellenados
+    if (checker) {
+      setAlert({
+        msg: "All fields all required",
+        error: true
+      })
+      return 
+    }
+    
     setIsLoading(true);
     resetError();
+    
     try {
       // call to api - send value
-      await login(value);
-      setIsLoading(false);
+        const data = await login(value);
+        setIsLoading(false);
+        setAlert({
+          msg: data.msg,
+          error: false
+         })
+      setAlert({})
+      
+      localStorage.setItem('token', data.token)
+      setAuth(data)
+
       //onLogin();
-      const { from } = location.state || { from: { pathname: "/" } };
-      history.push(from);
+      //const { from } = location.state || { from: { pathname: "/" } };
+      //history.push(from);
     } catch (error) {
       setError(error);
       setIsLoading(false);
     }
   };
-
+const { msg } = alert;
   return (
 
     <Layout>
@@ -63,20 +97,16 @@ function LoginPage({ onLogin, history, location }) {
             value={value.password}
             onChange={handleChange}
           ></input>
-          <span> Click para mantenerme logeado </span>
-          <input
-            type='checkbox'
-            name='mem'
-            checked={value.mem}
-            onChange={handleChange}
-          ></input>
+        
+          {msg && <Alert alert={alert} /> }
           <Button
             type='submit'
             variant='primary'
-            disabled={isLoading || !value.nombre || !value.password}
+        
           >
             Log in
           </Button>
+          
         </form>
         {error && (
           <div onClick={resetError} className='loginPage-error'>
