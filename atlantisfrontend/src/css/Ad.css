@@ -10,8 +10,8 @@
     width: 300px;
 }
 
-.img{
-    border-radius: 50%;
+img{
+    border-radius: 10px;
 }
 
 h6{

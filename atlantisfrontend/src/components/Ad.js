@@ -6,10 +6,11 @@ export const Ad = (ad) => {
         <div className="img">
           {ad.imagen && (
             <img
-              src={`http://localhost:3002${ad.imagen}`}
+              src={`http://localhost:3002/images/anuncios/${ad.imagen}`}
               alt={ad.nombre}
-              width="300px"
-              height="300px"
+              width="150px"
+              height="200px"
+              border-radius="30px"
             ></img>
           )}
         </div>
