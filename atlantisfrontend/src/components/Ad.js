@@ -15,7 +15,7 @@ export const Ad = (ad) => {
             ></img>
           )}
         </div>
-        <div className="pdt-content-blk pt-0 pl-3 pr-3 pb-3">
+        <div className="pdt-content-blk pt-0 px-3">
           <div class="position-relative">                 
             <div class="buy-blk position-absolute r-0">
                 <ul class="pdt-item list-inline">
@@ -26,7 +26,9 @@ export const Ad = (ad) => {
             </div>
           </div>
           <div className="content-top-blk pt-3">
-             <div className="d-flex justify-content-between align-items-center"><p className="text-warning font-bold"> {ad.venta ? "buy" : "sell"} </p></div>
+            <div className="d-flex justify-content-between align-items-center">
+              <p className="text-warning font-bold"> {ad.venta ? "buy" : "sell"}</p>
+            </div>
             <h5 className="text-theme font-amt font-bold">{ad.precio}</h5> 
             <h4><a href="" className="display-block text-link">{ad.nombre}</a></h4>
             <h6 className="d-flex justify-content-between align-items-center">{ad.usuario}</h6>
