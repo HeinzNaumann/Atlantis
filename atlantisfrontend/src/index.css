@@ -79,6 +79,7 @@ html {
 
 a {
   color: #1579ee;
+  text-decoration: none !important;
 }
 
 p {

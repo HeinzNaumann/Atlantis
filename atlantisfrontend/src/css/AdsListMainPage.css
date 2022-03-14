@@ -2,22 +2,27 @@
     :: 16.0 PRODUCT LIST & GRID VIEW CSS
 *********************************************/
 
-.flex-filter-anuncios {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-}
-
 .filtros {
   width: 300px;
   height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+}
+
+.container {
+  height: 600px;
+}
+.form-select[multiple],
+.form-select[size]:not([size="1"]) {
+  height: 100px;
 }
 
 .tab-content {
   flex-direction: row;
 }
-.ad-container {
+/* .ad-container {
   display: flex;
   width: 100vw;
   gap: 30px;
-}
+} */

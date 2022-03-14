@@ -72,47 +72,55 @@ const AdsListMainPage = (props) => {
 
   return (
     <Layout>
-      <div className="flex-filter-anuncios" {...props}>
-          <div className="filtros">
+      <div className="row" {...props}>
+        <div className="col-lg-4">
+          <div className="col-lg-8">
             <FormField
               type="text"
               name="query"
               placeholder="Find ads"
               onChange={handleSearch}
-            ></FormField>
-            <p>Min Price: {filterByPrice[0]}</p>{" "}
-            <p>Max Price: {filterByPrice[1]}</p>
-            <Range value={filterByPrice} onChange={setFilterByPrice} />
-            <input type="radio" name="venta" value={true} onChange={handleRadio} />
-            Sell
-            <input type="radio" name="venta" value={false} onChange={handleRadio} />
-            Buy
-            <input
-              type="radio"
-              name="venta"
-              value="all"
-              checked
-              onChange={handleRadio}
-            />
-            All
-            <select
-              name="tags"
-              className="form-select"
-              onChange={handleSelectChange}
-              multiple
-            >
-              {tags
-                ? tags.results?.map((tag) => (
-                    <option key={tag} value={tag}>
-                      {tag}
-                    </option>
-                  ))
-                : []}
-            </select>
+             ></FormField>
+            <div className="range-price">
+              <span>Min Price: {filterByPrice[0]}</span>{" "}
+              <span>Max Price: {filterByPrice[1]}</span>
+              <Range value={filterByPrice} onChange={setFilterByPrice} />
+            </div>
+            <div className="buy-sale-switch">
+              <input type="radio" name="venta" value={true} onChange={handleRadio} />
+              Sell
+              <input type="radio" name="venta" value={false} onChange={handleRadio} />
+              Buy
+              <input
+                type="radio"
+                name="venta"
+                value="all"
+                checked
+                onChange={handleRadio}
+              />
+              All
+            </div>
+            <div className="tags-select">
+              <select
+                name="tags"
+                className="form-select"
+                onChange={handleSelectChange}
+                multiple
+              >
+                {tags
+                  ? tags.results?.map((tag) => (
+                      <option key={tag} value={tag}>
+                        {tag}
+                      </option>
+                    ))
+                  : []}
+              </select>
+            </div>
+          </div>
         </div>
-        <div className="listadoAnuncios">
+        <div className="col-lg-8">
           {adsList.length !== 0 ? (
-            <div className="ad-container">
+            <div className="row">
               {filteredAds.map((ad) => (
                 <Ad {...ad} />
               ))}
