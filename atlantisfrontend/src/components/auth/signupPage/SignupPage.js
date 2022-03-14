@@ -5,6 +5,7 @@ import "./SignupPage.css";
 import { Link } from "react-router-dom";
 import Layout from '../../../layout/Layout'
 import Alert from "../../common/Alert";
+import * as Icon from 'react-feather';
 
 function SignupPage({ onLogin, history, location }) {
 
@@ -102,48 +103,103 @@ function SignupPage({ onLogin, history, location }) {
 
   const { msg } = alert;
   return (
-    <Layout>
-    <div className='LoginPage'>
-      <h1 className='loginPage-title'> Signup to WallaClon </h1>
-      <form onSubmit={handleSubmit}>
-         <span> Name </span>
-        <input
-          type='name'
-          name='nombre'
-          className='loginForm-field'
-          value={value.nombre}
-          onChange={handleChange}
-        ></input>
-        <span> Email </span>
-        <input
-          type='email'
-          name='email'
-          className='loginForm-field'
-          value={value.email}
-          onChange={handleChange}
-        ></input>
-        <span> Password </span>
-        <input
-          type='password'
-          name='password'
-          value={value.password}
-          onChange={handleChange}
-        ></input>
-               <span> Repeate your password </span>
-        <input
-          type='password'
-          name='passwordRepeat'
-          value={value.passwordRepeat}
-          onChange={handleChange}
-          ></input>
+<>
+      <form className="col-lg-6" onSubmit={handleSubmit}>
+        
+                        <div className="border p-4">
+                        <div className="add-pdt-title-blk">
+                            <span data-feather="user-plus" className="mr-3 text-theme"></span>
+                            <h5 className="text-grey d-inline-block align-middle">New Account</h5>
+                        </div>
+                        <hr className="my-4"/>
+                        <div className="form-row mb-4">
+                            <div className="col-12">
+                                <div className="input-group px-0">
+                                  <div className="input-group-prepend">
+                  <span className="input-group-text no-bg-color border-0">
+                    <Icon.User className="position-relative z-index-5 text-theme" />
+                                   
+                                    </span>
+                                  </div>
+                <input
+                  type='text'
+                  name='nombre'
+                  className='form-control bg-input custom-input-group ml-n5 pl-5'
+                  value={value.nombre}
+                  onChange={handleChange}
+                  placeHolder="Enter Username"
+                ></input>
+                </div>                                        
+                  </div>
+              </div>                                    
+              <div className="form-row mb-4">
+                  <div className="col-12">
+                      <div className="input-group px-0">
+                        <div className="input-group-prepend">
+                  <span className="input-group-text no-bg-color border-0">
+                    <Icon.Mail className="position-relative z-index-5 text-theme" />
+                              
+                          </span>
+                        </div>
+                <input
+                  type='email'
+                  name='email'
+                  className='form-control bg-input custom-input-group ml-n5 pl-5'
+                  value={value.email}
+                        onChange={handleChange}
+                        placeHolder="Enter Email"
+                ></input>
+                </div>                                        
+                  </div>
+              </div>
+              <div className="form-row mb-4">
+                  <div className="col-12">
+                      <div className="input-group px-0">
+                        <div className="input-group-prepend">
+                          <span className="input-group-text no-bg-color border-0">
+                              <Icon.Lock className="position-relative z-index-5 text-theme" />
+                          </span>
+                        </div>
+                <input
+                  type='password'
+                        name='password'
+                        className="form-control bg-input custom-input-group ml-n5 pl-5"
+                  value={value.password}
+                        onChange={handleChange}
+                        placeHolder="Enter Password"
+                ></input>
+                      </div>                                        
+                  </div>
+              </div>
+              <div className="form-row mb-4">
+                  <div className="col-12">
+                      <div className="input-group">
+                        <div className="input-group-prepend">
+                          <span className="input-group-text no-bg-color border-0">
+                              <Icon.Lock className="position-relative z-index-5 text-theme" />
+                          </span>
+                        </div>
+                <input
+                  type='password'
+                  name='passwordRepeat'
+                  value={value.passwordRepeat}
+                        onChange={handleChange}
+                        placeHolder="Enter Password"
+                        className="form-control bg-input custom-input-group ml-n5 pl-5"
+                  ></input>
+                    </div>                                        
+                  </div>
+                </div>   
+                           
           {msg && <Alert alert={alert} /> }
         <Button
           type='submit'
           variant='primary'
           // disabled={isLoading || !value.email || !value.password}
-        >
-          Signup
-        </Button>
+        > Signup </Button>
+              </div>
+              
+       
       </form>
       {error && (
         <div onClick={resetError} className='loginPage-error'>
@@ -151,22 +207,8 @@ function SignupPage({ onLogin, history, location }) {
         </div>
       )}
 
-         <nav className="">
-          <Link
-            className=""
-            to="login"
-          >
-                You have allready a account? Login
-          </Link>
-          <Link
-            className=""
-            to="password-forgot"
-          >
-                You forgot your password?
-          </Link>
-        </nav>
-      </div>
-      </Layout>
+
+    </>
   );
 }
 

@@ -6,7 +6,8 @@ import "./LoginPage.css";
 import Layout from '../../../layout/Layout'
 import Alert from "../../common/Alert";
 import { Link, useNavigate } from "react-router-dom";
-import useAuth from "../../../hooks/useAuth";
+//import useAuth from "../../../hooks/useAuth";
+import * as Icon from 'react-feather';
 
 function LoginPage({ onLogin, history, location }) {
   const [value, setValue] = useState({
@@ -14,7 +15,7 @@ function LoginPage({ onLogin, history, location }) {
     password: ""
   });
 
-  const { setAuth } = useAuth()
+  //const { setAuth } = useAuth()
 
  
   const [error, setError] = useState(null);
@@ -64,7 +65,7 @@ function LoginPage({ onLogin, history, location }) {
       setAlert({})
       
       localStorage.setItem('token', data.token)
-      setAuth(data)
+      //setAuth(data)
 
       //onLogin();
       //const { from } = location.state || { from: { pathname: "/" } };
@@ -77,27 +78,60 @@ function LoginPage({ onLogin, history, location }) {
 const { msg } = alert;
   return (
 
-    <Layout>
-      <div className='LoginPage'>
+    <>
 
-        <h1 className='loginPage-title'> Log in to WallaClon </h1>
-        <form onSubmit={handleSubmit}>
-          <span> Introduce de usuario </span>
+    <form className="col-lg-6" onSubmit={handleSubmit}>
+ 
+        <div className="border mt-4 mt-lg-0 p-4">
+                <div className="add-pdt-title-blk">
+                    <span data-feather="key" className="mr-3 text-theme"></span>
+                    <h5 className="text-grey d-inline-block align-middle">Sign in</h5>
+                </div>
+                  <hr className="my-4"/>                                    
+            <div className="form-row mb-4">
+                <div className="col-12">
+                    <div className="input-group px-0">
+                      <div className="input-group-prepend">
+                  <span className="input-group-text no-bg-color border-0">
+                    <Icon.User className="position-relative z-index-5 text-theme" />
+                         
+                        </span>
+                      </div>
           <input
-            type='nombre'
+            type='text'
             name='nombre'
-            className='loginForm-field'
+            className='form-control bg-input custom-input-group ml-n5 pl-5'
             value={value.nombre}
             onChange={handleChange}
-          ></input>
-          <span> Introduce tu contraseña </span>
+            placeHolder="Enter Username"
+            ></input>
+                  </div>                                        
+              </div>
+            </div>
+            
+          <div className="form-row">
+              <div className="col-12">
+                  <div className="input-group px-0">
+                    <div className="input-group-prepend">
+                  <span className="input-group-text no-bg-color border-0">
+                     <Icon.Lock className="position-relative z-index-5 text-theme" />
+
+                      </span>
+                    </div>
+     
           <input
             type='password'
             name='password'
             value={value.password}
-            onChange={handleChange}
+                  onChange={handleChange}
+                  placeHolder="Enter password"
+                  className="form-control bg-input custom-input-group ml-n5 pl-5"
           ></input>
-        
+          </div>
+             </div>
+              </div>
+               </div>   
+          
           {msg && <Alert alert={alert} /> }
           <Button
             type='submit'
@@ -105,30 +139,23 @@ const { msg } = alert;
         
           >
             Log in
-          </Button>
+            </Button>
+      
+            
           
-        </form>
+
+  
+      </form>
+
+
         {error && (
           <div onClick={resetError} className='loginPage-error'>
             {error.message}
           </div>
         )}
-        <nav className="">
-          <Link
-            className=""
-            to="signup"
-          >
-                You dont have a account? Register
-          </Link>
-          <Link
-            className=""
-            to="password-forgot"
-          >
-                You forgot your password?
-          </Link>
-        </nav>
-      </div>
-    </Layout>
+  
+                  
+    </>
   );
 
 }

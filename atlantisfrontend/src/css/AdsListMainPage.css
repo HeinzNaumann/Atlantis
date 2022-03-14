@@ -2,29 +2,22 @@
     :: 16.0 PRODUCT LIST & GRID VIEW CSS
 *********************************************/
 
-section{
-    
-    flex-direction: flex;
-    max-width: 100vw;
-    height: 100vh;
-    justify-content: center;
+section {
+  flex-direction: flex;
+  max-width: 100vw;
+  height: 100vh;
+  justify-content: center;
 }
 
-.container{
-    flex-direction: row;
-    width: 100vw;
-    
-    border:solid 4px black;
-
+.container {
+  flex-direction: row;
+  width: 100vw;
 }
-.tab-content{
-    
-    flex-direction: row;
+.tab-content {
+  flex-direction: row;
 }
-.ad-container{
-    display: flex;
-    width: 100vw;
-    gap: 30px;
-
+.ad-container {
+  display: flex;
+  width: 100vw;
+  gap: 30px;
 }
-
