@@ -31,7 +31,7 @@ function Detail() {
                               <div class="buy-blk position-absolute r-0">
                                 <ul class="pdt-item list-inline">
                                   <li class="list-inline-item align-middle">
-                                    <a href="javascript:;" class="text-grey">
+                                    <a href="" class="text-grey">
                                       <span
                                         class="size-xs"
                                         data-feather="shopping-cart"
@@ -39,7 +39,7 @@ function Detail() {
                                     </a>
                                   </li>
                                   <li class="list-inline-item align-middle">
-                                    <a href="javascript:;" class="text-grey">
+                                    <a href="" class="text-grey">
                                       <span
                                         class="size-xs"
                                         data-feather="heart"
@@ -47,7 +47,7 @@ function Detail() {
                                     </a>
                                   </li>
                                   <li class="list-inline-item align-middle">
-                                    <a class="text-grey" href="javascript:;">
+                                    <a class="text-grey" href="">
                                       <span
                                         class="size-xs"
                                         data-feather="eye"

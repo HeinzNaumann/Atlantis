@@ -2,8 +2,7 @@ import { useState } from "react";
 import Button from "../../common/button";
 import { signup } from "../service";
 import "./SignupPage.css";
-import { Link } from "react-router-dom";
-import Layout from '../../../layout/Layout'
+import { useHistory } from "react-router-dom";
 import Alert from "../../common/Alert";
 import * as Icon from 'react-feather';
 
@@ -37,7 +36,7 @@ function SignupPage({ onLogin, history, location }) {
       }
       return false;
     });
-
+    history = useHistory();
   
   //Funcion de envio de formulario Submit  
   const handleSubmit = async event => {

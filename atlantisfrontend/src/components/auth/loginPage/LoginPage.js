@@ -5,11 +5,11 @@ import "./LoginPage.css";
 //import { AuthContextConsumer } from "../context";
 import Layout from '../../../layout/Layout'
 import Alert from "../../common/Alert";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 //import useAuth from "../../../hooks/useAuth";
 import * as Icon from 'react-feather';
 
-function LoginPage({ onLogin, history, location }) {
+function LoginPage({history}) {
   const [value, setValue] = useState({
     nombre: "",
     password: ""
@@ -17,7 +17,6 @@ function LoginPage({ onLogin, history, location }) {
 
   //const { setAuth } = useAuth()
 
- 
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [alert, setAlert] = useState({});
@@ -30,7 +29,6 @@ function LoginPage({ onLogin, history, location }) {
     }));
   };
 
-
     //Comprobar que todos los campos estan rellenados
     const checker = Object.values(value).every(x => {
       if (x === "") {
@@ -38,10 +36,11 @@ function LoginPage({ onLogin, history, location }) {
       }
       return false;
     });
+
     
   const handleSubmit = async event => {
     event.preventDefault();
-
+      
     //Comprobar que todos los campos estan rellenados
     if (checker) {
       setAlert({
@@ -66,7 +65,7 @@ function LoginPage({ onLogin, history, location }) {
       
       localStorage.setItem('token', data.token)
       //setAuth(data)
-
+        
       //onLogin();
       //const { from } = location.state || { from: { pathname: "/" } };
       history.push("/login");
@@ -75,7 +74,10 @@ function LoginPage({ onLogin, history, location }) {
       setIsLoading(false);
     }
   };
-const { msg } = alert;
+  const { msg } = alert;
+  
+ 
+
   return (
 
     <>
@@ -149,20 +151,12 @@ const { msg } = alert;
                 You forgot your password?
           </Link>
         </nav>
-            
-          
-
-  
       </form>
-
-
         {error && (
           <div onClick={resetError} className='loginPage-error'>
             {error.message}
           </div>
-        )}
-  
-                  
+        )}           
     </>
   );
 

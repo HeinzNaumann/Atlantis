@@ -10,9 +10,6 @@
   gap: 33px;
 }
 
-.container {
-  height: 600px;
-}
 .form-select[multiple],
 .form-select[size]:not([size="1"]) {
   height: 100px;

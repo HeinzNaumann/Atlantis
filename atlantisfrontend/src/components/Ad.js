@@ -16,11 +16,11 @@ export const Ad = (ad) => {
           )}
         </div>
         <div className="pdt-content-blk pt-0 px-3">
-          <div class="position-relative">                 
-            <div class="buy-blk position-absolute r-0">
-                <ul class="pdt-item list-inline">
+          <div className="position-relative">                 
+            <div className="buy-blk position-absolute r-0">
+                <ul className="pdt-item list-inline">
                    
-                    <li class="list-inline-item align-middle"><a href="javascript:;" className="text-grey"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart size-xs"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></a></li>
+                    <li className="list-inline-item align-middle"><a href="" className="text-grey"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-heart size-xs"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></a></li>
                    
                 </ul>
             </div>
@@ -32,9 +32,9 @@ export const Ad = (ad) => {
             <h5 className="text-theme font-amt font-bold">{ad.precio}</h5> 
             <h4><a href="" className="display-block text-link">{ad.nombre}</a></h4>
             <h6 className="d-flex justify-content-between align-items-center">{ad.usuario}</h6>
-             <div class="content-btm-blk">
-            <div class="media py-3">
-              <div class="media-body">
+             <div className="content-btm-blk">
+            <div className="media py-3">
+              <div className="media-body">
                   <h6 className="mb-0">{ad.tags}</h6>
          
               </div>

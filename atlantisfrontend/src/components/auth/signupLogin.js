@@ -1,10 +1,10 @@
 import SignupPage from "./signupPage/SignupPage";
 import LoginPage from "./loginPage/LoginPage";
 import Layout from "../../layout/Layout";
-import { Link } from "react-router-dom";
-const signupLogin = () => {
-    return ( 
 
+const signupLogin = ({ ...props }) => {
+
+    return ( 
         <Layout>
                <div className="row">
                   <div className="col-lg-12">
@@ -14,29 +14,18 @@ const signupLogin = () => {
                         <hr className="my-4"/>
                      </div>
                  </div>
-            
                 <div className="col-lg-12">
                     <div className="add-pdt-blk">
                           <div className="pdt-details-blk bg-white p-4">
                               <div className="row">
-                
-                    <SignupPage />
-                    <LoginPage />
-
-                    
-                
-                   </div>
+                                 <SignupPage {...props}/>
+                                 <LoginPage {...props}/>
+                             </div>
+                           </div>
+                     </div>
                 </div>
-                   </div>
-                </div>
-
-
-            </div>
-            
-
-   
-        
-        </Layout>
+            </div> 
+         </Layout> 
      );
 }
  
