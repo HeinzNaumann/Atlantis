@@ -2560,9 +2560,7 @@ div.append select {
     font-size: 0.95rem;
     line-height: 1.7;
   }
-  .logo .navbar-brand img {
-    width: 75%;
-  }
+
   .process .process-icon:before {
     left: 110px;
   }

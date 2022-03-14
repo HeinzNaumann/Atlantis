@@ -72,43 +72,45 @@ const AdsListMainPage = (props) => {
 
   return (
     <Layout>
-      <section className="tab-blk-style bg-grey py-6" {...props}>
-        <FormField
-          type="text"
-          name="query"
-          placeholder="Find ads"
-          onChange={handleSearch}
-        ></FormField>
-        <p>Min Price: {filterByPrice[0]}</p>{" "}
-        <p>Max Price: {filterByPrice[1]}</p>
-        <Range value={filterByPrice} onChange={setFilterByPrice} />
-        <input type="radio" name="venta" value={true} onChange={handleRadio} />
-        Sell
-        <input type="radio" name="venta" value={false} onChange={handleRadio} />
-        Buy
-        <input
-          type="radio"
-          name="venta"
-          value="all"
-          checked
-          onChange={handleRadio}
-        />
-        All
-        <select
-          name="tags"
-          className="form-select"
-          onChange={handleSelectChange}
-          multiple
-        >
-          {tags
-            ? tags.results?.map((tag) => (
-                <option key={tag} value={tag}>
-                  {tag}
-                </option>
-              ))
-            : []}
-        </select>
-        <>
+      <div className="flex-filter-anuncios" {...props}>
+          <div className="filtros">
+            <FormField
+              type="text"
+              name="query"
+              placeholder="Find ads"
+              onChange={handleSearch}
+            ></FormField>
+            <p>Min Price: {filterByPrice[0]}</p>{" "}
+            <p>Max Price: {filterByPrice[1]}</p>
+            <Range value={filterByPrice} onChange={setFilterByPrice} />
+            <input type="radio" name="venta" value={true} onChange={handleRadio} />
+            Sell
+            <input type="radio" name="venta" value={false} onChange={handleRadio} />
+            Buy
+            <input
+              type="radio"
+              name="venta"
+              value="all"
+              checked
+              onChange={handleRadio}
+            />
+            All
+            <select
+              name="tags"
+              className="form-select"
+              onChange={handleSelectChange}
+              multiple
+            >
+              {tags
+                ? tags.results?.map((tag) => (
+                    <option key={tag} value={tag}>
+                      {tag}
+                    </option>
+                  ))
+                : []}
+            </select>
+        </div>
+        <div className="listadoAnuncios">
           {adsList.length !== 0 ? (
             <div className="ad-container">
               {filteredAds.map((ad) => (
@@ -118,8 +120,8 @@ const AdsListMainPage = (props) => {
           ) : (
             <EmptyList />
           )}
-        </>
-      </section>
+        </div>
+      </div>
       {/* <Pagination {...filteredAds}></Pagination> */}
     </Layout>
   );

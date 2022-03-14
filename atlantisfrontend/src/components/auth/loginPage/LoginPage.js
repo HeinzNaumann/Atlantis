@@ -140,7 +140,15 @@ const { msg } = alert;
           >
             Log in
             </Button>
-      
+            <nav className="">
+   
+          <Link
+            className=""
+            to="password-forgot"
+          >
+                You forgot your password?
+          </Link>
+        </nav>
             
           
 

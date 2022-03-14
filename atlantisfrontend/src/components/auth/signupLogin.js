@@ -34,20 +34,7 @@ const signupLogin = () => {
             </div>
             
 
-         <nav className="">
-          <Link
-            className=""
-            to="login"
-          >
-                You have allready a account? Login
-          </Link>
-          <Link
-            className=""
-            to="password-forgot"
-          >
-                You forgot your password?
-          </Link>
-        </nav>
+   
         
         </Layout>
      );
