@@ -1,8 +1,9 @@
 import "./footer.css";
-
+import * as Icon from 'react-feather';
+import { Link } from "react-router-dom";
 function Footer() {
   return (
-    <div className="home-wrapper">
+    <>
       <footer>
         <div className="middle-footer py-6">
           <div className="container">
@@ -38,25 +39,7 @@ function Footer() {
                       </li>
                     </ul>
                   </address>
-                  <div className="pt-4 social-widget">
-                    <ul className="lh-0">
-                      <li className="list-inline-item">
-                        <a className="d-inline-block" href="javascript">
-                          <i className="fa fa-facebook"></i>
-                        </a>
-                      </li>
-                      <li className="list-inline-item">
-                        <a className="d-inline-block" href="javascript">
-                          <i className="fa fa-twitter"></i>
-                        </a>
-                      </li>
-                      <li className="list-inline-item">
-                        <a className="d-inline-block" href="javascript">
-                          <i className="fa fa-google-plus"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+                  
                 </div>
               </div>
               <div className="col-md-6 col-lg-2 mb-md-5 mb-lg-0">
@@ -64,20 +47,17 @@ function Footer() {
                   <h5 className="text-white text-uppercase">My Account</h5>
                   <ul className="pt-4 menu-list-style">
                     <li>
-                      <a href="user-profile.html">Profile</a>
+                      <Link to="/signup">Profile</Link>
+           
+                    </li>
+                   
+                    <li>
+                      <Link to="/signup">Dashboard</Link>
                     </li>
                     <li>
-                      <a href="my-payments.html">Wallet</a>
+                      <Link to="/adverts/new">Add Service</Link>
                     </li>
-                    <li>
-                      <a href="my-dashboard.html">Dashboard</a>
-                    </li>
-                    <li>
-                      <a href="add-product.html">Add Service</a>
-                    </li>
-                    <li className="mb-0">
-                      <a href="settings.html">Settings</a>
-                    </li>
+                  
                   </ul>
                 </div>
               </div>
@@ -85,12 +65,7 @@ function Footer() {
                 <div className="mb-4 mb-md-0">
                   <h5 className="text-white text-uppercase">Links</h5>
                   <ul className="pt-4 menu-list-style">
-                    <li>
-                      <a href="contact-us.html">Contact</a>
-                    </li>
-                    <li>
-                      <a href="blog-3col.html">Blog</a>
-                    </li>
+             
                     <li>
                       <a href="faq.html">FAQ</a>
                     </li>
@@ -120,17 +95,11 @@ function Footer() {
                             className="ml-n1 btn btn-style-search p-3 text-white"
                             type="submit"
                           >
-                            <span data-feather="mail" className=""></span>
+                            <Icon.Search className="d-inline-block mr-0 mr-lg-3" />
                           </button>
                         </span>
                       </div>
-                      <hr className="footer-hr w-100 my-0" />
-                      <p className="text-uppercase pt-4 font-bold">We Accept</p>
-                      <img
-                        className="mt-4 img-fluid"
-                        src="assets/img/payment-icons.png"
-                        alt="Secure Payment Methods"
-                      />
+                   
                     </div>
                   </div>
                 </div>
@@ -167,7 +136,7 @@ function Footer() {
           </div>
         </div>
       </footer>
-    </div>
+    </>
   );
 }
 export default Footer;
