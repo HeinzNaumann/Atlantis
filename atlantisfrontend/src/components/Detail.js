@@ -32,109 +32,34 @@ function Detail({ match }) {
   return (
     <>
       {advert ? (
-        <div className="home-wrapper">
-          <section className="tab-blk-style bg-grey py-6">
-            <div className="container">
-              <div className="row">
-                <div className="col-12">
-                  <div className="tab-list-contents">
-                    <div className="tab-content">
-                      <div
-                        role="tabpanel"
-                        className="tab-pane fade show active"
-                        id="geo"
-                      >
-                        <div className="row">
-                          <div className="col-md-6 col-lg-3">
-                            <div className="pdt-item-blk mb-4">
-                              <div className="pdt-img-blk">
-                                <h1>{advert.nombre}</h1>
-                                <img
-                                  src="./assets/img/logo-atlantis-small.png"
-                                  alt="Winter Coat with Hat"
-                                  className="img-fluid product-item-image"
-                                />
-                              </div>
-                              <div className="pdt-content-blk pt-0 pl-3 pr-3 pb-3">
-                                <div className="position-relative">
-                                  <div className="buy-blk position-absolute r-0">
-                                    <ul className="pdt-item list-inline">
-                                      <li className="list-inline-item align-middle"></li>
-                                      <li className="list-inline-item align-middle"></li>
-                                      <li className="list-inline-item align-middle"></li>
-                                    </ul>
-                                  </div>
-                                </div>
-                                <div className="content-top-blk pt-3">
-                                  <div className="d-flex justify-content-between align-items-center">
-                                    <p className="text-green font-bold">
-                                      In Stock
-                                    </p>
-                                  </div>
-                                  <h5 className="text-theme font-amt font-bold">
-                                    {advert.precio}
-                                    {advert.venta ? "Sell" : "Buy"}
-                                  </h5>
-                                  <h4>
-                                    <a
-                                      href="single-product.html"
-                                      className="display-block text-link"
-                                    >
-                                      {advert.descripcion}
-                                    </a>
-                                  </h4>
-                                </div>
-                                <div className="content-btm-blk">
-                                  <div className="media py-3">
-                                    <img
-                                      src={`${process.env.REACT_APP_API_BASE_URL}/images/anuncios/${advert.imagen}`}
-                                      className="align-self-center mr-4"
-                                      alt="Product Seller"
-                                    />
-                                    <div className="media-body">
-                                      <h6 className="mb-0">{advert.usuario}</h6>
-                                      <div className="rating-blk">
-                                        <span
-                                          data-feather="star"
-                                          className="rating fill"
-                                        ></span>
-                                        <span
-                                          data-feather="star"
-                                          className="rating fill"
-                                        ></span>
-                                        <span
-                                          data-feather="star"
-                                          className="rating fill"
-                                        ></span>
-                                        <span
-                                          data-feather="star"
-                                          className="rating fill"
-                                        ></span>
-                                        <span
-                                          data-feather="star"
-                                          className="rating"
-                                        ></span>
+        <div className="container">
+          <div className="row">
+            <div className="content">
+              <div className="item">
+                <div className="inside-left">
+                  <img
+                    src={`${process.env.REACT_APP_API_BASE_URL}/images/anuncios/${advert.imagen}`}
+                    alt={advert.imagen}
+                    className="img-fluid "
+                  />
+                </div>
+                <div className="inside-right">
+                  <h1>{advert.nombre}</h1>
+                  <h1>{advert.precio}</h1>
+                  <h5>{advert.venta ? "Sell" : "Buy"}</h5>
 
-                                        {advert.tags}
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <p className="text-green font-bold">
-                                    {advert.reservado}
-                                    {advert.vendido}
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <h4>{advert.descripcion}</h4>
+                  <h5>{advert.usuario}</h5>
+                  <h5>{advert.tags}</h5>
+
+                  <h5>
+                    {advert.reservado}
+                    {advert.vendido}
+                  </h5>
                 </div>
               </div>
             </div>
-          </section>
+          </div>
         </div>
       ) : (
         <p>sin anuncios</p>
