@@ -62,13 +62,19 @@ function LoginPage({history}) {
           error: false
          })
       setAlert({})
+
+      if(data.token){
+        localStorage.setItem('token', data.token)
+        localStorage.setItem('nombre', value.nombre)
+        history.push("/");
+      }else{
+        throw data.msg;
+      }
       
-      localStorage.setItem('token', data.token)
       //setAuth(data)
         
       //onLogin();
       //const { from } = location.state || { from: { pathname: "/" } };
-      history.push("/login");
     } catch (error) {
       setError(error);
       setIsLoading(false);

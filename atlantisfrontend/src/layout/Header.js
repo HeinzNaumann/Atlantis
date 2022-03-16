@@ -25,6 +25,15 @@ function Header() {
                   </div>
                   <div className="header-items text-white ml-auto">
                     <ul className="list-inline menu-header">
+                    <li className="list-inline-item d-none d-md-inline-block">
+                        <Link to="/chat">
+                    
+                           <Icon.MessageCircle className="d-inline-block mr-0 mr-lg-3 icons-header" />
+                          <span className="d-none d-lg-inline-block">
+                            Message
+                          </span>
+                       </Link>
+                      </li>
                       <li className="list-inline-item d-none d-md-inline-block">
                         <Link to="/signup">
                     

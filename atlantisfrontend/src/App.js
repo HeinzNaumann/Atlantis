@@ -6,6 +6,8 @@ import NewAdPage from "./components/NewAdPage";
 import PasswordForgot from "./components/auth/passwordForgot/PasswordForgot";
 import AccountConfirm from "./components/auth/accountConfirm/AccountConfirm"
 import signupLogin from './components/auth/signupLogin';
+import chat from './components/message/Chat'
+
 //import {AuthProvider} from "./context/AuthProvider";
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
       <Route exact path="/adverts/new" component={NewAdPage} />
        <Route exact path="/login" component={signupLogin} /> 
       <Route exact path="/signup" component={signupLogin} />
+      <Route exact path="/chat" component={chat} />
       {/* <Route exact path="/signuplogin" component={signupLogin} /> */}
       <Route exact path="/password-forgot/:accessToken" component={PasswordForgot} /> 
       <Route exact path="/account-confirm/:id" component={AccountConfirm} />

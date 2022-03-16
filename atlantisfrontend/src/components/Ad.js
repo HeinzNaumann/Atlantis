@@ -24,6 +24,7 @@ export const Ad = (ad) => {
                    
                 </ul>
             </div>
+
           </div>
           <div className="content-top-blk pt-3">
             <div className="d-flex justify-content-between align-items-center">
@@ -40,7 +41,8 @@ export const Ad = (ad) => {
               </div>
             </div>
               <p className="ad-tags"></p>
-              <p className="text-green font-bold">{ad.descripcion}</p>
+              { /*<p className="text-green font-bold">{ad.descripcion}</p> */}
+              <button className="text-green font-bold">Chat</button><div/>
         </div>
           </div>
         </div>
