@@ -19,7 +19,7 @@ function Detail({ match }) {
 
       return detalle;
     } catch (error) {
-      console.log(error, "aqui");
+      console.log(error);
     }
   };
 
