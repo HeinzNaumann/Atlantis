@@ -55,20 +55,26 @@ function LoginPage({history}) {
     
     try {
       // call to api - send value
-        const data = await login(value);
-        setIsLoading(false);
+      const data = await login(value);
+      console.log(data)
+      setIsLoading(false);
+      console.log(data.msg)
         setAlert({
           msg: data.msg,
           error: false
          })
-      setAlert({})
+    
+      if (data.token) {
+        localStorage.setItem('token', data.token)
+        history.push("/adverts");
+      }
       
-      localStorage.setItem('token', data.token)
+     
+      
       //setAuth(data)
-        
       //onLogin();
       //const { from } = location.state || { from: { pathname: "/" } };
-      history.push("/login");
+      
     } catch (error) {
       setError(error);
       setIsLoading(false);
@@ -105,7 +111,7 @@ function LoginPage({history}) {
             className='form-control bg-input custom-input-group ml-n5 pl-5'
             value={value.nombre}
             onChange={handleChange}
-            placeHolder="Enter Username"
+            placeholder="Enter Username"
             ></input>
                   </div>                                        
               </div>
@@ -126,7 +132,7 @@ function LoginPage({history}) {
             name='password'
             value={value.password}
                   onChange={handleChange}
-                  placeHolder="Enter password"
+                  placeholder="Enter password"
                   className="form-control bg-input custom-input-group ml-n5 pl-5"
           ></input>
           </div>
@@ -151,12 +157,13 @@ function LoginPage({history}) {
                 You forgot your password?
           </Link>
         </nav>
-      </form>
-        {error && (
+          {error && (
           <div onClick={resetError} className='loginPage-error'>
             {error.message}
           </div>
-        )}           
+        )}   
+      </form>
+              
     </>
   );
 

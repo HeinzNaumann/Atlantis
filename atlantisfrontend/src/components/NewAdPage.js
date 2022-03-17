@@ -70,7 +70,7 @@ export function NewAdPage({ history }) {
                         <FormField
                           type="text"
                           name="nombre"
-                          placeholder="What do you want to sell today?"
+                          placeHolder="What do you want to sell today?"
                           label="Name of your item"
                           className="form-control"
                           value={ad.nombre}
@@ -88,7 +88,7 @@ export function NewAdPage({ history }) {
                     <FormField
                       type="radio"
                       name="venta"
-                      placeholder="Are you selling?"
+                      placeHolder="Are you selling?"
                       label="Sell"
                       className="venta"
                       value={ad.venta === true}
@@ -98,7 +98,7 @@ export function NewAdPage({ history }) {
                     <FormField
                       type="radio"
                       name="venta"
-                      placeholder="Are you buying?"
+                      placeHolder="Are you buying?"
                       label="Buy"
                       className="venta"
                       value={ad.venta === false}
@@ -107,7 +107,7 @@ export function NewAdPage({ history }) {
                     <FormField
                       type="number"
                       name="precio"
-                      placeholder="What price do you want to set? Don't be greedy!"
+                      placeHolder="What price do you want to set? Don't be greedy!"
                       label="Price of your item"
                       className="precio"
                       value={ad.precio}
@@ -116,7 +116,7 @@ export function NewAdPage({ history }) {
                     <FormField
                       type="text"
                       name="descripcion"
-                      placeholder="Tell to the world a bit your item and why is the best"
+                      placeHolder="Tell to the world a bit your item and why is the best"
                       label="Description of your item"
                       className="descripcion"
                       value={ad.descripcion}
@@ -134,7 +134,7 @@ export function NewAdPage({ history }) {
                     <FormField
                       type="text"
                       name="usuario"
-                      placeholder="What's your name?"
+                      placeHolder="What's your name?"
                       label="Name of yourself"
                       classNamee="usuario"
                       value={ad.usuario}
@@ -143,7 +143,7 @@ export function NewAdPage({ history }) {
                     <FormField
                       type="file"
                       name="imagen"
-                      placeholder="Upload a picture of your item"
+                      placeHolder="Upload a picture of your item"
                       label="Imagen"
                       className="imagen"
                       value={ad.imagen}

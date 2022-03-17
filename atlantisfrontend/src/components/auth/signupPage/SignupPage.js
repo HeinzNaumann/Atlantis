@@ -73,8 +73,6 @@ function SignupPage({ onLogin, history, location }) {
     try {
       // call to api - send value
       const data = await signup(value);
-
-      console.log(data);
       setIsLoading(false);
 
        setValue({
@@ -83,7 +81,6 @@ function SignupPage({ onLogin, history, location }) {
              password: "",
              passwordRepeat: "",
         });
-
       
       setAlert({
         msg: data.msg,
@@ -126,7 +123,7 @@ function SignupPage({ onLogin, history, location }) {
                   className='form-control bg-input custom-input-group ml-n5 pl-5'
                   value={value.nombre}
                   onChange={handleChange}
-                  placeHolder="Enter Username"
+                  placeholder="Enter Username"
                 ></input>
                 </div>                                        
                   </div>
@@ -146,7 +143,7 @@ function SignupPage({ onLogin, history, location }) {
                   className='form-control bg-input custom-input-group ml-n5 pl-5'
                   value={value.email}
                         onChange={handleChange}
-                        placeHolder="Enter Email"
+                        placeholder="Enter Email"
                 ></input>
                 </div>                                        
                   </div>
@@ -165,7 +162,7 @@ function SignupPage({ onLogin, history, location }) {
                         className="form-control bg-input custom-input-group ml-n5 pl-5"
                   value={value.password}
                         onChange={handleChange}
-                        placeHolder="Enter Password"
+                        placeholder="Enter Password"
                 ></input>
                       </div>                                        
                   </div>
@@ -183,7 +180,7 @@ function SignupPage({ onLogin, history, location }) {
                   name='passwordRepeat'
                   value={value.passwordRepeat}
                         onChange={handleChange}
-                        placeHolder="Enter Password"
+                        placeholder="Enter Password"
                         className="form-control bg-input custom-input-group ml-n5 pl-5"
                   ></input>
                     </div>                                        
@@ -198,13 +195,13 @@ function SignupPage({ onLogin, history, location }) {
         > Signup </Button>
               </div>
               
-       
-      </form>
-      {error && (
+        {error && (
         <div onClick={resetError} className='loginPage-error'>
           {error.message}
         </div>
       )}
+      </form>
+     
 
 
     </>

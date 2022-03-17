@@ -6,7 +6,7 @@ export const Ad = (ad) => {
         <div className="pdt-img-blk">
           {ad.imagen && (
             <img
-              src={`http://localhost:3002/images/anuncios/${ad.imagen}`}
+              src={`${process.env.REACT_APP_API_ATLANTIS_URL}/images/anuncios/${ad.imagen}`}
               alt={ad.nombre}
               className="img-fluid product-item-image"
               width="900px"
