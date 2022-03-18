@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../css/Ad.css";
 export const Ad = (ad) => {
   return (
@@ -42,7 +43,10 @@ export const Ad = (ad) => {
             </div>
               <p className="ad-tags"></p>
               { /*<p className="text-green font-bold">{ad.descripcion}</p> */}
-              <button className="text-green font-bold">Chat</button><div/>
+              { /*<button className="text-green font-bold">Chat</button><div/> */}
+              <Link className="chat-button" to={`/chat/${ad._id}`}>
+                Chat
+              </Link>
         </div>
           </div>
         </div>

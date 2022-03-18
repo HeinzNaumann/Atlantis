@@ -18,6 +18,7 @@ function App() {
       <Route exact path="/adverts/new" component={NewAdPage} />
        <Route exact path="/login" component={signupLogin} /> 
       <Route exact path="/signup" component={signupLogin} />
+      <Route exact path="/chat/:adId" component={chat} />
       <Route exact path="/chat" component={chat} />
       {/* <Route exact path="/signuplogin" component={signupLogin} /> */}
       <Route exact path="/password-forgot/:accessToken" component={PasswordForgot} /> 

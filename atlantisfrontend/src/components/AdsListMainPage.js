@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAdsList, getTags } from "../DataService";
+import { getAdsList, getTags, getUser } from "../DataService";
 import Ad from "./Ad";
 import FormField from "./FormField";
 import Layout from "../layout/Layout";
@@ -15,12 +15,33 @@ const EmptyList = () => {
 
 const AdsListMainPage = (props) => {
   const [adsList, setAdsList] = useState([]);
+  
   //const [totalPages, setTotalPages] = useState(0);
   const [filterByName, setFilterByName] = useState("");
   const [filterByPrice, setFilterByPrice] = useState([0, 1000]);
   const [filterBySale, setFilterBySale] = useState("all");
   const [tags, setTags] = useState([]);
   const [filterByTag, setFilterByTag] = useState([]);
+
+  //* Diego *//
+  const [user,setUser]=useState("");
+
+  useEffect(() => {
+    if(localStorage.getItem('nombre')){
+      console.log('NOMBRE:',localStorage.getItem('nombre'))
+      getUser(localStorage.getItem('nombre')).then((user) => setUser(user))}
+    else{
+      setUser("")
+    }
+
+    return()=>{console.log("Usuario--->", user)}
+  }, []);
+ 
+  if(user){
+    localStorage.setItem('usuario',user.result[0]._id)
+  }
+   
+  //* Fin Diego *//
 
   useEffect(() => {
     getAdsList().then(
@@ -31,6 +52,8 @@ const AdsListMainPage = (props) => {
   useEffect(() => {
     getTags().then((tags) => setTags(tags));
   }, []);
+
+
 
   const handleSearch = (event) => {
     setFilterByName(event.target.value);
