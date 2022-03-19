@@ -13,5 +13,5 @@ export const signup = ({  ...credentials }) => {
 
 export const logout = () =>
   Promise.resolve().then(() => {
-    storage.remove("auth");
+    localStorage.removeItem("token");
   });
