@@ -8,7 +8,6 @@ import Layout from "../layout/Layout";
 import React from "react";
 function Detail({ match }) {
   const advertId = match.params.id;
-  console.log(advertId)
   //const history = useHistory();
   const [advert, setAdvert] = useState(advertId);
 

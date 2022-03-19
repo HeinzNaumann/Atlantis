@@ -15,7 +15,6 @@ const EmptyList = () => {
 
 const AdsListMainPage = (props) => {
   const [adsList, setAdsList] = useState([]);
-  //const [totalPages, setTotalPages] = useState(0);
   const [filterByName, setFilterByName] = useState("");
   const [filterByPrice, setFilterByPrice] = useState([0, 1000]);
   const [filterBySale, setFilterBySale] = useState("all");
@@ -58,7 +57,6 @@ const AdsListMainPage = (props) => {
   };
 
   const filteredSale = (ad) => {
-    console.log(ad.venta);
     const sellBuy = ad.venta ? true : false;
     return filterBySale === "all" || filterBySale === sellBuy;
   };

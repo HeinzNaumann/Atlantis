@@ -2,7 +2,7 @@
 import Header from "./Header";
 import Footer from "./Footer"
 
-export function Layout({children}) {
+export function Layout({children} ) {
   return (
     <>
       <Header />

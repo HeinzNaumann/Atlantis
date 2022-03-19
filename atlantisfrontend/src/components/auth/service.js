@@ -1,10 +1,9 @@
-import client, {
+import client, { removeAuthorizationHeader
 } from "../../api/client";
-import storage from "../../utils/storage";
+
 
 export const login = ({  ...credentials }) => {
-  return client.post("/api/auth", credentials);
-
+  return client.post("/api/auth", credentials)
 };
 
 export const signup = ({  ...credentials }) => {
@@ -14,4 +13,6 @@ export const signup = ({  ...credentials }) => {
 export const logout = () =>
   Promise.resolve().then(() => {
     localStorage.removeItem("token");
+  }).then(() => {
+    removeAuthorizationHeader();
   });

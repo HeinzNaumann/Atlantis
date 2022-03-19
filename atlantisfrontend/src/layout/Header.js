@@ -6,11 +6,23 @@ import * as Icon from 'react-feather';
 import { NavLink, Link } from "react-router-dom";
 import LoginButton from "../components/common/LoginButton";
 import LogoutButton from "../components/common/LogoutButton";
+import { useEffect, useState } from "react";
+
 function Header() {
 
+  const [isLogged, SetLogged] = useState(false);
   const token = localStorage.getItem('token')
+  
+  useEffect(() => {
+    if (token) {
+    SetLogged(true)
+  }else{
+    SetLogged(false)
+  }
+  })
 
-  console.log(token)
+  
+
   return (
     <header className="bg-black">
       {/* <!-- Main header Section --> */}
@@ -32,7 +44,7 @@ function Header() {
                     <ul className="list-inline menu-header">
                       <li className="list-inline-item d-none d-md-inline-block">
                         
-                        {token ?
+                        {isLogged ?
                           <LogoutButton/>
                         : <LoginButton/>
                        }

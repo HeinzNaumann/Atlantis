@@ -35,10 +35,9 @@ export function NewAdPage({ history }) {
       data.append("files input", filesInput);
       
       
-      const token = localStorage.getItem('token', data.token)
-      data.append("token", token);
+      // const token = localStorage.getItem('token', data.token)
+      // data.append("token", token);
       const newAd = await createAd(data);
-      console.log("Ad Created", newAd);
       if (newAd) {
         history.push("/adverts");
       }
@@ -73,7 +72,7 @@ export function NewAdPage({ history }) {
                         <input
                           type="text"
                           name="nombre"
-                          placeHolder="What do you want to sell today?"
+                          placeholder="What do you want to sell today?"
                           className="form-control mt-3"
                           value={ad.nombre}
                           onChange={handleChange}
@@ -85,7 +84,7 @@ export function NewAdPage({ history }) {
                     <input
                       type="radio"
                       name="venta"
-                      placeHolder="Are you selling?"
+                      placeholder="Are you selling?"
                       label="Sell"
                       className="custom-control-input"
                       value={ad.venta === true}
@@ -98,7 +97,7 @@ export function NewAdPage({ history }) {
                     <input
                       type="radio"
                       name="venta"
-                      placeHolder="Are you buying?"
+                      placeholder="Are you buying?"
                       label="Buy"
                       className="venta"
                       value={ad.venta === false}
@@ -110,7 +109,7 @@ export function NewAdPage({ history }) {
                     <input
                       type="number"
                       name="precio"
-                      placeHolder="Enter price"
+                      placeholder="Enter price"
                       label="Price of your item"
                       className="form-control"
                       value={ad.precio}
@@ -120,7 +119,7 @@ export function NewAdPage({ history }) {
                     <textarea
                       type="text"
                       name="descripcion"
-                      placeHolder="Tell to the world a bit about your item and why is the best..."
+                      placeholder="Tell to the world a bit about your item and why is the best..."
                       label="Description of your item"
                       className="form-control input-lg bg-input custom-textarea mt-3"
                       rows="5"
@@ -140,7 +139,7 @@ export function NewAdPage({ history }) {
                     <input
                       type="text"
                       name="usuario"
-                      placeHolder="What's your name?"
+                      placeholder="What's your name?"
                       label="Name of yourself"
                       className="form-control mt-3 "
                       value={ad.usuario}
@@ -150,7 +149,7 @@ export function NewAdPage({ history }) {
                     <input
                       type="file"
                       name="imagen"
-                      placeHolder="Upload a picture of your item"
+                      placeholder="Upload a picture of your item"
                       label="Imagen"
                       className="form-control mt-3 mb-3"
                       value={ad.imagen}

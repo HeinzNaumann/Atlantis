@@ -1,10 +1,10 @@
 import "../css/Ad.css";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 export const Ad = (ad) => {
   return (
    
     <div className=" col-md-4" key={ad._id}>
-       <a href={`/adverts/${ad._id}`}>
+       <Link to={`/adverts/${ad._id}`}> 
         <div className="pdt-item-blk mb-4">
           <div className="pdt-img-blk">
             {ad.imagen && (
@@ -71,7 +71,7 @@ export const Ad = (ad) => {
             </div>
           </div>
         </div>
-        </a>
+        </Link>
       </div>
     
   );

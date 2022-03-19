@@ -2,7 +2,8 @@ import SignupPage from "./signupPage/SignupPage";
 import LoginPage from "./loginPage/LoginPage";
 import Layout from "../../layout/Layout";
 
-const signupLogin = ({ ...props }) => {
+const signupLogin = ({...props } ) => {
+
 
     return ( 
         <Layout>
@@ -19,7 +20,7 @@ const signupLogin = ({ ...props }) => {
                           <div className="pdt-details-blk bg-white p-4">
                               <div className="row">
                                  <SignupPage {...props}/>
-                                 <LoginPage {...props}/>
+                                 <LoginPage  {...props}/>
                              </div>
                            </div>
                      </div>

@@ -3,19 +3,18 @@ import Button from "../../common/button";
 import { login } from "../service";
 import "./LoginPage.css";
 //import { AuthContextConsumer } from "../context";
-import Layout from '../../../layout/Layout'
 import Alert from "../../common/Alert";
 import { Link } from "react-router-dom";
 //import useAuth from "../../../hooks/useAuth";
 import * as Icon from 'react-feather';
+import {setAuthorizationHeader} from "../../../api/client"
 
-function LoginPage({history}) {
+function LoginPage({ history, onLogin} ) {
   const [value, setValue] = useState({
     nombre: "",
     password: ""
   });
 
-  //const { setAuth } = useAuth()
 
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -56,23 +55,22 @@ function LoginPage({history}) {
     try {
       // call to api - send value
       const data = await login(value);
-      console.log(data)
       setIsLoading(false);
-      console.log(data.msg)
         setAlert({
           msg: data.msg,
           error: false
          })
     
       if (data.token) {
-        localStorage.setItem('token', data.token)
+        localStorage.setItem("token", data.token);
+        setAuthorizationHeader(data.token)
         history.push("/adverts");
       }
       
      
       
       //setAuth(data)
-      //onLogin();
+      onLogin();
       //const { from } = location.state || { from: { pathname: "/" } };
       
     } catch (error) {

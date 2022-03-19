@@ -1,23 +1,28 @@
-//import Formik from "formik";
 import { Switch, Route, Redirect } from "react-router-dom";
 import AdsListMainPage from "./components/AdsListMainPage";
 import NewAdPage from "./components/NewAdPage";
 import PasswordForgot from "./components/auth/passwordForgot/PasswordForgot";
 import AccountConfirm from "./components/auth/accountConfirm/AccountConfirm";
-import signupLogin from "./components/auth/signupLogin";
+import SignupLogin from "./components/auth/SignupLogin";
 import Detail from "./components/Detail";
+import { useState } from "react";
 //import {AuthProvider} from "./context/AuthProvider";
 function App() {
+
+  const [isLogged, SetLogged] = useState(false);
+  
+  const handleLogin = () => SetLogged(true)
+
   return (
     // <AuthProvider>
-
     <Switch>
-      <Route exact path="/adverts" component={AdsListMainPage} />
+      <Route exact path="/adverts" component={AdsListMainPage}/> 
       <Route exact path="/adverts/new" component={NewAdPage} />
       <Route exact path="/adverts/:id" component={Detail} />
-      <Route exact path="/login" component={signupLogin} />
-      <Route exact path="/signup" component={signupLogin} />
-      {/* <Route exact path="/signuplogin" component={signupLogin} /> */}
+      <Route exact path="/login" >
+        <SignupLogin onLogin={handleLogin}/>
+      </Route>
+      <Route exact path="/signup" component={SignupLogin} />
       <Route
         exact
         path="/password-forgot/:accessToken"

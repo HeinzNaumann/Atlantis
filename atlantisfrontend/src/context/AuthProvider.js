@@ -22,7 +22,6 @@
 //             }
 //             try {
 //                 const { data } = await authUser(config)
-//                 console.log(data)
 //             } catch (error) {
                 
 //             }
