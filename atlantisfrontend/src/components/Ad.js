@@ -57,7 +57,7 @@ export const Ad = (ad) => {
                 </a>
               </h4>
               <h6 className="d-flex justify-content-between align-items-center">
-                {ad.usuario}
+                {ad.usuario_nombre}
               </h6>
               <div className="content-btm-blk">
                 <div className="media py-3">

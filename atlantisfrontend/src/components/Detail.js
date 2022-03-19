@@ -2,12 +2,13 @@
 import "./detail.css";
 import { detailAds } from "./service";
 import { useEffect, useState } from "react";
+import Layout from "../layout/Layout";
 //import { DeleteButton } from "../common/DeleteButton";
 
 import React from "react";
 function Detail({ match }) {
   const advertId = match.params.id;
-
+  console.log(advertId)
   //const history = useHistory();
   const [advert, setAdvert] = useState(advertId);
 
@@ -15,11 +16,10 @@ function Detail({ match }) {
     try {
       const advertData = await detailAds(advertId);
       const detalle = advertData.result[0];
-      console.log(detalle);
 
       return detalle;
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -27,10 +27,10 @@ function Detail({ match }) {
     getAdvertById().then((ad) => setAdvert(ad));
   }, []);
 
-  console.log(advert);
 
   return (
     <>
+      <Layout>
       {advert ? (
         <div className="container">
           <div className="row">
@@ -38,7 +38,7 @@ function Detail({ match }) {
               <div className="item">
                 <div className="inside-left">
                   <img
-                    src={`${process.env.REACT_APP_API_BASE_URL}/images/anuncios/${advert.imagen}`}
+                    src={`${process.env.REACT_APP_API_ATLANTIS_URL}/images/anuncios/${advert.imagen}`}
                     alt={advert.imagen}
                     className="img-fluid "
                   />
@@ -63,7 +63,8 @@ function Detail({ match }) {
         </div>
       ) : (
         <p>sin anuncios</p>
-      )}
+        )}
+        </Layout>
     </>
   );
 }
