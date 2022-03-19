@@ -33,6 +33,10 @@ export function NewAdPage({ history }) {
     try {
       const data = new FormData(event.target);
       data.append("files input", filesInput);
+      
+      
+      const token = localStorage.getItem('token', data.token)
+      data.append("token", token);
       const newAd = await createAd(data);
       console.log("Ad Created", newAd);
       if (newAd) {
