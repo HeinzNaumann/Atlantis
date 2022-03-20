@@ -33,6 +33,7 @@ const AdsListMainPage = (props) => {
   const getAds = () => {
     getAdsList().then(({ results, totalads }) => {
       const ads = results;
+      results.sort((t1, t2) => t2.createdAt.localeCompare(t1.createdAt));
       const slice = ads.slice(skip-limit, limit*currentPage);
       const slicedData = slice.map(ad => ad);
       setAdsList(slicedData);
@@ -68,10 +69,6 @@ const AdsListMainPage = (props) => {
     return filterByTag.every((tag) => ad.tags.includes(tag));
   };
 
-  
-  adsList.sort((t1, t2) => t2.createdAt.localeCompare(t1.createdAt));
-  console.log(adsList)
-  
   
   const filteredAds =
     adsList?.filter((ad) => {
