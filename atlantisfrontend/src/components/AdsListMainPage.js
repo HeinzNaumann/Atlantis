@@ -15,35 +15,46 @@ const EmptyList = () => {
 
 const AdsListMainPage = (props) => {
   const [adsList, setAdsList] = useState([]);
-  //const [totalPages, setTotalPages] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [tags, setTags] = useState([]);
   const [filterByName, setFilterByName] = useState("");
   const [filterByPrice, setFilterByPrice] = useState([0, 1000]);
-  const [filterBySale, setFilterBySale] = useState("all");
-  const [tags, setTags] = useState([]);
   const [filterByTag, setFilterByTag] = useState([]);
+  
+  const limit = 3;
+  const skip = currentPage * limit;
 
-  useEffect(() => {
-    getAdsList().then(
-      (adsList) => setAdsList(adsList)
-    );
-  }, []);
 
   useEffect(() => {
     getTags().then((tags) => setTags(tags));
   }, []);
 
+  const getAds = () => {
+    getAdsList().then(({ results, totalads }) => {
+      const ads = results;
+      const slice = ads.slice(skip-limit, limit*currentPage);
+      const slicedData = slice.map(ad => ad);
+      setAdsList(slicedData);
+      setTotalPages(totalads/limit);
+    }); 
+  };
+  
+
+  useEffect(()=>{
+    getAds();
+  },[currentPage])
+
+
   const handleSearch = (event) => {
     setFilterByName(event.target.value);
-  };
-
-  const handleRadio = (event) => {
-    setFilterBySale(event.target.value);
   };
 
   const handleSelectChange = (event) => {
     const selectedOptions = Array.from(event.target.selectedOptions);
     setFilterByTag(selectedOptions.map((tag) => tag.value));
   };
+  
 
   const filteredName = (ad) => {
     return ad.nombre.includes(filterByName);
@@ -57,18 +68,16 @@ const AdsListMainPage = (props) => {
     return filterByTag.every((tag) => ad.tags.includes(tag));
   };
 
-  const filteredSale = (ad) => {
-    console.log(ad.venta);
-    const sellBuy = ad.venta ? true : false;
-    return filterBySale === "all" || filterBySale === sellBuy;
-  };
-
-  const { results } = adsList;
-
+  
+  adsList.sort((t1, t2) => t2.createdAt.localeCompare(t1.createdAt));
+  console.log(adsList)
+  
+  
   const filteredAds =
-    results?.filter((ad) => {
-      return filteredPrice(ad) && filteredName(ad) && filteredTags(ad); //&& filteredSale(ad);
+    adsList?.filter((ad) => {
+      return filteredPrice(ad) && filteredName(ad) && filteredTags(ad);
     }) || [];
+  
 
   return (
     <Layout>
@@ -82,18 +91,6 @@ const AdsListMainPage = (props) => {
         <p>Min Price: {filterByPrice[0]}</p>{" "}
         <p>Max Price: {filterByPrice[1]}</p>
         <Range value={filterByPrice} onChange={setFilterByPrice} />
-        <input type="radio" name="venta" value={true} onChange={handleRadio} />
-        Sell
-        <input type="radio" name="venta" value={false} onChange={handleRadio} />
-        Buy
-        <input
-          type="radio"
-          name="venta"
-          value="all"
-          checked
-          onChange={handleRadio}
-        />
-        All
         <select
           name="tags"
           className="form-select"
@@ -120,7 +117,13 @@ const AdsListMainPage = (props) => {
           )}
         </>
       </section>
-      {/* <Pagination {...filteredAds}></Pagination> */}
+      {totalPages > 0 && (
+        <Pagination
+          pages={totalPages}
+          currentPage={currentPage}
+          onPageChange={setCurrentPage}
+        ></Pagination>
+      )}
     </Layout>
   );
 };
