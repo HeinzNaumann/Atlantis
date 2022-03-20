@@ -136,15 +136,7 @@ export function NewAdPage({ history }) {
                         : []}
                     </select>
                     <div className="col-sm-4 mt-3">
-                    <input
-                      type="text"
-                      name="usuario"
-                      placeholder="What's your name?"
-                      label="Name of yourself"
-                      className="form-control mt-3 "
-                      value={ad.usuario}
-                      onChange={handleChange}
-                      ></input>
+                   
                       </div>
                     <input
                       type="file"
