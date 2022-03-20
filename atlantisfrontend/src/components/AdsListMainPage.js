@@ -77,32 +77,41 @@ const AdsListMainPage = (props) => {
   
 
   return (
-    <Layout>
-      <section className="tab-blk-style bg-grey py-6" {...props}>
-        <FormField
-          type="text"
-          name="query"
-          placeholder="Find ads"
-          onChange={handleSearch}
-        ></FormField>
-        <p>Min Price: {filterByPrice[0]}</p>{" "}
-        <p>Max Price: {filterByPrice[1]}</p>
-        <Range value={filterByPrice} onChange={setFilterByPrice} />
-        <select
-          name="tags"
-          className="form-select"
-          onChange={handleSelectChange}
-          multiple
-        >
-          {tags
-            ? tags.results?.map((tag) => (
-                <option key={tag} value={tag}>
-                  {tag}
-                </option>
-              ))
-            : []}
-        </select>
-        <>
+       <Layout>
+      <div className="row" {...props}>
+        <div className="col-lg-4">
+          <div className="col-lg-8">
+            <FormField
+              type="text"
+              name="query"
+              placeholder="Find ads"
+              onChange={handleSearch}
+             ></FormField>
+            <div className="range-price">
+              <span>Min Price: {filterByPrice[0]}</span>{" "}
+              <span>Max Price: {filterByPrice[1]}</span>
+              <Range value={filterByPrice} onChange={setFilterByPrice} />
+            </div>
+            
+            <div className="tags-select">
+              <select
+                name="tags"
+                className="form-select"
+                onChange={handleSelectChange}
+                multiple
+              >
+                {tags
+                  ? tags.results?.map((tag) => (
+                      <option key={tag} value={tag}>
+                        {tag}
+                      </option>
+                    ))
+                  : []}
+              </select>
+            </div>
+          </div>
+        </div>
+        <div className="col-lg-8">
           {adsList.length !== 0 ? (
             <div className="row">
               {filteredAds.map((ad) => (
@@ -112,8 +121,9 @@ const AdsListMainPage = (props) => {
           ) : (
             <EmptyList />
           )}
-        </>
-      </section>
+        </div>
+      </div>
+      
       {totalPages > 0 && (
         <Pagination
           pages={totalPages}
@@ -121,8 +131,13 @@ const AdsListMainPage = (props) => {
           onPageChange={setCurrentPage}
         ></Pagination>
       )}
-    </Layout>
+   </Layout>
   );
 };
 
 export default AdsListMainPage;
+
+
+
+    
+
