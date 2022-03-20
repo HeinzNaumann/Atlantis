@@ -2,6 +2,7 @@ import SignupPage from "./signupPage/SignupPage";
 import LoginPage from "./loginPage/LoginPage";
 import Layout from "../../layout/Layout";
 
+
 const signupLogin = ({...props } ) => {
 
 
