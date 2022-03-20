@@ -5,12 +5,12 @@ export const Pagination = ({ pages, currentPage, onPageChange }) => {
     .map((page) => (
       <button
         key={page}
-        style={{ color: currentPage === page ? "teal" : "inherit" }}
+        style={{ color: currentPage === page ? "blue" : "inherit" }}
         onClick={() => onPageChange(page)}
       >
         {page}
       </button>
-    ));;
+    ));
 };
 
 
