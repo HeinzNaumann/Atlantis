@@ -4,8 +4,25 @@ import flagEs from "../assets/img/es.png";
 import flagEn from "../assets/img/en.png"
 import * as Icon from 'react-feather';
 import { NavLink, Link } from "react-router-dom";
+import LoginButton from "../components/common/LoginButton";
+import LogoutButton from "../components/common/LogoutButton";
+import { useEffect, useState } from "react";
 
 function Header() {
+
+  const [isLogged, SetLogged] = useState(false);
+  const token = localStorage.getItem('token')
+  
+  useEffect(() => {
+    if (token) {
+    SetLogged(true)
+  }else{
+    SetLogged(false)
+  }
+  })
+
+  
+
   return (
     <header className="bg-black">
       {/* <!-- Main header Section --> */}
@@ -25,23 +42,13 @@ function Header() {
                   </div>
                   <div className="header-items text-white ml-auto">
                     <ul className="list-inline menu-header">
-                    <li className="list-inline-item d-none d-md-inline-block">
-                        <Link to="/chat">
-                    
-                           <Icon.MessageCircle className="d-inline-block mr-0 mr-lg-3 icons-header" />
-                          <span className="d-none d-lg-inline-block">
-                            Message
-                          </span>
-                       </Link>
-                      </li>
                       <li className="list-inline-item d-none d-md-inline-block">
-                        <Link to="/signup">
-                    
-                           <Icon.User className="d-inline-block mr-0 mr-lg-3 icons-header" />
-                          <span className="d-none d-lg-inline-block">
-                            User
-                          </span>
-                       </Link>
+                        
+                        {isLogged ?
+                          <LogoutButton/>
+                        : <LoginButton/>
+                       }
+                         
                       </li>
                       <li className="list-inline-item d-none d-md-inline-block explore-menu-style">
                         <Link to="/adverts">

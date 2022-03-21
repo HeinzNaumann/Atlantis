@@ -109,12 +109,16 @@ function ErrorPage() {
                       </a>
                     </li>
                     <li class="list-inline-item">
+<<<<<<< HEAD
                       <a class="d-inline-block" href="">
+=======
+                      <a class="d-inline-block" href="javascript:;">
                         <i class="fa fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li class="list-inline-item">
+<<<<<<< HEAD
                       <a class="d-inline-block" href="">
+=======
+                      <a class="d-inline-block" href="javascript:;">
+>>>>>>> detail
                         <i class="fa fa-google-plus"></i>
                       </a>
                     </li>
@@ -204,7 +208,11 @@ function ErrorPage() {
                   <h5 class="text-theme">Download Apps</h5>
                   <div class="pt-4 mb-0">
                     <div class="media align-items-center mb-2">
+<<<<<<< HEAD
                       <a href="" class="d-block w-100 radius-1 p-3">
+=======
+                      <a href="javascript:;" class="d-block w-100 radius-1 p-3">
+>>>>>>> detail
                         <span
                           class="fa fa-android display-5"
                           aria-hidden="true"
@@ -215,7 +223,11 @@ function ErrorPage() {
                       </a>
                     </div>
                     <div class="media align-items-center mb-0">
+<<<<<<< HEAD
                       <a href="" class="d-block w-100 radius-1 p-3">
+=======
+                      <a href="javascript:;" class="d-block w-100 radius-1 p-3">
+>>>>>>> detail
                         <span
                           class="fa fa-apple display-5"
                           aria-hidden="true"

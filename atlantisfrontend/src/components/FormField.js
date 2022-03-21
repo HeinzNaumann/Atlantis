@@ -15,7 +15,7 @@ function FormField({ className, label, ...props }) {
       <label className="formField-label">
         <span>{label}</span>
         <input
-          className="formField-input"
+          className="form-control"
           autoComplete="off"
           {...props}
         ></input>

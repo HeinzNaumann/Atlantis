@@ -1,0 +1,47 @@
+/* .row {
+  display: block;
+  align-items: inline-block;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.container {
+  margin-top: 50px;
+  width: 100%;
+  margin-top: 35px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.content {
+  display: block;
+  background-color: rgb(236, 243, 238);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  width: 500px;
+}
+.item {
+  align-items: center;
+  display: flex;
+}
+.inside-left {
+  position: relative;
+
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  max-width: 41%;
+}
+.inside-right {
+  position: relative;
+
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  max-width: 41%;
+}
+.img-fluid {
+  width: 400px;
+  height: 400px;
+  height: auto;
+  display: block;
+} */

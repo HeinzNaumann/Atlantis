@@ -23,6 +23,7 @@ export function NewAdPage({ history }) {
     setFilesInput({ [event.target.name]: event.target.files });
     setAd({
       ...ad,
+      
       [event.target.name]: event.target.value,
     });
   };
@@ -32,8 +33,11 @@ export function NewAdPage({ history }) {
     try {
       const data = new FormData(event.target);
       data.append("files input", filesInput);
+      
+      
+      // const token = localStorage.getItem('token', data.token)
+      // data.append("token", token);
       const newAd = await createAd(data);
-      console.log("Ad Created", newAd);
       if (newAd) {
         history.push("/adverts");
       }
@@ -60,42 +64,37 @@ export function NewAdPage({ history }) {
                      <div className="col-lg-8">
                        <div className="add-pdt-title-blk">
                           <span data-feather="folder" className="mr-3 text-theme"></span>
-                         <h5 className="text-grey d-inline-block align-middle">Product details</h5>
+                         <h5 className="text-grey d-inline-block align-middle">Add a product</h5>
                        </div>
                        <hr className="my-4"/>
                        <div className="form-row mb-4">
                       <div className="col-12">
-                        
-
-                        <FormField
+                        <input
                           type="text"
                           name="nombre"
                           placeholder="What do you want to sell today?"
-                          label="Name of your item"
-                          className="form-control"
+                          className="form-control mt-3"
                           value={ad.nombre}
                           onChange={handleChange}
-                          ></FormField>
-                          <div className="mt-2">
-                             <p className="text-theme">
-                                <span className="lnr lnr-warning mr-2"></span>Publishing the product, you agree all
-                                its content and the product is your complete property.
-                             </p>
-                         </div>
+                          />
                       </div>
-                   </div>
+                    </div>
                     
-                    <FormField
+                    <div className="form-check form-check-inline">
+                    <input
                       type="radio"
                       name="venta"
                       placeholder="Are you selling?"
                       label="Sell"
-                      className="venta"
+                      className="custom-control-input"
                       value={ad.venta === true}
                       checked={true}
                       onChange={handleChange}
-                    ></FormField>
-                    <FormField
+                      />
+                      <label className="custom-control-label"> Sell </label>
+                      </div>
+                    <div className="form-check form-check-inline">
+                    <input
                       type="radio"
                       name="venta"
                       placeholder="Are you buying?"
@@ -103,52 +102,51 @@ export function NewAdPage({ history }) {
                       className="venta"
                       value={ad.venta === false}
                       onChange={handleChange}
-                    ></FormField>
-                    <FormField
+                    ></input>
+                    <label className="custom-control-label"> Buy </label>
+                    </div>
+                    <div className="col-sm-4 mt-3 form-check form-check-inline">
+                    <input
                       type="number"
                       name="precio"
-                      placeholder="What price do you want to set? Don't be greedy!"
+                      placeholder="Enter price"
                       label="Price of your item"
-                      className="precio"
+                      className="form-control"
                       value={ad.precio}
                       onChange={handleChange}
-                    ></FormField>
-                    <FormField
+                      ></input>
+                      </div>
+                    <textarea
                       type="text"
                       name="descripcion"
-                      placeholder="Tell to the world a bit your item and why is the best"
+                      placeholder="Tell to the world a bit about your item and why is the best..."
                       label="Description of your item"
-                      className="descripcion"
+                      className="form-control input-lg bg-input custom-textarea mt-3"
+                      rows="5"
                       value={ad.descripcion}
                       onChange={handleChange}
-                    ></FormField>
-                    <select name="tags" className="form-select" multiple>
+                    ></textarea>
+                    <select onChange={handleChange} name="tags" className="custom-select bg-input mt-3 input-lg" multiple>
                       {tags
                         ? results?.map((tag) => (
-                            <option key={tag} value={tag}>
+                            <option key={tag} value={tag} >
                               {tag}
                             </option>
                           ))
                         : []}
                     </select>
-                    <FormField
-                      type="text"
-                      name="usuario"
-                      placeholder="What's your name?"
-                      label="Name of yourself"
-                      classNamee="usuario"
-                      value={ad.usuario}
-                      onChange={handleChange}
-                    ></FormField>
-                    <FormField
+                    <div className="col-sm-4 mt-3">
+                   
+                      </div>
+                    <input
                       type="file"
                       name="imagen"
                       placeholder="Upload a picture of your item"
                       label="Imagen"
-                      className="imagen"
+                      className="form-control mt-3 mb-3"
                       value={ad.imagen}
                       onChange={handleChange}
-                    ></FormField>
+                    ></input>
                     <Button className="button" type="submit" variant="primary">
                       Create Ad
                       </Button>
