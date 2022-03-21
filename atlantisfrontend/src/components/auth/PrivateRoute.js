@@ -1,9 +1,20 @@
-import { useContext } from "react";
+import { useState, useEffect } from "react";
 import { Route, Redirect } from "react-router";
-import AuthContext from "./context";
+
 
 const PrivateRoute = props => {
-  const { isLogged } = useContext(AuthContext);
+
+  const [isLogged, setLogged] = useState([false]);
+  
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      setLogged(true)
+    } else {
+      setLogged(false)
+      }
+  },[setLogged])
+
   return isLogged ? (
     <Route {...props} />
   ) : (

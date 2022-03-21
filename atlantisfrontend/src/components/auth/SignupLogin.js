@@ -6,8 +6,8 @@ import Layout from "../../layout/Layout";
 
 const signupLogin = ({...props } ) => {
 
-
-    return ( 
+return ( 
+        <>
         <Layout>
                <div className="row">
                   <div className="col-lg-12">
@@ -29,7 +29,9 @@ const signupLogin = ({...props } ) => {
                 </div>
             </div> 
          </Layout> 
-     );
+         </>
+     )
 }
  
+
 export default signupLogin;

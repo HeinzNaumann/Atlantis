@@ -5,22 +5,19 @@ import PasswordForgot from "./components/auth/passwordForgot/PasswordForgot";
 import AccountConfirm from "./components/auth/accountConfirm/AccountConfirm";
 import SignupLogin from "./components/auth/SignupLogin";
 import Detail from "./components/Detail";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import PrivateRoute from "./components/auth/PrivateRoute";
 //import {AuthProvider} from "./context/AuthProvider";
 function App() {
-
-  const [isLogged, SetLogged] = useState(false);
-  
-  const handleLogin = () => SetLogged(true)
 
   return (
     // <AuthProvider>
     <Switch>
       <Route exact path="/adverts" component={AdsListMainPage}/> 
-      <Route exact path="/adverts/new" component={NewAdPage} />
+      <PrivateRoute path="/adverts/new" component={NewAdPage} />
       <Route exact path="/adverts/:id" component={Detail} />
       <Route exact path="/login" >
-        <SignupLogin onLogin={handleLogin}/>
+        <SignupLogin />
       </Route>
       <Route exact path="/signup" component={SignupLogin} />
       <Route
