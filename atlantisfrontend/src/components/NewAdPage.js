@@ -11,7 +11,7 @@ export function NewAdPage({ history }) {
     nombre: "",
     imagen: "",
     descripcion: "",
-    venta: false,
+    venta: "",
     precio: "",
     tags: [""],
     usuario: "",
@@ -87,8 +87,8 @@ export function NewAdPage({ history }) {
                       placeholder="Are you selling?"
                       label="Sell"
                       className="custom-control-input"
-                      value={ad.venta === true}
-                      checked={true}
+                      value ="sell"
+                      checked={ad.venta === "sell"}
                       onChange={handleChange}
                       />
                       <label className="custom-control-label"> Sell </label>
@@ -100,7 +100,8 @@ export function NewAdPage({ history }) {
                       placeholder="Are you buying?"
                       label="Buy"
                       className="venta"
-                      value={ad.venta === false}
+                      value = "buy"
+                      checked={ad.venta === "buy"}
                       onChange={handleChange}
                     ></input>
                     <label className="custom-control-label"> Buy </label>

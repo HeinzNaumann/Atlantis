@@ -47,7 +47,7 @@ export const Ad = (ad) => {
               <div className="d-flex justify-content-between align-items-center">
                 <p className="text-warning font-bold">
                   {" "}
-                  {ad.venta ? "buy" : "sell"}
+                  {ad.venta}
                 </p>
               </div>
               <h5 className="text-theme font-amt font-bold">{ad.precio}</h5>

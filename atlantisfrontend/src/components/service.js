@@ -15,3 +15,13 @@ export const createAd = (adObj) => {
   const url = "/api/ads";
   return client.post(url, adObj);
 };
+
+export const updateAd = (id, adObj) => {
+  const url = `/api/ads/${id}`;
+  return client.put(url, adObj)
+}
+
+export const getTags = () => {
+  const url = "/api/ads/tags";
+  return client.get(url);
+};

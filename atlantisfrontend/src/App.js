@@ -6,6 +6,7 @@ import AccountConfirm from "./components/auth/accountConfirm/AccountConfirm";
 import SignupLogin from "./components/auth/SignupLogin";
 import Detail from "./components/Detail";
 import { useState } from "react";
+import EditComponent from "./components/EditComponent";
 //import {AuthProvider} from "./context/AuthProvider";
 function App() {
 
@@ -16,11 +17,12 @@ function App() {
   return (
     // <AuthProvider>
     <Switch>
-      <Route exact path="/adverts" component={AdsListMainPage}/> 
+      <Route exact path="/adverts" component={AdsListMainPage} />
       <Route exact path="/adverts/new" component={NewAdPage} />
       <Route exact path="/adverts/:id" component={Detail} />
-      <Route exact path="/login" >
-        <SignupLogin onLogin={handleLogin}/>
+      <Route exact path="/update" component={EditComponent} />
+      <Route exact path="/login">
+        <SignupLogin onLogin={handleLogin} />
       </Route>
       <Route exact path="/signup" component={SignupLogin} />
       <Route
