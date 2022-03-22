@@ -1,12 +1,12 @@
 //import Layout from "../layout/Layout";
 import "./detail.css";
-import { detailAds } from "./service";
+import { detailAds, deleteAd } from "./service";
 import { useEffect, useState } from "react";
 import Layout from "../layout/Layout";
 import { Button } from "reactstrap";
 
 import React from "react";
-function Detail({ match }) {
+function Detail({ match, history }) {
   const advertId = match.params.id;
   //const history = useHistory();
   const [advert, setAdvert] = useState(advertId);
@@ -22,23 +22,20 @@ function Detail({ match }) {
     }
   };
 
-  const deleteAd= async (advertId) => {
-    try{
-      const confirmar = window.confirm("Do you want to delete?")
-      if(confirmar === true){
-        
-      }
-
-    }catch (error) {
-      console.error(error);
-  }
-
+  const toDelete = () => {
+    const adId = match.params.id;
+    console.log(adId);
+    try {
+      deleteAd(adId);
+      history.push("/adverts");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     getAdvertById().then((ad) => setAdvert(ad));
   }, []);
-
- 
 
   return (
     <>
@@ -68,7 +65,9 @@ function Detail({ match }) {
                       {advert.reservado}
                       {advert.vendido}
                     </h5>
-                    <Button color="danger" onClick={()=>deleteAd(advert)}>Delete</Button>
+                    <Button color="danger" onClick={toDelete}>
+                      Delete
+                    </Button>
                   </div>
                 </div>
               </div>
