@@ -1,35 +1,30 @@
 import { useEffect, useRef, useState } from 'react';
 import socket from './socket'
 import Layout from '../../layout/Layout';
+import { Link } from "react-router-dom";
 import { getChats,getAd } from '../../DataService';
 import './chat.css'
+import Button from '../common/button';
 
 const EmptyList = () => (
     <div style={{ textAlign: 'center' }}>
       <p>No tienes mensajes aun!</p>
-      <Button as={Link} to="/" variant="primary">
+      {/* <Link to="/" variant="primary">
         Anuncios
-      </Button>
+      </Link> */}
     </div>
   );
 
 
 
 const MessagePage=({ match }) =>{
-   // const[msg, setMsg] = useState("");
+   
     const[chats, setChats] = useState([])
+    const[chat, setChat] = useState([])
     const[ad, setAd] = useState({});
     const nombre = localStorage.getItem('nombre');
     const idusuario = localStorage.getItem('usuario');
     const idAd =match.params.idAd? match.params.idAd:"";
-    //const ad_ = useAd(idAd);
-   // console.log("AD -->", ad_);
-    
-    //console.log("AD.nombre -->", ad.nombre);
- 
-   /*  useEffect(()=>{
-        socket.emit('conectado', nombre)
-    },[nombre]) */
 
     const gtAd = adId =>{
         if(!adId){
@@ -70,25 +65,27 @@ const MessagePage=({ match }) =>{
         divRef.current.scrollIntoView({behavior:'smooth'})
     }) */
 
-    const handleSubmnit = (e)=>{
+    const handleChatSelect = (e)=>{
         e.preventDefault();
         //const 
        // socket.emit('mensaje', nombre, msg)
-
+        console.log("event--->",e.target)
        // setMsg("");
     }
 
 
     return (
         <Layout>
-            <div className="">
+            
+            <div>
                 {chats.length ? (
-                <ul className="">
+                <ul>
                     {chats.map(({ _id,anuncio_nombre, ...chat }) => (
-                    <li key={id}>
-                        <Link to={`/chat/${_id}`}>
-                        <p>{}</p>
-                        </Link>
+                    <li key={_id} onClick={handleChatSelect} value={nombre}>
+                    
+                            <p>{anuncio_nombre}</p>
+                            <p>{console.log("chat",chat)}</p>
+                    
                     </li>
                     ))}
                 </ul>

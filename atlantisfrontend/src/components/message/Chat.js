@@ -4,23 +4,6 @@ import Layout from '../../layout/Layout';
 import { getUser } from '../../DataService';
 import './chat.css'
 
-/* const useAd = adId => {
-    const [advert, setAdvert] = useState(null);
-
-    useEffect(() => {
-      if(!adId){
-          setAdvert("");
-      }else{
-           getAd(adId).then(advert => setAdvert(advert.result[0]));
-      }
- 
-      return () => {}; 
-    }, []);
- 
-    return advert;
-  }; */
-
-
 const Chat=({ match }) =>{
     const[msg, setMsg] = useState("");
     const[message, setMessage] = useState([])
