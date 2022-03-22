@@ -2,9 +2,12 @@ import SignupPage from "./signupPage/SignupPage";
 import LoginPage from "./loginPage/LoginPage";
 import Layout from "../../layout/Layout";
 
-const signupLogin = ({ ...props }) => {
 
-    return ( 
+
+const signupLogin = ({...props } ) => {
+
+return ( 
+        <>
         <Layout>
                <div className="row">
                   <div className="col-lg-12">
@@ -19,14 +22,16 @@ const signupLogin = ({ ...props }) => {
                           <div className="pdt-details-blk bg-white p-4">
                               <div className="row">
                                  <SignupPage {...props}/>
-                                 <LoginPage {...props}/>
+                                 <LoginPage  {...props}/>
                              </div>
                            </div>
                      </div>
                 </div>
             </div> 
          </Layout> 
-     );
+         </>
+     )
 }
  
+
 export default signupLogin;

@@ -1,16 +1,17 @@
 
 export const Pagination = ({ pages, currentPage, onPageChange }) => {
-  return [...Array(pages).keys()]
+  const pagesModificado = Math.ceil(pages);
+  return [...Array(pagesModificado).keys()]
     .map((page) => page + 1)
     .map((page) => (
       <button
         key={page}
-        style={{ color: currentPage === page ? "teal" : "inherit" }}
+        style={{ color: currentPage === page ? "blue" : "inherit" }}
         onClick={() => onPageChange(page)}
       >
         {page}
       </button>
-    ));;
+    ));
 };
 
 

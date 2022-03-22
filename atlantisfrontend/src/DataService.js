@@ -24,3 +24,10 @@ export const getUser = id => {
     const url = `/api/users/${id}`
     return client.get(url)
 }
+
+// getChats,getAd
+export const getChats = (idusuario,idAd) => {
+    console.log("UsuarioID-S---:",idusuario,"  AnuncioID-S---",idAd);
+    const url = `/api/chats?user=${idusuario}&ad=${idAd}`;
+    return client.get(url);
+}

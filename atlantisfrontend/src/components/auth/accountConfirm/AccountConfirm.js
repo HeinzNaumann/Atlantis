@@ -9,7 +9,6 @@ const AccountConfirm = () => {
 
     const params = useParams();
 
-    console.log(params);
     
     return (
             <>

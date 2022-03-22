@@ -11,17 +11,16 @@ const PasswordForgot = () => {
 
         <h1 className='loginPage-title'> Recover your password</h1>
         <form >
-          <span> EMAIL </span>
+          <span> Nombre </span>
         <input
-          type='email'
-          name='email'
+          type='text'
+          name='nombre'
           className='loginForm-field'
 
         ></input>
           <Button
             type='submit'
             variant='primary'
-           
           >
             Send instructions
           </Button>
