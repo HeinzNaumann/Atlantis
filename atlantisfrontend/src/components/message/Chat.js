@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import socket from './socket'
 import Layout from '../../layout/Layout';
-import { getAd,getUser } from '../../DataService';
+import { getUser } from '../../DataService';
 import './chat.css'
 
-const useAd = adId => {
+/* const useAd = adId => {
     const [advert, setAdvert] = useState(null);
 
     useEffect(() => {
@@ -18,7 +18,7 @@ const useAd = adId => {
     }, []);
  
     return advert;
-  };
+  }; */
 
 
 const Chat=({ match }) =>{
@@ -28,10 +28,10 @@ const Chat=({ match }) =>{
     const nombre = localStorage.getItem('nombre');
     const idusuario = localStorage.getItem('usuario');
     
-    const id =match.params.adId? match.params.adId:"";
+  /*   const id =match.params.adId? match.params.adId:"";
     const ad = useAd(id);
     console.log("Match",match);
-    console.log("AD: ",ad);
+    console.log("AD: ",ad); */
 
     useEffect(()=>{
         socket.emit('conectado', nombre)

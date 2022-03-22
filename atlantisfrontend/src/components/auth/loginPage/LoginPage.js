@@ -63,6 +63,7 @@ function LoginPage({ history, onLogin} ) {
     
       if (data.token) {
         localStorage.setItem("token", data.token);
+        localStorage.setItem("nombre",value.nombre);
         setAuthorizationHeader(data.token)
         history.push("/adverts");
       }

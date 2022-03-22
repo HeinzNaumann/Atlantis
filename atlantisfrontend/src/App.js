@@ -7,6 +7,7 @@ import SignupLogin from "./components/auth/SignupLogin";
 import Detail from "./components/Detail";
 import { useState, useEffect } from "react";
 import PrivateRoute from "./components/auth/PrivateRoute";
+import Message from "./components/message/MessagePage"
 //import {AuthProvider} from "./context/AuthProvider";
 function App() {
 
@@ -16,6 +17,8 @@ function App() {
       <Route exact path="/adverts" component={AdsListMainPage}/> 
       <PrivateRoute path="/adverts/new" component={NewAdPage} />
       <Route exact path="/adverts/:id" component={Detail} />
+      <Route exact path="/chat/:idAd" component={Message} />
+      <Route exact path="/chat" component={Message} />
       <Route exact path="/login" >
         <SignupLogin />
       </Route>

@@ -50,6 +50,16 @@ function Header() {
                        }
                          
                       </li>
+                      <li className="list-inline-item d-none d-md-inline-block">
+                        <Link to="/chat">
+                    
+                           <Icon.MessageCircle className="d-inline-block mr-0 mr-lg-3 icons-header" />
+                          <span className="d-none d-lg-inline-block">
+                            Message
+                          </span>
+                       </Link>
+                      </li>
+
                       <li className="list-inline-item d-none d-md-inline-block explore-menu-style">
                         <Link to="/adverts">
                           <span

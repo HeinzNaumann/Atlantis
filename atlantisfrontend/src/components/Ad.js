@@ -65,8 +65,13 @@ export const Ad = (ad) => {
                     <h6 className="mb-0">{ad.tags}</h6>
                   </div>
                 </div>
+                
                 <p className="ad-tags"></p>
-                <p className="text-green font-bold">{ad.descripcion}</p>
+                <Link to={`/chat/${ad._id}`}>
+                    
+                          Chat
+                          
+                 </Link>
               </div>
             </div>
           </div>
