@@ -6,8 +6,8 @@ export const detailAds = (id) => {
   return client.get(url);
 };
 
-export const getAdsList = () => {
-  const url = "/api/ads";
+export const getAdsList = (usuario) => {
+  const url = `/api/ads/?user=${usuario}`;
   return client.get(url);
 };
 

@@ -77,7 +77,7 @@ const AdsListMainPage = (props) => {
   
 
   return (
-       <Layout>
+       <Layout >
       <div className="row" {...props}>
         <div className="col-lg-4">
           <div className="col-lg-8">

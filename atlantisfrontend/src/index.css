@@ -2327,7 +2327,7 @@ footer .menu-list-style li {
   background-attachment: fixed;
 }
 
-.userpanel-banner-wrapper:before {
+/* .userpanel-banner-wrapper:before {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
   content: "";
@@ -2335,7 +2335,7 @@ footer .menu-list-style li {
   height: 100%;
   top: 0rem;
   left: 0rem;
-}
+} */
 
 .userpanel-banner-wrapper .owl-carousel .owl-nav {
   position: absolute;

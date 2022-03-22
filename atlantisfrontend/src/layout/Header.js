@@ -6,6 +6,7 @@ import * as Icon from 'react-feather';
 import { NavLink, Link } from "react-router-dom";
 import LoginButton from "../components/common/LoginButton";
 import LogoutButton from "../components/common/LogoutButton";
+import AdminButton from "../components/common/AdminButton";
 import { useEffect, useState } from "react";
 
 function Header() {
@@ -45,7 +46,10 @@ function Header() {
                       <li className="list-inline-item d-none d-md-inline-block">
                         
                         {isLogged ?
-                          <LogoutButton/>
+                          <>
+                          <LogoutButton />
+                          <AdminButton/>
+                            </>
                         : <LoginButton/>
                        }
                          

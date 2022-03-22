@@ -4,6 +4,7 @@ import NewAdPage from "./components/NewAdPage";
 import PasswordForgot from "./components/auth/passwordForgot/PasswordForgot";
 import AccountConfirm from "./components/auth/accountConfirm/AccountConfirm";
 import SignupLogin from "./components/auth/SignupLogin";
+import AdminPanel from "./components/adminPanel/AdminPanel"
 import Detail from "./components/Detail";
 import { useState, useEffect } from "react";
 import PrivateRoute from "./components/auth/PrivateRoute";
@@ -15,6 +16,8 @@ function App() {
     <Switch>
       <Route exact path="/adverts" component={AdsListMainPage}/> 
       <PrivateRoute path="/adverts/new" component={NewAdPage} />
+      <PrivateRoute exact path="/admin" component={AdminPanel} />
+      <PrivateRoute exact path="/admin/:userId" component={AdminPanel} />
       <Route exact path="/adverts/:id" component={Detail} />
       <Route exact path="/login" >
         <SignupLogin />
