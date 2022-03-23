@@ -25,3 +25,7 @@ export const getTags = () => {
   const url = "/api/ads/tags";
   return client.get(url);
 };
+export const favAds = (favId) => {
+  const url = `/api/users/?fav=${favId}`
+  return client.get(url)
+}
