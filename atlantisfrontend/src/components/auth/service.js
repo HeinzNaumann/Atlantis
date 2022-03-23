@@ -13,6 +13,8 @@ export const signup = ({  ...credentials }) => {
 export const logout = () =>
   Promise.resolve().then(() => {
     localStorage.removeItem("token");
+    localStorage.removeItem("nombre");
+    localStorage.removeItem("usuario");
   }).then(() => {
     removeAuthorizationHeader();
   });

@@ -3,7 +3,7 @@ import socket from './socket'
 import Layout from '../../layout/Layout';
 import Chat from './Chat'
 import { Link } from "react-router-dom";
-import { getChats,getAd, setChatRead } from '../../DataService';
+import { getChats,getAd, setChatRead,getChat } from '../../DataService';
 import './chat.css'
 import Button from '../common/button';
 
@@ -24,6 +24,7 @@ const MessagePage=({ match }) =>{
     const[chats, setChats] = useState([])
     const[chat, setChat] = useState([])
     const[ad, setAd] = useState({});
+    const[arg,setArg]= useState("");
     const[first,setFirst]= useState(0);
     const nombre = localStorage.getItem('nombre');
     const idusuario = localStorage.getItem('usuario');
@@ -41,12 +42,18 @@ const MessagePage=({ match }) =>{
         gtAd(idAd);
       },[idAd])
 
+
+    useEffect(()=>{
+        setArg(match);
+      },[arg])
+
     useEffect(()=>{
         getChats(idusuario,idAd).then(({result,existChatAd})=>{
-            if(existChatAd || ad.propietario === ad.usuario_int){
-                //console.log("Result-->",result)
-               // console.log("existChatAd-->",existChatAd)
-                console.log("RESULT", result, "  ");
+            if(existChatAd || idusuario === ad.usuario){
+                //console.log("ad.propietario",ad.propietario," == ",ad.usuario_int,"ad.usuario_int")
+                //console.log("existChatAd-->",existChatAd)
+                //console.log("RESULT", result, "  ");
+                //console.log("AD", ad);
                 setChats(result)
                 setFirst(0);
             }else{
@@ -73,16 +80,32 @@ const MessagePage=({ match }) =>{
         setFirst(1);
       },[]) */
 
+      const updChat = async (id) =>{
+         const chat = await getChat(id);
+         //console.log("chat", chat, "id", id, chat._id===id);
+         //console.log("chat 1", chat1.result[0]);
+         setChat(chat.result[0]);
+         setFirst(1);
+      }  
+
+
     const handleChatSelect = async (chat,e,_id)=>{
         e.preventDefault();
         //const 
        // socket.emit('mensaje', nombre, msg)
+       
+       
+     /*    console.log("ID",_id)
         setChat(chat);
-        setFirst(1);
+        setFirst(1); */
+
         //llama al servicio para que ponga nuevo_msj a false
-        console.log("chat Handle--->",chat," Chat ID:",_id)
-        if(_id){ // si existe el chat no es temp
+       if(_id){ // si existe el chat no es temp
+            updChat(_id);
             await setChatRead(_id);
+        }else{
+            setChat(chat);
+            setFirst(1);
         }
      }
 

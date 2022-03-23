@@ -32,13 +32,16 @@ const Chat=({ props }) =>{
 
 
 
-    useEffect(()=>{
+/*     useEffect(()=>{
         socket.emit('conectado', nombre)
-    },[nombre])
+    },[nombre]) */
 
     useEffect(()=>{
         socket.on('mensajes', mensaje =>{
-            setMessage([...message,mensaje])
+            if(mensaje.id===props._id){
+                //console.log("Mensajes", mensaje)
+                setMessage([...message,mensaje])
+            }
         });
         return ()=> {socket.off()}
     },[message])
@@ -51,7 +54,7 @@ const Chat=({ props }) =>{
 
     const handleSubmnit = async (e)=>{
         e.preventDefault();
-        socket.emit('mensaje', nombre, msg);
+        socket.emit('mensaje', nombre, msg,props._id);
         console.log("PROPS CHAT-->",props);
         //verifica si es un chat existente sino lo crea
         if(!props._id){

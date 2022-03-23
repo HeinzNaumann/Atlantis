@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 //import useAuth from "../../../hooks/useAuth";
 import * as Icon from 'react-feather';
 import {setAuthorizationHeader} from "../../../api/client"
+import socket from '../../message/socket'
 
 function LoginPage({ history, onLogin} ) {
   const [value, setValue] = useState({
@@ -65,6 +66,7 @@ function LoginPage({ history, onLogin} ) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("nombre",value.nombre);
         setAuthorizationHeader(data.token)
+        socket.emit('conectado', data.nombre)
         history.push("/adverts");
       }
       
