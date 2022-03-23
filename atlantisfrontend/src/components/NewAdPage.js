@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { createAd, getTags } from "../DataService";
+import { createAd, getTags } from "./service";
 import Layout from "../layout/Layout";
-import FormField from "./FormField";
 import Button from "./common/button"
 
 import "./NewAdPage.css"

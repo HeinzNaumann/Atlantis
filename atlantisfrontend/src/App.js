@@ -6,13 +6,10 @@ import AccountConfirm from "./components/auth/accountConfirm/AccountConfirm";
 import SignupLogin from "./components/auth/SignupLogin";
 import AdminPanel from "./components/adminPanel/AdminPanel"
 import Detail from "./components/Detail";
-import { useState, useEffect } from "react";
 import PrivateRoute from "./components/auth/PrivateRoute";
-//import {AuthProvider} from "./context/AuthProvider";
 function App() {
 
   return (
-    // <AuthProvider>
     <Switch>
       <Route exact path="/adverts" component={AdsListMainPage}/> 
       <PrivateRoute path="/adverts/new" component={NewAdPage} />
@@ -34,7 +31,6 @@ function App() {
       <Route exact path="/" component={AdsListMainPage} />
       <Redirect to="/404" />
     </Switch>
-    // </AuthProvider>
   );
 }
 export default App;

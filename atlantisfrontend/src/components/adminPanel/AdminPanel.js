@@ -1,7 +1,7 @@
 import Layout from "../../layout/Layout";
 import { Link, useParams } from "react-router-dom";
 import {useEffect, useState} from 'react';
-import { getAdsList } from "../service";
+import { getAdsUserList } from "../service";
 import { Ads } from "./Ads"
 
 
@@ -13,7 +13,7 @@ const AdminPanel = ({ match }) => {
 
    
     useEffect(() => {
-       getAdsList(userId).then((ads) => {
+       getAdsUserList(userId).then((ads) => {
             userAd(ads)
         });
 

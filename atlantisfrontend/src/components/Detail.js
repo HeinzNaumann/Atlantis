@@ -1,14 +1,12 @@
-//import Layout from "../layout/Layout";
-import "./detail.css";
+
 import { detailAds } from "./service";
 import { useEffect, useState } from "react";
 import Layout from "../layout/Layout";
-//import { DeleteButton } from "../common/DeleteButton";
+
 
 import React from "react";
 function Detail({ match }) {
   const advertId = match.params.id;
-  //const history = useHistory();
   const [advert, setAdvert] = useState(advertId);
 
   const getAdvertById = async () => {
