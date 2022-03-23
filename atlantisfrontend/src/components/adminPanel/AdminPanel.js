@@ -2,25 +2,26 @@ import Layout from "../../layout/Layout";
 import { Link, useParams } from "react-router-dom";
 import {useEffect, useState} from 'react';
 import { getAdsList } from "../service";
+import { Ads } from "./Ads"
+
 
 const AdminPanel = ({ match }) => {
 
     const id = useParams();
-
     const { userId } = id;
     const [ads, userAd] = useState([]);
 
+   
     useEffect(() => {
-        try {
-             getAdsList(userId).then((ads)=>{
-                userAd(ads)
-            });
-           
-        } catch (error) {
-            console.log(error);
-        }
+       getAdsList(userId).then((ads) => {
+            userAd(ads)
+        });
+
     }, []);
- console.log(ads);
+
+   
+    
+ console.log(ads.results);
 
     return (<>
         
@@ -33,19 +34,16 @@ const AdminPanel = ({ match }) => {
                      <div className="row">
                         <div className="col-md-6 col-lg-5">
                            <div className="media mb-4 mb-md-0">
-                              <img src="assets/img/pdt-owner-img.jpg"
-                                 className="align-self-start mr-4 rounded-circle border-groove-success p-1"
-                                 alt="Owner Image" />
-                              <div className="media-body">
-                                 <h3><a href="loggedin-user-profile.html" className="text-link">John doe</a></h3>
+
+                            <div className="media-body">
+                                <h6>User:</h6>
+                                <h3>{ads.results ? ads.results[0].usuario_nombre : <span>User Name</span>}</h3>  
                               </div>
                            </div>
                         </div>
                        
                      </div>
                   </div>
-
-
                </div>
             </div>
          </div>
@@ -105,7 +103,8 @@ const AdminPanel = ({ match }) => {
                         <div className="table-responsive">
                            <table id="notify-table" className="table table-hover table-bordered table-striped mb-0">
                               <thead>
-                                 <tr>
+                                <tr>
+                                    <th>Photo</th>
                                     <th>Name</th>
                                     <th>Type</th>
                                     <th>Description</th>
@@ -113,73 +112,13 @@ const AdminPanel = ({ match }) => {
                                     <th>Price</th>
                                  </tr>
                               </thead>
-                              <tbody>
-                                 <tr>
-                                    <td>
-                                       <div className="bg-theme text-white custom-circle">
-                                          <i data-feather="mail" className="size-sm mx-auto"></i>
-                                       </div>
-                                    </td>
-                                    <td>
-                                       <div className="media">
-                                          <img src="assets/img/pdt-cat-iwatch-img.jpg" alt="user avatar"
-                                             className="mx-auto align-self-center w-50" />
-
-                                       </div>
-                                    </td>
-                                    <td>
-                                       <h5>Apple - iwatch series 3</h5><span className="text-grey">30 mins ago</span>
-                                       <p><a href="JavaScript:;">Peter Lawis</a> has commented on this product</p>
-                                    </td>
-                                    <td><a href="javascript:;" className="btn btn-sm btn-style"><span data-feather="eye"
-                                             className="size-xs mr-2"></span>View</a></td>
-                                 </tr>
-
-                                 <tr>
-                                    <td>
-                                       <div className="bg-warning text-white custom-circle">
-                                          <i data-feather="help-circle" className="size-sm mx-auto"></i>
-
-                                       </div>
-                                    </td>
-                                    <td>
-                                       <div className="media">
-
-                                          <img src="assets/img/pdt-img-xs-2.jpg" alt="user avatar"
-                                             className="mx-auto align-self-center w-50 img-fluid" />
-
-
-                                       </div>
-                                    </td>
-                                    <td>
-                                       <h5>MI headset</h5><span className="text-grey">1 hour ago</span>
-                                       <p><a href="JavaScript:;">Steve smith</a> has question on this product</p>
-                                    </td>
-                                    <td><a href="javascript:;" className="btn btn-sm btn-style"><span data-feather="eye"
-                                             className="size-xs mr-2"></span>View</a></td>
-                                 </tr>
-                                 <tr>
-                                    <td>
-                                       <div className="bg-warning text-white custom-circle">
-                                          <i data-feather="help-circle" className="size-sm mx-auto"></i>
-                                       </div>
-                                    </td>
-                                    <td>
-                                       <div className="media">
-
-                                          <img src="assets/img/pdt-cat-mac-img.jpg" alt="user avatar"
-                                             className="mx-auto align-self-center w-50 img-fluid"/>
-
-
-                                       </div>
-                                    </td>
-                                    <td>
-                                       <h5>MacBook Pro - Dark version</h5><span className="text-grey">2 hours ago</span>
-                                       <p><a href="JavaScript:;">Lenin</a> has commented on this product</p>
-                                    </td>
-                                    <td><a href="javascript:;" className="btn btn-sm btn-style"><span data-feather="eye"
-                                             className="size-xs mr-2"></span>View</a></td>
-                                 </tr>
+                                <tbody>
+                                {ads.results ? 
+                
+                                    ads.results.map((ad) => <Ads {...ad} /> )
+                                 : 
+                                  <div>prueba</div>
+                                }
                               </tbody>
                            </table>
                         </div>
