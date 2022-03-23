@@ -36,3 +36,14 @@ export const setChatRead = (idChat) => {
     const url = `/api/chats/${idChat}?read=1`;
     return client.put(url);
 }
+
+export const createChad = (chatObj) => {
+    const url = "/api/chats";
+    return client.post(url, chatObj);
+}
+
+
+export const updateChad = (idChat,dataChat)=> {
+    const url = `/api/chats/${idChat}`;
+    return client.put(url, dataChat);
+}

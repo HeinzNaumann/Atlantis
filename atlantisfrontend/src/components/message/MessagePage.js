@@ -16,7 +16,8 @@ const EmptyList = () => (
     </div>
   );
 
-
+ //TODO 
+ //actualizar nombre de usuario en chats si cambia, relevante para nombre de classsName en nuevo_msj
 
 const MessagePage=({ match }) =>{
    
@@ -42,24 +43,24 @@ const MessagePage=({ match }) =>{
 
     useEffect(()=>{
         getChats(idusuario,idAd).then(({result,existChatAd})=>{
-            if(existChatAd){
+            if(existChatAd || ad.propietario === ad.usuario_int){
                 //console.log("Result-->",result)
                // console.log("existChatAd-->",existChatAd)
+                console.log("RESULT", result, "  ");
                 setChats(result)
                 setFirst(0);
             }else{
                 console.log("AD -->2", ad);
-                const idTemp="623a65c2124334be5775386a"
                 const chatTemp ={
                     anuncio_nombre:ad.nombre,
-                    _id:idTemp,
                     anuncio: ad._id,
+                    precio: ad.precio? ad.precio:"",
                     propietario: ad.usuario,
                     propietario_nombre:ad.usuario_nombre,
                     usuario_int:idusuario,
                     usuario_int_nombre:nombre,
-                    mensajes:[{nombre:nombre,mensaje:"Holaa"},{nombre:"Jose",mensaje:"Holaa"}],
-                    nuevo_msj:true
+                    mensajes:[],
+                    imagen:ad.imagen? ad.imagen:""
                 }
           
                 setChats([chatTemp,...result]);
@@ -79,36 +80,35 @@ const MessagePage=({ match }) =>{
         setChat(chat);
         setFirst(1);
         //llama al servicio para que ponga nuevo_msj a false
-        console.log("chat Handle--->",chat)
-        await setChatRead(_id);
-       // setMsg("");
-    }
+        console.log("chat Handle--->",chat," Chat ID:",_id)
+        if(_id){ // si existe el chat no es temp
+            await setChatRead(_id);
+        }
+     }
 
     const firstChatSelect= chat=>{
         console.log("FirstChat", chat)
-        if(setFirst==1){
+        if(setFirst===1){
             setChat(chat);
             setFirst(2);
         }
     }
       
-    /* console.log(_id,"==",chats[0]._id,chat._id==chats[0]._id):console.log("COMPARA",_id,"==",chats[0]._id,chat._id==chats[0]._id)} */
-
-    return (
+   return (
         <Layout>
             
             <div>
                 
                 {chats.length ? (
                 <ul>
-                    {chats.map(({ _id, ...chat }) => ( 
-                    <li key={_id} onClick={(e)=>handleChatSelect(chat,e,_id)} 
+                    {chats.map(({ ...chat }) => ( 
+                    <li key={chat._id} onClick={(e)=>handleChatSelect(chat,e,chat._id)} 
                        className={chat.mensajes.length>0?(nombre!==chat.mensajes[chat.mensajes.length-1].nombre&&chat.nuevo_msj?"unread":"read"):"normal"}>
                             {/* {_id==chats[0]._id? firstChatSelect(chat):"FALSE" }  */}
                             <p>{chat.anuncio_nombre}</p>
                             <p>{chat.propietario_nombre}</p>
-                            <p>{chat.mensajes.length}</p>
-                    
+                            <p>{chat.imagen}</p>
+                            <p>{chat.precio}</p>
                     </li>
                  ))}
                 </ul>

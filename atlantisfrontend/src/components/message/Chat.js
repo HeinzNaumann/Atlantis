@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import socket from './socket'
 import Layout from '../../layout/Layout';
-import { getUser } from '../../DataService';
+import { createChad, updateChad, getUser } from '../../DataService';
 import './chat.css'
 
 const Chat=({ props }) =>{
@@ -19,7 +19,7 @@ const Chat=({ props }) =>{
 
     const setFirst = props =>{
         console.log("PROPS", props)
-       if(props.length==0){
+       if(props.length===0){
             setMessage([]);
         }else{
             setMessage(props.mensajes); 
@@ -49,10 +49,22 @@ const Chat=({ props }) =>{
         divRef.current.scrollIntoView({behavior:'smooth'})
     }) */
 
-    const handleSubmnit = (e)=>{
+    const handleSubmnit = async (e)=>{
         e.preventDefault();
-        //const 
-        socket.emit('mensaje', nombre, msg)
+        socket.emit('mensaje', nombre, msg);
+        console.log("PROPS CHAT-->",props);
+        //verifica si es un chat existente sino lo crea
+        if(!props._id){
+            // console.log("PROPS CHAT-->",props);
+            const dataChat={...props,mensajes:[{nombre:nombre,mensaje:msg}]}
+            //console.log("dataChat-->",dataChat);
+            //llama al servicio para almacenar en BD de chat los nuevos msj
+            await createChad(dataChat);
+        }else{
+            const dataChat={nombre:nombre,mensaje:msg}
+            //llama al servicio para almacenar en BD de chat los nuevos msj
+            await updateChad(props._id,dataChat);
+        }
 
         setMsg("");
     }
@@ -62,7 +74,7 @@ const Chat=({ props }) =>{
             
             <div>
                 <div className="chat" >
-                   { message.length ? (message.map((e,i)=><div key={i}><div>{e.nombre}</div><div>{e.mensaje}</div></div>)):
+                   { message.length ? (message.map((e,i)=><div key={i+1}><div>{e.nombre}</div><div>{e.mensaje}</div></div>)):
                     ("")}
                     { console.log("Message",message, typeof(message))}
                     {/* {message.map((e,i)=><div key={i}><div>{e.nombre}</div><div>{e.mensaje}</div></div>)} */}
