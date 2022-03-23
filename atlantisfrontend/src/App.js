@@ -7,6 +7,8 @@ import SignupLogin from "./components/auth/SignupLogin";
 import AdminPanel from "./components/adminPanel/AdminPanel"
 import Detail from "./components/Detail";
 import PrivateRoute from "./components/auth/PrivateRoute";
+import EditComponent from "./components/EditComponent";
+
 function App() {
 
   return (
@@ -19,6 +21,7 @@ function App() {
       <Route exact path="/login" >
         <SignupLogin />
       </Route>
+      <Route exact path="/update" component={EditComponent} />
       <Route exact path="/signup" component={SignupLogin} />
       <Route
         exact

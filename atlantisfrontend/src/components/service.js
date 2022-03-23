@@ -26,3 +26,13 @@ export const getAdsList = () => {
     const url = "/api/ads";
     return client.get(url)
 }
+
+export const updateAd = (id, adObj) => {
+  const url = `/api/ads/${id}`;
+  return client.put(url, adObj)
+}
+
+export const favAds = (favId) => {
+  const url = `/api/users/?fav=${favId}`
+  return client.get(url)
+}
