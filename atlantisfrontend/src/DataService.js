@@ -31,3 +31,8 @@ export const getChats = (idusuario,idAd) => {
     const url = `/api/chats?user=${idusuario}&ad=${idAd}`;
     return client.get(url);
 }
+
+export const setChatRead = (idChat) => {
+    const url = `/api/chats/${idChat}?read=1`;
+    return client.put(url);
+}

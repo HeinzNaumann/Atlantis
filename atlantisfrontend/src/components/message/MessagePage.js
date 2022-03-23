@@ -1,17 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
 import socket from './socket'
 import Layout from '../../layout/Layout';
+import Chat from './Chat'
 import { Link } from "react-router-dom";
-import { getChats,getAd } from '../../DataService';
+import { getChats,getAd, setChatRead } from '../../DataService';
 import './chat.css'
 import Button from '../common/button';
 
 const EmptyList = () => (
     <div style={{ textAlign: 'center' }}>
       <p>No tienes mensajes aun!</p>
-      {/* <Link to="/" variant="primary">
-        Anuncios
-      </Link> */}
+      <Link to="/" variant="primary">
+        Adverts
+      </Link>
     </div>
   );
 
@@ -22,6 +23,7 @@ const MessagePage=({ match }) =>{
     const[chats, setChats] = useState([])
     const[chat, setChat] = useState([])
     const[ad, setAd] = useState({});
+    const[first,setFirst]= useState(0);
     const nombre = localStorage.getItem('nombre');
     const idusuario = localStorage.getItem('usuario');
     const idAd =match.params.idAd? match.params.idAd:"";
@@ -41,59 +43,87 @@ const MessagePage=({ match }) =>{
     useEffect(()=>{
         getChats(idusuario,idAd).then(({result,existChatAd})=>{
             if(existChatAd){
-                console.log("Result-->",result)
-                console.log("existChatAd-->",existChatAd)
+                //console.log("Result-->",result)
+               // console.log("existChatAd-->",existChatAd)
                 setChats(result)
+                setFirst(0);
             }else{
                 console.log("AD -->2", ad);
+                const idTemp="623a65c2124334be5775386a"
                 const chatTemp ={
                     anuncio_nombre:ad.nombre,
+                    _id:idTemp,
                     anuncio: ad._id,
                     propietario: ad.usuario,
                     propietario_nombre:ad.usuario_nombre,
                     usuario_int:idusuario,
-                    usuario_int_nombre:nombre
+                    usuario_int_nombre:nombre,
+                    mensajes:[{nombre:nombre,mensaje:"Holaa"},{nombre:"Jose",mensaje:"Holaa"}],
+                    nuevo_msj:true
                 }
+          
                 setChats([chatTemp,...result]);
             }
             
         })
     },[ad])
 
- /*    const divRef = useRef(null);
-    useEffect(()=>{
-        divRef.current.scrollIntoView({behavior:'smooth'})
-    }) */
+  /*   useEffect(()=>{
+        setFirst(1);
+      },[]) */
 
-    const handleChatSelect = (e)=>{
+    const handleChatSelect = async (chat,e,_id)=>{
         e.preventDefault();
         //const 
        // socket.emit('mensaje', nombre, msg)
-        console.log("event--->",e.target)
+        setChat(chat);
+        setFirst(1);
+        //llama al servicio para que ponga nuevo_msj a false
+        console.log("chat Handle--->",chat)
+        await setChatRead(_id);
        // setMsg("");
     }
 
+    const firstChatSelect= chat=>{
+        console.log("FirstChat", chat)
+        if(setFirst==1){
+            setChat(chat);
+            setFirst(2);
+        }
+    }
+      
+    /* console.log(_id,"==",chats[0]._id,chat._id==chats[0]._id):console.log("COMPARA",_id,"==",chats[0]._id,chat._id==chats[0]._id)} */
 
     return (
         <Layout>
             
             <div>
+                
                 {chats.length ? (
                 <ul>
-                    {chats.map(({ _id,anuncio_nombre, ...chat }) => (
-                    <li key={_id} onClick={handleChatSelect} value={nombre}>
-                    
-                            <p>{anuncio_nombre}</p>
-                            <p>{console.log("chat",chat)}</p>
+                    {chats.map(({ _id, ...chat }) => ( 
+                    <li key={_id} onClick={(e)=>handleChatSelect(chat,e,_id)} 
+                       className={chat.mensajes.length>0?(nombre!==chat.mensajes[chat.mensajes.length-1].nombre&&chat.nuevo_msj?"unread":"read"):"normal"}>
+                            {/* {_id==chats[0]._id? firstChatSelect(chat):"FALSE" }  */}
+                            <p>{chat.anuncio_nombre}</p>
+                            <p>{chat.propietario_nombre}</p>
+                            <p>{chat.mensajes.length}</p>
                     
                     </li>
-                    ))}
+                 ))}
                 </ul>
                 ) : (
                 <EmptyList />
                 )}
             </div>
+
+            <div>
+                { first?(<Chat props={chat}/>):(chats.length?"Seleccione un Mensaje":"")}
+                     
+            </div>
+
         </Layout>
+        
     )
 
 }

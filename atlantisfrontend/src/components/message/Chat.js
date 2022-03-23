@@ -4,17 +4,33 @@ import Layout from '../../layout/Layout';
 import { getUser } from '../../DataService';
 import './chat.css'
 
-const Chat=({ match }) =>{
+const Chat=({ props }) =>{
     const[msg, setMsg] = useState("");
-    const[message, setMessage] = useState([])
-    //const[ad, setAd] = useState({});
+    //const msjs = props.mensajes.length>0? props.mensajes:[];
+    const[message, setMessage] = useState([]);
     const nombre = localStorage.getItem('nombre');
-    const idusuario = localStorage.getItem('usuario');
-    
-  /*   const id =match.params.adId? match.params.adId:"";
-    const ad = useAd(id);
-    console.log("Match",match);
-    console.log("AD: ",ad); */
+  
+
+ /*    useEffect(()=>{
+        //console.log("props.mensajes: ",props.mensajes);
+        setMessage(props.mensajes);
+        //console.log("message useEffect: ",message);
+    },[props]) */
+
+    const setFirst = props =>{
+        console.log("PROPS", props)
+       if(props.length==0){
+            setMessage([]);
+        }else{
+            setMessage(props.mensajes); 
+        } 
+    }
+
+    useEffect(()=>{
+        setFirst(props);
+      },[props])
+
+
 
     useEffect(()=>{
         socket.emit('conectado', nombre)
@@ -27,10 +43,11 @@ const Chat=({ match }) =>{
         return ()=> {socket.off()}
     },[message])
 
-    const divRef = useRef(null);
+   /*  const divRef = useRef(null);
     useEffect(()=>{
+        console.log("DivRef",divRef.current)
         divRef.current.scrollIntoView({behavior:'smooth'})
-    })
+    }) */
 
     const handleSubmnit = (e)=>{
         e.preventDefault();
@@ -42,18 +59,21 @@ const Chat=({ match }) =>{
 
 
     return (
-        <Layout>
+            
             <div>
-                <div className="chat">
-                    {message.map((e,i)=><div key={i}><div>{e.nombre}</div><div>{e.mensaje}</div></div>)}
+                <div className="chat" >
+                   { message.length ? (message.map((e,i)=><div key={i}><div>{e.nombre}</div><div>{e.mensaje}</div></div>)):
+                    ("")}
+                    { console.log("Message",message, typeof(message))}
+                    {/* {message.map((e,i)=><div key={i}><div>{e.nombre}</div><div>{e.mensaje}</div></div>)} */}
                 </div>
-                <div ref={divRef}></div>
+                {/* <div ref={divRef}></div> */}
                 <form onSubmit={handleSubmnit} className="form-chat">
                     <textarea cols="10" rows="1" value={msg} onChange={e=>setMsg(e.target.value)}></textarea>
                     <button>Enviar</button>
                 </form>
             </div>
-        </Layout>
+        
     )
 
 }
