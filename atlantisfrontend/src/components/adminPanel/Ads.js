@@ -4,11 +4,11 @@ export const Ads = (ad) => {
         <>
             <tr key={ad._id}>
                 <td>
-   <div className=" text-white ">
+                <div className=" text-white ">
                     <img
                         src={`${process.env.REACT_APP_API_ATLANTIS_URL}/images/anuncios/${ad.imagen}`}
                         alt={ad.nombre}
-                        className="img-fluid product-item-image"
+                        className="img-fluid product-item-image img-style"
                         width="100px"
                         height="100px"
                         border-radius="30px"

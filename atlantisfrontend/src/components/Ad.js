@@ -2,6 +2,7 @@ import "../css/Ad.css";
 
 import { Link } from "react-router-dom";
 import { favAds } from "./service";
+import * as Icon from 'react-feather';
 
 export const Ad = (ad) => {
   return (
@@ -12,7 +13,7 @@ export const Ad = (ad) => {
             <img
               src={`${process.env.REACT_APP_API_ATLANTIS_URL}/images/anuncios/${ad.imagen}`}
               alt={ad.nombre}
-              className="img-fluid product-item-image"
+              className="img-fluid product-item-image img-style"
               width="900px"
               height="900px"
               border-radius="30px"
@@ -25,22 +26,15 @@ export const Ad = (ad) => {
             <div className="buy-blk position-absolute r-0">
               <ul className="pdt-item list-inline">
                 <li className="list-inline-item align-middle">
-                  <button onClick={() => favAds(ad._id)} className="text-grey">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="feather feather-heart size-xs"
-                    >
-                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                    </svg>
+                  <button onClick={() => favAds(ad._id)} className="botones-fav">
+                    <Icon.Heart className=" feather-heart size-xs"/>
                   </button>
+                  {/* <button onClick={() => favAds(ad._id)} className="botones-fav">
+                    <Icon.Gift className=" feather-heart size-xs"/>
+                  </button>
+                  <button onClick={() => favAds(ad._id)} className="botones-fav">
+                    <Icon.Heart className=" feather-heart size-xs"/>
+                  </button> */}
                 </li>
               </ul>
             </div>

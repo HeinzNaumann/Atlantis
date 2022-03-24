@@ -1,12 +1,12 @@
 import Layout from "../../layout/Layout";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import {useEffect, useState} from 'react';
 import { getAdsUserList } from "../service";
-import { Ads } from "./Ads"
 import ControlledTabs from "./controlledTabs";
 import MyProducts from "./MyProducts";
 import MyFavorites from "./MyFavorites"
 import NewAdPageSmall from "./NewAdPageSmall";
+import * as Icon from "react-feather"
 const AdminPanel = ({ ...props } ) => {
 
     const id = useParams();
@@ -19,6 +19,7 @@ const AdminPanel = ({ ...props } ) => {
     const handleCheckCategoria = (id) => {
         const idCat = id.target.id;
         setCategorias(idCat);
+        console.log(id.target)
     }
    
     useEffect(() => {
@@ -42,8 +43,8 @@ const AdminPanel = ({ ...props } ) => {
                         <div className="col-md-6 col-lg-5">
                            <div className="media mb-4 mb-md-0">
 
-                            <div className="media-body">
-                                <h6>User:</h6>
+                            <div className="d-inline-flex p-2 gap-4">
+                                <Icon.User  > </Icon.User>
                                 <h3>{ads.results ? ads.results[0].usuario_nombre : <span>User Name</span>}</h3>  
                               </div>
                            </div>
