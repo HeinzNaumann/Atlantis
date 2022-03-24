@@ -46,11 +46,10 @@ const Chat=({ props }) =>{
         return ()=> {socket.off()}
     },[message])
 
-   /*  const divRef = useRef(null);
+   const divRef = useRef(null);
     useEffect(()=>{
-        console.log("DivRef",divRef.current)
-        divRef.current.scrollIntoView({behavior:'smooth'})
-    }) */
+          divRef.current.scrollIntoView({behavior: "smooth"})
+    })
 
     const handleSubmnit = async (e)=>{
         e.preventDefault();
@@ -77,12 +76,11 @@ const Chat=({ props }) =>{
             
             <div>
                 <div className="chat" >
-                   { message.length ? (message.map((e,i)=><div key={i+1}><div>{e.nombre}</div><div>{e.mensaje}</div></div>)):
+                   { message.length ? (message.map((e,i)=><div  key={i+1}><div>{e.nombre}</div><div>{e.mensaje}</div></div>)):
                     ("")}
-                    { console.log("Message",message, typeof(message))}
-                    {/* {message.map((e,i)=><div key={i}><div>{e.nombre}</div><div>{e.mensaje}</div></div>)} */}
+                    <br/>
+                    <div ref={divRef}></div>
                 </div>
-                {/* <div ref={divRef}></div> */}
                 <form onSubmit={handleSubmnit} className="form-chat">
                     <textarea cols="10" rows="1" value={msg} onChange={e=>setMsg(e.target.value)}></textarea>
                     <button>Enviar</button>

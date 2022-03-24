@@ -4,7 +4,7 @@ import Layout from '../../layout/Layout';
 import Chat from './Chat'
 import { Link } from "react-router-dom";
 import { getChats,getAd, setChatRead,getChat } from '../../DataService';
-import './chat.css'
+import './messagepage.css'
 import Button from '../common/button';
 
 const EmptyList = () => (
@@ -119,8 +119,9 @@ const MessagePage=({ match }) =>{
       
    return (
         <Layout>
-            
-            <div>
+
+          <div className='message-container'>            
+            <div className='message-list'>
                 
                 {chats.length ? (
                 <ul>
@@ -140,10 +141,11 @@ const MessagePage=({ match }) =>{
                 )}
             </div>
 
-            <div>
+            <div className='message-chat'>
                 { first?(<Chat props={chat}/>):(chats.length?"Seleccione un Mensaje":"")}
                      
-            </div>
+           </div>
+         </div>
 
         </Layout>
         
