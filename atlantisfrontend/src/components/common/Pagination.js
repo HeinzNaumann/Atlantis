@@ -4,13 +4,16 @@ export const Pagination = ({ pages, currentPage, onPageChange }) => {
   return [...Array(pagesModificado).keys()]
     .map((page) => page + 1)
     .map((page) => (
+      <li className="page-item">
       <button
+        className="page-link"
         key={page}
         style={{ color: currentPage === page ? "blue" : "inherit" }}
         onClick={() => onPageChange(page)}
       >
         {page}
       </button>
+      </li>
     ));
 };
 

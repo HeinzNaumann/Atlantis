@@ -1,3 +1,5 @@
+import ActionsButtons from "./ActionsButtons";
+
 export const Ads = (ad) => {
     return (
         
@@ -37,7 +39,8 @@ export const Ads = (ad) => {
                     
                 
                 </td>
-                  <td><h5>{ad.precio}€</h5></td>
+                <td><h5>{ad.precio}€</h5></td>
+                <td><ActionsButtons/></td>
             </tr>
             </>
             );

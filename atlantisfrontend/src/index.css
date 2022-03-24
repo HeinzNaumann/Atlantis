@@ -177,6 +177,10 @@ button:focus {
   margin: auto;
 }
 
+.anuncios-block {
+  margin-top: 50px !important;
+}
+
 input[type="email"],
 input[type="password"],
 input[type="text"],
@@ -1884,6 +1888,10 @@ h5 {
 .custom-checkbox .custom-control-label.red-fill::before {
   background: red;
   border: 1px solid red;
+}
+
+.filters h5 {
+  margin: 35px 0 10px 0;
 }
 
 .pdt-banner:before {

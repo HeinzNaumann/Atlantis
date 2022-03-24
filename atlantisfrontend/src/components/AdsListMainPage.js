@@ -99,22 +99,29 @@ const AdsListMainPage = (props) => {
     <Layout>
       <div className="row" {...props}>
         <div className="col-lg-4">
-          <div className="col-lg-8">
+          <div className="col-lg-8 filters">
+            <h5 > Search by Name</h5>
+            <hr/>
             <FormField
               type="text"
               name="query"
               placeholder="Find ads"
               onChange={handleSearch}
             ></FormField>
+            <h5 > Filter by Price</h5>
+            <hr/>
             <div className="range-price">
               <span>Min Price: {filterByPrice[0]}</span>{" "}
               <span>Max Price: {filterByPrice[1]}</span>
+              
               <Range
                 max={500}
                 value={filterByPrice}
                 onChange={setFilterByPrice}
               />
             </div>
+            <h5 > Filter by type</h5>
+            <hr/>
             <input
               type="radio"
               name="sale"
@@ -139,7 +146,8 @@ const AdsListMainPage = (props) => {
               onClick={() => setFilterBySale("all")}
             />
             All
-            <div></div>
+            <h5 > Filter by categories</h5>
+            <hr/>
             <div className="tags-select">
               <select
                 name="tags"
@@ -150,18 +158,20 @@ const AdsListMainPage = (props) => {
                 <option key="all" value="all">
                   All
                 </option>
-                {tags
+                {tags.length !== 0
                   ? tags.results?.map((tag) => (
                       <option key={tag} value={tag}>
                         {tag}
                       </option>
                     ))
-                  : []}
+                  : <div>Nothing to show</div>}
               </select>
+              
             </div>
+            
           </div>
         </div>
-        <div className="col-lg-8">
+        <div className="col-lg-8 m-20 anuncios-block">
           {adsList.length !== 0 ? (
             <div className="row">
               {filteredAds.map((ad) => (
@@ -171,16 +181,20 @@ const AdsListMainPage = (props) => {
           ) : (
             <EmptyList />
           )}
+           {totalPages > 0 && (
+            <ul className="pagination d-flex justify-content-center ">
+            <Pagination
+              pages={totalPages}
+              currentPage={currentPage}
+              onPageChange={setCurrentPage}
+            ></Pagination>
+            </ul>
+          )}
         </div>
+        
       </div>
 
-      {totalPages > 0 && (
-        <Pagination
-          pages={totalPages}
-          currentPage={currentPage}
-          onPageChange={setCurrentPage}
-        ></Pagination>
-      )}
+     
     </Layout>
   );
 };
