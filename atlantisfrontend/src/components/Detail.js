@@ -4,6 +4,7 @@ import { detailAds, deleteAd } from "./service";
 import { useEffect, useState } from "react";
 import Layout from "../layout/Layout";
 import { Button } from "reactstrap";
+import swal from "sweetalert";
 
 import React from "react";
 function Detail({ match, history }) {
@@ -24,13 +25,25 @@ function Detail({ match, history }) {
 
   const toDelete = () => {
     const adId = match.params.id;
-    console.log(adId);
-    try {
-      deleteAd(adId);
-      history.push("/adverts");
-    } catch (error) {
-      console.log(error);
-    }
+    swal({
+      title: "Do you want to delete?",
+      text: adId,
+      icon: "warning",
+      buttons: ["no", "yes"],
+    }).then((respuesta) => {
+      if (respuesta) {
+        swal({
+          text: "the advert has been successfully deleted",
+          icon: "success",
+        });
+      }
+      try {
+        deleteAd(adId);
+        history.push("/adverts");
+      } catch (error) {
+        console.log(error);
+      }
+    });
   };
 
   useEffect(() => {
