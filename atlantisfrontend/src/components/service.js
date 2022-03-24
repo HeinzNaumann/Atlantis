@@ -11,6 +11,11 @@ export const getAdsUserList = (usuario) => {
   return client.get(url);
 };
 
+export const getAdsFavList = () => {
+  const url = `/api/users/?favs=true`;
+  return client.get(url);
+};
+
 export const createAd = (adObj) => {
   const url = "/api/ads";
   return client.post(url, adObj);

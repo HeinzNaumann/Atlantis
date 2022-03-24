@@ -20,11 +20,10 @@ export const Ads = (ad) => {
              <h5>{ad.nombre}</h5>
             </td>
             <td>
-                <div className="media">
-                    <img src="assets/img/pdt-cat-iwatch-img.jpg" alt="user avatar"
-                        className="mx-auto align-self-center w-50" />
+                
+                    <p>{ ad.venta ? "Sell" : "Buy"}</p>
 
-                </div>
+              
             </td>
             <td>
                 
