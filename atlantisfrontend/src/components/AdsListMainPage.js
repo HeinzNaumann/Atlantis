@@ -126,7 +126,7 @@ const AdsListMainPage = (props) => {
               type="radio"
               name="sale"
               value="sell"
-              checked={false}
+              //checked={false}
               onChange={() => setFilterBySale("sell")}
             />
             Sell
@@ -134,7 +134,7 @@ const AdsListMainPage = (props) => {
               type="radio"
               name="sale"
               value="buy"
-              checked={false}
+              //checked={false}
               onChange={() => setFilterBySale("buy")}
             />
             Buy
@@ -142,7 +142,7 @@ const AdsListMainPage = (props) => {
               type="radio"
               name="sale"
               value="all"
-              checked={true}
+              //checked={true}
               onClick={() => setFilterBySale("all")}
             />
             All

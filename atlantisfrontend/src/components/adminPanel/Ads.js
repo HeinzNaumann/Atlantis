@@ -23,7 +23,7 @@ export const Ads = (ad) => {
             </td>
             <td>
                 
-                    <p>{ ad.venta ? "Sell" : "Buy"}</p>
+                    <p>{ ad.venta }</p>
 
               
             </td>

@@ -177,6 +177,9 @@ button:focus {
   margin: auto;
 }
 
+input[type="radio"] {
+  margin: 0 10px 0 5px;
+}
 .anuncios-block {
   margin-top: 50px !important;
 }

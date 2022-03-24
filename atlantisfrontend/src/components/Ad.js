@@ -27,7 +27,7 @@ export const Ad = (ad) => {
               <ul className="pdt-item list-inline">
                 <li className="list-inline-item align-middle">
                   <button onClick={() => favAds(ad._id)} className="botones-fav">
-                    <Icon.Heart className=" feather-heart size-xs"/>
+                    <Icon.Heart className="feather-heart size-xs"/>
                   </button>
                   {/* <button onClick={() => favAds(ad._id)} className="botones-fav">
                     <Icon.Gift className=" feather-heart size-xs"/>
@@ -43,7 +43,7 @@ export const Ad = (ad) => {
             <div className="d-flex justify-content-between align-items-center">
               <p className="text-warning font-bold"> {ad.venta}</p>
             </div>
-            <h5 className="text-theme font-amt font-bold">{ad.precio}</h5>
+            <h5 className="text-theme font-amt font-bold">{ad.precio} €</h5>
             <Link to={`/adverts/${ad._id}`}>
               <h4>
                 <a href="" className="display-block text-link">
