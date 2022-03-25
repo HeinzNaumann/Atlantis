@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import socket from './socket'
 import Layout from '../../layout/Layout';
-import { createChad, updateChad, getUser } from '../../DataService';
+import { createChad, updateChad, getUser } from '../../../src/components/service';
 import './chat.css'
 
 const Chat=({ props }) =>{

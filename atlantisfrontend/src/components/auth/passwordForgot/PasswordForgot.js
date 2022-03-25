@@ -36,31 +36,20 @@ const handleSubmit = async event =>{
       <div className='LoginPage'>
 
         <h1 className='loginPage-title'> Recover your password</h1>
-<<<<<<< HEAD
         <form onSubmit={handleSubmit}>
-=======
-        <form >
->>>>>>> ChatNotificacion
           <span> Nombre </span>
         <input
           type='text'
           name='nombre'
-<<<<<<< HEAD
           value={value.nombre}
           onChange={handleChange}
-=======
->>>>>>> ChatNotificacion
           className='loginForm-field'
 
         ></input>
           <Button
             type='submit'
-<<<<<<< HEAD
               variant='primary'
               
-=======
-            variant='primary'
->>>>>>> ChatNotificacion
           >
             Send instructions
           </Button>

@@ -3,7 +3,7 @@ import socket from './socket'
 import Layout from '../../layout/Layout';
 import Chat from './Chat'
 import { Link } from "react-router-dom";
-import { getChats,getAd, setChatRead,getChat } from '../../DataService';
+import { getChats,getAd, setChatRead,getChat } from '../../../src/components/service'
 import './messagepage.css'
 import Button from '../common/button';
 
@@ -27,7 +27,7 @@ const MessagePage=({ match }) =>{
     const[arg,setArg]= useState("");
     const[first,setFirst]= useState(0);
     const nombre = localStorage.getItem('nombre');
-    const idusuario = localStorage.getItem('usuario');
+    const idusuario = localStorage.getItem('id_usuario');
     const idAd =match.params.idAd? match.params.idAd:"";
 
     const gtAd = adId =>{

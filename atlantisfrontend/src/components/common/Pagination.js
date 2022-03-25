@@ -13,10 +13,7 @@ export const Pagination = ({ pages, currentPage, onPageChange }) => {
       >
         {page}
       </button>
-<<<<<<< HEAD
       </li>
-=======
->>>>>>> ChatNotificacion
     ));
 };
 
