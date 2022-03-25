@@ -24,13 +24,16 @@ const AdminPanel = (   ) => {
     }
    
     useEffect(() => {
+       //console.log("UserID",userId);
        getAdsUserList(userId).then((ads) => {
+            console.log("UserID",userId);
+            console.log("Ads UseEfe",ads);
             userAd(ads)
         });
 
     }, [userId]);
 
-   
+   console.log("ADS-admin",ads)
 
     return (<>
         

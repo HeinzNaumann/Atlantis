@@ -21,7 +21,7 @@ function Header() {
   }else{
     SetLogged(false)
   }
-  },  [])
+  },  [isLogged])
 
   
 

@@ -75,7 +75,7 @@ function LoginPage({ history, onLogin} ) {
      
       
       //setAuth(data)
-      onLogin();
+     // onLogin();
       //const { from } = location.state || { from: { pathname: "/" } };
       
     } catch (error) {

@@ -29,6 +29,7 @@ const AdsListMainPage = (props) => {
   
 
   //**      Diego* */
+ 
 
   const [user, setUser] = useState("");
 
@@ -55,6 +56,7 @@ const AdsListMainPage = (props) => {
 
   const getAds = () => {
     getAdsList().then(({ results, totalads }) => {
+      console.log("AD_LIST", results);
       const ads = results;
       ads.sort((t1, t2) => t2.createdAt.localeCompare(t1.createdAt));
       const slice = ads.slice(skip - limit, limit * currentPage);

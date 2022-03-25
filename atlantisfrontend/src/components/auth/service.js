@@ -18,7 +18,7 @@ export const logout = () =>
   Promise.resolve().then(() => {
     localStorage.removeItem("token");
     localStorage.removeItem("nombre");
-    localStorage.removeItem("usuario");
+    localStorage.removeItem("id_usuario");
     socket.emit('logout',localStorage.getItem('sck'));
     //socket.emit('conectado', value.nombre)
     localStorage.removeItem("sck");

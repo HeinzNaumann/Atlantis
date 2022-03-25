@@ -62,8 +62,9 @@ const Chat=({ props }) =>{
             //console.log("dataChat-->",dataChat);
             //llama al servicio para almacenar en BD de chat los nuevos msj
             const chatcreated =await createChad(dataChat);
+            console.log("CHATCREAD",chatcreated)
             //almacena del id de chat creado para pasarselo emit
-            idchat = chatcreated.chat[0]._id;
+            idchat = chatcreated.chat._id;
         }else{
             const dataChat={nombre:nombre,mensaje:msg}
             //llama al servicio para almacenar en BD de chat los nuevos msj

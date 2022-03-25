@@ -16,6 +16,7 @@ export const Ad = (ad) => {
   
   const handleSold = (e)=>{
     e.preventDefault();
+    e.stopPropagation();
     socket.emit("sendNotification", {
       senderName:localStorage.getItem('nombre'),
       recieverName:ad.usuario_nombre,
@@ -25,6 +26,7 @@ export const Ad = (ad) => {
   }
 
 
+  
   
   return (
     <div className=" col-md-4" onClick={()=> history.push(`/adverts/${ad._id}`)} key={ad._id}>
@@ -86,13 +88,13 @@ export const Ad = (ad) => {
                   <h6 className="mb-0">{ad.tags}</h6>
                 </div>
               </div>
-                { console.log("AD :",ad)}
+               {/*  { console.log("AD :",ad)} */}
                 {/* DIEGO */}
                 <div className="interaction">
                   
-                    <Link to={`/chat/${ad._id}`} className="adIcon">
+                    <span onClick={(e)=>{e.stopPropagation(); history.push(`/chat/${ad._id}`)}} className="adIcon">
                          <span className="spanChat">Chat</span>
-                    </Link>
+                    </span>
                     <Link to="" className="adIcon infoHeart">
                          <img id={ad._id} src={heart}  onClick={handleSold}></img>
                     </Link>
