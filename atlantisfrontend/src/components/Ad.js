@@ -1,6 +1,6 @@
 import "../css/Ad.css";
 import { Link } from "react-router-dom";
-import info from "../../src/assets/img/info.svg"
+import heart from "../../src/assets/img/heart.svg"
 
 export const Ad = (ad) => {
   return (
@@ -67,14 +67,15 @@ export const Ad = (ad) => {
                     <h6 className="mb-0">{ad.tags}</h6>
                   </div>
                 </div>
+                { console.log("AD :",ad)}
                 {/* DIEGO */}
                 <div className="interaction">
                   
                     <Link to={`/chat/${ad._id}`} className="adIcon">
                          <span className="spanChat">Chat</span>
                     </Link>
-                    <Link to={`/chat/${ad._id}`} className="adIcon">
-                         <img src={info}></img>
+                    <Link to="" className="adIcon infoHeart">
+                         <img id={ad._id} src={heart}  onClick={(e)=>{console.log(e.target.id)}}></img>
                     </Link>
                     
                  </div>

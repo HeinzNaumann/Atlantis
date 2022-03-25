@@ -62,6 +62,7 @@ function LoginPage({ history, onLogin} ) {
           error: false
          })
     
+      /* DIEGO */
       if (data.token) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("nombre",value.nombre);
@@ -69,6 +70,7 @@ function LoginPage({ history, onLogin} ) {
         socket.emit('conectado', data.nombre)
         history.push("/adverts");
       }
+      /* FIN DIEGO */
       
      
       

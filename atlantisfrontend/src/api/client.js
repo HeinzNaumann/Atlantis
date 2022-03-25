@@ -19,7 +19,9 @@ client.interceptors.response.use(
 );
 
 export const setAuthorizationHeader = token => {
+  
   client.defaults.headers.common["Authorization"] = token;
+  console.log("AuTH:", client.defaults.headers.common["Authorization"])
 };
 
 export const removeAuthorizationHeader = () => {

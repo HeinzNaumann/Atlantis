@@ -17,17 +17,19 @@ h6 {
 /* DIEGO */
 
 .interaction{
-  /* display: flex; */
+  display: flex;
   /* justify-content: space-between; */
   align-items: center;
   padding: 5px 10px;
+  width: 100vh;
+  height: 50px;
 }
 
 .adIcon{
   width: 16px;
   height: 16px;
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 50px;
   
 }
 
@@ -39,4 +41,9 @@ h6 {
   border-radius: 30px;
   padding: 8px;
   align-items: center;
+}
+
+.infoHeart{
+  width: 30px;
+  height: 30px;
 }

@@ -36,7 +36,7 @@ const AdsListMainPage = (props) => {
         setUser("")
       }
   
-      return()=>{console.log("Usuario--->", user)}
+      return()=>{}
     }, []);
      
     if(user){
