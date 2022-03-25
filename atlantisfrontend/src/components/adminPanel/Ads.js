@@ -8,7 +8,7 @@ export const Ads = (ad) => {
     return (
         
         <> 
-            <tr key={ad._id} onClick={(event) => {  history.push(`/adverts/${ad._id}`)  }} className="tr-button" >
+            <tr key={ad._id} onClick={() => {  history.push(`/adverts/${ad._id}`)  }} className="tr-button" >
                 
                 <td >
                      

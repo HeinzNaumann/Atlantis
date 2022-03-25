@@ -32,7 +32,7 @@ export const Ad = (ad) => {
               <ul className="pdt-item list-inline">
                 <li className="list-inline-item align-middle">
                   {token ?
-                  <button onClick={() => favAds(ad._id)} className="botones-fav">
+                    <button onClick={(e) => { e.stopPropagation(); favAds(ad._id) }} className="botones-fav">
                     <Icon.Heart className="feather-heart size-xs"/> 
                    
                     </button>
