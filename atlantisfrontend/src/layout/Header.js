@@ -20,7 +20,7 @@ function Header() {
   }else{
     SetLogged(false)
   }
-  })
+  },  [])
 
   
 

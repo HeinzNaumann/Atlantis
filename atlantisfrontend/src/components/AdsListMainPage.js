@@ -26,7 +26,7 @@ const AdsListMainPage = (props) => {
   const limit = 6;
   const skip = currentPage * limit;
 
-
+  
 
   //**      Diego* */
 

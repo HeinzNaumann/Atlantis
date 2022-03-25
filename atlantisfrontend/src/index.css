@@ -1858,6 +1858,28 @@ h5 {
   height: 32px;
 }
 
+.botones-fav-click {
+  color: #ffffff;
+  display: inline-block;
+  vertical-align: middle;
+  background: red;
+  border-radius: 50%;
+  border: none;
+  width: 32px;
+  height: 32px;
+}
+
+.botones-fav-click:hover {
+  color: red;
+  display: inline-block;
+  vertical-align: middle;
+  background: white;
+  border-radius: 50%;
+  border: none;
+  width: 32px;
+  height: 32px;
+}
+
 .tabs-admin-panel {
   display: block;
   width: 100%;

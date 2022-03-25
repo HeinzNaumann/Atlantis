@@ -1,18 +1,25 @@
 import "../css/Ad.css";
+import {useEffect, useState} from "react"
 import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { favAds } from "./service";
 import * as Icon from 'react-feather';
-import { useEffect } from "react";
 
 export const Ad = (ad) => {
 
+  const [heart, heartRefresh] = useState("algo")
+
+  useEffect(() => {
+    heartRefresh("algo")
+  }, [heart])
+  
+  console.log(heart)
+
     const history = useHistory();
     const token = localStorage.getItem("token")
-
+ 
   return (
     <div className=" col-md-4" onClick={()=> history.push(`/adverts/${ad._id}`)} key={ad._id}>
-      <div className="pdt-item-blk mb-4">
+      <div key={ad.id} className="pdt-item-blk mb-4">
         <div className="pdt-img-blk">
           {ad.imagen && (
             <img
@@ -25,15 +32,14 @@ export const Ad = (ad) => {
             ></img>
           )}
         </div>
-
         <div className="pdt-content-blk pt-0 px-3">
           <div className="position-relative">
             <div className="buy-blk position-absolute r-0">
               <ul className="pdt-item list-inline">
                 <li className="list-inline-item align-middle">
                   {token ?
-                    <button onClick={(e) => { e.stopPropagation(); favAds(ad._id) }} className="botones-fav">
-                    <Icon.Heart className="feather-heart size-xs"/> 
+                    <button onClick={(e) => { e.stopPropagation(); favAds(ad._id); heartRefresh(e)}} className={ ` ${ad.fav ? "botones-fav" : "botones-fav-click " }`} >
+                      <Icon.Heart className="feather-heart size-xs"/> 
                    
                     </button>
                     : []
@@ -48,6 +54,8 @@ export const Ad = (ad) => {
               </ul>
             </div>
           </div>
+          
+          <div>{ad.fav }</div>
           <div className="content-top-blk pt-3">
             <div className="d-flex justify-content-between align-items-center">
               <p className="text-warning font-bold"> {ad.venta}</p>
