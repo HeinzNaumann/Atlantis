@@ -3,12 +3,12 @@ import { Link, useHistory } from "react-router-dom"
 import { useState } from "react"
 export const Ads = (ad) => {
 
+    const history = useHistory();
 
     return (
         
-        <>
-            
-            <tr key={ad._id} className="tr-button" >
+        <> 
+            <tr key={ad._id} onClick={(event) => {  history.push(`/adverts/${ad._id}`)  }} className="tr-button" >
                 
                 <td >
                      
@@ -25,15 +25,12 @@ export const Ads = (ad) => {
               
                 </td>
                 <td>
-                    <Link to={`/adverts/${ad._id}`}>
+                
                         <h5>{ad.nombre}</h5>
-                        </Link>
+                   
             </td>
             <td>
-                
-                    <p>{ ad.venta }</p>
-
-              
+                   <p>{ ad.venta }</p>
             </td>
             <td>
                 

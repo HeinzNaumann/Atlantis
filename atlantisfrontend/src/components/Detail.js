@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import Button from "./common/button";
 import Layout from "../layout/Layout";
 
-function Detail({ match, history }) {
+function Detail({ match }) {
   const advertId = match.params.id;
   const [advert, setAdvert] = useState(advertId);
   
@@ -41,9 +41,7 @@ function Detail({ match, history }) {
     localStorage.setItem("tags", tags);
   };
 
-  console.log(advert)
-  console.log(advert.venta)
-  
+
   return (
     <>
       <Layout>
