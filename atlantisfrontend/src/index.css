@@ -1883,14 +1883,18 @@ h5 {
 }
 
 .botones-fav-click:hover {
-  color: red;
+  color: #1579ee;
   display: inline-block;
   vertical-align: middle;
   background: white;
   border-radius: 50%;
-  border: none;
+  border: 1px solid #1579ee;
   width: 32px;
   height: 32px;
+}
+
+.botones-fav-click:hover svg {
+  fill: #1579ee;
 }
 
 .tabs-admin-panel {
