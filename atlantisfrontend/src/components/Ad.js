@@ -1,8 +1,21 @@
 import "../css/Ad.css";
 import { Link } from "react-router-dom";
 import heart from "../../src/assets/img/heart.svg"
+import socket from "./message/socket";
+
 
 export const Ad = (ad) => {
+
+  const handleSold = (e)=>{
+    e.preventDefault();
+    socket.emit("sendNotification", {
+      senderName:localStorage.getItem('nombre'),
+      recieverName:ad.usuario_nombre,
+      type:"sold"
+    })
+    console.log('ad.usuario_nombre',ad.usuario_nombre );
+  }
+
   return (
    
     <div className=" col-md-4" key={ad._id}>
@@ -75,7 +88,7 @@ export const Ad = (ad) => {
                          <span className="spanChat">Chat</span>
                     </Link>
                     <Link to="" className="adIcon infoHeart">
-                         <img id={ad._id} src={heart}  onClick={(e)=>{console.log(e.target.id)}}></img>
+                         <img id={ad._id} src={heart}  onClick={handleSold}></img>
                     </Link>
                     
                  </div>

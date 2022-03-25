@@ -67,7 +67,8 @@ function LoginPage({ history, onLogin} ) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("nombre",value.nombre);
         setAuthorizationHeader(data.token)
-        socket.emit('conectado', data.nombre)
+        localStorage.setItem("sck",socket.id);
+        socket.emit('conectado', value.nombre)
         history.push("/adverts");
       }
       /* FIN DIEGO */
