@@ -1,16 +1,31 @@
 import "../css/Ad.css";
 import {useEffect, useState} from "react"
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+import heart from "../../src/assets/img/heart.svg"
+import socket from "./message/socket";
 import { favAds } from "./service";
 import * as Icon from 'react-feather';
 
 export const Ad = (ad) => {
+  
+  
+  
+  const history = useHistory();
+  const token = localStorage.getItem("token")
+  
+  const handleSold = (e)=>{
+    e.preventDefault();
+    socket.emit("sendNotification", {
+      senderName:localStorage.getItem('nombre'),
+      recieverName:ad.usuario_nombre,
+      type:"sold"
+    })
+    console.log('ad.usuario_nombre',ad.usuario_nombre );
+  }
 
 
-
-    const history = useHistory();
-    const token = localStorage.getItem("token")
- 
+  
   return (
     <div className=" col-md-4" onClick={()=> history.push(`/adverts/${ad._id}`)} key={ad._id}>
       <div key={ad.id} className="pdt-item-blk mb-4">
@@ -55,6 +70,7 @@ export const Ad = (ad) => {
               <p className="text-warning font-bold"> {ad.venta}</p>
             </div>
             <h5 className="text-theme font-amt font-bold">{ad.precio} €</h5>
+   
 
               <h4>
                 <a href="" className="display-block text-link">
@@ -64,20 +80,32 @@ export const Ad = (ad) => {
               <h6 className="d-flex justify-content-between align-items-center">
                 {ad.usuario_nombre}
               </h6>
-            
             <div className="content-btm-blk">
               <div className="media py-3">
                 <div className="media-body">
                   <h6 className="mb-0">{ad.tags}</h6>
                 </div>
               </div>
-              <p className="ad-tags"></p>
-              <p className="text-green font-bold">{ad.descripcion}</p>
+                { console.log("AD :",ad)}
+                {/* DIEGO */}
+                <div className="interaction">
+                  
+                    <Link to={`/chat/${ad._id}`} className="adIcon">
+                         <span className="spanChat">Chat</span>
+                    </Link>
+                    <Link to="" className="adIcon infoHeart">
+                         <img id={ad._id} src={heart}  onClick={handleSold}></img>
+                    </Link>
+                    
+                 </div>
+                 {/* FIN DIEGO */}
+              
             </div>
           </div>
         </div>
       </div>
     </div>
+
   );
 };
 

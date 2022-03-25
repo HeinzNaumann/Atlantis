@@ -1,0 +1,19 @@
+.message-container{
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-evenly;
+    border: 0.5px solid lightslategrey;
+    min-height: 500px;
+    border-radius: 5px;
+    padding-top: 30px;;
+    background-color: rgba(var(--bs-black-rgb),var(--bs-bg-opacity))!important;
+}
+
+.message-list{
+    width: 25%;
+
+}
+.message-chat{
+    width: 60%;
+
+}

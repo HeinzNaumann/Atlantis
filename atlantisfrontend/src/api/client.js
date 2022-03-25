@@ -19,7 +19,13 @@ client.interceptors.response.use(
 );
 
 export const setAuthorizationHeader = token => {
+<<<<<<< HEAD
   client.defaults.headers.common["Authorization"] = token;
+=======
+  
+  client.defaults.headers.common["Authorization"] = token;
+  console.log("AuTH:", client.defaults.headers.common["Authorization"])
+>>>>>>> ChatNotificacion
 };
 
 export const removeAuthorizationHeader = () => {

@@ -1,0 +1,27 @@
+.chat {
+    width: 85%;
+    min-height: 50vh;
+    max-height: 50vh;
+    overflow-y: scroll;
+    border: 2px solid skyblue;
+    scroll-behavior: smooth;
+}
+.form-chat{
+    width: 85%;
+    min-height: 50vh;
+    max-height: 50vh;
+    position: relative;
+}
+
+button.sendMsj{
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    width: 60px;
+    background-color: lightseagreen;
+    color:white;
+    cursor: pointer;
+    right: 1px;
+
+}

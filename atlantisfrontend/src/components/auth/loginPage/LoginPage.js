@@ -6,6 +6,7 @@ import Alert from "../../common/Alert";
 import { Link } from "react-router-dom";
 import * as Icon from 'react-feather';
 import {setAuthorizationHeader} from "../../../api/client"
+import socket from '../../message/socket'
 
 function LoginPage({ history, onLogin} ) {
   const [value, setValue] = useState({
@@ -52,8 +53,7 @@ function LoginPage({ history, onLogin} ) {
     try {
       // call to api - send value
       const data = await login(value);
-      localStorage.setItem("nombre", value.nombre)
-      // const { usuario } = data; 
+        // const { usuario } = data; 
       //  localStorage.setItem("id_usuario", usuario._id)
       setIsLoading(false);
         setAlert({
@@ -61,14 +61,21 @@ function LoginPage({ history, onLogin} ) {
           error: false
          })
     
+      /* DIEGO */
       if (data.token) {
         localStorage.setItem("token", data.token);
+        localStorage.setItem("nombre",value.nombre);
         setAuthorizationHeader(data.token)
+        localStorage.setItem("sck",socket.id);
+        socket.emit('conectado', value.nombre)
         history.push("/adverts");
       }
-
+      /* FIN DIEGO */
+      
+     
+      
       //setAuth(data)
-      //console.log(onLogin());
+      onLogin();
       //const { from } = location.state || { from: { pathname: "/" } };
       
     } catch (error) {

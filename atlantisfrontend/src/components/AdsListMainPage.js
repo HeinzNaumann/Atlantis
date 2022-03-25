@@ -22,7 +22,7 @@ const AdsListMainPage = (props) => {
   const [filterByPrice, setFilterByPrice] = useState([0, 500]);
   const [filterBySale, setFilterBySale] = useState("");
   const [filterByTag, setFilterByTag] = useState([]);
-
+  
   const limit = 6;
   const skip = currentPage * limit;
 
@@ -63,6 +63,11 @@ const AdsListMainPage = (props) => {
       setTotalPages(totalads / limit);
     });
   };
+  
+
+  useEffect(()=>{
+    getAds();
+  },[currentPage])
 
   useEffect(() => {
     getAds();
@@ -78,6 +83,7 @@ const AdsListMainPage = (props) => {
 
     console.log(selectedOptions);
   };
+  
 
   const filteredName = (ad) => {
     const name = ad.nombre.toLowerCase();
@@ -117,9 +123,10 @@ const AdsListMainPage = (props) => {
         filteredSale(ad)
       );
     }) || [];
+  
 
   return (
-    <Layout>
+       <Layout>
       <div className="row" {...props}>
         <div className="col-lg-4">
           <div className="col-lg-8 filters">
@@ -223,3 +230,8 @@ const AdsListMainPage = (props) => {
 };
 
 export default AdsListMainPage;
+
+
+
+    
+

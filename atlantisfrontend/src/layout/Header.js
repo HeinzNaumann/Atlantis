@@ -8,9 +8,10 @@ import LoginButton from "../components/common/LoginButton";
 import LogoutButton from "../components/common/LogoutButton";
 import AdminButton from "../components/common/AdminButton";
 import { useEffect, useState } from "react";
+import MsgNotiMenu from "../components/common/MsgNotiMenu";
+
 
 function Header() {
-
   const [isLogged, SetLogged] = useState(false);
   const token = localStorage.getItem('token')
   
@@ -50,10 +51,18 @@ function Header() {
                           <LogoutButton />
                           <AdminButton/>
                             </>
+                         
                         : <LoginButton/>
                        }
                          
                       </li>
+
+                      {/* ------------DIEGO -------------------------------*/}
+                      {isLogged? 
+                          <MsgNotiMenu/>:""}
+
+                      {/* ---------------FIN DIEGO----------------------------- */}
+
                       <li className="list-inline-item d-none d-md-inline-block explore-menu-style">
                         <Link to="/adverts">
                           <span

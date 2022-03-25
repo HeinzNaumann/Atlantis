@@ -1,0 +1,62 @@
+/* DIEGO */
+.icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .icons{
+    height: 100%;
+    align-items: center;
+    display: flex;
+    margin: 0 10px;
+  }
+  
+  .counter{
+    width: 20px;
+    height: 20px;
+    background-color: royalblue;
+    border-radius: 50%;
+    padding: 3px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -13px;
+    right: -8px;
+  
+  
+  }
+  
+
+ .notifications{
+    position:absolute;
+    top: 50px;
+    right: 0;
+    background-color: rgb(100, 170, 228);
+    color: rgb(205, 214, 236);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 10;
+}
+
+.notification{
+    padding:5px;
+    font-size: 14px;
+}
+
+.notiButton{
+   width: 30%; 
+   padding: 5px;
+   height: 15%;
+   margin-top: 10px;
+   font-size: 9px;
+}
