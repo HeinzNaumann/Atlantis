@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAdsList, getTags } from "./service";
+import { getUser, getAdsList, getAdsUserList, getTags } from "./service";
 import Ad from "./Ad";
 import FormField from "./FormField";
 import Layout from "../layout/Layout";
@@ -26,6 +26,29 @@ const AdsListMainPage = (props) => {
   const limit = 6;
   const skip = currentPage * limit;
 
+
+
+  //**      Diego* */
+
+  const [user, setUser] = useState("");
+
+  useEffect(() => {
+    if (localStorage.getItem("nombre")) {
+      getUser(localStorage.getItem("nombre")).then((user) => setUser(user))
+    }
+    else {
+      setUser("")
+    }
+    return () => { }
+  }, []);
+
+  if(user){
+    localStorage.setItem("id_usuario", user.result[0]._id)
+  }
+
+/*Diego*/
+
+  
   useEffect(() => {
     getTags().then((tags) => setTags(tags));
   }, []);

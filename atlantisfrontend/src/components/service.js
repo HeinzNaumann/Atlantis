@@ -41,3 +41,9 @@ export const favAds = (favId) => {
   const url = `/api/users/?fav=${favId}`
   return client.get(url)
 }
+
+export const getUser = id => {
+  const url = `/api/users/${id}`
+  return client.get(url)
+}
+  

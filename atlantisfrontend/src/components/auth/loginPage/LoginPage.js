@@ -52,9 +52,9 @@ function LoginPage({ history, onLogin} ) {
     try {
       // call to api - send value
       const data = await login(value);
-
-      const { usuario } = data; 
-       localStorage.setItem("id_usuario", usuario._id)
+      localStorage.setItem("nombre", value.nombre)
+      // const { usuario } = data; 
+      //  localStorage.setItem("id_usuario", usuario._id)
       setIsLoading(false);
         setAlert({
           msg: data.msg,

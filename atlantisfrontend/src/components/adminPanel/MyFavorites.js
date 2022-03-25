@@ -10,7 +10,6 @@ const MyProducts = () => {
         useEffect(() => {
        getAdsFavList(userId).then((ads) => {
           userAd(ads)
-          console.log(ads)
         });
 
     }, [userId]);
