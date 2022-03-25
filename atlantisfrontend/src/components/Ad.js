@@ -1,5 +1,5 @@
 import "../css/Ad.css";
-
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { favAds } from "./service";
 import * as Icon from 'react-feather';
@@ -7,13 +7,11 @@ import { useEffect } from "react";
 
 export const Ad = (ad) => {
 
-
+    const history = useHistory();
     const token = localStorage.getItem("token")
 
-  console.log(token)
-
   return (
-    <div className=" col-md-4" key={ad._id}>
+    <div className=" col-md-4" onClick={()=> history.push(`/adverts/${ad._id}`)} key={ad._id}>
       <div className="pdt-item-blk mb-4">
         <div className="pdt-img-blk">
           {ad.imagen && (
@@ -55,7 +53,7 @@ export const Ad = (ad) => {
               <p className="text-warning font-bold"> {ad.venta}</p>
             </div>
             <h5 className="text-theme font-amt font-bold">{ad.precio} €</h5>
-            <Link to={`/adverts/${ad._id}`}>
+
               <h4>
                 <a href="" className="display-block text-link">
                   {ad.nombre}
@@ -64,7 +62,7 @@ export const Ad = (ad) => {
               <h6 className="d-flex justify-content-between align-items-center">
                 {ad.usuario_nombre}
               </h6>
-            </Link>
+            
             <div className="content-btm-blk">
               <div className="media py-3">
                 <div className="media-body">
