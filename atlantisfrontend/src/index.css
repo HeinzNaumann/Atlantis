@@ -1853,20 +1853,33 @@ h5 {
   display: inline-block;
   vertical-align: middle;
   background: white;
+  border: 1px solid red;
   border-radius: 50%;
   width: 32px;
   height: 32px;
+}
+
+.botones-fav:hover svg {
+  fill: red;
+  border: none;
+  stroke: none;
 }
 
 .botones-fav-click {
   color: #ffffff;
   display: inline-block;
   vertical-align: middle;
-  background: red;
+  background: white;
   border-radius: 50%;
-  border: none;
+  border: 1px solid red;
+
   width: 32px;
   height: 32px;
+  fill: red;
+}
+
+.botones-fav-click svg {
+  fill: red;
 }
 
 .botones-fav-click:hover {

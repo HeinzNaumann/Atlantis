@@ -6,13 +6,7 @@ import * as Icon from 'react-feather';
 
 export const Ad = (ad) => {
 
-  const [heart, heartRefresh] = useState("algo")
 
-  useEffect(() => {
-    heartRefresh("algo")
-  }, [heart])
-  
-  console.log(heart)
 
     const history = useHistory();
     const token = localStorage.getItem("token")
@@ -38,7 +32,7 @@ export const Ad = (ad) => {
               <ul className="pdt-item list-inline">
                 <li className="list-inline-item align-middle">
                   {token ?
-                    <button onClick={(e) => { e.stopPropagation(); favAds(ad._id); heartRefresh(e)}} className={ ` ${ad.fav ? "botones-fav" : "botones-fav-click " }`} >
+                    <button onClick={(e) => { e.stopPropagation(); favAds(ad._id); }} className={ ` ${ad.fav ? "botones-fav" : "botones-fav-click " }`} >
                       <Icon.Heart className="feather-heart size-xs"/> 
                    
                     </button>
