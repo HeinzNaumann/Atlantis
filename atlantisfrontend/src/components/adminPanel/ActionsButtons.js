@@ -1,9 +1,7 @@
 import * as Icon from 'react-feather';
 
-const ActionsButtons = ( {onEdit, setCategorias}) => {
+const ActionsButtons = ( { setCategorias}) => {
 
-    const idAnuncio = onEdit;
-    console.log(setCategorias);
     
     return ( 
         <>

@@ -3,8 +3,15 @@ import "../css/Ad.css";
 import { Link } from "react-router-dom";
 import { favAds } from "./service";
 import * as Icon from 'react-feather';
+import { useEffect } from "react";
 
 export const Ad = (ad) => {
+
+
+    const token = localStorage.getItem("token")
+
+  console.log(token)
+
   return (
     <div className=" col-md-4" key={ad._id}>
       <div className="pdt-item-blk mb-4">
@@ -26,9 +33,13 @@ export const Ad = (ad) => {
             <div className="buy-blk position-absolute r-0">
               <ul className="pdt-item list-inline">
                 <li className="list-inline-item align-middle">
+                  {token ?
                   <button onClick={() => favAds(ad._id)} className="botones-fav">
-                    <Icon.Heart className="feather-heart size-xs"/>
-                  </button>
+                    <Icon.Heart className="feather-heart size-xs"/> 
+                   
+                    </button>
+                    : []
+                     }
                   {/* <button onClick={() => favAds(ad._id)} className="botones-fav">
                     <Icon.Gift className=" feather-heart size-xs"/>
                   </button>

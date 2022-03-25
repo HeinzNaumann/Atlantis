@@ -3,12 +3,6 @@ import { Link, useHistory } from "react-router-dom"
 import { useState } from "react"
 export const Ads = (ad) => {
 
-    console.log(ad)
-
-//     const history = useHistory();
-//   const handleRowClick = () => {
-//     history.push(`/adverts/${ad._id}`);
-//   }  
 
     return (
         
