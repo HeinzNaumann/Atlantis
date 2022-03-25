@@ -6,8 +6,9 @@ import ControlledTabs from "./controlledTabs";
 import MyProducts from "./MyProducts";
 import MyFavorites from "./MyFavorites"
 import NewAdPageSmall from "./NewAdPageSmall";
+import EditComponentSmall from "./EditComponentSmall"
 import * as Icon from "react-feather"
-const AdminPanel = ({ ...props } ) => {
+const AdminPanel = (   ) => {
 
     const id = useParams();
     const { userId } = id;
@@ -64,28 +65,33 @@ const AdminPanel = ({ ...props } ) => {
             <div className="row">
                <div className="col-12">
                   <div className="append user-features-menu-blk py-4 py-md-0">
-                                <ControlledTabs onClck={handleCheckCategoria }/>
+                         <ControlledTabs onClck={handleCheckCategoria} />
                   </div>
                   <span className="lnr lnr-chevron-down d-block d-md-none yalign nav-arrow r-2"></span>
                </div>
             </div>
          </div>
             </div>
-               {(() => {
-                    if (categorias === "1") {
-          return (
-            <MyProducts/>
-          )
-        } else if (categorias === "2") {
-          return (
-            <MyFavorites/>
-          )
-        } else if((categorias === "3")) {
-          return (
-            <NewAdPageSmall/>
-          )
-        }
-      })()}
+          {(() => {
+             if (categorias === "1") {
+                return (
+                   <MyProducts setCategorias={setCategorias}/>
+                )
+             } else if (categorias === "2") {
+                return (
+                   <MyFavorites />
+                )
+             } else if ((categorias === "3")) {
+                return (
+                   <NewAdPageSmall />
+                )
+             } else if ((categorias === 4)) {
+                return (
+               
+                   <EditComponentSmall  />
+                )
+             }
+          })()}
     </Layout>
         </> );
 }

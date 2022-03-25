@@ -1,11 +1,23 @@
 import ActionsButtons from "./ActionsButtons";
-
+import { Link, useHistory } from "react-router-dom"
+import { useState } from "react"
 export const Ads = (ad) => {
+
+    console.log(ad)
+
+//     const history = useHistory();
+//   const handleRowClick = () => {
+//     history.push(`/adverts/${ad._id}`);
+//   }  
+
     return (
         
         <>
-            <tr key={ad._id}>
-                <td>
+            
+            <tr key={ad._id} className="tr-button" >
+                
+                <td >
+                     
                 <div className=" text-white ">
                     <img
                         src={`${process.env.REACT_APP_API_ATLANTIS_URL}/images/anuncios/${ad.imagen}`}
@@ -16,10 +28,12 @@ export const Ads = (ad) => {
                         border-radius="30px"
                     ></img>
                 </div>
-
+              
                 </td>
-            <td>
-             <h5>{ad.nombre}</h5>
+                <td>
+                    <Link to={`/adverts/${ad._id}`}>
+                        <h5>{ad.nombre}</h5>
+                        </Link>
             </td>
             <td>
                 
@@ -40,7 +54,8 @@ export const Ads = (ad) => {
                 
                 </td>
                 <td><h5>{ad.precio}€</h5></td>
-                <td><ActionsButtons/></td>
+                <td><ActionsButtons onEdit={ad._id} setCategorias={ad.setCategorias} /></td>
+                
             </tr>
             </>
             );

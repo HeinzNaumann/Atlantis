@@ -1,10 +1,14 @@
 import * as Icon from 'react-feather';
 
-const ActionsButtons = () => {
+const ActionsButtons = ( {onEdit, setCategorias}) => {
+
+    const idAnuncio = onEdit;
+    console.log(setCategorias);
+    
     return ( 
         <>
         <div className="d-flex ">
-            <button ><Icon.Edit></Icon.Edit></button>
+            <button ><Icon.Edit onClick={()=>setCategorias(4)}></Icon.Edit></button>
                 <button >
                 <Icon.Delete></Icon.Delete>
                 </button>

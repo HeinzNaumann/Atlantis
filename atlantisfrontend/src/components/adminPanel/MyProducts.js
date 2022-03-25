@@ -3,7 +3,9 @@ import { useParams } from "react-router-dom"
 import { getAdsUserList } from "../service";
 import { Ads } from "./Ads"
 
-const MyProducts = () => {
+const MyProducts = ({ setCategorias }) => {
+
+  
     const id = useParams();
     const { userId } = id;
     const [ads, userAd] = useState([]);
@@ -46,7 +48,7 @@ const MyProducts = () => {
                                 <tbody>
                                 {ads.results ? 
                 
-                                    ads.results.map((ad) => <Ads {...ad} /> )
+                                     ads.results.map((ad) => <Ads {...ad} setCategorias={setCategorias} /> )
                                  : 
                                   <div>prueba</div>
                                 }

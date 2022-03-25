@@ -176,9 +176,12 @@ button:focus {
 .wizard-content-blk .next {
   margin: auto;
 }
-
 input[type="radio"] {
   margin: 0 10px 0 5px;
+}
+
+.tr-button:hover {
+  cursor: pointer;
 }
 .anuncios-block {
   margin-top: 50px !important;
