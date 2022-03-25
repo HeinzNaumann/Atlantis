@@ -141,10 +141,10 @@ const MessagePage=({ match }) =>{
                 )}
             </div>
 
-            <div className='message-chat'>
+            
                 { first?(<Chat props={chat}/>):(chats.length?"Seleccione un Mensaje":"")}
                      
-           </div>
+           
          </div>
 
         </Layout>

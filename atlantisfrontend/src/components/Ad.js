@@ -1,5 +1,7 @@
 import "../css/Ad.css";
 import { Link } from "react-router-dom";
+import info from "../../src/assets/img/info.svg"
+
 export const Ad = (ad) => {
   return (
    
@@ -65,13 +67,18 @@ export const Ad = (ad) => {
                     <h6 className="mb-0">{ad.tags}</h6>
                   </div>
                 </div>
-                
-                <p className="ad-tags"></p>
-                <Link to={`/chat/${ad._id}`}>
+                {/* DIEGO */}
+                <div className="interaction">
+                  
+                    <Link to={`/chat/${ad._id}`} className="adIcon">
+                         <span className="spanChat">Chat</span>
+                    </Link>
+                    <Link to={`/chat/${ad._id}`} className="adIcon">
+                         <img src={info}></img>
+                    </Link>
                     
-                          Chat
-                          
-                 </Link>
+                 </div>
+                 {/* FIN DIEGO */}
               </div>
             </div>
           </div>

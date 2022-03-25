@@ -51,6 +51,17 @@ function Header() {
                          
                       </li>
                       <li className="list-inline-item d-none d-md-inline-block">
+                        
+                        <div className="icons">
+                          <div className="icon">
+                             <Icon.AlertCircle />
+                             <div className="counter">2</div>
+                           </div>
+                        </div>
+                        
+                       
+                      </li>
+                      <li className="list-inline-item d-none d-md-inline-block">
                         <Link to="/chat">
                     
                            <Icon.MessageCircle className="d-inline-block mr-0 mr-lg-3 icons-header" />

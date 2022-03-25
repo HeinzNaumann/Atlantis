@@ -53,28 +53,31 @@ const Chat=({ props }) =>{
 
     const handleSubmnit = async (e)=>{
         e.preventDefault();
-        socket.emit('mensaje', nombre, msg,props._id);
         console.log("PROPS CHAT-->",props);
         //verifica si es un chat existente sino lo crea
-        if(!props._id){
+        let idchat = props._id? props._id:""; 
+        if(!idchat){
             // console.log("PROPS CHAT-->",props);
             const dataChat={...props,mensajes:[{nombre:nombre,mensaje:msg}]}
             //console.log("dataChat-->",dataChat);
             //llama al servicio para almacenar en BD de chat los nuevos msj
-            await createChad(dataChat);
+            const chatcreated =await createChad(dataChat);
+            //almacena del id de chat creado para pasarselo emit
+            idchat = chatcreated.chat[0]._id;
         }else{
             const dataChat={nombre:nombre,mensaje:msg}
             //llama al servicio para almacenar en BD de chat los nuevos msj
             await updateChad(props._id,dataChat);
         }
-
+        
+        socket.emit('mensaje', nombre, msg,idchat);
         setMsg("");
     }
 
 
     return (
             
-            <div>
+            <div className='message-chat'>  
                 <div className="chat" >
                    { message.length ? (message.map((e,i)=><div  key={i+1}><div>{e.nombre}</div><div>{e.mensaje}</div></div>)):
                     ("")}
@@ -83,7 +86,7 @@ const Chat=({ props }) =>{
                 </div>
                 <form onSubmit={handleSubmnit} className="form-chat">
                     <textarea cols="10" rows="1" value={msg} onChange={e=>setMsg(e.target.value)}></textarea>
-                    <button>Enviar</button>
+                    <button className="sendMsj">Enviar</button>
                 </form>
             </div>
         
