@@ -1,14 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import socket from './socket'
-import Layout from '../../layout/Layout';
-import { createChad, updateChad, getUser } from '../../../src/components/service';
+import { createChad, updateChad } from '../../../src/components/service';
 import './chat.css'
 
 const Chat=({ props }) =>{
     const[msg, setMsg] = useState("");
     //const msjs = props.mensajes.length>0? props.mensajes:[];
     const[message, setMessage] = useState([]);
+    const[chatId,setChatId]=useState("");
     const nombre = localStorage.getItem('nombre');
+    let idchat="TEST";
   
 
  /*    useEffect(()=>{
@@ -30,6 +31,16 @@ const Chat=({ props }) =>{
         setFirst(props);
       },[props])
 
+    useEffect(()=>{
+        if(props._id){
+            getChats(props.usuario_int,props.anuncio).then(({result,existChatAd})=>{
+                if(existChatAd===1){
+                    setChatId(result[0]._id)
+                }
+            })
+        }else{}
+    },[])
+
 
 
 /*     useEffect(()=>{
@@ -38,7 +49,8 @@ const Chat=({ props }) =>{
 
     useEffect(()=>{
         socket.on('mensajes', mensaje =>{
-            if(mensaje.id===props._id){
+            console.log("mensajeID",mensaje.id,"==",idchat,"idChat","-->ChatID",chatId);
+            if(mensaje.id===idchat){
                 //console.log("Mensajes", mensaje)
                 setMessage([...message,mensaje])
             }
@@ -55,14 +67,14 @@ const Chat=({ props }) =>{
         e.preventDefault();
         console.log("PROPS CHAT-->",props);
         //verifica si es un chat existente sino lo crea
-        let idchat = props._id? props._id:""; 
+        idchat = props._id? props._id:""; 
         if(!idchat){
             // console.log("PROPS CHAT-->",props);
             const dataChat={...props,mensajes:[{nombre:nombre,mensaje:msg}]}
             //console.log("dataChat-->",dataChat);
             //llama al servicio para almacenar en BD de chat los nuevos msj
             const chatcreated =await createChad(dataChat);
-            console.log("CHATCREAD",chatcreated)
+            //console.log("CHATCREAD",chatcreated)
             //almacena del id de chat creado para pasarselo emit
             idchat = chatcreated.chat._id;
         }else{
@@ -72,6 +84,7 @@ const Chat=({ props }) =>{
         }
         
         socket.emit('mensaje', nombre, msg,idchat);
+        setChatId(idchat)
         setMsg("");
     }
 
