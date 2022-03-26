@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import React from "react";
 import { Link } from "react-router-dom";
 
-
+//compartir en rrss
+import ShareAdvert from "./ShareAdvert";
 //import { DeleteButton } from "../common/DeleteButton";
 import Button from "./common/button";
 import Layout from "../layout/Layout";
@@ -74,6 +75,12 @@ function Detail({ match }) {
                   <Link to = {"/update"}>
                     <Button onClick = {() => setData(advert)}>Edit</Button>
                   </Link>
+                  <div>
+                    <ShareAdvert
+                      Url={`${process.env.REACT_APP_FRONT_ATLANTIS_URL}/adverts/${advertId}`}
+                    />
+                  </div>
+
                 </div>
               </div>
             </div>
