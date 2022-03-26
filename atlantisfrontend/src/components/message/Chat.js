@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import socket from './socket'
-import { createChad, updateChad } from '../../../src/components/service';
+import { createChad, updateChad, getChats } from '../../../src/components/service';
 import './chat.css'
 
 const Chat=({ props }) =>{
@@ -9,8 +9,7 @@ const Chat=({ props }) =>{
     const[message, setMessage] = useState([]);
     const[chatId,setChatId]=useState("");
     const nombre = localStorage.getItem('nombre');
-    let idchat="TEST";
-  
+      
 
  /*    useEffect(()=>{
         //console.log("props.mensajes: ",props.mensajes);
@@ -31,28 +30,44 @@ const Chat=({ props }) =>{
         setFirst(props);
       },[props])
 
-    useEffect(()=>{
-        if(props._id){
-            getChats(props.usuario_int,props.anuncio).then(({result,existChatAd})=>{
-                if(existChatAd===1){
-                    setChatId(result[0]._id)
-                }
-            })
-        }else{}
-    },[])
 
-
+    function getIdChat(usuario,anuncio){
+        let id="";
+        getChats(props.usuario_int,props.anuncio).then(({result,existChatAd})=>{
+            console.log("result",result,"existChatAd",existChatAd)
+            if(existChatAd===1){
+                id= result[0]._id;
+                //console.log("mensajeID SIN",mensaje.id,"==",idchat,"idChat");
+            }
+        })
+        return id;
+    }
 
 /*     useEffect(()=>{
         socket.emit('conectado', nombre)
     },[nombre]) */
 
     useEffect(()=>{
+   
         socket.on('mensajes', mensaje =>{
-            console.log("mensajeID",mensaje.id,"==",idchat,"idChat","-->ChatID",chatId);
-            if(mensaje.id===idchat){
-                //console.log("Mensajes", mensaje)
-                setMessage([...message,mensaje])
+            let idchat = props._id? props._id:""; 
+            if(!props._id){
+                let idC= getIdChat(props.usuario_int,props.anuncio)
+                if(idC){
+                    idchat=idC;
+                    if(mensaje.id===idchat){
+                    //console.log("Mensajes", mensaje)
+                        setMessage([...message,mensaje])
+                    } 
+                }          
+             
+                
+            }else{ 
+                console.log("mensajeID CON",mensaje.id,"==",idchat,"idChat");
+                if(mensaje.id===idchat){
+                    //console.log("Mensajes", mensaje)
+                    setMessage([...message,mensaje])
+                }
             }
         });
         return ()=> {socket.off()}
@@ -67,7 +82,12 @@ const Chat=({ props }) =>{
         e.preventDefault();
         console.log("PROPS CHAT-->",props);
         //verifica si es un chat existente sino lo crea
-        idchat = props._id? props._id:""; 
+        let idchat="";
+        if(!props._id){
+            const id=getIdChat(props.usuario_int,props.anuncio);
+            idchat=id? id: idchat;
+        }   
+        idchat = props._id? props._id:idchat; 
         if(!idchat){
             // console.log("PROPS CHAT-->",props);
             const dataChat={...props,mensajes:[{nombre:nombre,mensaje:msg}]}
@@ -84,7 +104,6 @@ const Chat=({ props }) =>{
         }
         
         socket.emit('mensaje', nombre, msg,idchat);
-        setChatId(idchat)
         setMsg("");
     }
 
