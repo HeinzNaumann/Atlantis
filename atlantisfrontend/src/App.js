@@ -8,19 +8,18 @@ import Detail from "./components/Detail";
 import { useState } from "react";
 //import {AuthProvider} from "./context/AuthProvider";
 function App() {
-
   const [isLogged, SetLogged] = useState(false);
-  
-  const handleLogin = () => SetLogged(true)
+
+  const handleLogin = () => SetLogged(true);
 
   return (
     // <AuthProvider>
     <Switch>
-      <Route exact path="/adverts" component={AdsListMainPage}/> 
+      <Route exact path="/adverts" component={AdsListMainPage} />
       <Route exact path="/adverts/new" component={NewAdPage} />
       <Route exact path="/adverts/:id" component={Detail} />
-      <Route exact path="/login" >
-        <SignupLogin onLogin={handleLogin}/>
+      <Route exact path="/login">
+        <SignupLogin onLogin={handleLogin} />
       </Route>
       <Route exact path="/signup" component={SignupLogin} />
       <Route
