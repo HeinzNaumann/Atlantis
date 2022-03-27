@@ -9,7 +9,27 @@ import * as Icon from 'react-feather';
 
 export const Ad = (ad) => {
   
+  const [heartEffect, heartClickEffect] = useState()
   
+
+  const Effect = () => {
+    if (heartEffect === "botones-fav") {
+      heartClickEffect("botones-fav-click")
+    } else {
+
+      heartClickEffect("botones-fav")
+    }
+  }
+
+  useEffect(() => {
+    if (ad.fav) {
+      heartClickEffect("botones-fav-click")
+    } else {
+      heartClickEffect("botones-fav")
+    }
+    
+  }, [heartClickEffect]);
+
   
   const history = useHistory();
   const token = localStorage.getItem("token")
@@ -49,7 +69,7 @@ export const Ad = (ad) => {
               <ul className="pdt-item list-inline">
                 <li className="list-inline-item align-middle">
                   {token ?
-                    <button onClick={(e) => { e.stopPropagation(); favAds(ad._id); }} className={ ` ${ad.fav ? "botones-fav" : "botones-fav-click " }`} >
+                    <button onClick={(e) => { e.stopPropagation(); favAds(ad._id);Effect("botones-fav-click") }} className={heartEffect} >
                       <Icon.Heart className="feather-heart size-xs"/> 
                    
                     </button>

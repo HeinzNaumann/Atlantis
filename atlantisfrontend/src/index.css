@@ -1872,10 +1872,12 @@ h5 {
   background: white;
   border-radius: 50%;
   border: 1px solid red;
-
   width: 32px;
   height: 32px;
-  fill: red;
+}
+
+.botones-fav-click:focus {
+  border: 1px solid red;
 }
 
 .botones-fav-click svg {
