@@ -45,11 +45,11 @@ const MyProducts = ({ setCategorias }) => {
                                  </tr>
                               </thead>
                                 <tbody>
-                                  {ads.length ?
+                                  {ads.length !== 0 ?
                                       
                                      ads.results.map((ad) => <Ads {...ad} setCategorias={setCategorias} /> )
                                  : 
-                                  <div>prueba</div>
+                                  <div>No hay anuncios</div>
                                 }
                               </tbody>
                            </table>

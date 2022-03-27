@@ -45,11 +45,11 @@ const MyProducts = () => {
                                  </tr>
                               </thead>
                                 <tbody>
-                                {ads.result ? 
+                                {ads.length !== 0 ? 
                 
                                     ads.result.map((ad) => <Ads {...ad} /> )
                                  : 
-                                  <div>prueba</div>
+                                  <div>otra cosa</div>
                                 }
                               </tbody>
                            </table>
