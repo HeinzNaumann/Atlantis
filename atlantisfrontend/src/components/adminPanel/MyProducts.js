@@ -2,16 +2,17 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { getAdsUserList } from "../service";
 import { Ads } from "./Ads"
-
+import Loader from "../../common/Loader";
 const MyProducts = ({ setCategorias }) => {
 
-  
+    const [isLoading, setLoading] = useState(true)
     const id = useParams();
     const { userId } = id;
     const [ads, userAd] = useState([]);
         useEffect(() => {
        getAdsUserList(userId).then((ads) => {
-            userAd(ads)
+          userAd(ads)
+          setLoading(false);
         });
     }, [userId]);
 
@@ -31,7 +32,10 @@ const MyProducts = ({ setCategorias }) => {
                      </div>
                      <hr className="my-4"/>
                      <div className="notify-content-blk">
-                        <div className="table-responsive">
+                         <div className="table-responsive">
+                               {isLoading ? (
+                                  <Loader />
+                               ) : (
                            <table id="notify-table" className="table table-hover table-bordered table-striped mb-0">
                               <thead>
                                 <tr>
@@ -44,15 +48,21 @@ const MyProducts = ({ setCategorias }) => {
                                     <th>Actions</th>
                                  </tr>
                               </thead>
-                                <tbody>
-                                  {ads.length !== 0 ?
+                            
+                                  <tbody>
+                                    
+                                     {ads.length !== 0 ?
                                       
-                                     ads.results.map((ad) => <Ads {...ad} setCategorias={setCategorias} /> )
-                                 : 
-                                  <div>No hay anuncios</div>
-                                }
-                              </tbody>
-                           </table>
+                                        ads.results.map((ad) => <Ads {...ad} setCategorias={setCategorias} />)
+                                        :
+                                        <div>No hay anuncios</div>
+                                        
+                                     })
+                                  
+                                  </tbody>
+                               
+                                  </table>
+                                  )}
                         </div>
                      </div>
                   </div>

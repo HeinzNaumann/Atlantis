@@ -2,14 +2,17 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { getAdsFavList } from "../service";
 import { Ads } from "./Ads"
-
+import Loader from "../../common/Loader";
 const MyProducts = () => {
+
+       const [isLoading, setLoading] = useState(true)
     const id = useParams();
     const { userId } = id;
     const [ads, userAd] = useState([]);
         useEffect(() => {
        getAdsFavList(userId).then((ads) => {
-          userAd(ads)
+          userAd(ads);
+           setLoading(false);
         });
 
     }, [userId]);
@@ -31,7 +34,10 @@ const MyProducts = () => {
                      </div>
                      <hr className="my-4"/>
                      <div className="notify-content-blk">
-                        <div className="table-responsive">
+                         <div className="table-responsive">
+                              {isLoading ? (
+                                  <Loader />
+                               ) : (
                            <table id="notify-table" className="table table-hover table-bordered table-striped mb-0">
                               <thead>
                                 <tr>
@@ -52,7 +58,8 @@ const MyProducts = () => {
                                   <div>otra cosa</div>
                                 }
                               </tbody>
-                           </table>
+                                  </table>
+                                  )}
                         </div>
                      </div>
                   </div>

@@ -4,7 +4,7 @@ import Ad from "./Ad";
 import FormField from "./FormField";
 import Layout from "../layout/Layout";
 import { Range } from "rc-slider";
-
+import Loader from "../common/Loader";
 import "rc-slider/assets/index.css";
 import "../css/AdsListMainPage.css";
 import { Pagination } from "./common/Pagination";
@@ -22,7 +22,7 @@ const AdsListMainPage = (props) => {
   const [filterByPrice, setFilterByPrice] = useState([0, 500]);
   const [filterBySale, setFilterBySale] = useState("");
   const [filterByTag, setFilterByTag] = useState([]);
-  
+  const [isLoading, setLoading] = useState(true)
   const limit = 6;
   const skip = currentPage * limit;
 
@@ -56,6 +56,7 @@ const AdsListMainPage = (props) => {
 
   const getAds = () => {
     getAdsList().then(({ results, totalads }) => {
+
       console.log("AD_LIST", results);
       const ads = results;
       ads.sort((t1, t2) => t2.createdAt.localeCompare(t1.createdAt));
@@ -63,17 +64,13 @@ const AdsListMainPage = (props) => {
       const slicedData = slice.map((ad) => ad);
       setAdsList(slicedData);
       setTotalPages(totalads / limit);
+      setLoading(false);
     });
   };
   
-
   useEffect(()=>{
     getAds();
   },[currentPage])
-
-  useEffect(() => {
-    getAds();
-  }, [currentPage]);
 
   const handleSearch = (event) => {
     setFilterByName(event.target.value.toLowerCase());
@@ -203,27 +200,32 @@ const AdsListMainPage = (props) => {
             
           </div>
         </div>
-        <div className="col-lg-8 m-20 anuncios-block">
-          {adsList.length !== 0 ? (
-            <div className="row">
-              {filteredAds.map((ad) => (
-                <Ad {...ad} />
-              ))}
+        {isLoading ? (
+          <div className="col-lg-8 container-fluid  justify-content-center">
+            <Loader />
             </div>
-          ) : (
-            <EmptyList />
-          )}
-           {totalPages > 0 && (
-            <ul className="pagination d-flex justify-content-center ">
-            <Pagination
-              pages={totalPages}
-              currentPage={currentPage}
-              onPageChange={setCurrentPage}
-            ></Pagination>
-            </ul>
-          )}
-        </div>
-        
+        ) : (
+          <div className="col-lg-8 m-20 anuncios-block">
+            {adsList.length !== 0 ? (
+              <div className="row">
+                {filteredAds.map((ad) => (
+                  <Ad {...ad} />
+                ))}
+              </div>
+            ) : (
+              <EmptyList />
+            )}
+            {totalPages > 0 && (
+              <ul className="pagination d-flex justify-content-center ">
+                <Pagination
+                  pages={totalPages}
+                  currentPage={currentPage}
+                  onPageChange={setCurrentPage}
+                ></Pagination>
+              </ul>
+            )}
+          </div>
+        )}
       </div>
 
      
