@@ -5,7 +5,7 @@ const ActionsButtonsFavoritos = ( { setCategorias}) => {
     
     return ( 
         <>
-        <div className="d-flex gap-1 ">
+        <div className="d-flex justify-content-center">
              
            
            <button className="botones-fav" ><Icon.Heart className=" size-xs"></Icon.Heart></button>

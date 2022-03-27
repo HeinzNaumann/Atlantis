@@ -46,8 +46,8 @@ const AdminPanel = (   ) => {
                      <div className="row">
                         <div className="col-md-6 col-lg-5">
                            <div className="media mb-4 mb-md-0">
-
-                            <div className="d-inline-flex p-2 gap-4">
+                                       <h2><strong>My Account</strong></h2> 
+                                  <div className="d-inline-flex p-2 gap-4">
                                 <Icon.User  > </Icon.User>
                                      <h3>{nombre}</h3>  
                               </div>
