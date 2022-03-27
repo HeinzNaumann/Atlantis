@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { getAdsFavList } from "../service";
-import { Ads } from "./Ads"
+import { AdsFavoritos } from "./AdsFavoritos"
 import Loader from "../../common/Loader";
 const MyProducts = () => {
 
@@ -53,7 +53,7 @@ const MyProducts = () => {
                                 <tbody>
                                 {ads.length !== 0 ? 
                 
-                                    ads.result.map((ad) => <Ads {...ad} /> )
+                                    ads.result.map((ad) => <AdsFavoritos {...ad} /> )
                                  : 
                                   <div>otra cosa</div>
                                 }

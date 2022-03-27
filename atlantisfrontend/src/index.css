@@ -1893,6 +1893,51 @@ td .img-fluid.img-style {
   height: 32px;
 }
 
+.feather-Edit {
+  color: #ffffff;
+  display: inline-block;
+  vertical-align: middle;
+  background: #1579ee;
+  border-radius: 50%;
+  border: none;
+  width: 32px;
+  height: 32px;
+}
+
+.feather-Edit:hover {
+  color: #ffffff;
+  display: inline-block;
+  vertical-align: middle;
+  background: #79b0ee;
+  border-radius: 50%;
+  border: none;
+  width: 32px;
+  height: 32px;
+}
+
+.feather-Delete {
+  color: #ffffff;
+  display: inline-block;
+  vertical-align: middle;
+
+  background: #ed5249;
+  border-radius: 50%;
+  border: none;
+  width: 32px;
+  height: 32px;
+}
+
+.feather-Delete:hover {
+  color: #ffffff;
+  display: inline-block;
+  vertical-align: middle;
+  background: #e47e79d7;
+  border-radius: 50%;
+  border: none;
+  width: 32px;
+  height: 32px;
+}
+
 .botones-fav {
   color: #ffffff;
   display: inline-block;

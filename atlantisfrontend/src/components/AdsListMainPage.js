@@ -134,7 +134,7 @@ const AdsListMainPage = (props) => {
       <div className="container">
       <div className="row" {...props}>
         <div className="col-lg-4">
-          <div className="col-lg-8 filters">
+          <div className="col-lg-10 filters">
             <h5 > Search by Name</h5>
             <hr/>
             <FormField
