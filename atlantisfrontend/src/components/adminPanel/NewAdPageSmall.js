@@ -82,8 +82,8 @@ export function NewAdPageSmall({ history }) {
                       placeholder="Are you selling?"
                       label="Sell"
                       className="custom-control-input"
-                      value ="sell"
-                      checked={ad.venta === "sell"}
+                      value ="Sell"
+                      checked={ad.venta === "Sell"}
                       onChange={handleChange}
                       />
                       <label className="custom-control-label"> Sell </label>
@@ -95,8 +95,8 @@ export function NewAdPageSmall({ history }) {
                       placeholder="Are you buying?"
                       label="Buy"
                       className="venta"
-                      value = "buy"
-                      checked={ad.venta === "buy"}
+                      value = "Buy"
+                      checked={ad.venta === "Buy"}
                       onChange={handleChange}
                     ></input>
                     <label className="custom-control-label"> Buy </label>
