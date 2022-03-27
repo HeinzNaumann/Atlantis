@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 //import { Link } from "react-router-dom";
 import swal from "sweetalert";
+import * as Icon from "react-feather";
 
 //compartir en rrss
 import ShareAdvert from "./ShareAdvert";
@@ -14,6 +15,7 @@ function Detail({ match, history }) {
   const advertId = match.params.id;
   const [advert, setAdvert] = useState(advertId);
 
+  const token = localStorage.getItem("token");
   const getAdvertById = async () => {
     try {
       const advertData = await detailAds(advertId);
@@ -189,13 +191,6 @@ function Detail({ match, history }) {
                                 alt={advert.imagen}
                                 className="img-fluid "
                               />
-                              <div class="slide">
-                                <img
-                                  src={`${process.env.REACT_APP_API_ATLANTIS_URL}/images/anuncios/${advert.imagen}`}
-                                  alt={advert.imagen}
-                                  className="img-fluid "
-                                />
-                              </div>
                             </div>
                           </div>
                         </div>
@@ -364,16 +359,17 @@ function Detail({ match, history }) {
                               </div>
                               <div class="row">
                                 <div class="col-md-12">
-                                  <a
-                                    href="javascript:;"
-                                    class="btn btn-style-success btn-lg mt-4 d-block"
-                                  >
-                                    <span
-                                      data-feather="shopping-cart"
-                                      class="mr-2"
-                                    ></span>
-                                    CHAT WITH OWNER
-                                  </a>
+                                  {token && (
+                                    <button
+                                      className="feather-Message"
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        history.push(`/chat/${advert._id}`);
+                                      }}
+                                    >
+                                      <Icon.MessageSquare className=" size-xs" />
+                                    </button>
+                                  )}
                                   <a>
                                     <ShareAdvert
                                       Url={`${process.env.REACT_APP_FRONT_ATLANTIS_URL}/adverts/${advertId}`}
