@@ -1886,11 +1886,16 @@ td .img-fluid.img-style {
   color: #ffffff;
   display: inline-block;
   vertical-align: middle;
-  background: #79b0ee;
+  background: white;
   border-radius: 50%;
-  border: none;
+  border: solid 1px #1579ee;
   width: 32px;
   height: 32px;
+}
+
+.feather-Message:hover svg {
+  fill: white;
+  stroke: #1579ee;
 }
 
 .feather-Edit {
@@ -1908,7 +1913,7 @@ td .img-fluid.img-style {
   color: #ffffff;
   display: inline-block;
   vertical-align: middle;
-  background: #79b0ee;
+  background: #5ea1ed;
   border-radius: 50%;
   border: none;
   width: 32px;
@@ -1931,7 +1936,7 @@ td .img-fluid.img-style {
   color: #ffffff;
   display: inline-block;
   vertical-align: middle;
-  background: #e47e79d7;
+  background: #e47e79f3;
   border-radius: 50%;
   border: none;
   width: 32px;
