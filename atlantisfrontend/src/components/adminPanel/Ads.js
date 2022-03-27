@@ -36,7 +36,7 @@ export const Ads = (ad) => {
                 </td>
                 <td>
                 
-                    <p>{ad.descripcion}</p>
+                    <div className="overflow-scroll w-100 texto-description" >{ad.descripcion}</div>
                 </td>
                 <td>
                     {ad.tags.map((tags, index) => (

@@ -1846,7 +1846,17 @@ em {
 }
 
 td {
-  overflow: hidden;
+  max-width: 200px;
+  overflow: scroll;
+}
+
+.texto-description {
+  white-space: normal !important;
+  max-height: 100px;
+}
+
+td p {
+  overflow: scroll;
 }
 
 .img-fluid.img-style {
