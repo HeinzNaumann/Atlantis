@@ -49,7 +49,7 @@ const AdminPanel = (   ) => {
 
                             <div className="d-inline-flex p-2 gap-4">
                                 <Icon.User  > </Icon.User>
-                                <h3>{ads.results ? ads.results[0].usuario_nombre : <span>User Name</span>}</h3>  
+                                <h3>{ads.length ? ads.results[0].usuario_nombre : <span>User Name</span>}</h3>  
                               </div>
                            </div>
                         </div>
