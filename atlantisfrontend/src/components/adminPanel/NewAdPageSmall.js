@@ -49,6 +49,7 @@ export function NewAdPageSmall({ history }) {
   return (
 
       <>
+      <div className="container mt-5">
   <div className="row">
    <div className="col-lg-12">
       <div className="add-pdt-blk">
@@ -151,7 +152,8 @@ export function NewAdPageSmall({ history }) {
           </form>
         </div>
       </div>
-    </div>
+        </div>
+      </div>
 </>
   );
 }
