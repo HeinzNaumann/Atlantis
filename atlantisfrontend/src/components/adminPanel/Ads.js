@@ -1,14 +1,14 @@
 import ActionsButtons from "./ActionsButtons";
-import { Link, useHistory } from "react-router-dom"
-import { useState } from "react"
+import {  useHistory } from "react-router-dom"
 export const Ads = (ad) => {
 
     const history = useHistory();
 
     return (
         
-        <> 
- 
+        <>
+     
+        {ad.nombre ? (
             <tr key={ad._id} onClick={() => { history.push(`/adverts/${ad._id}`) }} className="tr-button" >
             
                     
@@ -49,9 +49,10 @@ export const Ads = (ad) => {
                 <td><h5>{ad.precio}€</h5></td>
                 <td><ActionsButtons onEdit={ad._id} setCategorias={ad.setCategorias} /></td>
       
-            </tr>
-
-                   
+                </tr>
+            ):
+            ([])
+        }
             </>
-            );
-}
+    )
+};

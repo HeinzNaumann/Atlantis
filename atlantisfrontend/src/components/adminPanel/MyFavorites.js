@@ -39,7 +39,7 @@ const MyProducts = () => {
                                   <Loader />
                                ) : (
                            <table id="notify-table" className="table table-hover table-bordered table-striped mb-0">
-                              <thead>
+                              <thead className="thead-light">
                                 <tr>
                                     <th>Photo</th>
                                     <th>Name</th>

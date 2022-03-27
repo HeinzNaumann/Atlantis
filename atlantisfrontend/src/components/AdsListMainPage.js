@@ -8,6 +8,7 @@ import Loader from "../common/Loader";
 import "rc-slider/assets/index.css";
 import "../css/AdsListMainPage.css";
 import { Pagination } from "./common/Pagination";
+import { setAuthorizationHeader,removeAuthorizationHeader } from "../api/client";
 
 const EmptyList = () => {
   return <p> Nothing to show up </p>;
@@ -26,7 +27,14 @@ const AdsListMainPage = (props) => {
   const limit = 6;
   const skip = currentPage * limit;
 
-  
+    useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      setAuthorizationHeader(token);
+    } else {
+      removeAuthorizationHeader(token);
+      }
+  },[])
 
   //**      Diego* */
  
@@ -56,8 +64,6 @@ const AdsListMainPage = (props) => {
 
   const getAds = () => {
     getAdsList().then(({ results, totalads }) => {
-
-      console.log("AD_LIST", results);
       const ads = results;
       ads.sort((t1, t2) => t2.createdAt.localeCompare(t1.createdAt));
       const slice = ads.slice(skip - limit, limit * currentPage);
@@ -80,7 +86,6 @@ const AdsListMainPage = (props) => {
     const selectedOptions = Array.from(event.target.selectedOptions);
     setFilterByTag(selectedOptions.map((tag) => tag.value));
 
-    console.log(selectedOptions);
   };
   
 
@@ -125,7 +130,8 @@ const AdsListMainPage = (props) => {
   
 
   return (
-       <Layout>
+    <Layout>
+      <div className="container">
       <div className="row" {...props}>
         <div className="col-lg-4">
           <div className="col-lg-8 filters">
@@ -209,7 +215,7 @@ const AdsListMainPage = (props) => {
             {adsList.length !== 0 ? (
               <div className="row">
                 {filteredAds.map((ad) => (
-                  <Ad {...ad} />
+                  <Ad  {...ad} />
                 ))}
               </div>
             ) : (
@@ -217,7 +223,8 @@ const AdsListMainPage = (props) => {
             )}
             {totalPages > 0 && (
               <ul className="pagination d-flex justify-content-center ">
-                <Pagination
+                    <Pagination
+                  getAds={getAds}
                   pages={totalPages}
                   currentPage={currentPage}
                   onPageChange={setCurrentPage}
@@ -227,8 +234,7 @@ const AdsListMainPage = (props) => {
           </div>
         )}
       </div>
-
-     
+    </div>  
     </Layout>
   );
 };

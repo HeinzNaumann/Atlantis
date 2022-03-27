@@ -129,6 +129,10 @@ strong {
   font-weight: 600;
 }
 
+.p-sell {
+  margin-bottom: 5px;
+}
+
 a,
 button,
 input {
@@ -1517,6 +1521,16 @@ h5 {
   opacity: 0;
   transition: all 0.3s;
   visibility: hidden;
+  width: 85%;
+}
+
+em {
+  margin: 0;
+  padding: 0;
+}
+.tags-ads {
+  margin: 0;
+  padding: 0;
 }
 
 .pdt-item-blk:hover {
@@ -1831,10 +1845,42 @@ h5 {
   border-radius: 50%;
 }
 
+td {
+  overflow: hidden;
+}
+
 .img-fluid.img-style {
   max-width: 100%;
   height: 200px;
   object-fit: contain;
+}
+
+td .img-fluid.img-style {
+  max-width: 100%;
+  height: 100px;
+  object-fit: contain;
+}
+
+.feather-Message {
+  color: #ffffff;
+  display: inline-block;
+  vertical-align: middle;
+  background: #1579ee;
+  border-radius: 50%;
+  border: none;
+  width: 32px;
+  height: 32px;
+}
+
+.feather-Message:hover {
+  color: #ffffff;
+  display: inline-block;
+  vertical-align: middle;
+  background: #79b0ee;
+  border-radius: 50%;
+  border: none;
+  width: 32px;
+  height: 32px;
 }
 
 .botones-fav {
@@ -2425,6 +2471,10 @@ footer .menu-list-style li {
   background: url(./assets/img/slide-item-3.jpg) no-repeat center top;
   background-size: cover;
   background-attachment: fixed;
+  margin-left: -33.33%;
+  margin-right: -33.33%;
+  height: 300px;
+  margin-top: -50px;
 }
 
 /* .userpanel-banner-wrapper:before {
@@ -2789,6 +2839,10 @@ div.append select {
 *********************************************************/
 
 @media (max-width: 767.98px) {
+  .mb-4 {
+    text-align: center;
+  }
+
   .custom-truncate {
     width: 140px;
   }

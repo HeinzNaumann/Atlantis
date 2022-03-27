@@ -1,8 +1,6 @@
 import "../css/Ad.css";
 import {useEffect, useState} from "react"
 import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
-import heart from "../../src/assets/img/heart.svg"
 import socket from "./message/socket";
 import { favAds } from "./service";
 import * as Icon from 'react-feather';
@@ -16,7 +14,6 @@ export const Ad = (ad) => {
     if (heartEffect === "botones-fav") {
       heartClickEffect("botones-fav-click")
     } else {
-
       heartClickEffect("botones-fav")
     }
   }
@@ -28,7 +25,7 @@ export const Ad = (ad) => {
       heartClickEffect("botones-fav")
     }
     
-  }, [heartClickEffect]);
+  }, [ad.fav]);
 
   
   const history = useHistory();
@@ -68,18 +65,29 @@ export const Ad = (ad) => {
             <div className="buy-blk position-absolute r-0">
               <ul className="pdt-item list-inline">
                 <li className="list-inline-item align-middle">
-                  {token ?
+                  {token &&
                     <button onClick={(e) => { e.stopPropagation(); favAds(ad._id);Effect("botones-fav-click") }} className={heartEffect} >
                       <Icon.Heart className="feather-heart size-xs"/> 
-                   
                     </button>
-                    : []
-                     }
-                  {/* <button onClick={() => favAds(ad._id)} className="botones-fav">
-                    <Icon.Gift className=" feather-heart size-xs"/>
-                  </button>
+                    
+                  }
+                  
+                  {/* 
                   <button onClick={() => favAds(ad._id)} className="botones-fav">
-                    <Icon.Heart className=" feather-heart size-xs"/>
+                    <Icon.Message className=" feather-heart size-xs"/>
+                  </button> */}
+                </li>
+                   <li className="list-inline-item align-middle">
+                  {token &&
+                    <button className="feather-Message" onClick={(e)=>{e.stopPropagation(); history.push(`/chat/${ad._id}`)}}  >
+                      <Icon.MessageSquare className=" size-xs"/> 
+                    </button>
+                    
+                  }
+                  
+                  {/* 
+                  <button onClick={() => favAds(ad._id)} className="botones-fav">
+                    <Icon.Message className=" feather-heart size-xs"/>
                   </button> */}
                 </li>
               </ul>
@@ -88,9 +96,9 @@ export const Ad = (ad) => {
           
           <div>{ad.fav }</div>
           <div className="content-top-blk pt-3">
-            <div className="d-flex justify-content-between align-items-center">
-              <p className="text-warning font-bold"> {ad.venta}</p>
-            </div>
+            
+              <p className={`${ad.venta === "sell" ? "text-warning font-bold p-sell" : "text-success font-bold p-sell"}` } > {ad.venta}</p>
+        
             <h5 className="text-theme font-amt font-bold">{ad.precio} €</h5>
    
 
@@ -99,18 +107,24 @@ export const Ad = (ad) => {
                   {ad.nombre}
                 </a>
               </h4>
-              <h6 className="d-flex justify-content-between align-items-center">
-                {ad.usuario_nombre}
-              </h6>
+              
             <div className="content-btm-blk">
-              <div className="media py-3">
-                <div className="media-body">
-                  <h6 className="mb-0">{ad.tags}</h6>
+            
+                <h6 className="d-flex gap-1 align-items-center pl-3">
+                  <Icon.User />{ad.usuario_nombre}
+               </h6>
+              <div className="media-body pb-1">
+                <span>Categories:</span>
+                <div className="d-flex flex-wrap mt-0">
+                  {ad.tags.map((tags, index) => (
+                        <span className="pl-6 tags-ads " key={index}> &nbsp;<em className="pm-6 tags-ads "> {tags} </em></span>
+
+                    ))}
                 </div>
               </div>
-               {/*  { console.log("AD :",ad)} */}
+                {/* { console.log("AD :",ad)} */}
                 {/* DIEGO */}
-                <div className="interaction">
+                {/* <div className="interaction">
                   
                     <span onClick={(e)=>{e.stopPropagation(); history.push(`/chat/${ad._id}`)}} className="adIcon">
                          <span className="spanChat">Chat</span>
@@ -119,7 +133,7 @@ export const Ad = (ad) => {
                          <img id={ad._id} src={heart}  onClick={handleSold}></img>
                     </Link>
                     
-                 </div>
+                 </div> */}
                  {/* FIN DIEGO */}
               
             </div>
