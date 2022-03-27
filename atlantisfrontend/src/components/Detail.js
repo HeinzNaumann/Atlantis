@@ -25,17 +25,18 @@ function Detail({ match, history }) {
   };
 
   const toDelete = () => {
+    const name = advert.nombre;
     const adId = match.params.id;
 
     swal({
-      title: "Do you want to delete?",
-      text: adId,
+      title: "Do you want to delete",
+      text: name + "?",
       icon: "warning",
       buttons: ["no", "yes"],
     }).then((respuesta) => {
       if (respuesta) {
         swal({
-          text: "the advert has been successfully deleted",
+          text: name + " has been successfully deleted",
           icon: "success",
         });
       }
@@ -86,7 +87,7 @@ function Detail({ match, history }) {
                               stroke-width="2"
                               stroke-linecap="round"
                               stroke-linejoin="round"
-                              class="feather feather-star"
+                              class="feather feather-star rating fill"
                             >
                               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                             </svg>
@@ -101,7 +102,7 @@ function Detail({ match, history }) {
                               stroke-width="2"
                               stroke-linecap="round"
                               stroke-linejoin="round"
-                              class="feather feather-star"
+                              class="feather feather-star rating fill"
                             >
                               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                             </svg>
@@ -115,7 +116,7 @@ function Detail({ match, history }) {
                               stroke-width="2"
                               stroke-linecap="round"
                               stroke-linejoin="round"
-                              class="feather feather-star"
+                              class="feather feather-star rating fill"
                             >
                               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                             </svg>
@@ -129,14 +130,14 @@ function Detail({ match, history }) {
                               stroke-width="2"
                               stroke-linecap="round"
                               stroke-linejoin="round"
-                              class="feather feather-star"
+                              class="feather feather-star rating fill"
                             >
                               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                             </svg>
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
-                              width="40"
-                              height="40"
+                              width="20"
+                              height="20"
                               viewBox="0 0 24 24"
                               fill="none"
                               stroke="yellow"
@@ -194,10 +195,23 @@ function Detail({ match, history }) {
                             <div class="price-blk">
                               <div class="d-block d-lg-flex justify-content-between">
                                 <p class="text-grey font-bold">
-                                  <span
-                                    data-feather="users"
-                                    class="mr-2"
-                                  ></span>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-users"
+                                  >
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                  </svg>
                                   Real time{" "}
                                   <span class="bg-black py-1 px-2 text-white font-bold">
                                     17
@@ -205,46 +219,114 @@ function Detail({ match, history }) {
                                   Visitor Right now
                                 </p>
                                 <p class="d-inline-block mt-4 mt-lg-0 text-grey bg-green btn-sm radius-0 text-white">
-                                  {advert.reservado}
+                                  Many in Stock
                                 </p>
                               </div>
                               <div class="d-block d-lg-flex justify-content-between align-items-center mt-4">
                                 <h2 class="font-bold text-theme">
-                                  {advert.precio}€
+                                  Price {advert.precio}€
                                 </h2>
                                 <p class="mt-4 mt-lg-0 text-red font-xs d-inline-block font-bold align-middle">
-                                  <span
-                                    data-feather="trending-up"
-                                    class="animate-blink mr-2"
-                                  ></span>
-                                  {advert.vendido}
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-trending-up animate-blink mr-2"
+                                  >
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                    <polyline points="17 6 23 6 23 12"></polyline>
+                                  </svg>
+                                  13 Sold in last 3 hours
                                 </p>
                               </div>
                               <hr class="my-4" />
                               <ul class="font-bold list-inline text-theme">
                                 <li class="list-inline-item">
-                                  <span
-                                    data-feather="bar-chart"
-                                    class="mr-2"
-                                  ></span>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-bar-chart"
+                                  >
+                                    <line
+                                      x1="12"
+                                      y1="20"
+                                      x2="12"
+                                      y2="10"
+                                    ></line>
+                                    <line x1="18" y1="20" x2="18" y2="4"></line>
+                                    <line x1="6" y1="20" x2="6" y2="16"></line>
+                                  </svg>
                                   <p class="d-inline-block align-middle">
                                     1400 Sold
                                   </p>
                                 </li>
                                 <li class="list-inline-item">
-                                  <span
-                                    data-feather="truck"
-                                    class="mr-2"
-                                  ></span>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-truck"
+                                  >
+                                    <rect
+                                      x="1"
+                                      y="3"
+                                      width="15"
+                                      height="13"
+                                    ></rect>
+                                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                    <circle
+                                      cx="18.5"
+                                      cy="18.5"
+                                      r="2.5"
+                                    ></circle>
+                                  </svg>
                                   <p class="d-inline-block align-middle">
                                     Free Shipping
                                   </p>
                                 </li>
                                 <li class="list-inline-item mt-2 mt-lg-0">
-                                  <span
-                                    data-feather="smile"
-                                    class="mr-2"
-                                  ></span>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-smile"
+                                  >
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                                    <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                    <line
+                                      x1="15"
+                                      y1="9"
+                                      x2="15.01"
+                                      y2="9"
+                                    ></line>
+                                  </svg>
                                   <p class="d-inline-block align-middle">
                                     1310 Happy Buyers
                                   </p>
@@ -288,20 +370,53 @@ function Detail({ match, history }) {
                                   href="javascript:;"
                                   class="d-block text-grey"
                                 >
-                                  <span
-                                    data-feather="eye"
-                                    class="bg-grey text-theme p-2 size-lg rounded-circle mr-3"
-                                  ></span>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-eye"
+                                  >
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                  </svg>
                                   Add to Favorites
                                 </a>
                                 <a
                                   href="javascript:;"
                                   class="d-block mt-4 mt-lg-0 text-grey"
                                 >
-                                  <span
-                                    data-feather="archive"
-                                    class="bg-grey text-theme p-2 size-lg rounded-circle mr-3"
-                                  ></span>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-archive"
+                                  >
+                                    <polyline points="21 8 21 21 3 21 3 8"></polyline>
+                                    <rect
+                                      x="1"
+                                      y="3"
+                                      width="22"
+                                      height="5"
+                                    ></rect>
+                                    <line
+                                      x1="10"
+                                      y1="12"
+                                      x2="14"
+                                      y2="12"
+                                    ></line>
+                                  </svg>
                                   Add to collections
                                 </a>
                               </div>
@@ -317,10 +432,21 @@ function Detail({ match, history }) {
                           </div>
                           <div class="seller-info-card bg-white mt-4 p-4">
                             <div class="">
-                              <span
-                                data-feather="mail"
-                                class="mr-3 text-theme"
-                              ></span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="feather feather-mail"
+                              >
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                              </svg>
                               <h5 class="text-grey d-inline-block align-middle">
                                 About the Seller
                               </h5>
@@ -328,13 +454,13 @@ function Detail({ match, history }) {
                             <hr class="my-4" />
                             <div class="media">
                               <img
-                                src="/assets/img/atlantis.PNG"
-                                alt="atlantis"
+                                src="/assets/img/atlantis.png"
+                                alt="foto usuario"
                                 class="mr-4 radius-1 border xs-width-50"
                               />
                               <div class="media-body">
                                 <h4>
-                                  {advert.usuario}
+                                  {advert.usuario_nombre}
                                   <span
                                     data-feather="user-check"
                                     data-toggle="tooltip"
@@ -343,44 +469,124 @@ function Detail({ match, history }) {
                                   ></span>
                                 </h4>
                                 <a class="d-inline-block my-3">
-                                  <span
-                                    data-feather="phone-call"
-                                    class="text-theme mr-2"
-                                  ></span>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-phone"
+                                  >
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                  </svg>
                                   <span class="text-grey d-inline-block align-middle">
                                     (850) 386-7896
                                   </span>
                                 </a>
                                 <p class="text-grey">
-                                  <span
-                                    data-feather="calendar"
-                                    class="text-theme mr-2"
-                                  ></span>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-calendar"
+                                  >
+                                    <rect
+                                      x="3"
+                                      y="4"
+                                      width="18"
+                                      height="18"
+                                      rx="2"
+                                      ry="2"
+                                    ></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                  </svg>
                                   <span class="text-grey d-inline-block align-middle">
                                     Member since :01/03/2022
                                   </span>
                                 </p>
                                 <div class="rating-blk mt-3">
-                                  <span
-                                    data-feather="star"
-                                    class="rating fill"
-                                  ></span>
-                                  <span
-                                    data-feather="star"
-                                    class="rating fill"
-                                  ></span>
-                                  <span
-                                    data-feather="star"
-                                    class="rating fill"
-                                  ></span>
-                                  <span
-                                    data-feather="star"
-                                    class="rating fill"
-                                  ></span>
-                                  <span
-                                    data-feather="star"
-                                    class="rating"
-                                  ></span>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="40"
+                                    height="40"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="yellow"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-star rating fill"
+                                  >
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                  </svg>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="40"
+                                    height="40"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="yellow"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-star rating fill"
+                                  >
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                  </svg>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="40"
+                                    height="40"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="yellow"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-star rating fill"
+                                  >
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                  </svg>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="40"
+                                    height="40"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="yellow"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-star rating fill"
+                                  >
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                  </svg>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="40"
+                                    height="40"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="yellow"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-star rating fill"
+                                  >
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                  </svg>
                                   <a
                                     href="javascript:;"
                                     class="font-bold text-grey"
@@ -396,10 +602,22 @@ function Detail({ match, history }) {
                           </div>
                           <div class="seller-contact-card bg-white mt-4 p-4">
                             <div class="">
-                              <span
-                                data-feather="help-circle"
-                                class="mr-3 text-theme"
-                              ></span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="feather feather-help-circle"
+                              >
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                              </svg>
                               <h5 class="text-grey d-inline-block align-middle">
                                 Product inquiry
                               </h5>
@@ -427,24 +645,64 @@ function Detail({ match, history }) {
                                   href="javascript:;"
                                   class="btn btn-style btn-lg d-block"
                                 >
-                                  <span data-feather="mail" class="mr-2"></span>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="feather feather-mail"
+                                  >
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                  </svg>
                                   Send it now
                                 </a>
                               </form>
                             </div>
                           </div>
                           <div class="other-info-card bg-white mt-4 p-4">
-                            <span
-                              data-feather="cpu"
-                              class="mr-3 text-theme"
-                            ></span>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="feather feather-cpu"
+                            >
+                              <rect
+                                x="4"
+                                y="4"
+                                width="16"
+                                height="16"
+                                rx="2"
+                                ry="2"
+                              ></rect>
+                              <rect x="9" y="9" width="6" height="6"></rect>
+                              <line x1="9" y1="1" x2="9" y2="4"></line>
+                              <line x1="15" y1="1" x2="15" y2="4"></line>
+                              <line x1="9" y1="20" x2="9" y2="23"></line>
+                              <line x1="15" y1="20" x2="15" y2="23"></line>
+                              <line x1="20" y1="9" x2="23" y2="9"></line>
+                              <line x1="20" y1="14" x2="23" y2="14"></line>
+                              <line x1="1" y1="9" x2="4" y2="9"></line>
+                              <line x1="1" y1="14" x2="4" y2="14"></line>
+                            </svg>
                             <h5 class="text-grey d-inline-block align-middle">
                               Product Code
                             </h5>
                             <hr class="my-4" />
                             <div class="media">
                               <img
-                                src="assets/img/qr-code.png"
+                                src="assets/img/qr.jpg"
                                 alt="Qr Code"
                                 class="mr-4 radius-1 border xs-width-50"
                               />
@@ -461,10 +719,34 @@ function Detail({ match, history }) {
                             </div>
                           </div>
                           <div class="share-info-card bg-white mt-4 p-4">
-                            <span
-                              data-feather="share-2"
-                              class="text-theme mr-3"
-                            ></span>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="feather feather-share-2"
+                            >
+                              <circle cx="18" cy="5" r="3"></circle>
+                              <circle cx="6" cy="12" r="3"></circle>
+                              <circle cx="18" cy="19" r="3"></circle>
+                              <line
+                                x1="8.59"
+                                y1="13.51"
+                                x2="15.42"
+                                y2="17.49"
+                              ></line>
+                              <line
+                                x1="15.41"
+                                y1="6.51"
+                                x2="8.59"
+                                y2="10.49"
+                              ></line>
+                            </svg>
                             <h5 class="text-grey d-inline-block align-middle">
                               Share this product
                             </h5>
@@ -505,10 +787,21 @@ function Detail({ match, history }) {
                             </ul>
                           </div>
                           <div class="share-info-card bg-white mt-4 p-4">
-                            <span
-                              data-feather="tag"
-                              class="mr-3 text-theme"
-                            ></span>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="feather feather-tag"
+                            >
+                              <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                              <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                            </svg>
                             <h5 class="text-grey d-inline-block align-middle">
                               TAGS
                             </h5>
