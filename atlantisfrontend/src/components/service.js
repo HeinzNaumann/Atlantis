@@ -51,6 +51,11 @@ export const getUser = id => {
   return client.get(url)
 }
 
+export const deleteAd = (id) => {
+  const url = `/api/ads/${id}`;
+  return client.delete(url);
+};
+
 // getChats,getAd
 export const getChats = (idusuario,idAd) => {
   console.log("UsuarioID-S---:",idusuario,"  AnuncioID-S---",idAd);
@@ -78,4 +83,11 @@ export const createChad = (chatObj) => {
 export const updateChad = (idChat,dataChat)=> {
   const url = `/api/chats/${idChat}`;
   return client.put(url, dataChat);
+}
+
+//marcar como vendido
+//PUT: localhost:3000/api/ads/62212d237780fc1d2069a940?vend=true
+export const setAdSold = (idAd) => {
+  const url = `/api/ads/${idAd}?vend=true`;
+  return client.put(url);
 }
