@@ -13,7 +13,6 @@ const MyProducts = ({ setCategorias }) => {
        getAdsUserList(userId).then((ads) => {
             userAd(ads)
         });
-
     }, [userId]);
 
     return ( <>
@@ -46,8 +45,8 @@ const MyProducts = ({ setCategorias }) => {
                                  </tr>
                               </thead>
                                 <tbody>
-                                {ads.results ? 
-                
+                                  {ads.length ?
+                                      
                                      ads.results.map((ad) => <Ads {...ad} setCategorias={setCategorias} /> )
                                  : 
                                   <div>prueba</div>
