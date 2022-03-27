@@ -1,47 +1,109 @@
-/* .row {
-  display: block;
-  align-items: inline-block;
-  margin-right: -15px;
-  margin-left: -15px;
-}
-.container {
-  margin-top: 50px;
-  width: 100%;
-  margin-top: 35px;
-  padding-right: 15px;
-  padding-left: 15px;
+/* ******************************************
+    :: 15.0 SINGLE PRODUCT DESCRIPTION CSS
+*********************************************/
+
+@keyframes fading {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-.content {
-  display: block;
-  background-color: rgb(236, 243, 238);
-  margin-bottom: 1rem;
-  padding: 1rem;
-  width: 500px;
+.animate-blink {
+  animation: fading 1s infinite;
 }
-.item {
-  align-items: center;
-  display: flex;
-}
-.inside-left {
-  position: relative;
 
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  max-width: 41%;
+.pdt-item-showcase .prev-nav span {
+  font-size: 1.3125rem;
+  cursor: pointer;
 }
-.inside-right {
-  position: relative;
 
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  max-width: 41%;
+.pdt-item-showcase .prev-nav span + span {
+  margin-left: 16px;
 }
-.img-fluid {
-  width: 400px;
-  height: 400px;
-  height: auto;
+
+.vertical-slider-wrapper.pdt-item-showcase .prev-nav span + span {
+  margin-left: 0px;
+}
+
+.single-pdt-page .slick-disabled {
+  opacity: 0.5;
+}
+
+.pdt-item-info ul.nav-tabs li a {
+  text-transform: capitalize;
+  color: #050521;
   display: block;
-} */
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.pdt-item-info ul.nav-tabs li a.active:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.rating-blk ul li span.fa-star,
+.rating-blk ul li span.fa-star-half-o {
+  color: #ffc000;
+}
+
+.accordion .card-header a:after {
+  font-family: "Linearicons-Free";
+  content: "\e873";
+  float: right;
+}
+
+.accordion .card-header a.collapsed:after {
+  /* symbol for "collapsed" panels */
+  content: "\e874";
+}
+
+.social-share-list a {
+  background-color: #ebebeb;
+}
+
+.social-share-list a:hover,
+.social-share-list a:focus {
+  background-color: #1579ee;
+  color: #ffffff;
+}
+
+/* ****************************** 
+    :: 5.0 SLIDER INDICATORS CSS
+****************************** */
+
+.custom-indicators.carousel-indicators li {
+  border: 0rem;
+  background-color: #1579ee;
+  opacity: 0.5;
+}
+
+.custom-indicators.carousel-indicators li.active {
+  background-color: #1579ee;
+  opacity: 1;
+}
+
+.arrow-navigation {
+  cursor: pointer;
+}
+
+.slick-dots {
+  bottom: -41px;
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+  line-height: 14px;
+  color: #1579ee;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #1579ee;
+}

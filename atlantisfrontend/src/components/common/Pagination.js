@@ -1,5 +1,5 @@
 
-export const Pagination = ({ pages, currentPage, onPageChange }) => {
+export const Pagination = ({ pages, currentPage, onPageChange, getAds}) => {
   const pagesModificado = Math.ceil(pages);
   return [...Array(pagesModificado).keys()]
     .map((page) => page + 1)
@@ -9,7 +9,7 @@ export const Pagination = ({ pages, currentPage, onPageChange }) => {
         className="page-link"
         key={page}
         style={{ color: currentPage === page ? "blue" : "inherit" }}
-        onClick={() => onPageChange(page)}
+          onClick={() => { onPageChange(page);getAds() } }
       >
         {page}
       </button>

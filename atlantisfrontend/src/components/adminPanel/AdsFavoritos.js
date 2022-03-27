@@ -1,6 +1,6 @@
-import ActionsButtons from "./ActionsButtons";
+import ActionsButtonsFavoritos from "./ActionsButtonsFavoritos";
 import {  useHistory } from "react-router-dom"
-export const Ads = (ad) => {
+export const AdsFavoritos = (ad) => {
 
     const history = useHistory();
 
@@ -47,7 +47,7 @@ export const Ads = (ad) => {
                 
                 </td>
                 <td><h5>{ad.precio}€</h5></td>
-                <td><ActionsButtons onEdit={ad._id} setCategorias={ad.setCategorias} /></td>
+                <td><ActionsButtonsFavoritos onEdit={ad._id} setCategorias={ad.setCategorias} /></td>
       
                 </tr>
             ):

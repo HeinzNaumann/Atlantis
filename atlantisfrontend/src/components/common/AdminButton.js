@@ -9,7 +9,7 @@ const AdminButton = () => {
          <Link to={`/admin/${user}`}>
                 <Icon.User className="d-inline-block mr-0 mr-lg-3 icons-header" />
                  <span className="d-none d-lg-inline-block">
-                 Admin Panel
+                 My Account
                  </span>
           </Link>
      );

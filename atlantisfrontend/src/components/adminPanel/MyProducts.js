@@ -2,21 +2,22 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { getAdsUserList } from "../service";
 import { Ads } from "./Ads"
-
+import Loader from "../../common/Loader";
 const MyProducts = ({ setCategorias }) => {
 
-  
-    const id = useParams();
-    const { userId } = id;
-    const [ads, userAd] = useState([]);
-        useEffect(() => {
-       getAdsUserList(userId).then((ads) => {
-            userAd(ads)
-        });
+   const [isLoading, setLoading] = useState(true)
+   const id = useParams();
+   const { userId } = id;
+   const [ads, userAd] = useState([]);
+   useEffect(() => {
+      getAdsUserList(userId).then((ads) => {
+         userAd(ads)
+         setLoading(false);
+      });
+   }, [userId]);
 
-    }, [userId]);
-
-    return ( <>
+   return(
+   <>
     
      
       <section className="orders-summary-wrapper bg-grey py-5">
@@ -30,30 +31,39 @@ const MyProducts = ({ setCategorias }) => {
                         <span data-feather="share-2" className="mr-3 text-theme"></span>
                         <h5 className="text-grey d-inline-block align-middle">My products</h5>
                      </div>
-                     <hr className="my-4"/>
+                     <hr className="my-4" />
                      <div className="notify-content-blk">
                         <div className="table-responsive">
-                           <table id="notify-table" className="table table-hover table-bordered table-striped mb-0">
-                              <thead>
-                                <tr>
-                                    <th>Photo</th>
-                                    <th>Name</th>
-                                    <th>Type</th>
-                                    <th>Description</th>
-                                    <th>Category</th>
-                                    <th>Price</th>
-                                    <th>Actions</th>
-                                 </tr>
-                              </thead>
-                                <tbody>
-                                {ads.results ? 
-                
-                                     ads.results.map((ad) => <Ads {...ad} setCategorias={setCategorias} /> )
-                                 : 
-                                  <div>prueba</div>
-                                }
-                              </tbody>
-                           </table>
+                           {isLoading ? (
+                              <Loader />
+                           ) : (
+                              <table id="notify-table" className="table table-hover table-bordered table-striped mb-0">
+                                 <thead>
+                                    <tr>
+                                       <th>Photo</th>
+                                       <th>Name</th>
+                                       <th>Type</th>
+                                       <th>Description</th>
+                                       <th>Category</th>
+                                       <th>Price</th>
+                                       <th>Actions</th>
+                                    </tr>
+                                 </thead>
+                            
+                                 <tbody>
+                                    
+                                    {ads.length !== 0 ?
+                                      
+                                       ads.results.map((ad) => <Ads {...ad} setCategorias={setCategorias} />)
+                                       :
+                                       <div>No adverts to show up, create one to show :)</div>
+                  
+                                    }
+                                  
+                                 </tbody>
+                               
+                              </table>)
+                           }
                         </div>
                      </div>
                   </div>
@@ -63,7 +73,8 @@ const MyProducts = ({ setCategorias }) => {
             </div>
          </div>
       </section>
-    </>);
-}
+   </>
+   )
+};
  
 export default MyProducts;
