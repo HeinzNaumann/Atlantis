@@ -32,11 +32,11 @@ export const Ads = (ad) => {
                    
                 </td>
                 <td>
-                    <p>{ad.venta}</p>
+                    <span>{ad.venta}</span>
                 </td>
                 <td>
                 
-                    <div className="overflow-scroll w-100 texto-description" >{ad.descripcion}</div>
+                    <div className="overflow-auto w-100 texto-description" >{ad.descripcion}</div>
                 </td>
                 <td>
                     {ad.tags.map((tags, index) => (

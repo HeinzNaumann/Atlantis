@@ -4,11 +4,10 @@ import { updateAd, detailAds, getTags } from "../../components/service";
 import Button from "./../common/button";
 
 
-export function EditComponentSmall(EditId /*userId*/) {
+export function EditComponentSmall(EditId ) {
 
-  
-  const { idEdit } = EditId;
-  const { userId } = EditId;
+
+  const { idEdit, userId, setCategorias } = EditId;
   console.log(userId)
   
   const [ad, getAd] = useState([])
@@ -42,7 +41,8 @@ export function EditComponentSmall(EditId /*userId*/) {
       data.append("files input", filesInput);
       const updatedAd = await updateAd(id, data);
       if (updatedAd) {
-        history.push("/adverts")
+        setCategorias("1");
+        //history.push("/adverts")
       }
     } catch (err) {
       console.log(err);

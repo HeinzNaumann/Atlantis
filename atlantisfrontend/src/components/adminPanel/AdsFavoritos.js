@@ -36,7 +36,7 @@ export const AdsFavoritos = (ad) => {
                 </td>
                 <td>
                 
-                    <div className="overflow-scroll w-100 texto-description" >{ad.descripcion}</div>
+                    <div className="overflow-auto w-100 texto-description" >{ad.descripcion}</div>
                 </td>
                 <td>
                     {ad.tags.map((tags, index) => (

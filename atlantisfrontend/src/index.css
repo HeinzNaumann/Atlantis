@@ -1855,7 +1855,7 @@ td {
 }
 
 td p {
-  overflow: scroll;
+  overflow-x: auto;
 }
 
 .img-fluid.img-style {

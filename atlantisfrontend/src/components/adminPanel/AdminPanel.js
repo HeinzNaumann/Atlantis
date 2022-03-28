@@ -91,7 +91,7 @@ const AdminPanel = (   ) => {
              } else if ((categorias === 4)) {
                 return (
                
-                   <EditComponentSmall userId={userId} idEdit={idEdit} />
+                   <EditComponentSmall setCategorias={setCategorias} userId={userId} idEdit={idEdit} />
                 )
              }
           })()}

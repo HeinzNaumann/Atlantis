@@ -1,13 +1,9 @@
 import { detailAds, deleteAd } from "./service";
 import { useEffect, useState } from "react";
 import React from "react";
-//import { Link } from "react-router-dom";
 import swal from "sweetalert";
 import * as Icon from "react-feather";
-
-//compartir en rrss
 import ShareAdvert from "./ShareAdvert";
-//import { DeleteButton } from "../common/DeleteButton";
 import Button from "./common/button";
 import Layout from "../layout/Layout";
 
@@ -27,44 +23,13 @@ function Detail({ match, history }) {
     }
   };
 
-  const toDelete = () => {
-    const name = advert.nombre;
-    const adId = match.params.id;
 
-    swal({
-      title: "Do you want to delete",
-      text: name + "?",
-      icon: "warning",
-      buttons: ["no", "yes"],
-    }).then((respuesta) => {
-      if (respuesta) {
-        swal({
-          text: name + " has been successfully deleted",
-          icon: "success",
-        });
-      }
-      try {
-        deleteAd(adId);
-        history.push("/adverts");
-      } catch (error) {
-        console.log(error);
-      }
-    });
-  };
 
   useEffect(() => {
     getAdvertById().then((ad) => setAdvert(ad));
   }, []);
 
-  const setData = (data) => {
-    let { _id, nombre, descripcion, precio, venta, tags } = data;
-    localStorage.setItem("ID", _id);
-    localStorage.setItem("Nombre", nombre);
-    localStorage.setItem("descripcion", descripcion);
-    localStorage.setItem("precio", precio);
-    localStorage.setItem("venta", venta);
-    localStorage.setItem("tags", tags);
-  };
+ 
 
   return (
     <>
@@ -351,9 +316,6 @@ function Detail({ match, history }) {
                                       data-feather="shopping-cart"
                                       class="mr-2"
                                     ></span>
-                                    <Button color="danger" onClick={toDelete}>
-                                      Delete
-                                    </Button>
                                   </a>
                                 </div>
                               </div>
