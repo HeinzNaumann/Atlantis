@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
-import {useHistory} from "react-router-dom"
+import {useHistory, Redirect} from "react-router-dom"
 import { updateAd, detailAds, getTags } from "../../components/service";
 import Button from "./../common/button";
 
-export function EditComponentSmall(EditId, userId) {
 
-  console.log(EditId)
+export function EditComponentSmall(EditId /*userId*/) {
+
+  
   const { idEdit } = EditId;
-  const { idUser } = userId;
+  const { userId } = EditId;
+  console.log(userId)
+  
   const [ad, getAd] = useState([])
   
   useEffect(() => {
@@ -39,7 +42,7 @@ export function EditComponentSmall(EditId, userId) {
       data.append("files input", filesInput);
       const updatedAd = await updateAd(id, data);
       if (updatedAd) {
-        history.push(`/admin/${idUser}`);
+        history.push("/adverts")
       }
     } catch (err) {
       console.log(err);
