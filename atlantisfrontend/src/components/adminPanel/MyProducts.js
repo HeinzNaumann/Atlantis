@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import { getAdsUserList } from "../service";
 import { Ads } from "./Ads"
 import Loader from "../../common/Loader";
-const MyProducts = ({ setCategorias }) => {
+const MyProducts = ({ setCategorias, EditId }) => {
 
    const [isLoading, setLoading] = useState(true)
    const id = useParams();
@@ -54,7 +54,7 @@ const MyProducts = ({ setCategorias }) => {
                                     
                                     {ads.length !== 0 ?
                                       
-                                       ads.results.map((ad) => <Ads {...ad} setCategorias={setCategorias} />)
+                                       ads.results.map((ad) => <Ads {...ad} EditId={EditId} setCategorias={setCategorias} />)
                                        :
                                        <div>No adverts to show up, create one to show :)</div>
                   

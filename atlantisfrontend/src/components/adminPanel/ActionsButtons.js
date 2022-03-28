@@ -2,7 +2,7 @@ import * as Icon from 'react-feather';
 import { setAdSold,setAdReserved } from "../../components/service";
 import socket from "../message/socket";
 
-const ActionsButtons = ( { setCategorias, ad }) => {
+const ActionsButtons = ( { setCategorias, ad, EditId }) => {
 
 
       const handleSold = (e,type)=>{
@@ -29,7 +29,7 @@ const ActionsButtons = ( { setCategorias, ad }) => {
     return ( 
         <>
         <div className="d-flex gap-1 ">
-                <button className="feather-Edit" ><Icon.Edit className=" size-xs" onClick={(e) => { e.stopPropagation(); setCategorias(4) }}></Icon.Edit></button>
+                <button className="feather-Edit" ><Icon.Edit className=" size-xs" onClick={(e) => { e.stopPropagation(); setCategorias(4); EditId(ad._id);  }}></Icon.Edit></button>
                 <button className="feather-Delete" >
                 <Icon.Delete className=" size-xs"></Icon.Delete>
                 </button>

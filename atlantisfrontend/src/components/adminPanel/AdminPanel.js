@@ -14,9 +14,9 @@ const AdminPanel = (   ) => {
     const { userId } = id;
     const [ads, userAd] = useState([]);
     const [categorias, setCategorias] = useState("1")
-    
+    const [idEdit, EditId] = useState()
 
-
+   console.log(idEdit);
     const handleCheckCategoria = (id) => {
         const idCat = id.target.id;
         setCategorias(idCat);
@@ -33,7 +33,7 @@ const AdminPanel = (   ) => {
 
     }, [userId]);
 
-   console.log(nombre)
+   console.log(ads)
 
     return (<>
         
@@ -78,7 +78,7 @@ const AdminPanel = (   ) => {
           {(() => {
              if (categorias === "1") {
                 return (
-                   <MyProducts setCategorias={setCategorias}/>
+                   <MyProducts EditId={EditId} setCategorias={setCategorias}/>
                 )
              } else if (categorias === "2") {
                 return (
@@ -91,7 +91,7 @@ const AdminPanel = (   ) => {
              } else if ((categorias === 4)) {
                 return (
                
-                   <EditComponentSmall  />
+                   <EditComponentSmall userId={userId} idEdit={idEdit} />
                 )
              }
           })()}

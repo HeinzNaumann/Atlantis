@@ -1,9 +1,23 @@
 import { useEffect, useState } from "react";
 import {useHistory} from "react-router-dom"
-import { updateAd, getTags } from "../../components/service";
+import { updateAd, detailAds, getTags } from "../../components/service";
 import Button from "./../common/button";
 
-export function EditComponentSmall() {
+export function EditComponentSmall(EditId, userId) {
+
+  console.log(EditId)
+  const { idEdit } = EditId;
+  const { idUser } = userId;
+  const [ad, getAd] = useState([])
+  
+  useEffect(() => {
+    detailAds(idEdit).then((ad) => {
+      getAd(ad.result[0]);
+    })
+  }, [EditId])
+
+
+
   const [id, setId] = useState(null);
   const [nombre, setNombre] = useState("");
   const [descripcion, setDescripcion] = useState("");
@@ -25,7 +39,7 @@ export function EditComponentSmall() {
       data.append("files input", filesInput);
       const updatedAd = await updateAd(id, data);
       if (updatedAd) {
-        history.push("/adverts");
+        history.push(`/admin/${idUser}`);
       }
     } catch (err) {
       console.log(err);
@@ -33,22 +47,23 @@ export function EditComponentSmall() {
   };
 
   useEffect(() => {
-    setId(localStorage.getItem("ID"));
-    setNombre(localStorage.getItem("Nombre"));
-    setDescripcion(localStorage.getItem("descripcion"));
-    setPrecio(localStorage.getItem("precio"));
-    setVenta(localStorage.getItem("venta"));
-    setTags(localStorage.getItem("tags"));
-  }, []);
+    setId(ad._id);
+    setNombre(ad.nombre);
+    setDescripcion(ad.descripcion);
+    setPrecio(ad.precio);
+    setVenta(ad.venta);
+  }, [ad.nombre]);
 
-  useEffect(() => {
-    getTags().then((tags) => setTags(tags));
-  }, []);
-  //const { results } = tags;
-
+   useEffect(() => {
+     getTags().then((tags) => setTags(tags));
+   }, []);
+  
+  
+  // console.log(tags)
 
   return (
-
+  <>
+     {true ?(
       <div className="row">
         <div className="col-lg-12">
           <div className="add-pdt-blk">
@@ -133,6 +148,7 @@ export function EditComponentSmall() {
                     >
                       {tags.results
                         ? tags.results.map((tag) => (
+                          
                             <option key={tag} value={tag}>
                               {tag}
                             </option>
@@ -158,8 +174,9 @@ export function EditComponentSmall() {
           </div>
         </div>
       </div>
-
-  );
+     ) : [] }
+  </>
+      );
 }
 
 export default EditComponentSmall;

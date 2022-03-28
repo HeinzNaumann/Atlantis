@@ -47,7 +47,7 @@ export const Ads = (ad) => {
                 
                 </td>
                 <td><h5>{ad.precio}€</h5></td>
-                <td><ActionsButtons onEdit={ad._id} setCategorias={ad.setCategorias} ad={ad} /></td>
+                <td><ActionsButtons EditId={ad.EditId} setCategorias={ad.setCategorias} ad={ad} /></td>
       
                 </tr>
             ):
