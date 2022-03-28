@@ -7,6 +7,8 @@ import socket from "../message/socket";
 
 const ActionsButtons = ({ setCategorias, ad, EditId }) => {
   
+  const history = useHistory()
+
   const toDelete = () => {
         const name = ad.nombre;
         swal({
@@ -22,8 +24,9 @@ const ActionsButtons = ({ setCategorias, ad, EditId }) => {
             });
           }
           try {
-            deleteAd(ad._id)
-            useHistory.push("/admin");
+            deleteAd(ad._id).then(() => {
+              history.push(`/admin/${ad._id}`)
+            });
           } catch (error) {
             console.log(error);
           }
@@ -57,7 +60,7 @@ const ActionsButtons = ({ setCategorias, ad, EditId }) => {
         <div className="d-flex gap-1 ">
                 <button className="feather-Edit" ><Icon.Edit className=" size-xs" onClick={(e) => { e.stopPropagation(); setCategorias(4); EditId(ad._id);  }}></Icon.Edit></button>
                 <button className="feather-Delete" >
-                <Icon.Delete className="size-xs" onClick={()=> toDelete()} ></Icon.Delete>
+            <Icon.Delete className="size-xs" onClick={(e) => {e.stopPropagation(); toDelete() }} ></Icon.Delete>
                 </button>
            
            <button className="botones-fav" ><Icon.Heart className=" size-xs" onClick={e=>handleSold(e,"reserved")}></Icon.Heart></button>
