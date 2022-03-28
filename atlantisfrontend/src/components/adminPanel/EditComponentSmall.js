@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import {useHistory} from "react-router-dom"
 import { updateAd, getTags } from "../../components/service";
-import Button from "../common/button";
+import Button from "./../common/button";
 
-export function EditComponentSmall({ history }) {
+export function EditComponentSmall() {
   const [id, setId] = useState(null);
   const [nombre, setNombre] = useState("");
   const [descripcion, setDescripcion] = useState("");
@@ -11,6 +12,8 @@ export function EditComponentSmall({ history }) {
   const [filesInput, setFilesInput] = useState("");
   const [tags, setTags] = useState([]);
 
+
+  const history = useHistory();
   const handleChange = (event) => {
     setFilesInput({ [event.target.name]: event.target.files });
   };
@@ -41,7 +44,8 @@ export function EditComponentSmall({ history }) {
   useEffect(() => {
     getTags().then((tags) => setTags(tags));
   }, []);
-  const { results } = tags;
+  //const { results } = tags;
+
 
   return (
 
@@ -127,8 +131,8 @@ export function EditComponentSmall({ history }) {
                       className="custom-select bg-input mt-3 input-lg"
                       multiple
                     >
-                      {tags
-                        ? results?.map((tag) => (
+                      {tags.results
+                        ? tags.results.map((tag) => (
                             <option key={tag} value={tag}>
                               {tag}
                             </option>
