@@ -1,10 +1,8 @@
-import { detailAds, deleteAd } from "./service";
+import { detailAds } from "./service";
 import { useEffect, useState } from "react";
 import React from "react";
-import swal from "sweetalert";
 import * as Icon from "react-feather";
 import ShareAdvert from "./ShareAdvert";
-import Button from "./common/button";
 import Layout from "../layout/Layout";
 
 function Detail({ match, history }) {

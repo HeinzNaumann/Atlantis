@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getUser, getAdsList, getAdsUserList, getTags } from "./service";
+import { getUser, getAdsList, getTags } from "./service";
 import Ad from "./Ad";
 import FormField from "./FormField";
 import Layout from "../layout/Layout";

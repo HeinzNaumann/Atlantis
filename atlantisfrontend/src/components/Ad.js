@@ -47,7 +47,7 @@ export const Ad = (ad) => {
   
   return (
     <div className=" col-md-4" onClick={()=> history.push(`/adverts/${ad._id}`)} key={ad._id}>
-      <div key={ad.id} className="pdt-item-blk mb-4">
+      <div key={ad._id} className="pdt-item-blk mb-4">
         <div className="pdt-img-blk">
           {ad.imagen && (
             <img
