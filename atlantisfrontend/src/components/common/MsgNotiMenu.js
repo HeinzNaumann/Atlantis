@@ -27,6 +27,9 @@ const MsgNotiMenu = ( ) => {
           if(type==="sold"){
             msg=`Your favorite,${article_name} has been sold`
           }
+          if(type==="reserved"){
+            msg=`Your favorite,${article_name} has been reserved`
+          }
           //console.log("Noti",senderName);
           return (
               <span className="notification">{`${msg}`}</span>

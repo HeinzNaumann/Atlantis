@@ -84,6 +84,11 @@ export const updateChad = (idChat, dataChat) => {
 //marcar como vendido
 //PUT: localhost:3000/api/ads/62212d237780fc1d2069a940?vend=true
 export const setAdSold = (idAd) => {
-  const url = `/api/ads/${idAd}?vend=true`;
+  const url = `/api/ads/${idAd}?vend=1`;
+  return client.put(url);
+}
+//marcar como reservado
+export const setAdReserved = (idAd) => {
+  const url = `/api/ads/${idAd}?res=1`;
   return client.put(url);
 }
