@@ -111,8 +111,9 @@ export const Ad = (ad) => {
                 
             <p className={`${ad.venta === "sell" ? "text-warning font-bold p-sell" : "text-success font-bold p-sell"}`} > {ad.venta}</p>
             {ad.vendido ?
-              
-              <img src={sold} alt={sold} width="200px" height="auto" className="sold" />
+              <div className="sold-ovelay">
+                <img src={sold} alt={sold} width="200px" height="auto" className="sold" />
+                </div>
               : []}
             
             <h5 className="text-theme font-amt font-bold">{ad.precio} €</h5>

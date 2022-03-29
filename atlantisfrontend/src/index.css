@@ -1845,16 +1845,18 @@ em {
   border-radius: 50%;
 }
 
-.overlay-sold {
-  background-color: red;
-  z-index: -5;
-  height: 200px;
-  width: 200px;
+.sold-ovelay {
+  background-color: #ffffff9f;
+  z-index: 1;
+  position: absolute;
+  top: -202px;
+  height: 314px;
+  width: 100%;
 }
 
 .sold {
   position: absolute;
-  top: -131px;
+  top: 80px;
 }
 td {
   max-width: 200px;
