@@ -1994,6 +1994,51 @@ td .img-fluid.img-style {
   height: 32px;
 }
 
+.botones-resven {
+  color: #ffffff;
+  display: inline-block;
+  vertical-align: middle;
+  background: lightgrey;
+  border-radius: 50%;
+  border: none;
+  width: 32px;
+  height: 32px;
+}
+
+.botones-resven:hover {
+  color: #1579ee;
+  display: inline-block;
+  vertical-align: middle;
+  background: white;
+  border-radius: 50%;
+  border: 1px solid #1579ee;
+  border: none;
+  width: 32px;
+  height: 32px;
+}
+
+.botones-resven-click {
+  color: #ffffff;
+  display: inline-block;
+  vertical-align: middle;
+  background: #1579ee;
+  border-radius: 50%;
+  border: 1px solid #1579ee;
+  width: 32px;
+  height: 32px;
+}
+
+.botones-resven-click:hover {
+  color: #1579ee;
+  display: inline-block;
+  vertical-align: middle;
+  background: white;
+  border-radius: 50%;
+  border: 1px solid #1579ee;
+  width: 32px;
+  height: 32px;
+}
+
 .botones-fav-click:focus {
   border: 1px solid red;
 }

@@ -48,10 +48,6 @@ export const Ad = (ad) => {
     })
     console.log('ad.usuario_nombre',ad.usuario_nombre );
   }
-
-  console.log(ad.vendido)
-
-  
   
   return (
  

@@ -51,18 +51,42 @@ const ActionsButtons = ({ setCategorias, ad, EditId, setRender }) => {
           type:type
         }) 
       }
-  const [heartEffect, heartClickEffect] = useState();
-
+  const [reservedEffect, reservedClickEffect] = useState();
+  const [soldEffect, soldClickEffect] = useState();
     useEffect(() => {
     if (ad.vendido) {
-      heartClickEffect("botones-fav-click")
+      soldClickEffect("botones-resven-click")
     } else {
-      heartClickEffect("botones-fav")
+      soldClickEffect("botones-resven")
     }
     
   }, [ad.vendido]);
 
+   useEffect(() => {
+    if (ad.reservado) {
+      reservedClickEffect("botones-resven-click")
+    } else {
+      reservedClickEffect("botones-resven")
+    }
+    
+  }, [ad.reservado]);
 
+    const Effect = () => {
+    if (soldEffect === "botones-resven") {
+      soldClickEffect("botones-resven-click")
+    } else {
+      soldClickEffect("botones-resven")
+    }
+    }
+  
+  
+    const Effect2 = () => {
+    if ( reservedEffect === "botones-resven") {
+      reservedClickEffect("botones-resven-click")
+    } else {
+      reservedClickEffect("botones-resven")
+    }
+  }
     return ( 
         <>
         <div className="d-flex gap-1 ">
@@ -71,8 +95,8 @@ const ActionsButtons = ({ setCategorias, ad, EditId, setRender }) => {
             <Icon.Delete className="size-xs" onClick={(e) => {e.stopPropagation(); toDelete() }} ></Icon.Delete>
                 </button>
            
-           <button className={heartEffect} onClick={e=>handleSold(e,"reserved")} ><Icon.Gift className=" size-xs"  ></Icon.Gift></button>
-           <button className="feather-Message" ><Icon.DollarSign className=" size-xs" onClick={e=>handleSold(e,"sold")}></Icon.DollarSign></button>     
+           <button className={reservedEffect} onClick={(e) => { handleSold(e, "reserved"); Effect2("botones-resven-click")}} ><Icon.Gift className=" size-xs"  ></Icon.Gift></button>
+          <button className={soldEffect} onClick={(e) => { handleSold(e, "sold"); Effect("botones-resven-click")}}><Icon.DollarSign className=" size-xs" ></Icon.DollarSign></button>     
         </div>
         </>
      );
