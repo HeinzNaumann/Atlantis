@@ -5,6 +5,7 @@ import socket from "./message/socket";
 import { favAds } from "./service";
 import * as Icon from 'react-feather';
 import sold from "../assets/sold.png"
+import reserved from "../assets/Reserved.png"
 export const Ad = (ad) => {
   
   const [heartEffect, heartClickEffect] = useState()
@@ -50,12 +51,13 @@ export const Ad = (ad) => {
   }
   
   return (
- 
-    <div className=" col-md-4" onClick={()=> history.push(`/adverts/${ad._id}`)} key={ad._id}>
-      
+    <div
+      className=" col-md-4"
+      onClick={() => history.push(`/adverts/${ad._id}`)}
+      key={ad._id}
+    >
       <div key={ad._id} className="pdt-item-blk mb-4">
         <div className="pdt-img-blk">
-         
           {ad.imagen && (
             <img
               src={`${process.env.REACT_APP_API_ATLANTIS_URL}/images/anuncios/${ad.imagen}`}
@@ -67,75 +69,116 @@ export const Ad = (ad) => {
             ></img>
           )}
         </div>
-        
+
         <div className="pdt-content-blk pt-0 px-3">
           <div className="position-relative">
             <div className="buy-blk position-absolute r-0">
               <ul className="pdt-item list-inline">
                 <li className="list-inline-item align-middle">
-                  {token &&
-                    <button onClick={(e) => { e.stopPropagation(); favAds(ad._id);Effect("botones-fav-click") }} className={heartEffect} >
-                      <Icon.Heart className="feather-heart size-xs"/> 
+                  {token && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        favAds(ad._id);
+                        Effect("botones-fav-click");
+                      }}
+                      className={heartEffect}
+                    >
+                      <Icon.Heart className="feather-heart size-xs" />
                     </button>
-                    
-                  }
-                  
+                  )}
+
                   {/* 
                   <button onClick={() => favAds(ad._id)} className="botones-fav">
                     <Icon.Message className=" feather-heart size-xs"/>
                   </button> */}
                 </li>
-                   <li className="list-inline-item align-middle">
-                  {token &&
-                    <button className="feather-Message" onClick={(e)=>{e.stopPropagation(); history.push(`/chat/${ad._id}`)}}  >
-                      <Icon.MessageSquare className=" size-xs"/> 
+                <li className="list-inline-item align-middle">
+                  {token && (
+                    <button
+                      className="feather-Message"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        history.push(`/chat/${ad._id}`);
+                      }}
+                    >
+                      <Icon.MessageSquare className=" size-xs" />
                     </button>
-                    
-                  }
+                  )}
                 </li>
               </ul>
             </div>
           </div>
-          
-          <div>{ad.fav }</div>
-          <div className="content-top-blk pt-3">
-                
-            <p className={`${ad.venta === "sell" ? "text-warning font-bold p-sell" : "text-success font-bold p-sell"}`} > {ad.venta}</p>
-            {ad.vendido ?
-              <div className="sold-ovelay">
-                <img src={sold} alt={sold} width="200px" height="auto" className="sold" />
-                </div>
-              : []}
-            
-            <h5 className="text-theme font-amt font-bold">{ad.precio} €</h5>
-   
 
-              <h4>
-                <a href="" className="display-block text-link">
-                  {ad.nombre}
-                </a>
-              </h4>
-              
+          <div>{ad.fav}</div>
+          <div className="content-top-blk pt-3">
+            <p
+              className={`${
+                ad.venta === "sell"
+                  ? "text-warning font-bold p-sell"
+                  : "text-success font-bold p-sell"
+              }`}
+            >
+              {" "}
+              {ad.venta}
+            </p>
+            {ad.vendido ? (
+              <div className="sold-ovelay">
+                <img
+                  src={sold}
+                  alt={sold}
+                  width="200px"
+                  height="auto"
+                  className="sold"
+                />
+              </div>
+            ) : (
+              []
+            )}
+
+            {ad.reservado ? (
+              <div className="sold-ovelay">
+                <img
+                  src={reserved}
+                  alt={reserved}
+                  width="200px"
+                  height="auto"
+                  className="sold"
+                />
+              </div>
+            ) : (
+              []
+            )}
+
+            <h5 className="text-theme font-amt font-bold">{ad.precio} €</h5>
+
+            <h4>
+              <a href="" className="display-block text-link">
+                {ad.nombre}
+              </a>
+            </h4>
+
             <div className="content-btm-blk">
-            
-                <h6 className="d-flex gap-1 align-items-center pl-3">
-                  <Icon.User />{ad.usuario_nombre}
-               </h6>
+              <h6 className="d-flex gap-1 align-items-center pl-3">
+                <Icon.User />
+                {ad.usuario_nombre}
+              </h6>
               <div className="media-body pb-1">
                 <span>Categories:</span>
                 <div className="d-flex flex-wrap mt-0">
                   {ad.tags.map((tags, index) => (
-                        <span className="pl-6 tags-ads " key={index}> &nbsp;<em className="pm-6 tags-ads "> {tags} </em></span>
-
-                    ))}
+                    <span className="pl-6 tags-ads " key={index}>
+                      {" "}
+                      &nbsp;<em className="pm-6 tags-ads "> {tags} </em>
+                    </span>
+                  ))}
                 </div>
-              </div>              
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
   );
 };
 
