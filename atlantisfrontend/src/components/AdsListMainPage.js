@@ -210,9 +210,13 @@ const AdsListMainPage = (props) => {
             <div className="col-lg-8 m-20 anuncios-block">
               {adsList.length !== 0 ? (
                 <div className="row">
-                  {slice.map((ad) => (
-                    <Ad {...ad} />
-                  ))}
+                  {slice.length !== 0 ? (
+                    slice.map((ad) => <Ad {...ad} />)
+                  ) : (
+                    <div className="d-flex justify-content-center p-4">
+                      There are no results for that, sorry.
+                    </div>
+                  )}
                 </div>
               ) : (
                 <EmptyList />
