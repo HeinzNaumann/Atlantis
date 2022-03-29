@@ -5,8 +5,11 @@ import { deleteAd } from "../service";
 import { setAdSold,setAdReserved } from "../../components/service";
 import socket from "../message/socket";
 
-const ActionsButtons = ({ setCategorias, ad, EditId }) => {
+const ActionsButtons = ({ setCategorias, ad, EditId, setRender }) => {
   
+
+  console.log(ad.setRender);
+
   const history = useHistory()
 
   const toDelete = () => {
@@ -25,7 +28,10 @@ const ActionsButtons = ({ setCategorias, ad, EditId }) => {
           }
           try {
             deleteAd(ad._id).then(() => {
-              history.push(`/admin/${ad._id}`)
+                ad.setRender("algo")
+                setCategorias("1");
+                 history.push(`/admin/${ad.usuario}`)
+                 
             });
           } catch (error) {
             console.log(error);

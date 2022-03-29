@@ -88,7 +88,7 @@ function SignupPage({ onLogin, history, location }) {
       })
        
       //const { from } = location.state || { from: { pathname: "/" } };
-      history.push("/adverts");
+      
       } catch (error) {
       setError(error);
       setIsLoading(false);

@@ -5,6 +5,7 @@ import { Ads } from "./Ads"
 import Loader from "../../common/Loader";
 const MyProducts = ({ setCategorias, EditId }) => {
 
+   const [render, setRender] = useState("")
    const [isLoading, setLoading] = useState(true)
    const id = useParams();
    const { userId } = id;
@@ -14,7 +15,7 @@ const MyProducts = ({ setCategorias, EditId }) => {
          userAd(ads)
          setLoading(false);
       });
-   }, [userId]);
+   }, [render]);
 
    return(
    <>
@@ -54,7 +55,7 @@ const MyProducts = ({ setCategorias, EditId }) => {
                                     
                                     {ads.length !== 0 ?
                                       
-                                       ads.results.map((ad) => <Ads {...ad} EditId={EditId} setCategorias={setCategorias} />)
+                                       ads.results.map((ad) => <Ads {...ad} setRender={setRender} EditId={EditId} setCategorias={setCategorias} />)
                                        :
                                        <div>No adverts to show up, create one to show :)</div>
                   

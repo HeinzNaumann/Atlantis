@@ -44,7 +44,7 @@ function Header() {
                   </div>
                   <div className="header-items text-white ml-auto">
                     <ul className="list-inline menu-header">
-                      <li className="list-inline-item d-none d-md-inline-block">
+                      <li className="list-inline-item d-md-inline-block">
                         
                         {isLogged ?
                           <>
@@ -56,14 +56,14 @@ function Header() {
                        }
                          
                       </li>
-
+                      
                       {/* ------------DIEGO -------------------------------*/}
                       {isLogged? 
                           <MsgNotiMenu/>:""}
 
                       {/* ---------------FIN DIEGO----------------------------- */}
 
-                      <li className="list-inline-item d-none d-md-inline-block explore-menu-style">
+                      <li className="list-inline-item  d-md-inline-block explore-menu-style">
                         <Link to="/adverts">
                           <span
                             className="d-inline-block mr-0 mr-lg-3"
@@ -71,18 +71,18 @@ function Header() {
                           <span className="d-none d-lg-inline-block">Explore</span>
                         </Link>
                       </li>
-                      <li className="list-inline-item d-none d-md-inline-block sell-pdt-menu-style">
+                      <li className="list-inline-item  d-md-inline-block sell-pdt-menu-style">
                         <Link to="/adverts/new">
                            <span
                           
                             className="d-inline-block mr-0 mr-lg-3"
-                          ><Icon.Globe className="d-inline-block mr-0 mr-lg-3 icons-header" /></span>
+                          ><Icon.Globe className="d-inline-block d-none mr-0 mr-lg-3 icons-header" /></span>
                           <span className="d-none d-lg-inline-block">
                             Sell Your Product
                           </span>
                         </Link>
                       </li>
-                     
+{/*                      
                       <li className="list-inline-item animate-menu dropdown">
                         <a
                           href="javascript"
@@ -103,11 +103,9 @@ function Header() {
 
                              
                         </div>
-                      </li>
+                      </li> */}
                       <li className="list-inline-item">
-                        <a href="javascript" id="open_navSidebar">
-                          <Icon.Menu className="d-inline-block mr-0 mr-lg-3" />
-                        </a>
+                       
                       </li>
                     </ul>
                   </div>
