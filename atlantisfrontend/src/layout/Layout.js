@@ -6,7 +6,7 @@ export function Layout({children} ) {
   return (
     <>
       <Header />
-      <section className="reg-wrapper bg-grey py-5">
+      <section className="reg-wrapper bg-grey">
         <div >{children}</div>      
       </section>
       <Footer />

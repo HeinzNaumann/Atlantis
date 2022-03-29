@@ -70,7 +70,7 @@ function LoginPage( ) {
         setAuthorizationHeader(data.token)
         localStorage.setItem("sck",socket.id);
         socket.emit('conectado', value.nombre)
-        history.push("/adverts");
+        history.push("/main");
       }
       /* FIN DIEGO */
       

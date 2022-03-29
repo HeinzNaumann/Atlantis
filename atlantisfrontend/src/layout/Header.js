@@ -1,8 +1,8 @@
 import "./header.css";
 import logo from "../assets/logo_atlantis.png";
 import flagEs from "../assets/img/es.png";
-import flagEn from "../assets/img/en.png"
-import * as Icon from 'react-feather';
+import flagEn from "../assets/img/en.png";
+import * as Icon from "react-feather";
 import { NavLink, Link } from "react-router-dom";
 import LoginButton from "../components/common/LoginButton";
 import LogoutButton from "../components/common/LogoutButton";
@@ -10,20 +10,17 @@ import AdminButton from "../components/common/AdminButton";
 import { useEffect, useState } from "react";
 import MsgNotiMenu from "../components/common/MsgNotiMenu";
 
-
 function Header() {
   const [isLogged, SetLogged] = useState(false);
-  const token = localStorage.getItem('token')
-  
+  const token = localStorage.getItem("token");
+
   useEffect(() => {
     if (token) {
-    SetLogged(true)
-  }else{
-    SetLogged(false)
-  }
-  },  [isLogged])
-
-  
+      SetLogged(true);
+    } else {
+      SetLogged(false);
+    }
+  }, [isLogged]);
 
   return (
     <header className="bg-black">
@@ -36,53 +33,55 @@ function Header() {
               <div className="main-menu menu-section w-100 d-inline-block d-md-block">
                 <nav className="navbar p-0 navbar-expand-justify-content-xxl-around">
                   <div className="logo my-3 my-md-0">
-                    <NavLink to="/">
-                    <a className="navbar-brand" href="/">
-                      <img src={logo} width="150px" height="auto "alt="logo" className="img-fluid"/> </a>
-                   </NavLink>
-                   
+                    <NavLink to="/main">
+                      <img
+                        src={logo}
+                        width="150px"
+                        height="auto "
+                        alt="logo"
+                        className="img-fluid"
+                      />
+                    </NavLink>
                   </div>
                   <div className="header-items text-white ml-auto">
                     <ul className="list-inline menu-header">
                       <li className="list-inline-item d-md-inline-block">
-                        
-                        {isLogged ?
+                        {isLogged ? (
                           <>
-                          <LogoutButton />
-                          <AdminButton/>
-                            </>
-                         
-                        : <LoginButton/>
-                       }
-                         
+                            <LogoutButton />
+                            <AdminButton />
+                          </>
+                        ) : (
+                          <LoginButton />
+                        )}
                       </li>
-                      
+
                       {/* ------------DIEGO -------------------------------*/}
-                      {isLogged? 
-                          <MsgNotiMenu/>:""}
+                      {isLogged ? <MsgNotiMenu /> : ""}
 
                       {/* ---------------FIN DIEGO----------------------------- */}
 
                       <li className="list-inline-item  d-md-inline-block explore-menu-style">
                         <Link to="/adverts">
-                          <span
-                            className="d-inline-block mr-0 mr-lg-3"
-                          ><Icon.Play className="d-inline-block mr-0 mr-lg-3 icons-header" /></span>
-                          <span className="d-none d-lg-inline-block">Explore</span>
+                          <span className="d-inline-block mr-0 mr-lg-3">
+                            <Icon.Play className="d-inline-block mr-0 mr-lg-3 icons-header" />
+                          </span>
+                          <span className="d-none d-lg-inline-block">
+                            Explore
+                          </span>
                         </Link>
                       </li>
                       <li className="list-inline-item  d-md-inline-block sell-pdt-menu-style">
                         <Link to="/adverts/new">
-                           <span
-                          
-                            className="d-inline-block mr-0 mr-lg-3"
-                          ><Icon.Globe className="d-inline-block d-none mr-0 mr-lg-3 icons-header" /></span>
+                          <span className="d-inline-block mr-0 mr-lg-3">
+                            <Icon.Globe className="d-inline-block d-none mr-0 mr-lg-3 icons-header" />
+                          </span>
                           <span className="d-none d-lg-inline-block">
                             Sell Your Product
                           </span>
                         </Link>
                       </li>
-{/*                      
+                      {/*                      
                       <li className="list-inline-item animate-menu dropdown">
                         <a
                           href="javascript"
@@ -104,9 +103,7 @@ function Header() {
                              
                         </div>
                       </li> */}
-                      <li className="list-inline-item">
-                       
-                      </li>
+                      <li className="list-inline-item"></li>
                     </ul>
                   </div>
                 </nav>
@@ -218,8 +215,8 @@ function Header() {
                   Continue with Google
                 </a>
                 <a href="#" className="btn btn-outline-primary btn-block">
-                  <i className="fab fb-icon fa-facebook-f mr-1"></i> Continue with
-                  Facebook
+                  <i className="fab fb-icon fa-facebook-f mr-1"></i> Continue
+                  with Facebook
                 </a>
                 <a href="#" className="btn btn-outline-primary btn-block">
                   <i className="fab fa-apple mr-1"></i> Continue with Apple
