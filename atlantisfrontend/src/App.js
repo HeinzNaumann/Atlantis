@@ -4,15 +4,15 @@ import NewAdPage from "./components/NewAdPage";
 import PasswordForgot from "./components/auth/passwordForgot/PasswordForgot";
 import AccountConfirm from "./components/auth/accountConfirm/AccountConfirm";
 import SignupLogin from "./components/auth/SignupLogin";
-import AdminPanel from "./components/adminPanel/AdminPanel"
+import AdminPanel from "./components/adminPanel/AdminPanel";
 import Detail from "./components/Detail";
 import PrivateRoute from "./components/auth/PrivateRoute";
 import EditComponent from "./components/EditComponent";
-import Message from "./components/message/MessagePage"
+import Message from "./components/message/MessagePage";
 import MainPage from "./components/MainPage";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
-
   return (
     <Switch>
       <Route exact path="/main" component={MainPage} />
@@ -33,14 +33,10 @@ function App() {
 
       <Route exact path="/account-confirm/:id" component={AccountConfirm} />
 
-      <Route exact path="/404"></Route>
+      <Route exact path="/404" component={ErrorPage}></Route>
       <Route exact path="/" component={MainPage} />
-      <Redirect to="/404" />
+      <Redirect to="/404" component={ErrorPage} />
     </Switch>
   );
-     }
-     export default App;
-
- 
-      
-   
+}
+export default App;
