@@ -66,15 +66,14 @@ const AdsListMainPage = (props) => {
     getAdsList().then(({ results, totalads }) => {
       const ads = results;
       ads.sort((t1, t2) => t2.createdAt.localeCompare(t1.createdAt));
-      const slice = ads.slice(skip - limit, limit * currentPage);
-      const slicedData = slice.map((ad) => ad);
-      setAdsList(slicedData);
+      setAdsList(ads);
       setTotalPages(totalads / limit);
       setLoading(false);
     });
   };
   
   useEffect(()=>{
+
     getAds();
   },[currentPage])
 
@@ -127,7 +126,11 @@ const AdsListMainPage = (props) => {
         filteredTags(ad) &&
         filteredSale(ad) 
       );
+      
     }) || [];
+
+    const slice = filteredAds.slice(skip - limit, limit * currentPage);
+    
   
 
   return (
@@ -215,7 +218,7 @@ const AdsListMainPage = (props) => {
           <div className="col-lg-8 m-20 anuncios-block">
             {adsList.length !== 0 ? (
               <div className="row">
-                {filteredAds.map((ad) => (
+                {slice.map((ad) => (
                   <Ad  {...ad} />
                 ))}
               </div>
