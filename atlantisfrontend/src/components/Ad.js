@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import socket from "./message/socket";
 import { favAds } from "./service";
 import * as Icon from 'react-feather';
-
+import sold from "../assets/sold.png"
 export const Ad = (ad) => {
   
   const [heartEffect, heartClickEffect] = useState()
@@ -17,6 +17,13 @@ export const Ad = (ad) => {
       heartClickEffect("botones-fav")
     }
   }
+
+  //   console.log(ad.usuario, user)
+  //  const filteredFav = (ad) => {
+  //    if (ad.usuario ) {
+  //      return ad;
+  //    }
+  //  };
 
   useEffect(() => {
     if (ad.fav) {
@@ -42,13 +49,17 @@ export const Ad = (ad) => {
     console.log('ad.usuario_nombre',ad.usuario_nombre );
   }
 
+  console.log(ad.vendido)
 
   
   
   return (
+ 
     <div className=" col-md-4" onClick={()=> history.push(`/adverts/${ad._id}`)} key={ad._id}>
-      <div key={ad._id} className="pdt-item-blk mb-4">
+      
+      <div key={ad._id} className="pdt-item-blk overlay-sold mb-4">
         <div className="pdt-img-blk">
+         
           {ad.imagen && (
             <img
               src={`${process.env.REACT_APP_API_ATLANTIS_URL}/images/anuncios/${ad.imagen}`}
@@ -60,6 +71,7 @@ export const Ad = (ad) => {
             ></img>
           )}
         </div>
+        
         <div className="pdt-content-blk pt-0 px-3">
           <div className="position-relative">
             <div className="buy-blk position-absolute r-0">
@@ -96,9 +108,13 @@ export const Ad = (ad) => {
           
           <div>{ad.fav }</div>
           <div className="content-top-blk pt-3">
+                
+            <p className={`${ad.venta === "sell" ? "text-warning font-bold p-sell" : "text-success font-bold p-sell"}`} > {ad.venta}</p>
+            {ad.vendido ?
+              
+              <img src={sold} alt={sold} width="200px" height="auto" className="sold" />
+              : []}
             
-              <p className={`${ad.venta === "sell" ? "text-warning font-bold p-sell" : "text-success font-bold p-sell"}` } > {ad.venta}</p>
-        
             <h5 className="text-theme font-amt font-bold">{ad.precio} €</h5>
    
 

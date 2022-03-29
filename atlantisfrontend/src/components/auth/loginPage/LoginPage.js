@@ -155,7 +155,7 @@ function LoginPage({ history, onLogin} ) {
    
           <Link
             className=""
-            to="/password-forgot/"
+            to="/password-forgot"
           >
                 You forgot your password?
           </Link>

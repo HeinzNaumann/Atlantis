@@ -1845,6 +1845,17 @@ em {
   border-radius: 50%;
 }
 
+.overlay-sold {
+  background-color: red;
+  z-index: -5;
+  height: 200px;
+  width: 200px;
+}
+
+.sold {
+  position: absolute;
+  top: -131px;
+}
 td {
   max-width: 200px;
 }

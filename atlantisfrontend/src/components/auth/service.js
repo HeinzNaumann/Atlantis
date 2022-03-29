@@ -6,8 +6,8 @@ export const login = ({  ...credentials }) => {
   return client.post("/api/auth", credentials)
 };
 
-export const passwordRecover = ({  ...credentials }) => {
-  return client.post("/api/users", credentials)
+export const passwordRecover = (value) => {
+  return client.post("/api/users", value)
 }
 
 export const signup = ({  ...credentials }) => {

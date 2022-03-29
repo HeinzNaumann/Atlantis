@@ -69,8 +69,8 @@ const ActionsButtons = ({ setCategorias, ad, EditId, setRender }) => {
             <Icon.Delete className="size-xs" onClick={(e) => {e.stopPropagation(); toDelete() }} ></Icon.Delete>
                 </button>
            
-           <button className="botones-fav" ><Icon.Heart className=" size-xs" onClick={e=>handleSold(e,"reserved")}></Icon.Heart></button>
-           <button className="feather-Edit" ><Icon.Gift className=" size-xs" onClick={e=>handleSold(e,"sold")}></Icon.Gift></button>     
+           <button className="feather-Edit" ><Icon.Gift className=" size-xs" onClick={e=>handleSold(e,"reserved")}></Icon.Gift></button>
+           <button className="feather-Edit" ><Icon.DollarSign className=" size-xs" onClick={e=>handleSold(e,"sold")}></Icon.DollarSign></button>     
         </div>
         </>
      );

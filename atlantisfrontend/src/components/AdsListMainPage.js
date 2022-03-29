@@ -118,13 +118,14 @@ const AdsListMainPage = (props) => {
     });
   };
 
+
   const filteredAds =
     adsList?.filter((ad) => {
       return (
         filteredPrice(ad) &&
         filteredName(ad) &&
         filteredTags(ad) &&
-        filteredSale(ad)
+        filteredSale(ad) 
       );
     }) || [];
   

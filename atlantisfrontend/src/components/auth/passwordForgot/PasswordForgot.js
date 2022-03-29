@@ -18,8 +18,9 @@ const PasswordForgot = () => {
     setValue({ [event.target.name] : event.target.value })
   };
 
-const handleSubmit = async event =>{
-  event.preventDefault();
+  const handleSubmit = async event => {
+    event.preventDefault();
+
 
   try {
     await passwordRecover(value);
@@ -32,24 +33,28 @@ const handleSubmit = async event =>{
 
 
     return (  
-    <Layout>
+      <Layout>
+        <div className="container">
       <div className='LoginPage'>
 
         <h1 className='loginPage-title'> Recover your password</h1>
         <form onSubmit={handleSubmit}>
-          <span> Nombre </span>
-        <input
+          <span> Name </span>
+              <input
+           
           type='text'
           name='nombre'
           value={value.nombre}
           onChange={handleChange}
-          className='loginForm-field'
+                className='loginForm-field mb-3'
+                placeholder='Insert your Name'
 
         ></input>
           <Button
             type='submit'
               variant='primary'
-              
+                className='mb-3'
+                onSubmit={handleSubmit}
           >
             Send instructions
           </Button>
@@ -64,7 +69,8 @@ const handleSubmit = async event =>{
           </Link>
 
         </nav>
-      </div>
+          </div>
+          </div>
         </Layout>
     );
 }

@@ -26,7 +26,7 @@ function App() {
       <Route exact path="/signup" component={SignupLogin} />
       <Route
          exact
-         path="/password-forgot/:accessToken"
+         path="/password-forgot"
          component={PasswordForgot}
          />
          
