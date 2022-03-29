@@ -1,14 +1,14 @@
 import * as Icon from 'react-feather';
+import { favAds } from "../service";
 
-const ActionsButtonsFavoritos = ( { setCategorias}) => {
 
-    
+const ActionsButtonsFavoritos = ( { ad, onEdit, setRender, setCategorias}) => {
+
+
     return ( 
         <>
         <div className="d-flex justify-content-center">
-             
-           
-           <button className="botones-fav" ><Icon.Heart className=" size-xs"></Icon.Heart></button>
+             <button onClick={(e) => { e.stopPropagation(); favAds(onEdit); setRender(onEdit); }} className="botones-fav" ><Icon.Heart className=" size-xs"></Icon.Heart></button>
              
         </div>
         </>

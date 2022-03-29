@@ -3,19 +3,20 @@ import { useParams } from "react-router-dom"
 import { getAdsFavList } from "../service";
 import { AdsFavoritos } from "./AdsFavoritos"
 import Loader from "../../common/Loader";
-const MyProducts = () => {
+const MyFavorites = ({setCategorias}) => {
 
-       const [isLoading, setLoading] = useState(true)
+    const [render, setRender] = useState("")
+    const [isLoading, setLoading] = useState(true)
     const id = useParams();
     const { userId } = id;
     const [ads, userAd] = useState([]);
         useEffect(() => {
-       getAdsFavList(userId).then((ads) => {
-          userAd(ads);
-           setLoading(false);
-        });
+           getAdsFavList(userId).then((ads) => {
+              userAd(ads);
+              setLoading(false);
+           });
 
-    }, [userId]);
+    }, [render]);
 
    
     return ( <>
@@ -53,7 +54,7 @@ const MyProducts = () => {
                                 <tbody>
                                 {ads.length !== 0 ? 
                 
-                                    ads.result.map((ad) => <AdsFavoritos {...ad} /> )
+                                           ads.result.map((ad) => <AdsFavoritos setRender={setRender} setCategorias={setCategorias} {...ad} /> )
                                  : 
                                   <div>otra cosa</div>
                                 }
@@ -72,4 +73,4 @@ const MyProducts = () => {
     </>);
 }
  
-export default MyProducts;
+export default MyFavorites;

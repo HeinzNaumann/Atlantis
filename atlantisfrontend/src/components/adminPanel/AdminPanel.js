@@ -110,7 +110,7 @@ const AdminPanel = ({ history }) => {
           if (categorias === "1") {
             return <MyProducts EditId={EditId} setCategorias={setCategorias} />;
           } else if (categorias === "2") {
-            return <MyFavorites />;
+            return <MyFavorites setCategorias={setCategorias} />;
           } else if (categorias === "3") {
             return <NewAdPageSmall setCategorias={setCategorias} />;
           } else if (categorias === 4) {
