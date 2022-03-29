@@ -1,6 +1,4 @@
 import "./footer.css";
-import * as Icon from 'react-feather';
-import { Link } from "react-router-dom";
 function Footer() {
   return (
     <>
@@ -12,7 +10,8 @@ function Footer() {
                 <div className="company-info-widget mb-4 mb-md-0">
                   <h5 className="text-white text-uppercase text-center">About us</h5>
                   <p className="pt-4 text-center">
-                    Equipo de desarrolladores para la realización del proyecto final de la edicion XI de Keepcoding Web, <br/>formado por Patricia Manzuelo, Diego Perez, Kiko Navarro, Esther y Heinz Naumann.
+                   We are a team of developers working for the realization of the final project of the XI edition of Keepcoding Web,
+formed by <br/>Patricia Manzuelo, Diego Perez, Kiko Navarro, Esther and Heinz Naumann.
                   </p>
                 
                   

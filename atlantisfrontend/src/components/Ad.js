@@ -96,11 +96,6 @@ export const Ad = (ad) => {
                     </button>
                     
                   }
-                  
-                  {/* 
-                  <button onClick={() => favAds(ad._id)} className="botones-fav">
-                    <Icon.Message className=" feather-heart size-xs"/>
-                  </button> */}
                 </li>
               </ul>
             </div>
@@ -138,21 +133,7 @@ export const Ad = (ad) => {
 
                     ))}
                 </div>
-              </div>
-                {/* { console.log("AD :",ad)} */}
-                {/* DIEGO */}
-                {/* <div className="interaction">
-                  
-                    <span onClick={(e)=>{e.stopPropagation(); history.push(`/chat/${ad._id}`)}} className="adIcon">
-                         <span className="spanChat">Chat</span>
-                    </span>
-                    <Link to="" className="adIcon infoHeart">
-                         <img id={ad._id} src={heart}  onClick={handleSold}></img>
-                    </Link>
-                    
-                 </div> */}
-                 {/* FIN DIEGO */}
-              
+              </div>              
             </div>
           </div>
         </div>
