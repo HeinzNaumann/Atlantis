@@ -90,13 +90,17 @@ const ActionsButtons = ({ setCategorias, ad, EditId, setRender }) => {
     return ( 
         <>
         <div className="d-flex gap-1 ">
-                <button className="feather-Message" ><Icon.Edit className=" size-xs" onClick={(e) => { e.stopPropagation(); setCategorias(4); EditId(ad._id);  }}></Icon.Edit></button>
-                <button className="feather-Delete" >
+          <button className="feather-Message" >
+            <Icon.Edit className=" size-xs" onClick={(e) => { e.stopPropagation(); setCategorias(4); EditId(ad._id); }}></Icon.Edit></button>
+          <button className="feather-Delete" >
             <Icon.Delete className="size-xs" onClick={(e) => {e.stopPropagation(); toDelete() }} ></Icon.Delete>
-                </button>
-           
-           <button className={reservedEffect} onClick={(e) => { handleSold(e, "reserved"); Effect2("botones-resven-click")}} ><Icon.Gift className=" size-xs"  ></Icon.Gift></button>
-          <button className={soldEffect} onClick={(e) => { handleSold(e, "sold"); Effect("botones-resven-click")}}><Icon.DollarSign className=" size-xs" ></Icon.DollarSign></button>     
+          </button>
+          <button className={reservedEffect} onClick={(e) => { handleSold(e, "reserved"); Effect2("botones-resven-click") }} >
+            <Icon.Gift className=" size-xs"  ></Icon.Gift>
+          </button>
+          <button className={soldEffect} onClick={(e) => { handleSold(e, "sold"); Effect("botones-resven-click") }}>
+            <Icon.DollarSign className=" size-xs" ></Icon.DollarSign>
+          </button>     
         </div>
         </>
      );

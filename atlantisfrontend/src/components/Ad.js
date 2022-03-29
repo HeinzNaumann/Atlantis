@@ -122,12 +122,27 @@ export const Ad = (ad) => {
               {" "}
               {ad.venta}
             </p>
+
+               {ad.reservado ? (
+              <div className="sold-ovelay">
+                <img
+                  src={reserved}
+                  alt={reserved}
+                  width="120px"
+                  height="auto"
+                  className="sold"
+                />
+              </div>
+            ) : (
+              []
+            )}
+
             {ad.vendido ? (
               <div className="sold-ovelay">
                 <img
                   src={sold}
                   alt={sold}
-                  width="200px"
+                  width="220px"
                   height="auto"
                   className="sold"
                 />
@@ -136,20 +151,7 @@ export const Ad = (ad) => {
               []
             )}
 
-            {ad.reservado ? (
-              <div className="sold-ovelay">
-                <img
-                  src={reserved}
-                  alt={reserved}
-                  width="200px"
-                  height="auto"
-                  className="sold"
-                />
-              </div>
-            ) : (
-              []
-            )}
-
+         
             <h5 className="text-theme font-amt font-bold">{ad.precio} €</h5>
 
             <h4>
