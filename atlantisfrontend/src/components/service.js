@@ -54,6 +54,11 @@ export const deleteAd = (id) => {
   return client.delete(url);
 };
 
+export const deleteUser = (id) => {
+  const url = `/api/users/${id}`;
+  return client.delete(url);
+}
+
 // getChats,getAd
 export const getChats = (idusuario, idAd) => {
   console.log("UsuarioID-S---:", idusuario, "  AnuncioID-S---", idAd);
