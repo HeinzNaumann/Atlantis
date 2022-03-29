@@ -11,7 +11,7 @@ function Footer() {
                   <h5 className="text-white text-uppercase text-center">About us</h5>
                   <p className="pt-4 text-center">
                    We are a team of developers working for the realization of the final project of the XI edition of Keepcoding Web,
-formed by <br/>Patricia Manzuelo, Diego Perez, Kiko Navarro, Esther and Heinz Naumann.
+formed by <br/>Patricia Mazuelo, Diego Perez, Kiko Navarro, Esther Fernandez and Heinz Naumann.
                   </p>
                 
                   

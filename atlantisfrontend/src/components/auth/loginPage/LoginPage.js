@@ -3,16 +3,18 @@ import Button from "../../common/button";
 import { login } from "../service";
 import "./LoginPage.css";
 import Alert from "../../common/Alert";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import * as Icon from 'react-feather';
 import {setAuthorizationHeader} from "../../../api/client"
 import socket from '../../message/socket'
 
-function LoginPage({ history, onLogin} ) {
+function LoginPage( ) {
   const [value, setValue] = useState({
     nombre: "",
     password: ""
   });
+
+  const history = useHistory();
 
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
