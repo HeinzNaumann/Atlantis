@@ -4,7 +4,7 @@ import Button from "../common/button"
 
 import "../NewAdPage.css"
 
-export function NewAdPageSmall({ history }) {
+export function NewAdPageSmall({ setCategorias }) {
   const [ad, setAd] = useState({
     nombre: "",
     imagen: "",
@@ -34,7 +34,8 @@ export function NewAdPageSmall({ history }) {
   
       const newAd = await createAd(data);
       if (newAd) {
-        history.push("/adverts");
+        setCategorias("1")
+       
       }
     } catch (err) {
       console.log(err);

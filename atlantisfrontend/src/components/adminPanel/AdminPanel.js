@@ -112,7 +112,7 @@ const AdminPanel = ({ history }) => {
           } else if (categorias === "2") {
             return <MyFavorites />;
           } else if (categorias === "3") {
-            return <NewAdPageSmall />;
+            return <NewAdPageSmall setCategorias={setCategorias} />;
           } else if (categorias === 4) {
             return (
               <EditComponentSmall

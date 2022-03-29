@@ -2,7 +2,7 @@ import Layout from "../layout/Layout";
 import Ad from "./Ad";
 import Pagination from "./common/Pagination";
 import Loader from "../common/Loader";
-import { getAdsList } from "./service";
+import { getAdsList, getUser } from "./service";
 import { useState, useEffect } from "react";
 
 
@@ -18,6 +18,21 @@ export const MainPage = () => {
   const EmptyList = () => {
     return <p> Nothing to show up </p>;
   };
+
+    useEffect(() => {
+    if (localStorage.getItem("nombre")) {
+      getUser(localStorage.getItem("nombre")).then((user) => setUser(user));
+    } else {
+      setUser("");
+    }
+    return () => {};
+  }, []);
+
+    const [user, setUser] = useState("");
+
+   if (user) {
+    localStorage.setItem("id_usuario", user.result[0]._id);
+  }
 
   const getAds = () => {
     getAdsList().then(({ results, totalads }) => {

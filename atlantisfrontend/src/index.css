@@ -191,6 +191,10 @@ input[type="radio"] {
   margin-top: 50px !important;
 }
 
+textarea {
+  height: 100px !important;
+}
+
 input[type="email"],
 input[type="password"],
 input[type="text"],
@@ -2591,7 +2595,6 @@ footer .menu-list-style li {
   margin-left: -33.33%;
   margin-right: -33.33%;
   height: 300px;
-  margin-top: -50px;
 }
 
 /* .userpanel-banner-wrapper:before {
