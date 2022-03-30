@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# MiAtlantis
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Adverts Sell and Buy App. Final Project.
 
-## Available Scripts
+Develop of a APP that runs on the server (AWS - Ubuntu - Nginx) using React App and Node JS.
 
-In the project directory, you can run:
+The service shows a catalog of products given the user the option to register, log in, create, sell, buy, make his products reserve or sold, add favorites, chat with other users of the app, delete, delete account, system of notifications by email to inform the users and log out.  .
 
-### `npm start`
+To access the app you can click here 📲 <http://miatlantis.com>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# WEB-API/Node.js/MongoDB
 
-### `npm test`
+## Get Started/ 🚀
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Clone the repository:  
 
-### `npm run build`
+HTTPS FRONTEND:  
+`git clone https://github.com/kikonavarro/AtlantisFrontend.git`  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+SSH FRONTEND:  
+`git clone git@github.com:kikonavarro/AtlantisFrontend.git`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+HTTPS BACKEND:  
+`git clone https://github.com/kikonavarro/AtlantisBackend.git`  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+SSH BACKEND:  
+`git clone git@github.com:kikonavarro/AtlantisBackend.git`
 
-### `npm run eject`
+### Pre-Requirements of the Backend 📋  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Need to have installed and running:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- MongoDB  
+- Node  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Installation API Node AtlantisBackend/ 🔧
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+You need to be inside the folder you want to run then:
 
-## Learn More
+Install dependencies:  
+`npm install`  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Initialize Database with 2 users.
+`node install_db.js`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Start Aplication:
+`npm start`  
 
-### Code Splitting
+The default port is 3002, to change it you only need to access the bin folder in the file www line 16.
+`var port = normalizePort(process.env.PORT || '3002');`  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Connection to the data base
 
-### Analyzing the Bundle Size
+Create a folder images/anuncios inside public.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Create a file at the root of the .env project by copying the contents of .env.example, inside .env.example replace the route that you are going to use.
 
-### Making a Progressive Web App
+If you want to make the email works you need to change the .env file:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- EMAIL_SERVICE_FROM
+- EMAIL_SERVICE_NAME
+- EMAIL_SERVICE_USER
+- EMAIL_SERVICE_PASSWORD
 
-### Advanced Configuration
+To connect to the chat go to the folder "ServidorChat" , run "npm install" and then "npm start".
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Run the Backend and the chat server before you start the Frontend.
 
-### Deployment
+# WEB-APP/React App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Get Started/ 🚀
 
-### `npm run build` fails to minify
+### Installation SPA React AtlantisFrontend/ 🔧
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+You need to be inside the folder atlantisfrontend (cd atlantisfrontend) then:
+
+Install dependencies:  
+`npm install`  
+
+Start Aplication:
+`npm start`  
+
+The default port App Base Url is <http://localhost:3000>, to change it you only need to access to file .env and change the route at your desire.
+
+## Authors ✒️
+
+ **Heinz Naumann, Esther Fernández, Kiko Navarro, Diego Pérez and Patricia Mazuelo** 
+ 
+- https://github.com/heinznaumann
+- https://github.com/kikonavarro
+- https://github.com/estherfernandezrincon
+- https://github.com/PatriciaMazuelo
+- https://github.com/Dgoprz
