@@ -8,8 +8,6 @@ export function EditComponentSmall(EditId ) {
 
 
   const { idEdit, userId, setCategorias } = EditId;
-  console.log(userId)
-  
   const [ad, getAd] = useState([])
   
   useEffect(() => {
@@ -62,7 +60,6 @@ export function EditComponentSmall(EditId ) {
    }, []);
   
   
-  // console.log(tags)
 
   return (
   <>

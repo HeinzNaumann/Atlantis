@@ -47,7 +47,6 @@ export const Ad = (ad) => {
       recieverName:ad.usuario_nombre,
       type:"sold"
     })
-    console.log('ad.usuario_nombre',ad.usuario_nombre );
   }
   
   return (

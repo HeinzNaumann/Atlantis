@@ -19,7 +19,6 @@ const AdminPanel = ({ history }) => {
   const [idEdit, EditId] = useState();
   const nombre = localStorage.getItem("nombre");
 
-  console.log(idEdit);
 
   const handleCheckCategoria = (id) => {
     const idCat = id.target.id;
@@ -52,13 +51,11 @@ const AdminPanel = ({ history }) => {
   };
 
   useEffect(() => {
-    //console.log("UserID",userId);
     getAdsUserList(userId).then((ads) => {
       userAd(ads);
     });
   }, [userId]);
 
-  console.log(ads);
 
   return (
     <>

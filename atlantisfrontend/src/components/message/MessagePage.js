@@ -56,7 +56,6 @@ const MessagePage=({ match }) =>{
                 setChats(result)
                 setFirst(0);
             }else{
-                console.log("AD -->2", ad);
                 const chatTemp ={
                     anuncio_nombre:ad.nombre,
                     anuncio: ad._id,
@@ -80,7 +79,6 @@ const MessagePage=({ match }) =>{
       },[]) */
 
       const updChat = async (id) =>{
-        // console.log("ID async", id);
          const chat = await getChat(id);
          setChat(chat.result[0]);
          setFirst(1);
