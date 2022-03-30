@@ -189,6 +189,7 @@ input[type="radio"] {
 }
 .anuncios-block {
   margin-top: 50px !important;
+  padding-bottom: 50px !important;
 }
 
 textarea {
@@ -705,6 +706,14 @@ h5 {
   background-color: transparent;
 }
 
+.pagination {
+  padding-top: 50px;
+}
+
+select[name="tags"] {
+  height: 75px;
+  padding: 5px;
+}
 /* ****************************** 
     :: 5.0 SLIDER INDICATORS CSS
 ****************************** */
