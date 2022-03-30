@@ -105,13 +105,13 @@ const Chat=({ props }) =>{
             <div className="chatAdName"><Link to={`/adverts/${ad._id}`}><h3>{props.anuncio_nombre+ " - "+ad.precio+"€"}</h3></Link></div>
                 <div className="chat" >
                     { message.length ? (message.map((e,i)=>
-                        <div className={(i%2==0)? "left":"right"} key={i}>
-                            <div className={(i%2==0)? "dLeft":"dRight"}>
+                        <div className={(e.nombre!==message[0].nombre)? "left":"right"} key={i}>
+                            <div className={(e.nombre!==message[0].nombre)? "dLeft":"dRight"}>
                                 <div>
-                                    <p className={(i%2==0)? "chUserL":"chUserR"}>{e.nombre}</p>
-                                    <small className={(i%2==0)? "chMessageL":"chMessageR"}>{e.mensaje}</small>
+                                    <p className={(e.nombre!==message[0].nombre)? "chUserL":"chUserR"}>{e.nombre}</p>
+                                    <small className={(e.nombre!==message[0].nombre)? "chMessageL":"chMessageR"}>{e.mensaje}</small>
                                 </div>
-                                <div className={(i%2==0)? "dateL":"dateR"}>{e.createdAtMsg? 
+                                <div className={(e.nombre!==message[0].nombre)? "dateL":"dateR"}>{e.createdAtMsg? 
                                         (new Date(e.createdAtMsg).getHours()+":"+
                                         new Date(e.createdAtMsg).getMinutes()+"  "+
                                         new Date(e.createdAtMsg).getDate()+"/"+
