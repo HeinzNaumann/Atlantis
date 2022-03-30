@@ -2601,13 +2601,17 @@ footer .menu-list-style li {
 }
 
 .userpanel-banner-wrapper {
-  position: relative;
-  background: url(./assets/img/slide-item-3.jpg) no-repeat center top;
-  background-size: cover;
+  background: url(/static/media/slide-item-3.2b03e09f2fc1bd8c4ce3.jpg) no-repeat
+    top;
+  background-attachment: scroll;
+  background-size: auto;
   background-attachment: fixed;
+  background-size: cover;
+  height: 300px;
   margin-left: -33.33%;
   margin-right: -33.33%;
-  height: 300px;
+  position: relative;
+  width: 100%;
 }
 
 /* .userpanel-banner-wrapper:before {

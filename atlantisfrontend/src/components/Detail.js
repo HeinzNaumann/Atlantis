@@ -116,7 +116,7 @@ function Detail({ match, history }) {
 
                           <div className="share-info-card bg-white mt-4 p-4">
                             <h5 className="text-grey d-inline-block align-middle">
-                              TAGS
+                              Tags
                             </h5>
                             <hr className="my-4" />
                             <div className="row">
