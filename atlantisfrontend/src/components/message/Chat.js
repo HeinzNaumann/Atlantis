@@ -24,7 +24,18 @@ const Chat=({ props }) =>{
       },[props])
 
     useEffect(()=>{
-        getAd(props.anuncio).then(advert =>setAd(advert.result[0]));
+        getAd(props.anuncio).then(advert =>{
+            if(advert.result[0]){
+                setAd(advert.result[0])
+            }else{
+                const adtemp={
+                    _id:"",
+                    precio:"Ad deleted"
+                }
+                setAd(adtemp)
+            }
+            });
+        
       },[props])
 
 /*     useEffect(()=>{
@@ -102,7 +113,7 @@ const Chat=({ props }) =>{
     return (
             
         <div className='message-chat'>  
-            <div className="chatAdName"><Link to={`/adverts/${ad._id}`}><h3>{props.anuncio_nombre+ " - "+ad.precio+"€"}</h3></Link></div>
+            <div className="chatAdName"><Link to={`/adverts/${ad._id?ad._id:""}`}><h3>{props.anuncio_nombre+ " - "+ad.precio+"€"}</h3></Link></div>
                 <div className="chat" >
                     { message.length ? (message.map((e,i)=>
                         <div className={(e.nombre!==message[0].nombre)? "left":"right"} key={i}>

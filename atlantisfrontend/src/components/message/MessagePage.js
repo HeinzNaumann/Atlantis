@@ -41,7 +41,7 @@ const MessagePage=({ match }) =>{
         if(!adId){
             setAd("");
         }else{
-             getAd(adId).then(advert =>setAd(advert.result[0]));
+             getAd(adId).then(advert =>setAd(advert.result[0]?advert.result[0]:""));
         }
     }
 
@@ -56,19 +56,21 @@ const MessagePage=({ match }) =>{
                 setChats(result)
                 setFirst(0);
             }else{
-                console.log("AD -->2", ad);
-                const chatTemp ={
-                    anuncio_nombre:ad.nombre,
-                    anuncio: ad._id,
-                    precio: ad.precio? ad.precio:"",
-                    propietario: ad.usuario,
-                    propietario_nombre:ad.usuario_nombre,
-                    usuario_int:idusuario,
-                    usuario_int_nombre:nombre,
-                    mensajes:[],
-                    imagen:ad.imagen? ad.imagen:""
-                }
-          
+                
+                const chatTemp ={}
+                if(ad){
+                    chatTemp={
+                        anuncio_nombre:ad.nombre,
+                        anuncio: ad._id,
+                        precio: ad.precio? ad.precio:"",
+                        propietario: ad.usuario,
+                        propietario_nombre:ad.usuario_nombre,
+                        usuario_int:idusuario,
+                        usuario_int_nombre:nombre,
+                        mensajes:[],
+                        imagen:ad.imagen? ad.imagen:""
+                    }
+                 }
                 setChats([chatTemp,...result]);
             }
             
