@@ -2,6 +2,11 @@
 
 ## Adverts Sell and Buy App. Final Project.
 
+Links to Backend and Frontend
+
+- https://github.com/kikonavarro/AtlantisBackend
+- https://github.com/kikonavarro/AtlantisFrontend
+
 Develop of a APP that runs on the server (AWS - Ubuntu - Nginx) using React App and Node JS.
 
 The service shows a catalog of products given the user the option to register, log in, create, sell, buy, make his products reserve or sold, add favorites, chat with other users of the app, delete, delete account, system of notifications by email to inform the users and log out.  .
