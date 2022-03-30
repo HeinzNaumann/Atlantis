@@ -72,7 +72,6 @@ const Chat=({ props }) =>{
 
     const handleSubmnit = async (e)=>{
         e.preventDefault();
-        //console.log("PROPS CHAT-->",props);
         //verifica si es un chat existente sino lo crea
         let idchat=props._id;
         if(!idchat){

@@ -56,6 +56,7 @@ const MessagePage=({ match }) =>{
                 setChats(result)
                 setFirst(0);
             }else{
+<<<<<<< HEAD
                 
                 const chatTemp ={}
                 if(ad){
@@ -71,6 +72,20 @@ const MessagePage=({ match }) =>{
                         imagen:ad.imagen? ad.imagen:""
                     }
                  }
+=======
+                const chatTemp ={
+                    anuncio_nombre:ad.nombre,
+                    anuncio: ad._id,
+                    precio: ad.precio? ad.precio:"",
+                    propietario: ad.usuario,
+                    propietario_nombre:ad.usuario_nombre,
+                    usuario_int:idusuario,
+                    usuario_int_nombre:nombre,
+                    mensajes:[],
+                    imagen:ad.imagen? ad.imagen:""
+                }
+          
+>>>>>>> e040dfc1519538d6af592b61af7c02c76673ed46
                 setChats([chatTemp,...result]);
             }
             
@@ -82,7 +97,6 @@ const MessagePage=({ match }) =>{
       },[]) */
 
       const updChat = async (id) =>{
-        // console.log("ID async", id);
          const chat = await getChat(id);
          setChat(chat.result[0]);
          setFirst(1);

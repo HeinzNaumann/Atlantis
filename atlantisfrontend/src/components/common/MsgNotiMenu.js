@@ -25,7 +25,6 @@ const MsgNotiMenu = ( ) => {
      const displayNotification=({article_name,type})=>{
           let action;
           let msg="";
-          console.log("Noti",notifications)
           if(type==="sold"){
             msg=`Your favorite,${article_name} has been sold`
           }
