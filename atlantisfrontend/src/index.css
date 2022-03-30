@@ -2601,8 +2601,7 @@ footer .menu-list-style li {
 }
 
 .userpanel-banner-wrapper {
-  background: url(/static/media/slide-item-3.2b03e09f2fc1bd8c4ce3.jpg) no-repeat
-    top;
+  background: url(./assets/img/slide-item-3.jpg) no-repeat top;
   background-attachment: scroll;
   background-size: auto;
   background-attachment: fixed;
