@@ -8,6 +8,7 @@ const MsgNotiMenu = ( ) => {
 
     const[notifications, setNotifications]=useState([])
     const[open,setOpen]=useState(false);
+    const[message, setMessage] = useState([]);
 
     useEffect(()=>{
         socket.on("getNotification", data=>{
@@ -15,12 +16,13 @@ const MsgNotiMenu = ( ) => {
         })
       },[socket]);
 
-      const handleClrNoti= ()=>{
+
+        const handleClrNoti= ()=>{
           setNotifications([])
           setOpen(false)
       }
 
-      const displayNotification=({article_name,type})=>{
+     const displayNotification=({article_name,type})=>{
           let action;
           let msg="";
           console.log("Noti",notifications)
@@ -57,10 +59,11 @@ const MsgNotiMenu = ( ) => {
                         
                        
                       </li>
-                      <li className="list-inline-item d-md-inline-block">
+                      <li className="list-inline-item d-md-inline-block info">
                         <Link to="/chat">
                     
                            <Icon.MessageCircle className="d-inline-block mr-0 mr-lg-3 icons-header" />
+                         
                           <span className="d-none d-lg-inline-block">
                             Message
                           </span>

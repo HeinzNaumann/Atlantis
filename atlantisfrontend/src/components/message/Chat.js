@@ -1,17 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
 import socket from './socket'
-import { createChad, updateChad, getChats } from '../../../src/components/service';
+import { createChad, updateChad, getChats, getAd } from '../../../src/components/service';
 import './chat.css'
+import { Link } from "react-router-dom";
 
 const Chat=({ props }) =>{
     const[msg, setMsg] = useState("");
     const[message, setMessage] = useState([]);
+    const[ad, setAd] = useState({});
     const nombre = localStorage.getItem('nombre');
       
 
     const setFirst = props =>{
-        console.log("PROPS CARGA", props)
-       if(props.length===0){
+        if(props.length===0){
             setMessage([]);
         }else{
             setMessage(props.mensajes); 
@@ -22,6 +23,9 @@ const Chat=({ props }) =>{
         setFirst(props);
       },[props])
 
+    useEffect(()=>{
+        getAd(props.anuncio).then(advert =>setAd(advert.result[0]));
+      },[props])
 
 /*     useEffect(()=>{
         socket.emit('conectado', nombre)
@@ -50,7 +54,7 @@ const Chat=({ props }) =>{
         return ()=> {socket.off()}
     },[message])
 
-  /*  const divRef = useRef(null);
+   /* const divRef = useRef(null);
     useEffect(()=>{
           divRef.current.scrollIntoView({behavior: "smooth"})
     }) */
@@ -89,20 +93,48 @@ const Chat=({ props }) =>{
         setMsg("");
     }
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+          handleSubmnit(event);
+        }
+      }
+      
     return (
             
-            <div className='message-chat'>  
+        <div className='message-chat'>  
+            <div className="chatAdName"><Link to={`/adverts/${ad._id}`}><h3>{props.anuncio_nombre+ " - "+ad.precio+"€"}</h3></Link></div>
                 <div className="chat" >
-                   { message.length ? (message.map((e,i)=><div  key={i+1}><div>{e.nombre}</div><div>{e.mensaje}</div></div>)):
-                    ("")}
+                    { message.length ? (message.map((e,i)=>
+                        <div className={(i%2==0)? "left":"right"} key={i}>
+                            <div className={(i%2==0)? "dLeft":"dRight"}>
+                                <div>
+                                    <p className={(i%2==0)? "chUserL":"chUserR"}>{e.nombre}</p>
+                                    <small className={(i%2==0)? "chMessageL":"chMessageR"}>{e.mensaje}</small>
+                                </div>
+                                <div className={(i%2==0)? "dateL":"dateR"}>{e.createdAtMsg? 
+                                        (new Date(e.createdAtMsg).getHours()+":"+
+                                        new Date(e.createdAtMsg).getMinutes()+"  "+
+                                        new Date(e.createdAtMsg).getDate()+"/"+
+                                        (new Date(e.createdAtMsg).getMonth()+1)+"/"+
+                                        new Date(e.createdAtMsg).getFullYear())
+                                        : 
+                                        (new Date().getHours()+":"+
+                                        new Date().getMinutes()+"  "+
+                                        new Date().getDate()+"/"+
+                                        (new Date().getMonth()+1)+"/"+
+                                        new Date().getFullYear()) }
+                                </div>
+                            </div>
+                        </div>)):
+                                  ("")}
                     <br/>
                     {/* <div ref={divRef}></div> */}
                 </div>
                 <form onSubmit={handleSubmnit} className="form-chat">
-                    <textarea cols="10" rows="1" value={msg} onChange={e=>setMsg(e.target.value)}></textarea>
-                    <button className="sendMsj">Enviar</button>
+                    <input cols="10" rows="1" className="txtForm" value={msg} onChange={e=>setMsg(e.target.value)} onKeyDown={handleKeyDown}></input>
+                    <button className="sendMsj" >Enviar</button>
                 </form>
-            </div>
+        </div>
         
     )
 

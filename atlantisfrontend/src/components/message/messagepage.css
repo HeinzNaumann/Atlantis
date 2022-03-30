@@ -1,19 +1,72 @@
+.msjPage{
+    display: flex;
+    justify-content:center
+
+}
+
+.empty{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-weight: 600;
+    font-size: 26px; 
+    background-color: rgb(235, 235, 235);
+    
+}
+
 .message-container{
     display: flex;
-    /* align-items: center; */
     justify-content: space-evenly;
-    border: 0.5px solid lightslategrey;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.19);
     min-height: 500px;
     border-radius: 5px;
-    padding-top: 30px;;
-    background-color: rgba(var(--bs-black-rgb),var(--bs-bg-opacity))!important;
+   /*  padding-top: 30px; */
+    width: 90%;
+    height: 100vh;
+    overflow: hidden;
+    margin: 15px;
+    
+    /* background-color: rgba(var(--bs-black-rgb),var(--bs-bg-opacity))!important; */
 }
 
 .message-list{
     width: 25%;
+    overflow: auto;
+    padding-top: 30px;
+   /*  background-color: gray;
+    border-radius: 5%; */
+
 
 }
-.message-chat{
-    width: 60%;
+.listItem{
+    background-color: rgb(235, 235, 235);
+    border-radius: 15px;
+    padding: 5px;
+    cursor: pointer;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.19);
+    
+}
+.ulList{
+    padding: 7px !important;
+    
+}
+
+.ad{
+    margin: 2px 10px;
+    font-weight: 600;
+    font-size: 17px;
+}
+.seller{
+    color: rgb(134, 133, 133);
+    font-weight: 500;
+    margin: 1px 10px;
+}
+
+.unread{
+    background-color: wheat;
+    border-radius: 15px;
 
 }
