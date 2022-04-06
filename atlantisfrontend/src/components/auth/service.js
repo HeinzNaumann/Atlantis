@@ -25,3 +25,7 @@ export const logout = () =>
   }).then(() => {
     removeAuthorizationHeader();
   })
+
+  export const changePassword = (value) => {
+    return client.put("/api/users", value)
+  }

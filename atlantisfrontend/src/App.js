@@ -2,6 +2,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import AdsListMainPage from "./components/AdsListMainPage";
 import NewAdPage from "./components/NewAdPage";
 import PasswordForgot from "./components/auth/passwordForgot/PasswordForgot";
+import ChangePassword from "./components/auth/passwordForgot/ChangePassword";
 import AccountConfirm from "./components/auth/accountConfirm/AccountConfirm";
 import SignupLogin from "./components/auth/SignupLogin";
 import AdminPanel from "./components/adminPanel/AdminPanel";
@@ -27,6 +28,7 @@ function App() {
       <Route exact path="/update" component={EditComponent} />
       <Route exact path="/signup" component={SignupLogin} />
       <Route exact path="/password-forgot" component={PasswordForgot} />
+      <Route exact path="/change-password/:tk" component={ChangePassword} />
 
       <Route exact path="/chat/:idAd" component={Message} />
       <Route exact path="/chat" component={Message} />
