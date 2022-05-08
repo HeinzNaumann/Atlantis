@@ -27,7 +27,7 @@ button.sendMsj{
     border-radius: 5px;
     position: absolute;
     width: 60px;
-    background-color: lightseagreen;
+    background-color: #81bf30;
     color:white;
     cursor: pointer;
     right: 1px;
@@ -77,6 +77,7 @@ button.sendMsj{
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 3px;
     width: 60%;
+    min-width: 100px;
 }
 .chUserL{
     margin: 2px 10px;
@@ -115,7 +116,7 @@ button.sendMsj{
 .chatAdName{
     margin-top: 5px;
     margin-bottom: 20px;
-    background-color: rgb(222, 247, 245);
+    background-color: #fff;
     padding: 10px;
     padding-bottom: 4px;
     border-radius: 9px;;

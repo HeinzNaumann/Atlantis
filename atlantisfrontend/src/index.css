@@ -2569,6 +2569,15 @@ footer .menu-list-style li {
   background-color: #1579ee;
 }
 
+
+.empty p{
+  font-size:1rem;
+}
+
+
+.company-info-widget p{
+  color:white;
+}
 .social-widget ul li i {
   position: absolute;
   top: 50%;
